@@ -1,0 +1,123 @@
+.category-card {
+    border: 1px solid #000;
+    border-radius: 30px;
+    box-shadow: 3px 3px 0 0;
+    cursor: pointer;
+    font-family: "Lobster, sans-serif";
+    overflow: hidden;
+    padding: 0 !important;
+    padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .category-card .main {
+    display: none;
+  }
+  
+  .category-card .div-containing-image {
+    aspect-ratio: 7 / 10;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .category-card .icon-for-download {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform: translate(-50%, -100%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transition: 0.3s;
+  }
+  
+  .category-card .icon-for-download svg {
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  .category-card .div-containing-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    padding: 3px;
+    border-radius: 25px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .category-card .button-icon1 {
+    background-color: #da212b;
+    color: #f5f5f5;
+    display: none;
+    font-family: "Lato,sans-serif";
+    left: 50%;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
+    width: 90%;
+    bottom: 40px;
+    border: transparent;
+  }
+  .category-card:hover .icon-for-download {
+    /* display: flex; */
+    top: 4%;
+    transform: translate(-50%, 0%);
+  }
+  
+  .category-card:hover .button-icon1 {
+    display: block;
+  }
+  .category-card .button-icon1:hover {
+    background-color: #be2c34;
+  }
+  .category-card .product-name {
+    font-family: "Lobster", sans-serif;
+  }
+  .category-card .product-name .large-font {
+    font-size: 20px;
+  }
+  .category-card .product-name .small-font {
+    font-size: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    .category-card {
+      border-radius: 20px !important;
+      box-shadow: 3px 3px 0 0;
+    }
+    .category-card .div-containing-image {
+      border-radius: 20px !important;
+    }
+    .category-card .div-containing-image img {
+      aspect-ratio: 11 / 15;
+      border-radius: 20px !important;
+      transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .category-card .product-name {
+      font-size: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .category-card .product-name {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .category-card .product-name {
+      font-size: 11px;
+    }
+  }
+  
