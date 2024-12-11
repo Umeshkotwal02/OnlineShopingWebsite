@@ -1,74 +1,14 @@
 * {
   margin: 0px;
   padding: 0px;
-  background-color: '#F3F3F3';
 }
 
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* Utility classes */
-.d-flex {
-  display: flex;
+/* some row problem */
+.row {
+ --bs-gutter-x: 0rem !important;
 }
 
-.align-items-center {
-  align-items: center;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.px-4 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
-.bg-opacity-10 {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Custom input styles */
-.text-base {
-  font-size: 1rem;
-}
-
-.text-white {
-  color: #fff;
-}
-
-.placeholder-white-bold::placeholder {
-  color: #000000 !important;
-}
-
-
-/* Custom styles for the next and previous control icons */
-.custom-carousel .carousel-control-prev-icon,
-.custom-carousel .carousel-control-next-icon {
-  background-size: contain; /* Ensure image fits */
-  background-repeat: no-repeat;
-}
-
-.custom-carousel .carousel-control-prev-icon {
-  background-image: url("../public/assets/images/Carasole-Img/sidechange-prev.png");
-}
-
-.custom-carousel .carousel-control-next-icon {
-  background-image: url("../public/assets/images/Carasole-Img/sidechange-next.png");
-
-}

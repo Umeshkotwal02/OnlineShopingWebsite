@@ -17,17 +17,24 @@ const AccountIcon = (props) => (
 
 );
 
+const offcanvaceMobiIcon = (props) => (
+   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.59998 5.9998C3.59998 5.68154 3.7264 5.37632 3.95145 5.15128C4.17649 4.92623 4.48172 4.7998 4.79998 4.7998H19.2C19.5182 4.7998 19.8235 4.92623 20.0485 5.15128C20.2735 5.37632 20.4 5.68154 20.4 5.9998C20.4 6.31806 20.2735 6.62329 20.0485 6.84833C19.8235 7.07338 19.5182 7.1998 19.2 7.1998H4.79998C4.48172 7.1998 4.17649 7.07338 3.95145 6.84833C3.7264 6.62329 3.59998 6.31806 3.59998 5.9998ZM3.59998 11.9998C3.59998 11.6815 3.7264 11.3763 3.95145 11.1513C4.17649 10.9262 4.48172 10.7998 4.79998 10.7998H19.2C19.5182 10.7998 19.8235 10.9262 20.0485 11.1513C20.2735 11.3763 20.4 11.6815 20.4 11.9998C20.4 12.3181 20.2735 12.6233 20.0485 12.8483C19.8235 13.0734 19.5182 13.1998 19.2 13.1998H4.79998C4.48172 13.1998 4.17649 13.0734 3.95145 12.8483C3.7264 12.6233 3.59998 12.3181 3.59998 11.9998ZM3.59998 17.9998C3.59998 17.6815 3.7264 17.3763 3.95145 17.1513C4.17649 16.9262 4.48172 16.7998 4.79998 16.7998H19.2C19.5182 16.7998 19.8235 16.9262 20.0485 17.1513C20.2735 17.3763 20.4 17.6815 20.4 17.9998C20.4 18.3181 20.2735 18.6233 20.0485 18.8483C19.8235 19.0734 19.5182 19.1998 19.2 19.1998H4.79998C4.48172 19.1998 4.17649 19.0734 3.95145 18.8483C3.7264 18.6233 3.59998 18.3181 3.59998 17.9998Z" fill="black" />
+   </svg>
+
+)
+
 const Dropdown = (props) => (
    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M19 8.5L12 15.5L5 8.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19 8.5L12 15.5L5 8.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
 )
 
 const LoginIcon = (props) => (
    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15.8125 12.0217H3.77148" stroke="#252525" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M12.8848 9.10571L15.8128 12.0217L12.8848 14.9377" stroke="#252525" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M8.50391 7.38897V6.45597C8.50391 4.42097 10.1529 2.77197 12.1889 2.77197H17.0729C19.1029 2.77197 20.7479 4.41697 20.7479 6.44697V17.587C20.7479 19.622 19.0979 21.272 17.0629 21.272H12.1779C10.1489 21.272 8.50391 19.626 8.50391 17.597V16.655" stroke="#252525" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M15.8125 12.0217H3.77148" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.8848 9.10571L15.8128 12.0217L12.8848 14.9377" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.50391 7.38897V6.45597C8.50391 4.42097 10.1529 2.77197 12.1889 2.77197H17.0729C19.1029 2.77197 20.7479 4.41697 20.7479 6.44697V17.587C20.7479 19.622 19.0979 21.272 17.0629 21.272H12.1779C10.1489 21.272 8.50391 19.626 8.50391 17.597V16.655" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
 
 )
@@ -39,9 +46,13 @@ const WishlistIcon = (props) => (
 );
 
 const CartIcon = (props) => (
-   <svg xmlns="http://www.w3.org/2000/svg" width={26} height={26} fill="none" {...props}>
-      <path fill="#000" d="M22.862 7.555H17.96V7.21c.114-2.752-2.053-5.045-4.79-5.045-2.737.115-4.79 2.293-4.79 5.045v.344H3.477c-.684 0-1.14.458-1.14 1.146v9.4c0 3.21 2.509 5.732 5.702 5.732H18.3c3.193 0 5.702-2.522 5.702-5.732v-9.4c0-.573-.457-1.146-1.14-1.146ZM10.09 7.21c0-1.72 1.369-3.21 3.08-3.325 1.71.115 3.078 1.605 3.078 3.325v.344H10.09V7.21Zm12.202 11.005c0 2.178-1.825 4.012-3.991 4.012H8.038c-2.167 0-3.992-1.834-3.992-4.012V9.274H8.38v2.293c-.228.23-.342.573-.342.802 0 .688.57 1.147 1.14 1.147s1.14-.573 1.14-1.147c0-.344-.114-.573-.342-.802V9.274h6.158v2.178c-.228.23-.342.573-.342.917 0 .688.456 1.261 1.14 1.261.685 0 1.255-.458 1.255-1.146 0-.344-.114-.573-.342-.803V9.39h4.447v8.827Z" />
+   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M16.5137 21.4998H8.16592C5.09955 21.4998 2.74715 20.3922 3.41534 15.9346L4.19338 9.89339C4.60528 7.66913 6.02404 6.81787 7.26889 6.81787H17.4474C18.7105 6.81787 20.0469 7.7332 20.5229 9.89339L21.3009 15.9346C21.8684 19.8888 19.5801 21.4998 16.5137 21.4998Z" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16.651 6.59824C16.651 4.21216 14.7167 2.27787 12.3306 2.27787V2.27787C11.1816 2.273 10.078 2.72603 9.26381 3.53679C8.44963 4.34754 7.99193 5.44923 7.99194 6.59824H7.99194" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.2963 11.1017H15.2506" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9.46566 11.1017H9.41989" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
+
 );
 const RightAngle = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={10} height={16} fill="none" {...props}>
@@ -288,9 +299,17 @@ const AmazonIcon = (props) => (
       </defs>
    </svg>
 );
+
+const LgBagIcon = (props) => (
+   <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.8623 7.55403H17.9588V7.21011C18.0728 4.45878 15.9061 2.16602 13.1693 2.16602C10.4324 2.28065 8.3798 4.45878 8.3798 7.21011V7.55403H3.47629C2.79207 7.55403 2.33594 8.01258 2.33594 8.70041V18.1008C2.33594 21.3107 4.84471 23.8327 8.03769 23.8327H18.3008C21.4938 23.8327 24.0026 21.3107 24.0026 18.1008V8.70041C24.0026 8.12722 23.5464 7.55403 22.8623 7.55403ZM10.0903 7.21011C10.0903 5.49053 11.4588 4.00023 13.1693 3.88559C14.8797 4.00023 16.2482 5.49053 16.2482 7.21011V7.55403H10.0903V7.21011ZM22.2921 18.2154C22.2921 20.3935 20.4675 22.2277 18.3008 22.2277H8.03769C5.87103 22.2277 4.04647 20.3935 4.04647 18.2154V9.2736H8.3798V11.5663C8.15173 11.7957 8.03769 12.1395 8.03769 12.3688C8.03769 13.0567 8.60786 13.5152 9.17804 13.5152C9.74822 13.5152 10.3184 12.942 10.3184 12.3688C10.3184 12.0249 10.2044 11.7957 9.97629 11.5663V9.2736H16.1341V11.4517C15.9061 11.681 15.7921 12.0249 15.7921 12.3688C15.7921 13.0567 16.2482 13.6298 16.9324 13.6298C17.6167 13.6298 18.1868 13.1713 18.1868 12.4835C18.1868 12.1395 18.0728 11.9103 17.8447 11.681V9.38824H22.2921V18.2154Z" fill="black" />
+   </svg>
+)
 const AddPhotoIcon = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} fill="none" {...props}>
       <path fill="#BAB8B8" d="M31.668 11.666V8.333h-3.333V4.999h3.333V1.666h3.333v3.333h3.334v3.334H35v3.333h-3.333Zm-13.333 17.5c2.083 0 3.854-.73 5.313-2.188 1.459-1.46 2.188-3.23 2.187-5.312 0-2.083-.73-3.854-2.189-5.313-1.459-1.46-3.23-2.188-5.311-2.187-2.084 0-3.855.73-5.314 2.188-1.459 1.46-2.188 3.23-2.186 5.312 0 2.083.73 3.854 2.188 5.313 1.459 1.46 3.23 2.188 5.312 2.187Zm0-3.333c-1.167 0-2.153-.403-2.959-1.209-.805-.805-1.208-1.791-1.208-2.958 0-1.167.403-2.153 1.208-2.958.806-.806 1.792-1.209 2.959-1.209 1.166 0 2.152.403 2.958 1.209.806.805 1.208 1.791 1.208 2.958 0 1.167-.402 2.153-1.208 2.958-.806.806-1.792 1.209-2.958 1.209ZM5 34.999a3.21 3.21 0 0 1-2.355-.98c-.653-.653-.98-1.437-.978-2.353v-20c0-.917.327-1.702.98-2.355s1.438-.98 2.353-.978h5.25l3.084-3.334H25v6.667h3.334v3.333H35v16.667c0 .917-.326 1.702-.98 2.355-.653.653-1.438.98-2.353.978H5.001Z" />
    </svg>
 );
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, Dropdown, LoginIcon };
+
+
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, Dropdown, LoginIcon, offcanvaceMobiIcon, LgBagIcon };

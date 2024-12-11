@@ -1,11 +1,11 @@
 import React from 'react'
-import CustomCarousel from './Carousel'
-import OnlineShopDesignStudio from './OnlineShopDesignStudio'
 import Banner from './HomePage/Banner'
-import Login from '../Components/HeaderComponents/Login'
 import CategoryCardList from '../Components/CategoryCard'
 import Motion from './HomePage/Motion'
 import ProductList from './HomePage/ProductList'
+import Login from '../Components/HeaderComponents/LoginCanva'
+import CustomCarousel from './HomePage/CustomCarousel'
+import OnlineShopDesignStudio from './HomePage/OnlineShopDesignStudio'
 
 const HomePage = () => {
   return (
@@ -13,7 +13,7 @@ const HomePage = () => {
       <Login />
       <CustomCarousel />
       <CategoryCardList />
-      <ProductList/>
+      <ProductList />
       <Motion />
       <Banner />
       <OnlineShopDesignStudio />

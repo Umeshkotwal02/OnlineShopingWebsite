@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Offcanvas, Button, Container, Row, Col } from "react-bootstrap";
-import { AccountIcon, WishlistIcon, CartIcon, SearchIcon, LoginIcon } from "../../assets/SvgIcons";
-import Menu from "./MainMenu";
-import LoginOffCanvas from "./Login"; // Import your Login OffCanvas component
+import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, Dropdown, LgBagIcon } from "../../assets/SvgIcons";
+import LoginOffCanvas from "./LoginCanva";
+import MainHeaderMobi from "../MobileView/MainHeaderMobi";
+import CartOffCanvas from "./CartOffCanvas";
+import Menu from "./CategoryMenu";
 
-const Header = ({
+const MainHeader = ({
   isLoggedIn,
   userDetails,
   userProfile,
   wishlistCount,
-  handleLogout,
   handleNavigateToWishlist,
   headerButtons,
   searchTerm,
@@ -20,54 +21,68 @@ const Header = ({
   handleSuggestionClick,
   showSuggestions,
 }) => {
-  const navigate = useNavigate();
 
-  const [showOffcanvas, setShowOffcanvas] = useState(false); // Menu Offcanvas
   const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login Offcanvas
+  const [showCartCanvas, setShowCartCanvas] = useState(false); // Login Offcanvas
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
-  const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
-  const handleShowLoginCanvas = () => setShowLoginCanvas(true);
+  // const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
+  const handleShowLoginCanvas = () => {
+    setIsOpen(false);
+    setShowLoginCanvas(true);
+  };
   const handleCloseLoginCanvas = () => setShowLoginCanvas(false);
+
+   // const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
+   const handleCartLoginCanvas = () => {
+    setIsOpen(false);
+    setShowCartCanvas(true);
+  };
+
+  const handleCloseCartCanvas = () => setShowCartCanvas(false);
 
   return (
     <>
-        <header className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
-          <Row className="align-items-center py-2">
+      <header className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
+        {/* Header for Large Screens */}
+        <div className="d-none d-lg-block">
+          <Row className="align-items-center py-2 ms-4 me-4">
             {/* Logo Section */}
-            <Col xl={3} xxl={3} className="d-flex align-items-center">
+            <Col xl={3} xxl={3} lg={3} className="d-flex align-items-center">
               <Link to="/">
                 <img
                   src="/assets/images/header-logo.png"
                   alt="header-logo"
                   className="img-fluid"
-                  style={{ maxWidth: "200px", backgroundColor: "white" }}
+                  style={{ maxWidth: "200px" }}
                 />
               </Link>
             </Col>
 
             {/* Search Bar */}
-            <Col xxl={5} xl={5} className="flex-grow-1 my-2">
+            <Col xxl={6} xl={6} lg={6} className="flex-grow-1 my-2">
               <div
-                className="d-flex align-items-center bg-opacity-10 bg-white px-3"
+                className="d-flex align-items-center bg-opacity-10 px-3"
                 style={{
                   border: "2px solid #D3D1D1",
                   borderRadius: "25px",
+                  width: "100%",
+                  backgroundColor: "#fff", // Set the background for the container as well
                 }}
               >
-                <SearchIcon className="text-dark me-2" />
+                <SearchIcon className="text-dark" />
                 <input
                   type="search"
                   placeholder="Search for products..."
-                  className="form-control border-0 bg-transparent text-dark search-hover"
+                  className="form-control border-0 search-hover search-input"
                   value={searchTerm}
                   onKeyDown={handleKeyUp}
                   onChange={handleChange}
                   style={{
                     outline: "none",
                     boxShadow: "none",
-                    backgroundColor: "white",
+                    backgroundColor: "#fff",
                   }}
                 />
               </div>
@@ -90,8 +105,8 @@ const Header = ({
             </Col>
 
             {/* Icons Section */}
-            <Col xxl={4} xl={4} className="d-flex justify-content-end gap-3">
-              <button className="btn text-dark d-flex align-items-center gap-1">
+            <Col xxl={3} xl={3} lg={3} className="d-flex justify-content-end gap-3">
+              <div className=" text-dark d-flex align-items-center gap-1">
                 {isLoggedIn ? (
                   <>
                     <img
@@ -108,14 +123,16 @@ const Header = ({
                   </>
                 ) : (
                   <div style={{ position: "relative", display: "inline-block" }}>
-                    {/* Account Button */}
-                    <button
-                      className="btn text-dark d-flex align-items-center gap-1"
+                    {/* Account div */}
+                    <div
+                      className="text-dark d-flex align-items-center gap-1"
                       onClick={toggleDropdown}
+                      style={{ cursor: "pointer" }}
                     >
                       <AccountIcon />
                       <span className="d-none d-xl-inline-block">Account</span>
-                    </button>
+                      <Dropdown />
+                    </div>
 
                     {/* Dropdown */}
                     {isOpen && (
@@ -133,7 +150,7 @@ const Header = ({
                         }}
                       >
                         <div className="flex flex-col px-3.5">
-                          <button
+                          <div
                             className="py-3.5 border-b border-[#D6D6D6] flex items-center gap-3.5 last:border-none text-base font-medium text-[#252525]"
                             style={{
                               display: "flex",
@@ -145,94 +162,78 @@ const Header = ({
                               cursor: "pointer",
                               padding: "10px",
                             }}
-                            onClick={handleShowLoginCanvas} // Show Login Canvas
+                            onClick={handleShowLoginCanvas}
                           >
                             <LoginIcon />
                             Login/Signup
-                          </button>
+                          </div>
                         </div>
                       </div>
                     )}
                   </div>
                 )}
-              </button>
+              </div>
 
-              <button
-                className="btn text-dark d-flex align-items-center gap-1"
+              <div
+                className=" text-dark d-flex align-items-center gap-1"
                 onClick={handleNavigateToWishlist}
+                style={{ cursor: "pointer" }}
               >
                 <WishlistIcon />
                 {wishlistCount > 0 && (
                   <span className="badge bg-danger">{wishlistCount}</span>
                 )}
                 <span className="d-none d-xl-inline-block">Wishlist</span>
-              </button>
+              </div>
 
-              <button className="btn text-dark d-flex align-items-center gap-1">
-                <CartIcon />
+
+              <div className=" text-dark d-flex align-items-center gap-1" style={{ cursor: "pointer" }} onClick={handleCartLoginCanvas}>
+                <LgBagIcon />
                 {wishlistCount > 0 && (
                   <span className="badge bg-danger">{wishlistCount}</span>
                 )}
                 <span className="d-none d-xl-inline-block">Cart</span>
-              </button>
+              </div>
             </Col>
-            <Menu />
-
-            {/* OffCanvas Toggle for Small Screens */}
-            <div className="d-lg-none col-4">
-              <Button
-                variant="dark"
-                className="btn-sm"
-                onClick={handleOffcanvasToggle}
-              >
-                ☰
-              </Button>
-            </div>
           </Row>
 
           {/* Menu Section */}
-          <div className="container py-2 d-none d-lg-block">
+          <div className="container py-2">
             <div className="d-flex justify-content-center">
               {headerButtons?.map((item, index) => (
-                <button
+                <div
                   key={index}
                   className="btn btn-link text-decoration-none text-dark"
                 >
                   {item.category_name}
-                </button>
+                </div>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* OffCanvas for Small Screens */}
-          <Offcanvas show={showOffcanvas} onHide={handleOffcanvasToggle} placement="start">
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title>Menu</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <div className="mb-3">
-                <Link to="/account" className="text-dark d-block mb-2">
-                  Account
-                </Link>
-                <Link to="/wishlist" className="text-dark d-block mb-2">
-                  Wishlist
-                </Link>
-                <Link to="/cart" className="text-dark d-block">
-                  Cart
-                </Link>
-              </div>
-              <Menu />
-            </Offcanvas.Body>
-          </Offcanvas>
-        </header>
+        {/* Mobile and Tab View Component */}
+        <MainHeaderMobi />
+
+
+{/* Category Menu */}
+        <Menu/>
+      </header >
+
 
       {/* Login Canvas */}
-      <LoginOffCanvas
+      < LoginOffCanvas
         show={showLoginCanvas}
         handleClose={handleCloseLoginCanvas}
+      />
+
+      {/* Cart Canvas */}
+      < CartOffCanvas
+        show={showCartCanvas}
+        handleClose={handleCloseCartCanvas}
       />
     </>
   );
 };
 
-export default Header;
+export default MainHeader;
