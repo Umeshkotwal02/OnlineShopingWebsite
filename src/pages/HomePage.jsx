@@ -1,21 +1,27 @@
 import React from 'react'
 import Banner from './HomePage/Banner'
-import CategoryCardList from '../Components/CategoryCard'
 import Motion from './HomePage/Motion'
-import ProductList from './HomePage/ProductList'
-import Login from '../Components/HeaderComponents/LoginCanva'
-import CustomCarousel from './HomePage/CustomCarousel'
 import OnlineShopDesignStudio from './HomePage/OnlineShopDesignStudio'
+import CarosoleSilckSlider from './HomePage/CarosoleSilck'
+import CarosoleSlickMobi from '../Components/MobileView/CarosoleSlickMobi'
+import ShopByCategorySlick from './HomePage/ShopByCategory'
+import CategoryCardList from '../Components/CategoryCard'
+import ProductCard from './HomePage/Watch-Shop'
+import FestivalSpecial from './HomePage/FestivalSpecial'
+import SareeEdit from './HomePage/SareeEdit'
 
-const HomePage = () => {
+function HomePage() {
   return (
     <>
-      <Login />
-      <CustomCarousel />
-      <CategoryCardList />
-      <ProductList />
+      <CarosoleSilckSlider />
+      <CarosoleSlickMobi />
+      <ShopByCategorySlick />
+      <ProductCard/>
       <Motion />
+      <FestivalSpecial/>
       <Banner />
+      <SareeEdit/>
+      {/* <CategoryCardList /> */}
       <OnlineShopDesignStudio />
     </>
   )

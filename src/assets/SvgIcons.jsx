@@ -311,5 +311,34 @@ const AddPhotoIcon = (props) => (
    </svg>
 );
 
+const CategorySlickNextIcon = (props) => (
+   <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1_126)">
+         <path d="M28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z" fill="#EDEDED" />
+         <path d="M24.2397 35.9988C23.995 36.0014 23.7552 35.9308 23.551 35.7961C23.3468 35.6613 23.1876 35.4686 23.0938 35.2427C22.9999 35.0167 22.9758 34.7679 23.0246 34.5281C23.0733 34.2884 23.1926 34.0687 23.3671 33.8973L29.266 28.0106L23.3671 22.124C23.2525 22.0062 23.1623 21.867 23.1015 21.7143C23.0407 21.5616 23.0106 21.3984 23.0129 21.2341C23.0152 21.0698 23.0498 20.9075 23.1148 20.7565C23.1798 20.6056 23.2739 20.4689 23.3917 20.3543C23.5095 20.2398 23.6487 20.1495 23.8014 20.0887C23.9541 20.0279 24.1173 19.9978 24.2816 20.0001C24.446 20.0024 24.6082 20.037 24.7592 20.102C24.9101 20.167 25.0468 20.2611 25.1614 20.3789L31.9206 27.1381C32.0354 27.2525 32.1266 27.3885 32.1888 27.5382C32.251 27.688 32.283 27.8485 32.283 28.0106C32.283 28.1728 32.251 28.3333 32.1888 28.4831C32.1266 28.6328 32.0354 28.7688 31.9206 28.8832L25.1614 35.6424C25.0408 35.7623 24.8966 35.856 24.7379 35.9173C24.5793 35.9786 24.4096 36.0064 24.2397 35.9988Z" fill="black" />
+      </g>
+      <defs>
+         <clipPath id="clip0_1_126">
+            <rect width="56" height="56" fill="white" />
+         </clipPath>
+      </defs>
+   </svg>
+)
 
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, Dropdown, LoginIcon, offcanvaceMobiIcon, LgBagIcon };
+
+const CategoryPrevNextIcon = (props) => (
+   <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_5537_16064)">
+         <path d="M28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28C56 43.464 43.464 56 28 56Z" fill="#EDEDED" />
+         <path d="M31.7603 35.9988C32.005 36.0014 32.2448 35.9308 32.449 35.7961C32.6532 35.6613 32.8124 35.4686 32.9062 35.2427C33.0001 35.0167 33.0242 34.7679 32.9754 34.5281C32.9267 34.2884 32.8074 34.0687 32.6329 33.8973L26.734 28.0106L32.6329 22.124C32.7475 22.0062 32.8377 21.867 32.8985 21.7143C32.9593 21.5616 32.9894 21.3984 32.9871 21.2341C32.9848 21.0698 32.9502 20.9075 32.8852 20.7565C32.8202 20.6056 32.7261 20.4689 32.6083 20.3543C32.4905 20.2398 32.3513 20.1495 32.1986 20.0887C32.0459 20.0279 31.8827 19.9978 31.7184 20.0001C31.554 20.0024 31.3918 20.037 31.2408 20.102C31.0899 20.167 30.9532 20.2611 30.8386 20.3789L24.0794 27.1381C23.9646 27.2525 23.8734 27.3885 23.8112 27.5382C23.749 27.688 23.717 27.8485 23.717 28.0106C23.717 28.1728 23.749 28.3333 23.8112 28.4831C23.8734 28.6328 23.9646 28.7688 24.0794 28.8832L30.8386 35.6424C30.9592 35.7623 31.1034 35.856 31.2621 35.9173C31.4207 35.9786 31.5904 36.0064 31.7603 35.9988Z" fill="black" />
+      </g>
+      <defs>
+         <clipPath id="clip0_5537_16064">
+            <rect width="56" height="56" fill="white" transform="matrix(-1 0 0 1 56 0)" />
+         </clipPath>
+      </defs>
+   </svg>
+
+)
+
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, Dropdown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon };

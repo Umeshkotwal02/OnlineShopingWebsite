@@ -6,6 +6,9 @@ import Footer from './Components/Footer';
 import ScrollUp from './Components/ScrollUp';
 import { publicRoutes } from './Routes/allRoutes';
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   return (
@@ -14,12 +17,11 @@ function App() {
         <AutoScrollToTop />
         <TopBar />
         <MainHeader />
-        {/* <CategoryMenuMobi /> */}
         <Routes>
           {publicRoutes.map((route, idx) => (
             <Route key={idx} path={route.path} element={<route.component />} />
           ))}
-          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
         <Footer />
         <ScrollUp />

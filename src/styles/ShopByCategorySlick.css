@@ -1,0 +1,65 @@
+.ShopByCategorySlick {
+  position: relative;
+}
+
+.ShopByCategorySlick .custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.ShopByCategorySlick .next-arrow {
+  right: -15px;
+}
+
+.ShopByCategorySlick .prev-arrow {
+  left: -15px;
+}
+
+.ShopByCategorySlick .custom-arrow svg {
+  width: 40px;
+  height: 40px;
+  fill: #333;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.ShopByCategorySlick .custom-arrow:hover svg {
+  transform: scale(1.1);
+  fill: #B51B3B;
+}
+
+.slider-container {
+  padding: 0 50px;
+}
+
+.slider-item {
+  padding: 10px;
+  text-align: center;
+}
+
+.slider-item-image {
+  width: 100%; 
+  height: 280px; 
+  border-radius: 8px;
+  object-fit: cover; 
+}
+
+.slider-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+
+.ShopByCategorySlick .product-name {
+  font-family: "Lobster", sans-serif;
+}
+.ShopByCategorySlick .product-name .large-font {
+  font-size: 20px;
+}
+.ShopByCategorySlick .product-name .small-font {
+  font-size: 15px;
+}

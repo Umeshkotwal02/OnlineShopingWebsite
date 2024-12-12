@@ -12,12 +12,36 @@ const imageData = [
   },
   {
     category_name: "Category 2",
-    catelog: "/path/to/catalog2.pdf",
-    image: "/path/to/image2.jpg",
+    catelog: "/assets/images/New-Arrive/img1.png",
+    image: "/assets/images/New-Arrive/img1.png",
     color: "#33FF57",
   },
   {
     category_name: "Category 3",
+    catelog: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png",
+    image: "/path/to/image3.jpg",
+    color: "#3357FF",
+  },
+  {
+    category_name: "Category 4",
+    catelog: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png",
+    image: "/path/to/image3.jpg",
+    color: "#3357FF",
+  },
+  {
+    category_name: "Category 5",
+    catelog: "/path/to/catalog3.pdf",
+    image: "/path/to/image3.jpg",
+    color: "#3357FF",
+  },
+  {
+    category_name: "Category 6",
+    catelog: "/path/to/catalog3.pdf",
+    image: "/path/to/image3.jpg",
+    color: "#3357FF",
+  },
+  {
+    category_name: "Category 7",
     catelog: "/path/to/catalog3.pdf",
     image: "/path/to/image3.jpg",
     color: "#3357FF",

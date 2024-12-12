@@ -6,6 +6,7 @@ import LoginOffCanvas from "./LoginCanva";
 import MainHeaderMobi from "../MobileView/MainHeaderMobi";
 import CartOffCanvas from "./CartOffCanvas";
 import Menu from "./CategoryMenu";
+import CategoryMenuMobi from "../MobileView/CategoryMenuMobi";
 
 const MainHeader = ({
   isLoggedIn,
@@ -34,8 +35,8 @@ const MainHeader = ({
   };
   const handleCloseLoginCanvas = () => setShowLoginCanvas(false);
 
-   // const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
-   const handleCartLoginCanvas = () => {
+  // const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
+  const handleCartLoginCanvas = () => {
     setIsOpen(false);
     setShowCartCanvas(true);
   };
@@ -214,10 +215,11 @@ const MainHeader = ({
 
         {/* Mobile and Tab View Component */}
         <MainHeaderMobi />
+        <CategoryMenuMobi />
+        {/* Category Menu */}
+        <Menu />
 
 
-{/* Category Menu */}
-        <Menu/>
       </header >
 
 

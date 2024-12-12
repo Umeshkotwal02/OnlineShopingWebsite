@@ -2,7 +2,7 @@
 /* Custom styles for the next and previous control icons */
 .custom-carousel .carousel-control-prev-icon,
 .custom-carousel .carousel-control-next-icon {
-  background-size: contain; /* Ensure image fits */
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 1% !important; */
+  width: 1% !important;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -36,7 +36,7 @@
 .carousel-control-next-icon, .carousel-control-prev-icon {
   display: inline-block;
   width: 2rem;
-  height: 7rem;
+  height: 4rem !important;
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 100% 100%;

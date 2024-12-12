@@ -1,0 +1,83 @@
+.CarosoleSlickSlider .slick-slider {
+  width: 100vw;
+  height: 100%;
+}
+
+.CarosoleSlickSlider .slider-item {
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.CarosoleSlickSlider .slider-image {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  border: 0px solid rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.CarosoleSlickSlider .custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.CarosoleSlickSlider .next-arrow {
+  right: -7px;
+}
+
+.CarosoleSlickSlider .prev-arrow {
+  left: -7px;
+}
+
+.CarosoleSlickSlider .custom-arrow img {
+  width: 30px; 
+  height: auto;
+}
+
+
+.CarosoleSlickSlider .slick-dots {
+  position: absolute;
+  bottom: 14px !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.CarosoleSlickSlider .slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 12px !important;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  opacity: 1 !important;
+  text-align: center;
+  color: #ffffff !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.CarosoleSlickSlider .slick-dots li.slick-active button:before {
+  content: '';
+  opacity: 1;
+  background-image: url('../../public/assets/images/Carasole-Img/activebtn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 12px;
+  height: 19px; 
+  display: inline-block;
+}
