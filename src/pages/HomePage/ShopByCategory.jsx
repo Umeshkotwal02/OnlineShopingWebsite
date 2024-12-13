@@ -40,7 +40,7 @@ const ShopByCategorySlick = () => {
     };
 
     return (
-        <Container className="ShopByCategorySlick slider-container">
+        <Container fluid className="ShopByCategorySlick slider-container p-2">
             <Slider {...settings}>
                 {sliderItems.map((item) => (
                     <div key={item.id} className="slider-item">

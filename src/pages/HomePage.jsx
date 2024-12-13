@@ -9,10 +9,11 @@ import CategoryCardList from '../Components/CategoryCard'
 import ProductCard from './HomePage/Watch-Shop'
 import FestivalSpecial from './HomePage/FestivalSpecial'
 import SareeEdit from './HomePage/SareeEdit'
+import SareeEditMobi from '../Components/MobileView/SareeEditMobi'
 
 function HomePage() {
   return (
-    <>
+    <div style={{fontFamily:"Roboto"}}>
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
       <ShopByCategorySlick />
@@ -21,9 +22,10 @@ function HomePage() {
       <FestivalSpecial/>
       <Banner />
       <SareeEdit/>
+      <SareeEditMobi/>
       {/* <CategoryCardList /> */}
-      <OnlineShopDesignStudio />
-    </>
+      {/* <OnlineShopDesignStudio /> */}
+    </div>
   )
 }
 

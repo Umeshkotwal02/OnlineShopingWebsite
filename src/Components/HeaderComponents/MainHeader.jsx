@@ -5,8 +5,8 @@ import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, Dropdown, LgBagIcon }
 import LoginOffCanvas from "./LoginCanva";
 import MainHeaderMobi from "../MobileView/MainHeaderMobi";
 import CartOffCanvas from "./CartOffCanvas";
-import Menu from "./CategoryMenu";
 import CategoryMenuMobi from "../MobileView/CategoryMenuMobi";
+import CategoryMenu from "./CategoryMenu";
 
 const MainHeader = ({
   isLoggedIn,
@@ -217,7 +217,7 @@ const MainHeader = ({
         <MainHeaderMobi />
         <CategoryMenuMobi />
         {/* Category Menu */}
-        <Menu />
+        <CategoryMenu />
 
 
       </header >

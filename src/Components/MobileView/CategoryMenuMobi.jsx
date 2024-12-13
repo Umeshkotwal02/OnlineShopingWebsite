@@ -61,7 +61,7 @@ const CategoryMenuMobi = () => {
         flexWrap: "nowrap",
         scrollbarWidth: "none",
       }}
-      className="hide-scrollbar d-lg-none"
+      className="hide-scrollbar d-lg-none p-2"
     >
       {menuItems.map((item, index) => (
         <div

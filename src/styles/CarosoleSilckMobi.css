@@ -1,9 +1,11 @@
-/* .slick-slider {
+.MobileCarasole .slick-slider {
     width: 100vw;
     height: auto;
+    overflow-x: hidden;
+
 }
 
-.slider-item {
+.MobileCarasole .slider-item {
     width: 100%;
     height: auto;
     display: flex;
@@ -12,15 +14,15 @@
     overflow: hidden;
 }
 
-.slider-image {
+.MobileCarasole .slider-image {
     width: 100%;
     height: auto;
     object-fit: cover;
     border: 0px solid rgb(255, 255, 255);
-    border-radius: 30px;
+    border-radius: 11px;
 }
 
-.custom-arrow {
+.MobileCarasole .custom-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -28,23 +30,23 @@
     z-index: 2;
 }
 
-.next-arrow {
+.MobileCarasole .next-arrow {
     right: -7px;
 }
 
-.prev-arrow {
+.MobileCarasole .prev-arrow {
     left: -7px;
 }
 
-.custom-arrow img {
+.MobileCarasole .custom-arrow img {
     width: 30px;
     height: auto;
 }
 
 
-.slick-dots {
-    position: absolute;
-    bottom: 14px !important;
+.MobileCarasole .slick-dots {
+    position: relative;
+    bottom: 74px !important;
     display: block;
     width: 100%;
     padding: 0;
@@ -53,7 +55,7 @@
     text-align: center;
 }
 
-.slick-dots li button:before {
+.MobileCarasole .slick-dots li button:before {
     font-family: 'slick';
     font-size: 8px !important;
     line-height: 15px !important;
@@ -70,7 +72,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-dots li.slick-active button:before {
+.MobileCarasole .slick-dots li.slick-active button:before {
     content: "•";
     opacity: 1;
     background-image: url('');
@@ -83,7 +85,7 @@
     display: inline-block;
 }
 
-.slick-dots li {
+.MobileCarasole .slick-dots li {
     position: relative;
     display: inline-block;
     width: 20px;
@@ -91,4 +93,4 @@
     margin: 0 -4px !important;
     padding: 0;
     cursor: pointer;
-} */
+}

@@ -6,7 +6,7 @@ import { Container, Row } from "react-bootstrap";
 // Custom Next Arrow Component
 const NextArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow next-arrow d-none d-lg-block" onClick={onClick}>
+        <div className="custom-arrow next-arrow d-none d-lg-block " onClick={onClick}>
             <img
                 src="/assets/images/Carasole-Img/sidechange-next.png"
                 className="img-fluid"
@@ -19,7 +19,7 @@ const NextArrow = ({ onClick }) => {
 // Custom Previous Arrow Component
 const PrevArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow prev-arrow d-none d-lg-block" onClick={onClick}>
+        <div className="custom-arrow prev-arrow d-none d-lg-block " onClick={onClick}>
             <img
                 src="/assets/images/Carasole-Img/sidechange-prev.png"
                 className="img-fluid"
@@ -50,7 +50,7 @@ const CarosoleSilckSlider = () => {
     ];
 
     return (
-        <Container fluid className="slider-wrapper p-3 d-none d-lg-block CarosoleSlickSlider">
+        <Container fluid className=" d-none d-lg-block CarosoleSlickSlider p-3">
             <Row>
                 <Slider {...settings}>
                     {images.map((image, index) => (

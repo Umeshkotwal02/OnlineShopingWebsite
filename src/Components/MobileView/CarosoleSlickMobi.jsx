@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-// import "../../styles/CarosoleSilckMobi.css";
+import "../../styles/CarosoleSilckMobi.css";
 import { Container, Row } from "react-bootstrap";
 
 // Custom Next Arrow Component
@@ -50,7 +50,7 @@ const CarosoleSlickMobi = () => {
     ];
 
     return (
-        <Container fluid className="slider-wrapper p-3 d-lg-none">
+        <Container fluid className="MobileCarasole slider-wrapper d-lg-none">
             <Row>
                 <Slider {...settings}>
                     {images.map((image, index) => (

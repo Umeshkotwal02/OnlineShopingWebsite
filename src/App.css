@@ -7,11 +7,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* some row problem */
-.row {
- --bs-gutter-x: 0rem !important;
-}
-
 
 /* banner */
 .banner {
@@ -32,4 +27,12 @@ body {
   transition-duration: .15s;
   transition-property: transform;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+
+/* Bridal Banner */
+.image-overlay-text {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 10px 20px;
+  border-radius: 5px;
 }
