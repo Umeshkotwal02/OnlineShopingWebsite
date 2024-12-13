@@ -17,12 +17,12 @@ function HomePage() {
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
       <ShopByCategorySlick />
-      <ProductCard/>
-      <Motion />
-      <FestivalSpecial/>
-      <Banner />
-      <SareeEdit/>
-      <SareeEditMobi/>
+      {/* <ProductCard/> */}
+      {/* <Motion /> */}
+      {/* <FestivalSpecial/> */}
+      {/* <Banner /> */}
+      {/* <SareeEdit/> */}
+      {/* <SareeEditMobi/> */}
       {/* <CategoryCardList /> */}
       {/* <OnlineShopDesignStudio /> */}
     </div>

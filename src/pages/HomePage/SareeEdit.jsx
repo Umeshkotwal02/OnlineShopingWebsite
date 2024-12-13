@@ -65,7 +65,7 @@ const SareeEdit = () => {
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
-                                        <div className="image-overlay-text position-absolute top-50 start-50 translate-middle text-center">
+                                        <div className=" text-center">
                                             <h3 className="text-white">Bridal Edit</h3>
                                         </div>
                                     </div>

@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 import "../../styles/ShopByCategorySlick.css";
 import { sliderItems } from "../../config/ConstantData";
-import { Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Custom Next Arrow Component
 const NextCatArrow = ({ onClick }) => {
@@ -43,9 +44,12 @@ const ShopByCategorySlick = () => {
         <Container fluid className="ShopByCategorySlick slider-container p-2">
             <Slider {...settings}>
                 {sliderItems.map((item) => (
-                    <div key={item.id} className="slider-item">
-                        <img src={item.image} alt={item.text} className="slider-item-image" />
-                        <p>{item.text}</p>
+                    <div key={item.id} className="text-center ctgBanner">
+                        <img src={item.image} alt={item.text} />
+                        <div className='boxShade'></div>
+                        <div className='inCtgBanner'>
+                            <h2 className='mb-2 mb-sm-4'>{item.text}</h2>
+                        </div>
                     </div>
                 ))}
             </Slider>

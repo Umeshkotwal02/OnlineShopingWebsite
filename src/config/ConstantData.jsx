@@ -1,15 +1,51 @@
 // SHopbyCategory Data
 
 const sliderItems = [
-    { id: 1, image: "/assets/images/CategoryByShopSlicks/Shop By Category.png", text: "Shop By Category" },
-    { id: 2, image: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png", text: "NEW ARRIVAL" },
-    { id: 3, image: "/assets/images/CategoryByShopSlicks/FASHION SAREE.png", text: "FASHION SAREE" },
-    { id: 4, image: "/assets/images/CategoryByShopSlicks/LEHENGA.png", text: "LEHENGA" },
-    { id: 5, image: "https://kesariya.sridixtechnology.com/admin/category2/Georgette%20Gown.jpg", text: "Gown" },
-    { id: 6, image: "/assets/images/CategoryByShopSlicks/Wedding.png", text: "Wedding" },
-    { id: 7, image: "/assets/images/CategoryByShopSlicks/Celebrity Outfits.png", text: "Celebrity Outfits" },
-    { id: 8, image: "/assets/images/CategoryByShopSlicks/Reception.png", text: "Reception" },
-    { id: 9, image: "/assets/images/CategoryByShopSlicks/OTHERs.png", text: "OTHERs" },
+    {
+        id: 1,
+        image: "/assets/images/CategoryByShopSlicks/Shop By Category.png",
+        text: "Shop By Category"
+    },
+    {
+        id: 2,
+        image: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png",
+        text: "NEW ARRIVAL"
+    },
+    {
+        id: 3,
+        image: "/assets/images/CategoryByShopSlicks/FASHION SAREE.png", text:
+            "FASHION SAREE"
+    },
+    {
+        id: 4,
+        image: "/assets/images/CategoryByShopSlicks/LEHENGA.png",
+        text: "LEHENGA"
+    },
+    {
+        id: 5,
+        image: "https://kesariya.sridixtechnology.com/admin/category2/Georgette%20Gown.jpg",
+        text: "Gown"
+    },
+    {
+        id: 6,
+        image: "/assets/images/CategoryByShopSlicks/Wedding.png",
+        text: "Wedding"
+    },
+    {
+        id: 7,
+        image: "/assets/images/CategoryByShopSlicks/Celebrity Outfits.png",
+        text: "Celebrity Outfits"
+    },
+    {
+        id: 8,
+        image: "/assets/images/CategoryByShopSlicks/Reception.png",
+        text: "Reception"
+    },
+    {
+        id: 9,
+        image: "/assets/images/CategoryByShopSlicks/OTHERs.png",
+        text: "OTHERs"
+    },
 ];
 
 const watchAndShopConst = [
