@@ -28,35 +28,28 @@
 
 .ctgBanner {
   width: 100%;
+  height: 350px;
   position: relative;
   font-family: 'Kaushan Script';
   overflow: hidden;
-}
-
-.ctgBanner .boxShade {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  border-radius: 22px;
 }
 
 .ctgBanner img {
   width: 100%;
+  height: 100%;
+  object-fit: fill; /* Ensures the image fills the card without distortion */
   box-shadow: inset 0px 0px 50px black;
+  border-radius: 22px;
 }
 
 .ctgBanner .inCtgBanner {
   width: 100%;
   position: absolute;
   bottom: 10%;
+  text-align: center; /* Centers text horizontally */
 }
 
-.ctgBanner .inCtgBanner a {
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-.ctgBanner .inCtgBanner a:hover {
-  text-decoration: underline;
+.ctgBanner .inCtgBanner h4 {
+  color: #fff; /* Text color */
 }

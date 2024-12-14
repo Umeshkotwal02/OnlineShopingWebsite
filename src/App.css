@@ -7,18 +7,26 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Common style */
+.web-bg-color {
+  background-color: #F3F3F3;
+}
+
+.text-size{
+font-size: 0.9rem;
+}
 
 /* banner */
 .banner {
-  background-image: url(".././public/assets/images/Banner/Banner.png");
+  background-image: url("./assets/images/Banner/Banner.png");
   background-repeat: no-repeat;
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the background image */
-  height: 100%; /* Ensures it takes the full height of the parent row */
-  display: flex; /* Centers content vertically and horizontally */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  color: white; /* Adjust text color for better contrast */
+  color: white;
   text-align: center;
 }
 
@@ -26,13 +34,20 @@ body {
 .transition-transform {
   transition-duration: .15s;
   transition-property: transform;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 
 /* Bridal Banner */
 .image-overlay-text {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
   padding: 10px 20px;
   border-radius: 5px;
+}
+
+
+.custom-placeholder::placeholder {
+  color: black !important;
+  font-size: 13px !important;
 }

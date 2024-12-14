@@ -3,22 +3,22 @@
 const sliderItems = [
     {
         id: 1,
-        image: "/assets/images/CategoryByShopSlicks/Shop By Category.png",
+        image: require("../assets/images/CategoryByShopSlicks/Shop By Category.png"),
         text: "Shop By Category"
     },
     {
         id: 2,
-        image: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png",
+        image: require("../assets/images/CategoryByShopSlicks/NEW ARRIVAL.png"),
         text: "NEW ARRIVAL"
     },
     {
         id: 3,
-        image: "/assets/images/CategoryByShopSlicks/FASHION SAREE.png", text:
-            "FASHION SAREE"
+        image: require("../assets/images/CategoryByShopSlicks/FASHION SAREE.png") ,
+        text: "FASHION SAREE"
     },
     {
         id: 4,
-        image: "/assets/images/CategoryByShopSlicks/LEHENGA.png",
+        image: require("../assets/images/CategoryByShopSlicks/LEHENGA.png"),
         text: "LEHENGA"
     },
     {
@@ -28,22 +28,22 @@ const sliderItems = [
     },
     {
         id: 6,
-        image: "/assets/images/CategoryByShopSlicks/Wedding.png",
+        image: require("../assets/images/CategoryByShopSlicks/Wedding.png"),
         text: "Wedding"
     },
     {
         id: 7,
-        image: "/assets/images/CategoryByShopSlicks/Celebrity Outfits.png",
+        image: require("../assets/images/CategoryByShopSlicks/Celebrity Outfits.png"),
         text: "Celebrity Outfits"
     },
     {
         id: 8,
-        image: "/assets/images/CategoryByShopSlicks/Reception.png",
+        image: require("../assets/images/CategoryByShopSlicks/Reception.png"),
         text: "Reception"
     },
     {
         id: 9,
-        image: "/assets/images/CategoryByShopSlicks/OTHERs.png",
+        image: require("../assets/images/CategoryByShopSlicks/Others.png"),
         text: "OTHERs"
     },
 ];

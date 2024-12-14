@@ -7,19 +7,19 @@ const imageData = [
   {
     category_name: "Category 1",
     catelog: "/assets/images/New-Arrive/img1.png",
-    image: "/assets/images/New-Arrive/img1.png",
+    image: "../assets/images/New-Arrive/img1.png",
     color: "#FF5733",
   },
   {
     category_name: "Category 2",
     catelog: "/assets/images/New-Arrive/img1.png",
-    image: "/assets/images/New-Arrive/img1.png",
+    image: "../assets/images/New-Arrive/img1.png",
     color: "#33FF57",
   },
   {
     category_name: "Category 3",
     catelog: "/assets/images/CategoryByShopSlicks/NEW ARRIVAL.png",
-    image: "/path/to/image3.jpg",
+    image: "../path/to/image3.jpg",
     color: "#3357FF",
   },
   {

@@ -8,15 +8,16 @@ const Banner = () => {
     <Row>
       <Col className='col-12'>
         <Link to='/' className='d-none d-md-block'>
-          <img src={('/assets/images/Banner/Banner.png')} className='w-100' alt="" />
+          <img src={require('../../assets/images/Banner/Banner.png')} className='w-100' alt="" />
         </Link>
         <Link to='/' className='d-block d-md-none'>
-          <img src={('/assets/images/Banner/Banner2.png')} className='w-100' alt="" />
+          <img src={require('../../assets/images/Banner/Banner2.png')} className='w-100' alt="" />
         </Link>
       </Col>
     </Row>
   </Container>
   );
 };
+
 
 export default Banner;

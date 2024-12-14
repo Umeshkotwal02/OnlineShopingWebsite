@@ -75,7 +75,7 @@
 .CarosoleSlickSlider .slick-dots li.slick-active button:before {
   content: '';
   opacity: 1;
-  background-image: url('../../public/assets/images/Carasole-Img/activebtn.png');
+  background-image: url('../assets/images/Carasole-Img/activebtn.png') ;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

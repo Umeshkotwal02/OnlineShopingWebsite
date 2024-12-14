@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import AutoScrollToTop from './Components/AutoScrollToTop';
-import TopBar from './Components/HeaderComponents/TopBar';
-import MainHeader from './Components/HeaderComponents/MainHeader';
+import TopBar from './Components/headercomp/TopBar';
+import Header from './Components/headercomp/Header';
 import Footer from './Components/Footer';
 import ScrollUp from './Components/ScrollUp';
 import { publicRoutes } from './Routes/allRoutes';
@@ -15,8 +15,7 @@ function App() {
     <>
       <Router>
         <AutoScrollToTop />
-        <TopBar />
-        <MainHeader />
+        <Header />
         <Routes>
           {publicRoutes.map((route, idx) => (
             <Route key={idx} path={route.path} element={<route.component />} />

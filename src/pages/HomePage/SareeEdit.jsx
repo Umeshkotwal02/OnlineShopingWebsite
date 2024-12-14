@@ -17,7 +17,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img1.png'}
+                                            src={require('../../assets/images/SareeEdit/img1.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -28,7 +28,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img2.png'}
+                                            src={require('../../assets/images/SareeEdit/img2.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -37,7 +37,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img3.png'}
+                                            src={require('../../assets/images/SareeEdit/img3.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -50,7 +50,7 @@ const SareeEdit = () => {
                         <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={4}>
                             <div className='p-0'>
                                 <img
-                                    src={'/assets/images/SareeEdit/img4-Main.png'}
+                                    src={require('../../assets/images/SareeEdit/img4-Main.png')}
                                     className='w-100'
                                     alt="Bridal Edit"
                                 />
@@ -61,7 +61,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img7.png'}
+                                            src={require('../../assets/images/SareeEdit/img7.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -73,7 +73,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img6.png'}
+                                            src={require('../../assets/images/SareeEdit/img6.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -86,7 +86,7 @@ const SareeEdit = () => {
                                 <Col>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/SareeEdit/img5.png'}
+                                            src={require('../../assets/images/SareeEdit/img5.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />

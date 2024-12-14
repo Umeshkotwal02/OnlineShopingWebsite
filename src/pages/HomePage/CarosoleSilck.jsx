@@ -8,7 +8,7 @@ const NextArrow = ({ onClick }) => {
     return (
         <div className="custom-arrow next-arrow d-none d-lg-block " onClick={onClick}>
             <img
-                src="/assets/images/Carasole-Img/sidechange-next.png"
+                src={require("../../assets/images/Carasole-Img/sidechange-next.png")}
                 className="img-fluid"
                 alt="Next"
             />
@@ -21,7 +21,7 @@ const PrevArrow = ({ onClick }) => {
     return (
         <div className="custom-arrow prev-arrow d-none d-lg-block " onClick={onClick}>
             <img
-                src="/assets/images/Carasole-Img/sidechange-prev.png"
+                src={require("../../assets/images/Carasole-Img/sidechange-prev.png")}
                 className="img-fluid"
                 alt="Previous"
             />
@@ -44,13 +44,13 @@ const CarosoleSilckSlider = () => {
 
     // Array of images
     const images = [
-        "/assets/images/Carasole-Img/Carousel-1.png",
-        "/assets/images/Carasole-Img/Carousel-2.png",
-        "/assets/images/Carasole-Img/Carousel-3.png",
+        require("../../assets/images/Carasole-Img/Carousel-1.png"),
+        require("../../assets/images/Carasole-Img/Carousel-2.png"),
+        require("../../assets/images/Carasole-Img/Carousel-3.png"),
     ];
 
     return (
-        <Container fluid className=" d-none d-lg-block CarosoleSlickSlider p-3">
+        <Container fluid className=" d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5">
             <Row>
                 <Slider {...settings}>
                     {images.map((image, index) => (

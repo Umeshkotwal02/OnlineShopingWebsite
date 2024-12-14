@@ -14,7 +14,7 @@ const FestivalSpecial = () => {
                         <Col className='p-0 pe-2 pe-lg-3' xxl={5} xl={5} lg={12} sm={12} md={12} >
                             <div className='p-0'>
                                 <img
-                                    src={'/assets/images/Festival-Special/img1.png'}
+                                    src={require('../../assets/images/Festival-Special/img1.png')}
                                     className='w-100 transition-transform'
                                     alt="Bridal Edit"
                                 />
@@ -25,7 +25,7 @@ const FestivalSpecial = () => {
                                 <Col className='col-12 p-0 pb-2 pb-lg-3' style={{ height: "50%" }}>
                                     <div className='p-0'>
                                         <img
-                                            src={'/assets/images/Festival-Special/img4.png'}
+                                            src={require('../../assets/images/Festival-Special/img4.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -35,7 +35,7 @@ const FestivalSpecial = () => {
                                 <Col className='col-6' style={{ height: "50%" }}>
                                     <div className='pt-3'>
                                         <img
-                                            src={'/assets/images/Festival-Special/img2.png'}
+                                            src={require('../../assets/images/Festival-Special/img2.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
@@ -44,7 +44,7 @@ const FestivalSpecial = () => {
                                 <Col className='col-6' style={{ height: "50%" }}>
                                     <div className='pt-3  ps-3'>
                                         <img
-                                            src={'/assets/images/Festival-Special/img3.png'}
+                                            src={require('../../assets/images/Festival-Special/img3.png')}
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
