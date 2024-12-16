@@ -1,4 +1,4 @@
-const headerContent = [
+const headerContentaa = [
     {
         label: 'women',
         value: '/',
@@ -822,4 +822,4 @@ const headerContent = [
     },
 ]
 
-export default headerContent;
+export default headerContentaa;

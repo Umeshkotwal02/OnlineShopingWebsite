@@ -16,6 +16,7 @@ body {
 font-size: 0.9rem;
 }
 
+
 /* banner */
 .banner {
   background-image: url("./assets/images/Banner/Banner.png");
@@ -46,8 +47,14 @@ font-size: 0.9rem;
   border-radius: 5px;
 }
 
-
+/* for web */
 .custom-placeholder::placeholder {
   color: black !important;
   font-size: 13px !important;
+}
+
+/* for web */
+.Mobile-placeholder::placeholder {
+  color: black !important;
+  font-size: 16px !important;
 }

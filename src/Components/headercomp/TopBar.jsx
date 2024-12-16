@@ -14,8 +14,8 @@ const TopBar = () => {
 
   return (
     <div style={{ backgroundColor: "black", fontFamily: "Roboto" }}>
-      <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block pt-1 ">
-        <Row className="align-items-center px-lg-2 px-xl-2 px-xxl-2 pb-1">
+      <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block ">
+        <Row className="align-items-center px-lg-2 px-xl-2 px-xxl-2 py-lg-1">
           {/* Social Media Links */}
           <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={4}>
             <ul

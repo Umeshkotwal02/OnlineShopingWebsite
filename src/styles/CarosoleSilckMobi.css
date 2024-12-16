@@ -75,7 +75,7 @@
 .MobileCarasole .slick-dots li.slick-active button:before {
     content: "•";
     opacity: 1;
-    background-image: url('');
+    /* background-image: url(''); */
     color: #B51B3B !important;
     background-size: none;
     background-repeat: no-repeat;

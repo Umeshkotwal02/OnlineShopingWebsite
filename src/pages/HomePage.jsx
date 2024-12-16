@@ -11,7 +11,7 @@ import SareeEditMobi from '../Components/mobileheadercomp/SareeEditMobi'
 
 function HomePage() {
   return (
-    <div style={{fontFamily:"Roboto"}}>
+    <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
       {/* <ShopByCategorySlick /> */}
@@ -22,7 +22,7 @@ function HomePage() {
       {/* <FestivalSpecial/> */}
       <Banner />
       {/* <SareeEdit/> */}
-      <SareeEditMobi/>
+      <SareeEditMobi />
       {/* <CategoryCardList /> */}
       {/* <OnlineShopDesignStudio /> */}
     </div>

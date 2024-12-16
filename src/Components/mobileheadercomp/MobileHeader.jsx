@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Offcanvas, Button, Row, Col } from "react-bootstrap";
+import { Offcanvas, Row, Col } from "react-bootstrap";
 import { CartIcon, SearchIcon } from "../../assets/SvgIcons";
+import { FiSearch } from "react-icons/fi";
 
 const MainHeaderMobi = ({
   wishlistCount,
@@ -21,7 +22,7 @@ const MainHeaderMobi = ({
     <header>
       {/* Header for Small and Medium Screens Mobile and tablate view*/}
       <div className="d-lg-none">
-        <Row className="align-items-center py-2">
+        <Row className="align-items-center py-1 px-0">
           <Col xs={2} className="text-start">
             <button
               className="btn fs-2"
@@ -58,10 +59,10 @@ const MainHeaderMobi = ({
         <Row className="justify-content-center my-2 pb-3">
           {/* Search Bar */}
           <Col
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center px-4"
           >
             <div
-              className="d-flex align-items-center bg-opacity-10 px-3 "
+              className="d-flex align-items-center bg-opacity-10 px-3"
               style={{
                 border: "2px solid #D3D1D1",
                 borderRadius: "25px",
@@ -69,11 +70,11 @@ const MainHeaderMobi = ({
                 backgroundColor: "#fff",
               }}
             >
-              <SearchIcon className="text-dark" />
+              <FiSearch className="text-dark fs-3" />
               <input
                 type="search"
                 placeholder="Search for products..."
-                className="form-control border-0 search-hover text custom-placeholder"
+                className="form-control border-0 search-hover text Mobile-placeholder"
                 value={searchTerm}
                 onKeyDown={handleKeyUp}
                 onChange={handleChange}
@@ -109,7 +110,7 @@ const MainHeaderMobi = ({
         <Offcanvas
           show={showOffcanvas}
           onHide={handleOffcanvasToggle}
-          placement="buttom"
+          placement="start"
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Menu</Offcanvas.Title>
@@ -119,11 +120,35 @@ const MainHeaderMobi = ({
               <Link to="/account" className="text-dark d-block mb-2">
                 Account
               </Link>
-              <Link to="/wishlist" className="text-dark d-block mb-2">
-                Wishlist
+              <Link to="/account" className="text-dark d-block mb-2">
+                Home
               </Link>
-              <Link to="/cart" className="text-dark d-block">
-                Cart
+              <Link to="/account" className="text-dark d-block mb-2">
+                About Us
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Blogs
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Careers
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Your Orders
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Enquire Now
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Privacy Policy
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Terms & Conditions
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                Contact Us
+              </Link>
+              <Link to="/account" className="text-dark d-block mb-2">
+                FAQ
               </Link>
             </div>
           </Offcanvas.Body>

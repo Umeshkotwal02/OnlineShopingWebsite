@@ -1,91 +1,76 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; 
+  gap: 10px;
+  white-space: nowrap;
+}
 
 .menu-button {
-  background-color: transparent;
   color: rgb(0, 0, 0);
-  font-size: 16px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
   font-weight: 500;
-  text-align: center;
-  padding: 10px ;
-  text-transform: capitalize;
-  cursor: pointer;
+  padding: 10px 15px;
   border: none;
-  white-space: nowrap; /* Prevent text from wrapping */
-  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .menu-button:hover {
-  background-color: rgb(0, 0, 0);
   color: #ffffff;
+  background: rgb(0, 0, 0);
 }
 
-/* Submenu Styles */
-.submenu {
+.dropdown-content {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 80%;
+  transform: translateY(10px);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  width: auto;
-  z-index: 1;
 }
 
-.menu-item:hover .submenu {
-  opacity: 1;
-  visibility: hidden;
-}
-
-.submenu-content {
-  background-color: white;
-  padding: 20px 40px;
+.menu-item:hover .dropdown-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content img {
   width: 100%;
-}
-
-.submenu-grid {
-  display: flex;
-  justify-content: space-between;
-}
-
-.submenu-category {
-  padding: 0 10px;
-}
-
-.submenu-category h4 {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.submenu-category ul {
-  list-style: none;
-  padding: 0;
-}
-
-.submenu-category ul li {
-  margin-bottom: 8px;
-}
-
-.submenu-category ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-}
-
-.submenu-category ul li a:hover {
-  color: #E9B159;
-}
-
-.menu-image {
-  max-width: 50%;
   height: auto;
+  object-fit: cover;
 }
 
-.menu-image img {
-  width: 50%;
-  object-fit: contain;
+.list-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.list-item {
+  font-size: 0.875rem;
+  margin: 5px 0;
+  color: black;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.list-item:hover {
+  text-decoration: underline;
+  color: #e9b159;
 }

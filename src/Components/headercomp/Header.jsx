@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
 import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, Dropdown, LgBagIcon } from "../../assets/SvgIcons";
 import LoginOffCanvas from "./LoginCanva";
 import CartOffCanvas from "./CartOffCanvas";
@@ -63,7 +63,6 @@ const Header = ({
       <TopBar />
 
       {/* Second Header Online-Shop Search */}
-
       <Container fluid className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
         <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 pt-1">
           {/* Header for Large Screens */}
@@ -104,6 +103,7 @@ const Header = ({
                       outline: "none",
                       boxShadow: "none",
                       backgroundColor: "#fff",
+                      padding: "6px"
                     }}
                   />
                 </div>
@@ -127,7 +127,7 @@ const Header = ({
 
 
               {/* Icons Section */}
-                        
+
               <Col xxl={3} xl={3} lg={3} className="d-flex justify-content-end gap-3 ">
                 <div className="text-dark d-flex align-items-center gap-1 text-size">
                   {isLoggedIn ? (
@@ -143,8 +143,8 @@ const Header = ({
                           ? "Account"
                           : "Wholesale Account"}
                       </span>
-                       {/* Logout button */}
-                       <Button variant="link" onClick={handleLogout}>
+                      {/* Logout button */}
+                      <Button variant="link" onClick={handleLogout}>
                         Logout
                       </Button>
                     </>
@@ -154,7 +154,7 @@ const Header = ({
                       <div
                         className="text-dark d-flex align-items-center gap-1"
                         onClick={toggleDropdown}
-                        style={{ cursor: "pointer", fontSize:"0.9rem" }}
+                        style={{ cursor: "pointer", fontSize: "0.9rem" }}
                       >
                         <AccountIcon />
                         <span className="d-none d-xl-inline-block">Account</span>
@@ -210,7 +210,7 @@ const Header = ({
                   {wishlistCount > 0 && (
                     <span className="badge bg-danger">{wishlistCount}</span>
                   )}
-                  <span className="d-none d-xl-inline-block" style={{fontSize:"0.9rem"}}>Wishlist</span>
+                  <span className="d-none d-xl-inline-block" style={{ fontSize: "0.9rem" }}>Wishlist</span>
                 </div>
 
 
@@ -226,13 +226,14 @@ const Header = ({
           </div>
 
           {/* Mobile and Tab View Component */}
-          <MobileHeader />
         </Container>
+        <MobileHeader />
         {/* Menu Section Web */}
-        <CategoryMenu />
+      <CategoryMenu />  
       </Container >
+      
 
-    
+
 
       {/* Category Menu of Mobile */}
       <CategoryMenuMobi />
