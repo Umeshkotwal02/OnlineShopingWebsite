@@ -1,9 +1,11 @@
 // Login.jsx
 import React from 'react';
-import { Offcanvas, Button } from 'react-bootstrap';
+import { Offcanvas, Button, Form } from 'react-bootstrap';
 import { auth, googleProvider } from '../firebase'; // Importing auth and provider
 import { signInWithPopup } from 'firebase/auth'; // Import signInWithPopup from firebase/auth
 import { FcGoogle } from 'react-icons/fc';
+import "../../styles/LoginCanva.css"
+
 
 const Login = ({ show, handleClose }) => {
 
@@ -19,41 +21,59 @@ const Login = ({ show, handleClose }) => {
 
   return (
     <Offcanvas show={show} onHide={handleClose} placement="end" style={{ maxWidth: '450px' }}>
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title className='text-center '>Welcome Back !!!</Offcanvas.Title>
+      <Offcanvas.Header closeButton className="custom-header web-bg-color">
+        <Offcanvas.Title className='text-start '>Login</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <div className="text-center">
           <img
             src={require("../../assets/images/header-logo.png")}
             alt="Logo"
-            style={{ maxWidth: '200px', marginBottom: '20px' }}
+            style={{ maxWidth: '200px'}}
             loading="lazy"
+            className='login-logo'
           />
-          <p
-            style={{
-              color: '#010101',
-              backgroundColor: 'white',
-              border: '1px solid #000000',
-              padding: '15px',
-              borderRadius: '5px',
-              marginBottom: '20px',
-            }}
-          >
-            Fashion at Your Fingertips: Explore, Shop, and Slay!
+          <h3 className="signin-heading">Login</h3>
+          <p className="signin-description font-color-global">
+            Enter your email ID or phone
+            <p>number to sign in</p>
           </p>
-          <h5 style={{ marginBottom: '15px' }}>Login/SignUp</h5>
-          <p style={{ color: '#666464', marginBottom: '20px' }}>
-            Sign in/up to access your account, track orders, and more.
-          </p>
-          <Button
-            variant="outline"
-            style={{ width: '100%' }}
-            onClick={handleGoogleLogin}
-            className='border-none'
-          >
-           <FcGoogle className='fs-2' /> Sign in with Google
-          </Button>
+          {/* Mobile Number Enter */}
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="number"
+              placeholder="Enter your phone or email ID"
+              maxLength="10"
+              className="form-input"
+            />
+          </Form.Group>
+          <button type="submit" className="btn-continue w-100">
+            Proceed
+          </button>
+          {/* Horizontal line with text */}
+          <div className="d-flex align-items-center my-3">
+            <hr className="flex-grow-1" />
+            <span className="mx-2 text-muted">Or sign in with</span>
+            <hr className="flex-grow-1" />
+          </div>
+
+          {/* Social login buttons */}
+          <div className="social-login-container">
+            {/* Google Button */}
+            <div className="icon-bg" onClick={handleGoogleLogin}>
+              <FcGoogle className="fs-3" />
+            </div>
+
+            {/* Facebook Button */}
+            <div className="icon-bg">
+              <img
+                src={require("../../assets/images/facebook.png")}
+                alt="Facebook"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="text-sm sm:text-lg  font-medium !leading-none mb-4">Don’t have an account? Sign up<span class="">Sign up</span></div>
         </div>
       </Offcanvas.Body>
     </Offcanvas>

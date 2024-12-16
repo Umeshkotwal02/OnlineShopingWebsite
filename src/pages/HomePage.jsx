@@ -7,6 +7,7 @@ import ShopByCategorySlick from './HomePage/ShopByCategory'
 import FestivalSpecial from './HomePage/FestivalSpecial'
 import SareeEdit from './HomePage/SareeEdit'
 import SareeEditMobi from '../Components/mobileheadercomp/SareeEditMobi'
+import OnlineShopDesignStudio from './HomePage/OnlineShopDesignStudio'
 
 
 function HomePage() {
@@ -14,17 +15,17 @@ function HomePage() {
     <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
-      {/* <ShopByCategorySlick /> */}
+      <ShopByCategorySlick />
       {/* <ProductGrid/> */}
       {/* <CategoryCardList/> */}
       {/* <ProductCard/> */}
-      {/* <Motion /> */}
-      {/* <FestivalSpecial/> */}
+      <Motion />
+      <FestivalSpecial/>
       <Banner />
-      {/* <SareeEdit/> */}
+      <SareeEdit/>
       <SareeEditMobi />
       {/* <CategoryCardList /> */}
-      {/* <OnlineShopDesignStudio /> */}
+      <OnlineShopDesignStudio />
     </div>
   )
 }

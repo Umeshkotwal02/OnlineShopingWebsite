@@ -1,0 +1,128 @@
+/* Adjust the margins for better spacing */
+.login-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.login-logo {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.signin-heading {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    /* Space between heading and description */
+}
+
+.signin-description {
+    color: #666464;
+    margin-bottom: 25px;
+    /* Space between description and input */
+}
+
+.form-input {
+    height: 45px;
+    border: 1px solid #cdcdcd;
+    background-color: #F5F5F5 !important;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.btn-continue {
+    background-color: #B51B3B;
+    color: white;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    /* Space below the 'Proceed' button */
+}
+
+/* Horizontal line with text */
+.d-flex.align-items-center.my-3 {
+    margin: 20px 0;
+    /* Add space around the horizontal divider */
+}
+
+.social-login-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Increase space between social buttons */
+    margin-top: 20px;
+    /* Add space above social login buttons */
+}
+
+/* Social icon background and hover effect */
+.icon-bg {
+    background-color: #f1f1f1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    /* Space below social buttons */
+}
+
+.icon-bg img {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-bg .fs-3 {
+    font-size: 30px;
+    color: #4285f4;
+    /* Google icon color */
+}
+
+.icon-bg:hover {
+    background-color: #e0e0e0;
+}
+
+.signup-text {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    /* Space between social buttons and sign-up text */
+    margin-bottom: 20px;
+    /* Space between sign-up text and bottom */
+}
+
+.signup-link {
+    color: #e9b159;
+    cursor: pointer;
+}
+
+/* Styling for the terms and conditions */
+.terms-text {
+    font-size: 0.8rem;
+    color: black;
+    margin-top: 20px;
+    /* Add space above terms text */
+}
+
+.terms-link {
+    color: #e9b159;
+    text-decoration: none;
+}
+
+/* Close button on the left side */
+.custom-header .btn-close {
+    order: -1;
+    /* Move the close button to the left */
+}
+
+/* Styling for the Offcanvas Title (center it) */
+.custom-header .offcanvas-title {
+    margin-left: 20px;
+    flex-grow: 1;
+    /* Center the title */
+    text-align: center;
+}

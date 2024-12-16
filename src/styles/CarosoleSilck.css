@@ -1,12 +1,12 @@
 .CarosoleSlickSlider .slick-slider {
   width: 100vw;
   height: 100%;
-
+  background: transparent;
 }
 
-.CarosoleSlickSlider .slider-item {
-  width: 100vw;
-  height: 550px;
+.MobileCarasole .slider-item {
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
 .CarosoleSlickSlider .slider-image {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
   border: 0px solid rgb(255, 255, 255);
   border-radius: 30px;
 }
@@ -38,7 +38,7 @@
 }
 
 .CarosoleSlickSlider .custom-arrow img {
-  width: 22px; 
+  width: 22px;
   height: auto;
 }
 
@@ -75,12 +75,12 @@
 .CarosoleSlickSlider .slick-dots li.slick-active button:before {
   content: '';
   opacity: 1;
-  background-image: url('../assets/images/Carasole-Img/activebtn.png') ;
+  background-image: url('../assets/images/Carasole-Img/activebtn.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 13px;
-  height: 19px; 
+  height: 19px;
   display: inline-block;
 }
 

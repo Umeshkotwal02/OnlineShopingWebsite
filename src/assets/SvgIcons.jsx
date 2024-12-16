@@ -24,10 +24,16 @@ const offcanvaceMobiIcon = (props) => (
 
 )
 
-const Dropdown = (props) => (
+const DropdownDown = (props) => (
    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M19 8.5L12 15.5L5 8.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
+)
+const DropdownUp = (props) => (
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 15.5L12 8.5L19 15.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 )
 
 const LoginIcon = (props) => (
@@ -195,6 +201,10 @@ const FacebookIcon = (props) => (
    </svg>
 
 );
+
+const FacebookBgIcon = (props)=>{
+   
+}
 const TweeterIcon = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={15} height={17} fill="none" {...props}>
       <g clipPath="url(#a)">
@@ -359,4 +369,4 @@ const CategoryIcon = (props) => (
 
 )
 
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, Dropdown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon };
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp,DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon };

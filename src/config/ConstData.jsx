@@ -1,4 +1,4 @@
-const headerData = [
+const headerCatData = [
   {
     title: "Sale",
     dropdown: [],
@@ -119,4 +119,18 @@ const headerData = [
   },
 ];
 
-export { headerData };
+
+// Product Page:
+
+
+const productsConst = [
+  
+
+]
+
+// Product Details Page
+
+
+
+
+export { headerCatData };

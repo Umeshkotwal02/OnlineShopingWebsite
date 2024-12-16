@@ -1,20 +1,14 @@
 .menu-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap; 
-  gap: 10px;
+  flex-wrap: nowrap;
   white-space: nowrap;
 }
 
 .menu-button {
   color: rgb(0, 0, 0);
   background: transparent;
-  display: flex;
-  justify-content: space-between;
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -30,16 +24,19 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
+  background: #FFFFFF;
   padding: 20px;
   display: none;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 1px;
   width: 80%;
-  transform: translateY(10px);
+  transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1), 5px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item:hover .dropdown-content {
@@ -50,27 +47,30 @@
 }
 
 .dropdown-content img {
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .list-title {
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .list-item {
   font-size: 0.875rem;
   margin: 5px 0;
   color: black;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
 .list-item:hover {
   text-decoration: underline;
   color: #e9b159;
-}
+} 
+
+
