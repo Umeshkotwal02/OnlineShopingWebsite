@@ -1,0 +1,151 @@
+.new-arrival-container {}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  background: #f8f8f8;
+  z-index: 1;
+}
+.bridal-image-container{
+z-index: 16;
+}
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.new-arrival-card:hover .wishlist-btn {
+  opacity: 1 !important;
+}
+
+.new-arrival-card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  background: #f8f8f8;
+}
+
+.overlay-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 7  ;
+  transition: opacity 0.3s ease;
+}
+
+.new-arrival-card:hover .overlay-buttons {
+  opacity: 1;
+  /* Make visible on hover */
+}
+
+.add-to-cart-btn {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e9b159;
+  color: #fff;
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.new-arrival-card:hover .wishlist-btn {
+  opacity: 1 !important;
+  /* Make visible on hover */
+}
+
+.wishlist-btn button {
+  background: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 18px;
+  color: #000;
+}
+
+.heart-icon {
+  color: #ff3f3f;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: -16px;
+  background: url("../assets/images/discount1.png") no-repeat center center;
+  width: 95px;
+  height: 56px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  z-index: 20;
+}
+
+.discount-badge h5 {
+  margin: 10px;
+}
+
+.discount-p{
+  margin-top: 11px;
+  margin-bottom: 1re
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+  background-color: #F3F3F3;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+.price-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.discounted-price {
+  color: #03a685;
+  font-size: 16px;
+  font-weight: bold;
+}

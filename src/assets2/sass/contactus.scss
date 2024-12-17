@@ -1,0 +1,31 @@
+@import 'mixin';
+@import 'var';
+
+@media(min-width: 768px) {
+    .custom-container-contact {
+        max-width: 80%;
+    }
+}
+
+.container-backimg {
+    background-image: url('../Img/contact-us-bg-img_1.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.custom-box-contact {
+    border: 1px solid lightgray;
+
+    div {
+        a {
+            text-decoration: none;
+            color: $primaryColor;
+        }
+    }
+}
+.custom-input-contact{
+    height: 50px;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+}

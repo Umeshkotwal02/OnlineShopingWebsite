@@ -11,13 +11,11 @@ const Login = ({ show, handleClose }) => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
   const [resendTimer, setResendTimer] = useState(30);
-  const [isLoggedIn, setIsLoggedIn] = useState()
 
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider); // Use signInWithPopup correctly
       console.log('User logged in:', result.user);
-      setIsLoggedIn(true)
       handleClose();
     } catch (error) {
       console.error("Error logging in with Google: ", error.message);
@@ -29,7 +27,7 @@ const Login = ({ show, handleClose }) => {
     const phoneRegex = /^[0-9]{10}$/;
     return emailRegex.test(input) || phoneRegex.test(input);
   };
-
+  
   const handleProceed = () => {
     if (validateInput(mobileNumber)) {
       setOtpCanvas(true);
@@ -40,12 +38,11 @@ const Login = ({ show, handleClose }) => {
       setError('Please enter a valid email ID or 10-digit mobile number.');
     }
   };
-
+  
 
   const handleVerifyOtp = () => {
     if (otp && otp.length === 6 && otp.join('') === '123456') {
       console.log('OTP Verified Successfully!');
-      setIsLoggedIn(true)
       setOtpCanvas(false);
       setOtp(['', '', '', '', '', '']);
       handleClose();
@@ -54,14 +51,14 @@ const Login = ({ show, handleClose }) => {
       setError('Invalid OTP. Please try again.');
     }
   };
-
+  
 
   const handleOtpChange = (index, value) => {
     if (isNaN(value)) return; // Allow only numbers
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
-
+  
     // Automatically focus the next input
     if (value && index < 5) {
       const nextInput = document.getElementById(`otp-input-${index + 1}`);
@@ -72,7 +69,7 @@ const Login = ({ show, handleClose }) => {
       if (prevInput) prevInput.focus();
     }
   };
-
+  
 
   const clearOtp = () => {
     setOtp(['', '', '', '', '', '']);
@@ -97,23 +94,23 @@ const Login = ({ show, handleClose }) => {
     }
     return number; // Return as-is if length is less than 4
   };
-
+  
   // Timer logic in useEffect
-  useEffect(() => {
-    let interval;
-    if (resendTimer > 0) {
-      interval = setInterval(() => {
-        setResendTimer((prev) => {
-          if (prev <= 1) {
-            clearInterval(interval);
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [resendTimer]);
+useEffect(() => {
+  let interval;
+  if (resendTimer > 0) {
+    interval = setInterval(() => {
+      setResendTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }
+  return () => clearInterval(interval); // Cleanup on unmount
+}, [resendTimer]);
 
 
   return (
@@ -203,16 +200,16 @@ const Login = ({ show, handleClose }) => {
               <p>phone number</p>
             </p>
             <p>OTP sent to {maskMobileNumber(mobileNumber)} <button
-              className="btn-link text-danger resend-btn"
-              onClick={() => {
-                setOtpCanvas(false);
-                setMobileNumber('');
-                clearOtp();
-                setError('');
-              }}
-            >
-              Change
-            </button></p>
+    className="btn-link text-danger resend-btn"
+    onClick={() => {
+      setOtpCanvas(false);
+      setMobileNumber('');
+      clearOtp();
+      setError('');
+    }}
+  >
+    Change
+  </button></p>
             {/* OTP Input */}
             <div className="otp-input-container mb-4">
               {otp.map((digit, index) => (
@@ -232,7 +229,7 @@ const Login = ({ show, handleClose }) => {
               Verify OTP
             </button>
             <div className="mt-3 ">
-              <span className='font-color-global' style={{ fontSize: "13px" }}>
+              <span className='font-color-global' style={{fontSize:"13px"}}>
                 Didn’t receive an SMS?
               </span>
               <button

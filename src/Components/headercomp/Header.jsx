@@ -4,13 +4,14 @@ import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
 import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp } from "../../assets/SvgIcons";
 import LoginOffCanvas from "./LoginCanva";
 import CartOffCanvas from "./CartOffCanvas";
-import CategoryMenuMobi from "../mobileheadercomp/CategoryMenuMobi";
+import CategoryMenuMobi from "../../pages/MobilePages/CategoryMenuMobi";
 import CategoryMenu from "./CategoryMenu";
 import MobileHeader from "../mobileheadercomp/MobileHeader";
 import TopBar from "./TopBar";
 import { signOut } from "firebase/auth";
 import "../../styles/Header.css"
 import { auth } from "../firebase";
+import MobileFooter from "../mobileheadercomp/MobileFooter";
 
 const Header = ({
   isLoggedIn,
@@ -57,6 +58,7 @@ const Header = ({
   return (
     <>
       <TopBar />
+
       <Container fluid className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
         <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 pt-1">
           <div className="d-none d-lg-block">
@@ -173,10 +175,11 @@ const Header = ({
         </Container>
         <CategoryMenu />
       </Container >
-
       <CategoryMenuMobi />
       <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
+      <MobileFooter />
+
     </>
   );
 };

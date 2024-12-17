@@ -1,5 +1,6 @@
 // SHopbyCategory Data
 
+
 const sliderItems = [
     {
         id: 1,

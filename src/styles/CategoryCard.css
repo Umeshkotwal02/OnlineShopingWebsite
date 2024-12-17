@@ -54,8 +54,8 @@
     border-top-right-radius: 30px;
   }
   .category-card .button-icon1 {
-    background-color: #da212b;
-    color: #f5f5f5;
+    background-color: #fff;
+    color: #000;
     display: none;
     font-family: "Lato,sans-serif";
     left: 50%;
@@ -67,6 +67,7 @@
     width: 90%;
     bottom: 40px;
     border: transparent;
+    z-index: 100;
   }
   .category-card:hover .icon-for-download {
     /* display: flex; */
@@ -76,9 +77,10 @@
   
   .category-card:hover .button-icon1 {
     display: block;
+    z-index: 99;
   }
   .category-card .button-icon1:hover {
-    background-color: #be2c34;
+    /* background-color: #be2c34; */
   }
   .category-card .product-name {
     font-family: "Lobster", sans-serif;

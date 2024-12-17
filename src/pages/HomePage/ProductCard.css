@@ -1,10 +1,41 @@
-.ctgBanner .inCtgBanner {
+/* Product Video Styling */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
     width: 100%;
+    padding-top: 56.25%;
+}
+
+.product-video {
     position: absolute;
-    bottom: 10%;
-    text-align: center; /* Centers text horizontally */
-  }
-  
-  .ctgBanner .inCtgBanner h4 {
-    color: #fff; /* Text color */
-  }
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the video covers the entire container */
+}
+
+
+/* Badge Image Styling */
+.badge-img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    width: 50px; /* Adjust badge size as needed */
+    height: 50px;
+    z-index: 10;
+    pointer-events: none; /* Prevent interactions with the badge */
+}
+
+/* Price Section Styling */
+.price-section .mrp {
+    color: grey;
+    font-size: 14px;
+}
+
+.price-section .discounted-price {
+    color: #e63946; /* Custom color for discounted price */
+    font-size: 16px;
+}

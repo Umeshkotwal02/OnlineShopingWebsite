@@ -11,25 +11,37 @@ const CategoryMenu = () => {
         {headerCatData.map((menu, index) => (
           <Col className="menu-item" key={index}>
             <button className="menu-button">{menu.title}</button>
-            {menu.dropdown.length > 0 && (
-              <div className="dropdown-content">
-                {menu.dropdown.map((dropdown, idx) => (
+            <div className="dropdown-content">
+              {/* Check if there are dropdown items */}
+              {menu.dropdown.length > 0 ? (
+                menu.dropdown.map((dropdown, idx) => (
                   <div key={idx}>
-                    <h4 className="list-title">{dropdown.category}</h4>
-                    <ul>
-                      {dropdown.items.map((item, i) => (
-                        <li key={i}>
-                          <Link to={item.link} className="list-item">
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="list-title text-start">{dropdown.category}</p>
+                    {dropdown.items.map((item, i) => (
+                      <li key={i}>
+                        <Link to={item.link} className="list-item">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </div>
-                ))}
-                {menu.image && <img src={menu.image} alt={menu.title} />}
+                ))
+              ) : (
+                <div className="no-dropdown">
+                  {/* Show image only if there are no dropdown items */}
+                  {menu.image && <img src={menu.image} alt={menu.title} />}
+                </div>
+              )}
+              
+              <div>
+                {/* Always show image inside dropdown if it exists */}
+                {menu.dropdown.length > 0 && menu.image && (
+                  <div className="dropdown-image">
+                    <img src={menu.image} alt={menu.title} />
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </Col>
         ))}
       </Nav>
@@ -38,4 +50,3 @@ const CategoryMenu = () => {
 };
 
 export default CategoryMenu;
-

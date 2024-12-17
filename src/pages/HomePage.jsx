@@ -2,12 +2,16 @@ import React from 'react'
 import Banner from './HomePage/Banner'
 import Motion from './HomePage/Motion'
 import CarosoleSilckSlider from './HomePage/CarosoleSilck'
-import CarosoleSlickMobi from '../Components/mobileheadercomp/CarosoleSlickMobi'
+import CarosoleSlickMobi from './MobilePages/CarosoleSlickMobi'
 import ShopByCategorySlick from './HomePage/ShopByCategory'
 import FestivalSpecial from './HomePage/FestivalSpecial'
 import SareeEdit from './HomePage/SareeEdit'
-import SareeEditMobi from '../Components/mobileheadercomp/SareeEditMobi'
+import SareeEditMobi from './MobilePages/SareeEditMobi'
 import OnlineShopDesignStudio from './HomePage/OnlineShopDesignStudio'
+import CategoryCardList from '../Components/Card'
+import NewArrivalCard from './HomePage/NewArrivalCard'
+import BridalLahegaCholi from './HomePage/BridalLahegaCholi'
+import ProductCard from './HomePage/Watch-Shop'
 
 
 function HomePage() {
@@ -15,16 +19,18 @@ function HomePage() {
     <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
-      <ShopByCategorySlick />
+      <ShopByCategorySlick />  {/* overflow */}
+      <ProductCard/> {/* Watch & Shop */}
+      <NewArrivalCard />
+      <BridalLahegaCholi />
+
       {/* <ProductGrid/> */}
       {/* <CategoryCardList/> */}
-      {/* <ProductCard/> */}
       <Motion />
-      <FestivalSpecial/>
+      <FestivalSpecial />
       <Banner />
-      <SareeEdit/>
+      <SareeEdit />          {/* overflow */}
       <SareeEditMobi />
-      {/* <CategoryCardList /> */}
       <OnlineShopDesignStudio />
     </div>
   )

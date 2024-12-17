@@ -1,0 +1,66 @@
+@import 'mixin';
+@import 'var';
+
+
+.boxtext {
+    span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 500;
+        color: grey;
+    }
+
+    input {
+        padding: 0.6rem;
+        border: 1px solid lightgray;
+        border-radius: 0.5rem
+    }
+}
+
+.style-btn-one {
+    @include darkbtn;
+    border: 1px solid $primaryColor;
+    transition: .3s;
+
+    &:hover {
+        @include lightbtn;
+        border: 1px solid $primaryColor;
+    }
+}
+
+.style-btn-two {
+    @include lightbtn;
+    border: 1px solid $primaryColor;
+    transition: .3s;
+
+    &:hover {
+        @include darkbtn;
+        border: 1px solid $primaryColor;
+    }
+}
+
+.custom-order-box {
+    border-bottom: 1px solid lightgray;
+}
+
+.custom-order {
+    display: flex;
+
+    a {
+        text-decoration: none;
+        @include darkbtn;
+        width: 100%;
+        text-align: center;
+        border: 1px solid $subSecondoryColor;
+        background-color: $subSecondoryColor;
+        transition: .3s;
+        &:hover {
+            @include secondbtn;
+            border: 1px solid $subSecondoryColor;
+        }
+    }
+}

@@ -1,32 +1,27 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { MdOutlineLocationOn, MdMailOutline } from "react-icons/md";
+import { IoCallOutline } from "react-icons/io5";
 import {
-  MdOutlineLocationOn,
-  MdMailOutline,
-  IoCallOutline,
   FaYoutube,
   FaFacebook,
   FaPinterest,
-  IoIosMail,
-  RiTwitterXFill,
   FaInstagramSquare,
-} from "../utils/Icons";
-import "../styles/footer.css"
-import { useNavigate } from "react-router-dom";
-import MobileFooter from "./mobileheadercomp/MobileFooter";
+} from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { RiTwitterXFill } from "react-icons/ri";
+import "../styles/Footer.css"
 
 const Footer = () => {
-  const navigate = useNavigate();
+
   return (
-
-    <div className="mobile-footer">
-
-      <Container fluid className="footer d-none d-lg-block">
+    <div>
+      <Container fluid className="footer">
         <Container fluid className="py-0 mt-5">
           <Row>
             <Col xs={12} md={4} lg={3}>
-              <div className="logo-div ps-3">
+              <div className="logo-div ps-lg-3 ps-xl-3 ps-xxl-3">
                 <img
                   src={require("../assets/images/Footer-img/footer-logo.png")}
                   alt="footer-logo"
@@ -250,7 +245,6 @@ const Footer = () => {
           </Row>
         </Container>
       </Container>
-      <MobileFooter />
     </div>
   );
 };

@@ -1,7 +1,41 @@
 const headerCatData = [
   {
     title: "Sale",
-    dropdown: [],
+    dropdown: [
+      {
+        category: "Style",
+        items: [
+          { name: "Wedding Lehenga", link: "/products/wedding-lehenga" },
+          { name: "Bridal Lehenga", link: "/products/bridal-lehenga" },
+          { name: "Designer Lehenga", link: "/products/designer-lehenga" },
+          { name: "Contemporary Lehenga", link: "/products/contemporary-lehenga" },
+          { name: "Haldi Lehenga", link: "/products/haldi-lehenga" },
+          { name: "See All", link: "/products/lehenga-style" },
+        ],
+      },
+      {
+        category: "Fabric",
+        items: [
+          { name: "Pure Silk Lehenga", link: "/products/pure-silk-lehenga" },
+          { name: "Net Lehenga", link: "/products/net-lehenga" },
+          { name: "Georgette Lehenga", link: "/products/georgette-lehenga" },
+          { name: "Velvet Lehenga", link: "/products/velvet-lehenga" },
+          { name: "Art Silk Lehenga", link: "/products/art-silk-lehenga" },
+          { name: "See All", link: "/products/lehenga-fabric" },
+        ],
+      },
+      {
+        category: "Color",
+        items: [
+          { name: "Red Lehenga", link: "/products/red-lehenga" },
+          { name: "Maroon Lehenga", link: "/products/maroon-lehenga" },
+          { name: "Green Lehenga", link: "/products/green-lehenga" },
+          { name: "Blue Lehenga", link: "/products/blue-lehenga" },
+          { name: "Black Lehenga", link: "/products/black-lehenga" },
+          { name: "See All", link: "/products/lehenga-color" },
+        ],
+      },
+    ],
     image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
   },
   {

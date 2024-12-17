@@ -1,0 +1,675 @@
+@import 'mixin';
+@import 'var';
+
+
+
+.main_header {
+    box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.1);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-family: $defaultFontFamily;
+    transition: 1s;
+    background-color: $secondaryColor;
+
+    &:hover {
+        box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.1);
+    }
+}
+
+.forMargin {
+    height: 137px;
+}
+
+
+.transparentHeader {
+    background-color: transparent;
+    box-shadow: 0 0 0 transparent;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-family: $defaultFontFamily;
+    transition: 1s;
+
+    @media (max-width: 1200px) {
+        background-color: $primaryColor;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%28255, 255, 255, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
+    }
+
+    &:hover .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
+    }
+
+    &:hover {
+        background-color: $secondaryColor;
+        box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+        background-color: $secondaryColor;
+    }
+
+    &:hover .hdrLightBtn {
+        @include lightbtn;
+    }
+
+    .hdrLightBtn {
+        @include darkbtn;
+        background-color: transparent;
+        transition: 0.5s !important;
+
+        &:hover {
+            @include darkbtn;
+        }
+    }
+
+    &:hover .logoimg img {
+        filter: invert(0%);
+    }
+
+    .logoimg {
+        img {
+            filter: invert(100%);
+        }
+    }
+
+    #search {
+        background-color: rgb(255, 255, 255, 0.9);
+        border-style: solid;
+        color: $primaryColor;
+    }
+
+    &:hover #search {
+        background-color: rgb(255, 255, 255, 0);
+        border-color: $primaryColor;
+        border-style: solid;
+        color: $primaryColor;
+    }
+
+    .content2 {
+        a {
+            i {
+                color: $secondaryColor;
+            }
+        }
+    }
+
+    &:hover .content2 {
+        a {
+            i {
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .largesearch {
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255, 0.5);
+
+        input {
+            background-color: transparent;
+        }
+
+        i {
+            color: $secondaryColor;
+        }
+    }
+
+    &:hover .largesearch {
+        background-color: transparent;
+
+        border: 1px solid rgb(0, 0, 0, 1);
+
+        input {
+            background-color: transparent;
+        }
+
+        i {
+            color: $primaryColor;
+        }
+    }
+}
+
+.newBackCss {
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
+    }
+
+    background-color: $secondaryColor;
+    box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.1);
+
+    .hdrLightBtn {
+        @include lightbtn;
+    }
+
+    .logoimg img {
+        filter: invert(0%);
+    }
+
+    #search {
+        background-color: rgb(255, 255, 255, 0);
+        border-color: $primaryColor;
+        border-style: solid;
+        color: $primaryColor;
+    }
+
+    .content2 {
+        a {
+            i {
+                color: $primaryColor;
+            }
+        }
+    }
+
+
+    .largesearch {
+        background-color: transparent;
+
+        border: 1px solid rgb(0, 0, 0, 1);
+
+        input {
+            background-color: transparent;
+        }
+
+        i {
+            color: $primaryColor;
+        }
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
+}
+
+.main_sub_header {
+    box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 90px;
+    font-family: $defaultFontFamily;
+    z-index: 998;
+    background-color: $secondaryColor;
+}
+
+
+.logoimg {
+    display: block;
+    height: 4rem;
+
+    img {
+        height: 100%;
+    }
+}
+
+.hdrcontent {
+    gap: 1rem;
+
+    a {
+        i {
+            font-size: 1.3rem;
+            color: $primaryColor;
+        }
+    }
+}
+
+.searchmenu {
+    input {
+        border-radius: 10px 0px 0px 10px;
+        border-color: $primaryColor;
+        outline: none;
+    }
+
+    label {
+        @include darkbtn;
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+
+.largesearch {
+    border: 1px solid $secondaryColor;
+    background-color: $secondaryColor;
+    border-radius: 10px;
+
+    input {
+        border-width: 0px !important;
+        outline: none;
+        background-color: $secondaryColor;
+    }
+}
+
+.content1,
+.content2,
+.content3 {
+    width: 100%;
+}
+
+.NavLinkCss {
+    .nav-item {
+        font-weight: normal;
+    }
+
+    a {
+        &:hover {
+            @include darkbtn;
+        }
+    }
+}
+
+.darkBtn {
+    background-color: $primaryColor;
+    color: $secondaryColor !important;
+    @include flexwithbetween;
+}
+
+
+.hdrLightBtn {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    @include flexwithbetween;
+}
+
+.tranparentLightBtn {
+    background-color: transparent;
+    color: $secondaryColor;
+    @include flexwithbetween;
+}
+
+    .catImageHover img {
+        filter: brightness(35%);
+    }
+
+.sub_heading {
+    position: relative !important;
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        color: $primaryColor;
+        padding: 0.75rem 0rem;
+        transition: .3s;
+
+        &:hover {
+            color: $subSecondoryColor;
+            border-bottom: 1px solid $subSecondoryColor;
+        }
+
+        .sub_menu {
+            position: absolute !important;
+            top: 100%;
+            left: 0;
+            list-style-type: none;
+            justify-content: space-around;
+            min-width: 100%;
+            min-height: 20rem;
+            @include lightbtn;
+            box-shadow: 0 0 4px rgb(0, 0, 0, 0.1);
+            padding-top: 1.5rem;
+            display: none;
+            z-index: 999;
+            font-family: $secondaryFontFamily !important;
+        }
+
+        .peta_menu {
+            list-style-type: none;
+            font-weight: 100 !important;
+            font-family: $secondaryFontFamily !important;
+        }
+    }
+}
+
+.sub_heading a:hover .sub_menu {
+    display: flex;
+}
+
+.catImage {
+    height: 100%;
+    width: 15%;
+    display: block;
+    align-items: center;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.catImageContain {
+    width: 100%;
+    align-items: center;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.cartItemDisplay {
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -25%);
+        background-color: $subSecondoryColor;
+        height: 20px;
+        min-width: 20px;
+        text-align: center;
+        border-radius: 50%;
+        color: $secondaryColor;
+        font-size: 12px;
+    }
+}
+
+.cartItemBox {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.cartItemOnly {
+    border-bottom: 1px solid lightgray;
+}
+
+.cartBtn {
+    gap: 10px;
+
+    .checkoutBtn {
+        @include darkbtn;
+        transition: .3s;
+
+        &:hover {
+            @include lightbtn;
+            border: 2px solid $primaryColor;
+        }
+    }
+
+    .inCartBtn {
+        @include lightbtn;
+        transition: .3s;
+        border: 2px solid $primaryColor;
+
+        &:hover {
+            @include darkbtn;
+        }
+    }
+
+    a {
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 0.5rem;
+        border: 2px solid $primaryColor;
+    }
+}
+
+.custom-login-modal {
+    --bs-modal-width: 992px;
+    --bs-modal-margin: 0;
+
+    .modal-dialog {
+        .modal-content {
+            border-radius: 0;
+
+            .modal-body {
+                position: relative;
+                padding: 0;
+
+                .custom-close-btn {
+                    position: absolute;
+                    right: 5%;
+                    top: 5%;
+                    font-size: 20px;
+                    text-shadow: 0px 0px 5px $secondaryColor;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+.custom-backimage-modal {
+    .modal-page-one {
+        background-image: url('../Img/Signup_Desk_bgimage.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .content {
+            li {
+                list-style-type: decimal;
+            }
+        }
+    }
+
+    .modal-page-two {
+        .custom-login-form {
+            gap: 0.75rem;
+
+            input,
+            select {
+                padding: 0.75rem;
+                border-radius: 0.5rem;
+                border: 1px solid lightgray;
+                font-size: 14px;
+            }
+
+            .custom-next-btn {
+                text-decoration: none;
+                @include darkbtn;
+                border: 1px solid $primaryColor;
+                transition: .3s;
+
+                &:hover {
+                    @include lightbtn;
+                    border: 1px solid $primaryColor;
+                }
+            }
+
+            .custom-social-login {
+                display: flex;
+                justify-content: center;
+                gap: 0.75rem;
+
+                a {
+                    @include lightbtn;
+                    border: 1px solid $primaryColor;
+                    font-size: 20px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+.custom-user-box {
+    position: relative;
+    color: green;
+    font-size: 20.8px;
+    cursor: pointer;
+
+    .custom-user-list {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $secondaryColor;
+        box-shadow: 0 0 5px lightgray;
+        padding: 0.5rem;
+        width: 200px;
+        color: $primaryColor;
+        display: none;
+        font-size: 14px;
+        gap: 0.5rem;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: $primaryColor;
+            transition: .3s;
+
+            i {
+                transition: .3s;
+            }
+
+            svg {
+                font-size: 20.8px;
+            }
+
+            &:hover i {
+                color: $subSecondoryColor;
+            }
+
+            &:hover {
+                color: $subSecondoryColor;
+            }
+        }
+    }
+
+    &:hover .custom-user-list {
+        display: grid;
+    }
+}
+
+.new-for-margin {
+    height: 90px;
+}
+
+@media(max-width: 768px) {
+    .custom-close-btn {
+        color: white;
+        text-shadow: 0px 0px 5px $primaryColor !important;
+    }
+
+    .custom-backimage-modal {
+        .modal-page-one {
+            background-image: url('../Img/Signup_mob_bgimage767.jpg');
+            background-position: center;
+            color: $secondaryColor;
+
+            .content {
+                h2 {
+                    font-size: 16px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                }
+
+                li {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1350px) {
+    .sub_heading {
+        a {
+            font-size: 13px;
+
+            .sub_menu {
+                min-height: 15rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .sub_heading {
+        a {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .content1,
+    .content2,
+    .content3 {
+        width: auto;
+    }
+
+    .forMargin {
+        height: 147.6px;
+    }
+
+    .new-for-margin {
+        height: 147.6px;
+    }
+
+    .content1 {
+        .navbar-toggler {
+            padding: 0;
+            border: 0;
+        }
+    }
+
+    .sub_heading {
+        a {
+            padding: 0.2rem 0rem;
+            color: $primaryColor;
+
+            &:hover {
+                border-bottom: 0px;
+                @include darkbtn;
+                color: $secondaryColor !important;
+            }
+
+            .sub_menu {
+                display: none;
+            }
+        }
+    }
+
+    .NavLinkCss {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .nav-item {
+            flex: 1 0 50%;
+            padding: 0.5rem;
+
+            .nav-link {
+                border: 1px solid $primaryColor;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .logoimg {
+        height: 3rem;
+    }
+
+    .forMargin {
+        height: 131.6px;
+    }
+
+    .new-for-margin {
+        height: 131.6px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sub_header {
+        display: block;
+    }
+
+    .logoimg {
+        height: 3rem;
+    }
+}
