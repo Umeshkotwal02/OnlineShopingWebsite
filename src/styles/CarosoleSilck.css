@@ -1,23 +1,22 @@
 .CarosoleSlickSlider .slick-slider {
-  width: 100vw;
-  height: 100%;
-  background: transparent;
+  overflow: auto;
 }
 
-.MobileCarasole .slider-item {
+.CarosoleSlickSlider .slider-item {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden; 
+  border: 0px solid rgb(255, 255, 255);
+  border-radius: 30px;
 }
 
 .CarosoleSlickSlider .slider-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 0px solid rgb(255, 255, 255);
   border-radius: 30px;
 }
 
@@ -42,7 +41,6 @@
   height: auto;
 }
 
-
 .CarosoleSlickSlider .slick-dots {
   position: absolute;
   bottom: 20px !important;
@@ -53,7 +51,6 @@
   list-style: none;
   text-align: center;
 }
-
 
 .CarosoleSlickSlider .slick-dots li button:before {
   font-family: 'slick';
@@ -97,4 +94,7 @@
 .CarosoleSlickSlider .slider-item {
   padding: 0px;
   text-align: center;
+  border: 0px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  overflow: hidden;
 }

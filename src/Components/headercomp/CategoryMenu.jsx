@@ -16,7 +16,7 @@ const CategoryMenu = () => {
                 {menu.dropdown.map((dropdown, idx) => (
                   <div key={idx}>
                     <h4 className="list-title">{dropdown.category}</h4>
-                    <li>
+                    <ul>
                       {dropdown.items.map((item, i) => (
                         <li key={i}>
                           <Link to={item.link} className="list-item">
@@ -24,7 +24,7 @@ const CategoryMenu = () => {
                           </Link>
                         </li>
                       ))}
-                    </li>
+                    </ul>
                   </div>
                 ))}
                 {menu.image && <img src={menu.image} alt={menu.title} />}
