@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi2";
 import Pagination from "react-bootstrap/Pagination";
-import Breadcrumb from "./HomePage/Breadcrumb";
+import Breadcrumb from "../Components/Breadcrumb";
 import Loader from "../Components/Loader";
 import { FaChevronRight } from "react-icons/fa";
 

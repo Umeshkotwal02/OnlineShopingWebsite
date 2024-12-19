@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp, ProfileIcon, NotificationIcon, MyOrderIcon } from "../../assets/SvgIcons";
 import LoginOffCanvas from "../Canvas/LoginCanva";
 import CartOffCanvas from "./CartOffCanvas";
@@ -163,7 +163,7 @@ const Header = ({
 
                         {/* Dropdown */}
                         {isOpen && (
-                          <div className="dropdown-paper">
+                          <div className="dropdown-paper box-shadow">
                             <div className="flex flex-col px-3.5 m-2 fw-medium" style={{ color: "black" }}>
                               <div
                                 className="login-container  py-3.5 flex items-center gap-3.5 text-base font-medium text-font border-bottom"

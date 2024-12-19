@@ -28,7 +28,7 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          <AutoScrollToTop />
+          {/* <AutoScrollToTop /> */}
           <Toaster
             position="top-right"
             reverseOrder={false}

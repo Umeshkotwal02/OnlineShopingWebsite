@@ -24,7 +24,9 @@ body {
   color: #666464;
 }
 
-
+.box-shadow{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
 
 
 

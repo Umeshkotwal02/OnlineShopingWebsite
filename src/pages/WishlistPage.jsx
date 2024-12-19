@@ -5,7 +5,7 @@ import ProductImageSlider from "../pages/HomePage/ProductImageSlider";
 import { FaHeart } from "react-icons/fa6";
 import "../styles/NewArrivalCard.css";
 import { productData } from "../config/productData";
-import Breadcrumb from "./HomePage/Breadcrumb";
+import Breadcrumb from "../Components/Breadcrumb";
 
 const WishlistPage = () => {
   const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);

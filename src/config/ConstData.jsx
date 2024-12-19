@@ -5,48 +5,60 @@ const headerCatData = [
       {
         category: "Style",
         items: [
-          { name: "Wedding Lehenga", link: "/products/wedding-lehenga" },
-          { name: "Bridal Lehenga", link: "/products/bridal-lehenga" },
-          { name: "Designer Lehenga", link: "/products/designer-lehenga" },
-          { name: "Contemporary Lehenga", link: "/products/contemporary-lehenga" },
-          { name: "Haldi Lehenga", link: "/products/haldi-lehenga" },
-          { name: "See All", link: "/products/lehenga-style" },
+          { name: "See All Saree", link: "products-page" },
+          { name: "Ready to Ship Saree", link: "products-page" },
+          { name: "Embroidered Saree", link: "products-page" },
+          { name: "Designer Saree", link: "products-page" },
+          { name: "Sequin Saree", link: "products-page" },
+          { name: "Ready Pleated Saree", link: "products-page" },
+          { name: "Plain Saree with", link: "products-page" },
+          { name: "Plain Saree", link: "products-page" },
+          { name: "Classic Saree", link: "products-page" },
+          { name: "Printed Saree", link: "products-page" },
         ],
       },
       {
-        category: "Fabric",
+        category: "OCCASION",
         items: [
-          { name: "Pure Silk Lehenga", link: "/products/pure-silk-lehenga" },
-          { name: "Net Lehenga", link: "/products/net-lehenga" },
-          { name: "Georgette Lehenga", link: "/products/georgette-lehenga" },
-          { name: "Velvet Lehenga", link: "/products/velvet-lehenga" },
-          { name: "Art Silk Lehenga", link: "/products/art-silk-lehenga" },
-          { name: "See All", link: "/products/lehenga-fabric" },
+          { name: "Bridal Wedding Lehenga", link: "products-page" },
+          { name: "Haldi Lehenga", link: "/products/net-lehenga" },
+          { name: "Mehendi Lehengas", link: "products-page" },
+          { name: "Sangeet Lehengas", link: "/products/velvet-lehenga" },
+          { name: "Engagement Lehengas", link: "products-page" },
+          { name: "Wedding Lehengas", link: "products-page" },
+          { name: "Party Wear Lehengas", link: "products-page" },
         ],
       },
       {
-        category: "Color",
+        category: "FABRIC",
         items: [
-          { name: "Red Lehenga", link: "/products/red-lehenga" },
-          { name: "Maroon Lehenga", link: "/products/maroon-lehenga" },
-          { name: "Green Lehenga", link: "/products/green-lehenga" },
-          { name: "Blue Lehenga", link: "/products/blue-lehenga" },
-          { name: "Black Lehenga", link: "/products/black-lehenga" },
-          { name: "See All", link: "/products/lehenga-color" },
+          { name: "Georgette Lehenga", link: "products-page" },
+          { name: "Satin Lehenga", link: "products-page" },
+          { name: "Silk Lehenga", link: "products-page" },
+        ],
+      },
+      {
+        category: "COLOR",
+        items: [
+          { name: "Green Lehenga", link: "products-page" },
+          { name: "Yellow Lehenga", link: "products-page" },
+          { name: "Red Lehenga", link: "products-page" },
+          { name: "Pink Lehenga", link: "products-page" },
+          { name: "Purple Lehenga", link: "products-page" },
         ],
       },
     ],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "New Arrivals",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "HALF SAREE",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "FAShiON SAREE",
@@ -85,12 +97,12 @@ const headerCatData = [
         ],
       },
     ],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/75026.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "Lahenga",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "Gown",
@@ -118,53 +130,39 @@ const headerCatData = [
         ],
       },
     ],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/75026.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
 
   {
     title: "Wedding",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "Celebrity Outfits",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "OCCASIONS",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "Engagement",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "Reception",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
   {
     title: "OTHERs",
     dropdown: [],
-    image: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
+    image: require  ("../assets/images/CateMenu.png"),
   },
 ];
-
-
-// Product Page:
-
-
-const productsConst = [
-  
-
-]
-
-// Product Details Page
-
-
-
 
 export { headerCatData };

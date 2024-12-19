@@ -9,8 +9,8 @@ const authProtectedRoutes = [
 
 const publicRoutes = [
     { path: '/home', component: HomePage },
-    { path: "/products/:category", component: ProductPage },
-    { path: "/productslist", component: ProductPage },
+    // { path: "/products/:category", component: ProductPage },
+    { path: "/products-page", component: ProductPage },
     { path: "/products/details/:productId", component: ProductDetails },
     { path: "/my-order", component: MyOrderPage },
     { path: "/wishlist", component: WishlistPage },
