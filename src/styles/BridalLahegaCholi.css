@@ -1,0 +1,134 @@
+.bridal-image-container {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    background: #f8f8f8;
+    z-index: 1;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.bridal-image-container {
+    z-index: 16;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.overlay-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 7;
+    transition: opacity 0.3s ease;
+}
+
+
+.shop-now-btn {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    text-transform: uppercase;
+    background: rgba(225, 225, 225, 1);
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.shop-now-btn:hover {
+    background-color: #eee9e0;
+    color: #000000;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.new-arrival-card:hover .wishlist-btn {
+    opacity: 1 !important;
+    /* Make visible on hover */
+}
+
+.wishlist-btn button {
+    background: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 22px;
+    color: #000;
+}
+
+.heart-icon {
+    color: #ff3f3f;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: -16px;
+    background: url("../assets/images/discount1.png") no-repeat center center;
+    width: 95px;
+    height: 56px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    z-index: 20;
+}
+
+.discount-badge h5 {
+    margin: 10px;
+}
+
+.discount-p {
+    margin-top: 11px;
+    margin-bottom: 1re
+}
+
+.product-info {
+    padding: 10px;
+    text-align: center;
+    background-color: #F3F3F3;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.price-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.mrp {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.discounted-price {
+    color: #03a685;
+    font-size: 16px;
+    font-weight: bold;
+}

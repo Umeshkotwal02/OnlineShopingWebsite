@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Importing Link for navigation
 
 const SareeEdit = () => {
     return (
-        <Container fluid className='py-4 px-4 px-md-2 d-none d-lg-block'>
+        <Container fluid className='px-md-2 d-none d-lg-block px-lg-5 px-xl-5 px-xxl-5'>
             {/* Bridal Edit */}
             <p className='text-center fs-2'>The Saree Edit</p>
             <p className='text-center' style={{ fontFamily: "Jost" }}><i>""Embrace the festival magic, let joy fill every moment."</i></p>

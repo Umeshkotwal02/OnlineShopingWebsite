@@ -16,11 +16,11 @@ body {
   background-color: #F3F3F3;
 }
 
-.text-size{
-font-size: 0.9rem;
+.text-size {
+  font-size: 0.9rem;
 }
 
-.font-color-global{
+.font-color-global {
   color: #666464;
 }
 
@@ -73,4 +73,37 @@ font-size: 0.9rem;
 .Mobile-placeholder::placeholder {
   color: black !important;
   font-size: 16px !important;
+}
+
+/* New Arrive  */
+/* Container background */
+.swiper-pagination {
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 10px; /* Adds spacing around bullets */
+  display: flex; /* Align bullets in a row */
+  justify-content: center; /* Center the bullets horizontally */
+  position: relative; /* Ensures it's placed properly over other elements */
+  z-index: 10; /* Ensures pagination is visible above other content */
+}
+
+/* Default bullets (inactive) */
+.swiper-pagination-bullet {
+  background-color: white; /* Inactive bullet color */
+  opacity: 1; /* Ensures visibility */
+  margin: 0 5px; /* Adds spacing between bullets */
+  width: 10px; /* Bullet size */
+  height: 10px;
+  border-radius: 50%; /* Makes bullets round */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Smooth color transition */
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  background-color: red; /* Active bullet color */
+}
+
+/* Cart OffCanva */
+.cart-para{
+  margin-bottom: 0px !important;
+  margin-bottom: 0rem !important;
 }

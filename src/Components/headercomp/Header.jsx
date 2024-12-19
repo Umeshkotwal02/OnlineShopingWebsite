@@ -1,24 +1,23 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
-import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp } from "../../assets/SvgIcons";
-import LoginOffCanvas from "./LoginCanva";
+import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp, ProfileIcon, NotificationIcon, MyOrderIcon } from "../../assets/SvgIcons";
+import LoginOffCanvas from "../Canvas/LoginCanva";
 import CartOffCanvas from "./CartOffCanvas";
 import CategoryMenuMobi from "../../pages/MobilePages/CategoryMenuMobi";
 import CategoryMenu from "./CategoryMenu";
 import MobileHeader from "../mobileheadercomp/MobileHeader";
 import TopBar from "./TopBar";
 import { signOut } from "firebase/auth";
-import "../../styles/Header.css"
 import { auth } from "../firebase";
 import MobileFooter from "../mobileheadercomp/MobileFooter";
+import toast from "react-hot-toast";
+import { IoLogOutOutline } from "react-icons/io5";
+import ProfileModal from "../Canvas/ProfileModal";
+import Notification from "../Canvas/Notification";
+import "../../styles/Header.css"
 
 const Header = ({
-  isLoggedIn,
-  userDetails,
-  userProfile,
-  wishlistCount,
-  handleNavigateToWishlist,
   searchTerm,
   handleKeyUp,
   handleChange,
@@ -28,32 +27,75 @@ const Header = ({
 }) => {
 
   const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login Offcanvas
-  const [showCartCanvas, setShowCartCanvas] = useState(false); // Login Offcanvas
+  const [showCartCanvas, setShowCartCanvas] = useState(false); // Cart Offcanvas
+  const [showProfileModals, setShowProfileModals] = useState(false); // Profile Modal
+  const [showNotificationModal, setShowNotificationModal] = useState(false); // Notification Modal
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
+  // Monitor authentication state
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe(); // Cleanup subscription
+  }, []);
+
+  // Logout handler
+  const handleLogout = () => {
+    setUser(null);
+    signOut(auth).then(() => {
+      toast.success("Logged out successfully");
+      navigate("/");
+    }).catch((error) => {
+      console.error("Logout Error: ", error.message);
+    });
+  };
+  const handleUserUpdate = (userData) => {
+    console.log("User data updated:", userData);
+    setUser(userData);
+  };
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  //login
   const handleShowLoginCanvas = () => {
     setIsOpen(false);
     setShowLoginCanvas(true);
   };
   const handleCloseLoginCanvas = () => setShowLoginCanvas(false);
 
+  //WishList
+  const handleNavigateToWishlist = () => {
+    navigate('/wishlist');
+  };
+
+  // Cart
   const handleCartLoginCanvas = () => {
     setIsOpen(false);
     setShowCartCanvas(true);
   };
+  const handleCloseCartCanvas = () => setShowCartCanvas(false);
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth); // Sign out the user
-      console.log("User logged out");
-    } catch (error) {
-      console.error("Error logging out: ", error.message);
-    }
+  // Profile
+  const handleProfileModals = () => {
+    setIsOpen(false);
+    setShowProfileModals(true);
   };
 
-  const handleCloseCartCanvas = () => setShowCartCanvas(false);
+  const handleCloseProfileModals = () => setShowProfileModals(false);
+  // Notification
+  const handleNotificationModals = () => {
+    setIsOpen(false);
+    setShowNotificationModal(true);
+  };
+
+  //My-Order
+  const handleMyOrder = () => {
+    navigate("/my-order");
+  };
+
+  const handleCloseNotificationModals = () => setShowNotificationModal(false);
 
   return (
     <>
@@ -105,21 +147,56 @@ const Header = ({
               {/* Icons Section */}
               <Col xxl={3} xl={3} lg={3} className="d-flex justify-content-end gap-3">
                 <div className="text-dark d-flex align-items-center gap-1 text-size">
-                  {isLoggedIn ? (
+                  {user ? (
                     <>
-                      <img
-                        className="rounded-circle"
-                        src={userDetails?.user_profile}
-                        alt="User"
-                        style={{ width: "30px", height: "30px", objectFit: "cover" }}
-                      />
-                      <span className="d-none d-xl-inline-block">
-                        {userProfile?.user_type === "btoc" ? "Account" : "Wholesale Account"}
-                      </span>
                       {/* Logout button */}
-                      <Button variant="link" onClick={handleLogout}>
-                        Logout
-                      </Button>
+                      <div style={{ position: "relative", display: "inline-block" }}>
+                        <div
+                          className="text-dark d-flex align-items-center gap-1"
+                          onClick={toggleDropdown}
+                          style={{ cursor: "pointer", fontSize: "0.9rem" }}
+                        >
+                          <AccountIcon />
+                          <span className="d-none d-xl-inline-block">Account</span>
+                          {isOpen ? <DropdownUp /> : <DropdownDown />}
+                        </div>
+
+                        {/* Dropdown */}
+                        {isOpen && (
+                          <div className="dropdown-paper">
+                            <div className="flex flex-col px-3.5 m-2 fw-medium" style={{ color: "black" }}>
+                              <div
+                                className="login-container  py-3.5 flex items-center gap-3.5 text-base font-medium text-font border-bottom"
+                                onClick={handleProfileModals}
+                              >
+                                <ProfileIcon />
+                                My Profile
+                              </div>
+                              <div
+                                className="login-container py-3.5 flex items-center gap-3.5 text-base font-medium text-font border-bottom"
+                                onClick={handleNotificationModals}
+                              >
+                                <NotificationIcon />
+                                Notification
+                              </div>
+                              <div
+                                className="login-container py-3.5 flex items-center gap-3.5 text-base font-medium text-font border-bottom"
+                                onClick={handleMyOrder}
+                              >
+                                <MyOrderIcon className="fs-4" />
+                                My Order
+                              </div>
+                              <div
+                                className="login-container py-3.5 flex items-center gap-3.5 text-base font-medium text-font"
+                                onClick={handleLogout}
+                              >
+                                <IoLogOutOutline className="fs-4" />
+                                Logout
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </>
                   ) : (
                     <div style={{ position: "relative", display: "inline-block" }}>
@@ -154,19 +231,36 @@ const Header = ({
 
                 <div className="text-dark d-flex align-items-center gap-1" onClick={handleNavigateToWishlist} style={{ cursor: "pointer" }}>
                   <WishlistIcon />
-                  {wishlistCount > 0 && (
-                    <span className="badge bg-danger">{wishlistCount}</span>
-                  )}
-                  <span className="d-none d-xl-inline-block" style={{ fontSize: "0.9rem" }}>Wishlist</span>
+                  <span className="header-badge badge position-absolute d-inline-block bg-danger rounded-pill badge-position "
+                  >3</span>
+                  <span className="d-none d-xl-inline-block ms-1" style={{ fontSize: "0.9rem" }}>Wishlist</span>
                 </div>
 
-                <div className="text-dark d-flex align-items-center gap-1" style={{ cursor: "pointer" }} onClick={handleCartLoginCanvas}>
+                <div
+                  className="text-dark d-flex align-items-center gap-1 position-relative"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleCartLoginCanvas}
+                >
                   <LgBagIcon />
-                  {wishlistCount > 0 && (
-                    <span className="badge bg-danger">{wishlistCount}</span>
-                  )}
-                  <span className="d-none d-xl-inline-block text-size">Cart</span>
+                  <span
+                    className="cart badge bg-danger rounded-pill"
+                    style={{
+                      fontSize: '0.7rem',
+                      width: '18px',
+                      height: '18px',
+                      position: 'absolute',
+                      top: '13px',
+                      right: '32px',
+                      textAlign: 'center',
+                      display: 'grid',
+                      placeItems: 'center',
+                    }}
+                  >
+                    5
+                  </span>
+                  <span className="d-none d-xl-inline-block text-size ms-1 pt-1">Cart</span>
                 </div>
+
               </Col>
             </Row>
           </div>
@@ -176,8 +270,10 @@ const Header = ({
         <CategoryMenu />
       </Container >
       <CategoryMenuMobi />
-      <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} />
+      <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
+      <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
+      <Notification show={showNotificationModal} handleClose={handleCloseNotificationModals} />
       <MobileFooter />
 
     </>

@@ -1,0 +1,104 @@
+
+.watch-shop-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0px !important;
+    border-radius: 10px;
+  }
+  
+  .video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding-top: 0% !important;
+  }
+  
+  .react-video {
+    object-fit: cover;
+  }
+  
+  .badge-container {
+    position: absolute;
+    top: 71%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    z-index: 2;
+  }
+  
+  .badge-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .product-info {
+    padding: 0.8rem;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 0 0 10px 10px;  /* Rounded bottom corners */
+  }
+  
+  .product-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .price {
+    color: #03a685;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .slick-slide {
+    padding: 0 10px;  /* Adds horizontal spacing between cards */
+  }
+  
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .watch-shop-card .custom-arrow {
+    position: absolute;
+    top: 37%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .watch-shop-card .next-arrow {
+    right: -15px;
+  }
+  
+  .watch-shop-card .prev-arrow {
+    left: -15px;
+  }
+  
+  .watch-shop-card .custom-arrow svg {
+    width: 40px;
+    height: 40px;
+    fill: #333;
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+  
+  .watch-shop-card .custom-arrow:hover svg {
+    transform: scale(1.1);
+    fill: #B51B3B;
+  }
+  

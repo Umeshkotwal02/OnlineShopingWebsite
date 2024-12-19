@@ -1,59 +1,69 @@
+.form-control {
+    background-clip: padding-box;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 1px solid #CDCDCD;
+}
+
+
 .resend-btn {
     font-size: 14px;
     background: none;
     border: none;
     color: #666464;
     cursor: pointer;
-  }
-  
-  .resend-btn:disabled {
+}
+
+.resend-btn:disabled {
     cursor: not-allowed;
-  }
-  
-  .resend-text {
+}
+
+.resend-text {
     text-decoration: underline;
     font-weight: bold;
-  }
+}
 
 .otp-input-container {
     display: flex;
     justify-content: center;
     gap: 10px;
-  }
-  
-  .otp-input-box {
+}
+
+.otp-input-box {
     width: 40px;
     height: 50px;
     text-align: center;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .clear-otp-button {
+}
+
+.clear-otp-button {
     margin-left: 10px;
     padding: 5px 10px;
     background: #e9b159;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  .btn-continue {
+}
+
+.btn-continue {
     background-color: #e9b159;
     color: white;
     font-size: 18px;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-  }
-  
-  .btn-continue:disabled {
+}
+
+.btn-continue:disabled {
     background-color: #ddd;
     color: #aaa;
     cursor: not-allowed;
-  }
-  /* Adjust the margins for better spacing */
+}
+
+/* Adjust the margins for better spacing */
 .login-container {
     padding: 20px;
     text-align: center;
@@ -181,4 +191,3 @@
     /* Center the title */
     text-align: center;
 }
-

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container } from "react-bootstrap"; // Import React-Bootstrap components
+import { Row, Col, Container } from "react-bootstrap";
 import ProductImageSlider from "./ProductImageSlider";
 import { FaHeart } from "react-icons/fa6";
+import { FiHeart } from "react-icons/fi";
 import "../../styles/NewArrivalCard.css";
 import { productData } from "../../config/productData";
-import { FiHeart } from "react-icons/fi";
 
 const NewArrivalCard = () => {
   const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);
@@ -37,12 +37,12 @@ const NewArrivalCard = () => {
       <h2 className="text-center">New Arrival</h2>
       <p className="text-center">"Embrace the festival magic, let joy fill every moment."</p>
 
-      <Row className="px-lg-5 px-xl-5 px-xxl-5">
+      <Row className="px-lg-5 px-xl-5 px-xxl-5 g-4">
         {productData.map((product) => (
-          <Col xs={12} sm={6} md={3} lg={2.4} xl={2.4} xxl={2.6} key={product.id}>
+          <Col xs={12} sm={6} md={4} lg={3} xl={2} xxl={2} key={product.id} className="mb-1 rounded">
             <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none">
               {/* Product Image Section */}
-              <div className="image-container">
+              <div className="image-container rounded">
                 <ProductImageSlider imageList={product.product_images} />
                 <div className="overlay-buttons">
                   <button className="add-to-cart-btn" onClick={handleAddToCart}>
@@ -51,8 +51,8 @@ const NewArrivalCard = () => {
                 </div>
 
                 {/* Wishlist Button */}
-                <div className="wishlist-btn">
-                  <button onClick={handleWishlistToggle}>
+                <div className="wishlist-btn rounded-circle">
+                  <button onClick={handleWishlistToggle} className="rounded-circle">
                     {isWishlisted ? (
                       <FaHeart className="icon heart-icon" />
                     ) : (

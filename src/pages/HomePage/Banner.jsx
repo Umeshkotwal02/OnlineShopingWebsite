@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
-    <Container fluid className=''>
+    <Container fluid className='px-lg-5 px-xl-5 px-xxl-5'>
     <Row>
       <Col className='col-12'>
         <Link to='/' className='d-none d-md-block'>

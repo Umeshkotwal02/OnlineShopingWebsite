@@ -58,7 +58,7 @@ const CarosoleSilckSlider = () => {
                             <img
                                 src={image}
                                 alt={`Slide ${index + 1}`}
-                                className="slider-image"
+                                className="Carosole-slider-image"
                             />
                         </div>
                     ))}

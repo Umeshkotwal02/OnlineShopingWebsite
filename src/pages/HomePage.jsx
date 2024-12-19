@@ -8,29 +8,42 @@ import FestivalSpecial from './HomePage/FestivalSpecial'
 import SareeEdit from './HomePage/SareeEdit'
 import SareeEditMobi from './MobilePages/SareeEditMobi'
 import OnlineShopDesignStudio from './HomePage/OnlineShopDesignStudio'
-import CategoryCardList from '../Components/Card'
 import NewArrivalCard from './HomePage/NewArrivalCard'
 import BridalLahegaCholi from './HomePage/BridalLahegaCholi'
-import ProductCard from './HomePage/Watch-Shop'
-
+import CustomerStoriesSection from './HomePage/CustomerStoriesSection'
+import OurInstaPage from './HomePage/OurInstaPage'
+import ShopByColor from './HomePage/shopByColor'
+import WatchShopCardDemo from './HomePage/WatchShopCard'
+import NewOnKapoorSwiper from './HomePage/NewOnKapoorSwiper'
+import CategorySection from './HomePage/CategoryCustomCard'
 
 function HomePage() {
   return (
     <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
       <CarosoleSlickMobi />
+
+      {/* <CategorySection /> */}
       <ShopByCategorySlick />  {/* overflow */}
-      <ProductCard/> {/* Watch & Shop */}
-      <NewArrivalCard />
+      {/* <ShopByCategoryDemo /> */}
+      <WatchShopCardDemo />
+
       <BridalLahegaCholi />
 
-      {/* <ProductGrid/> */}
-      {/* <CategoryCardList/> */}
+      &nbsp;
+      <NewArrivalCard /> {/*Add to Cart Component*/}
+
+      <NewOnKapoorSwiper />
+
+
       <Motion />
       <FestivalSpecial />
       <Banner />
-      <SareeEdit />          {/* overflow */}
-      <SareeEditMobi />
+      {/* <ShopByColor /> */}
+      <SareeEdit />         {/*  overflow */}
+      {/* <SareeEditMobi /> */}
+      <CustomerStoriesSection />
+      <OurInstaPage />
       <OnlineShopDesignStudio />
     </div>
   )

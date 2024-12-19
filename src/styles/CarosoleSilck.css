@@ -13,7 +13,7 @@
   border-radius: 30px;
 }
 
-.CarosoleSlickSlider .slider-image {
+.CarosoleSlickSlider .Carosole-slider-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -29,11 +29,11 @@
 }
 
 .CarosoleSlickSlider .next-arrow {
-  right: 7px;
+  right: 17px;
 }
 
 .CarosoleSlickSlider .prev-arrow {
-  left: 7px;
+  left: 17px;
 }
 
 .CarosoleSlickSlider .custom-arrow img {

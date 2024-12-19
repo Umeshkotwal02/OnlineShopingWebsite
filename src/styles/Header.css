@@ -16,7 +16,8 @@
 .search-input:focus {
   box-shadow: none !important;
   outline: none !important;
-  border: 0px solid #D3D1D1; /* Keep border consistent on focus */
+  border: 0px solid #D3D1D1;
+  /* Keep border consistent on focus */
 }
 
 /* Dropdown Styling */
@@ -39,10 +40,20 @@
   gap: 10px;
   cursor: pointer;
   color: #333;
-  border-radius: 10px;
-  border-top-right-radius: 0%;
 }
 
-.login-container:hover {
+.dropdown-paper:hover {
   box-shadow: 0 6px 12px rgba(18, 18, 18, 0.15);
+}
+
+.badge-position {
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  top: 38px; 
+  right: 192px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  z-index: 11; 
 }

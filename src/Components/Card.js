@@ -8,7 +8,7 @@ const imageData = [
   {
     category_name: "Category 1",
     catelog: "/assets/images/New-Arrive/img1.png",
-    image: require("../assets/images/CategoryByShopSlicks/Shop By Category.png"),
+    image: require("../assets/images/CategoryByShopSlicks/ShopByCategoryBg.png"),
 
   },
   {

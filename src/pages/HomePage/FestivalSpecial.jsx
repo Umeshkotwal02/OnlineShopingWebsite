@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Importing Link for navigation
 
 const FestivalSpecial = () => {
     return (
-        <Container fluid className='py-4 px-4 px-md-2'>
+        <Container fluid className='py-4 px-4 px-md-2 px-lg-5 px-xl-5 px-xxl-5'>
             {/* Bridal Edit */}
             <h4 className='text-center ff-lexend pb-3'>Festival Special</h4>
             <p className='text-center ff-lexend pb-3' style={{ fontFamily: "Jost" }}><i>"Embrace the festival magic, let joy fill every moment."</i></p>

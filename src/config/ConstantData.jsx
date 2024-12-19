@@ -4,8 +4,8 @@
 const sliderItems = [
     {
         id: 1,
-        image: require("../assets/images/CategoryByShopSlicks/Shop By Category.png"),
-        text: "Shop By Category"
+        image: require("../assets/images/CategoryByShopSlicks/ShopByCategoryBg.png"),
+        text: "ShopByCategoryBg"
     },
     {
         id: 2,
