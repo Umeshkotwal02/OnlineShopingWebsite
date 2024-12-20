@@ -100,7 +100,6 @@ const Header = ({
   return (
     <>
       <TopBar />
-
       <Container fluid className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
         <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 pt-1">
           <div className="d-none d-lg-block">

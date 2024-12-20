@@ -1,22 +1,25 @@
-.CarosoleSlickSlider .slick-slider {
+.CarosoleSlickSlider {
   overflow: hidden;
   position: relative;
+  width: 100%;
+}
+
+.CarosoleSlickSlider .slick-slider {
+  overflow: visible;
+}
+
+.caro-img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .CarosoleSlickSlider .slider-item {
-  width: 100vw;
-  height: 100vh; /* Make the slider take up the full height of the viewport */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  border-radius: 30px;
-}
-
-.CarosoleSlickSlider .Carosole-slider-image {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover; /* Ensures images cover the container while maintaining aspect ratio */
+  padding: 0;
+  border: 0;
   border-radius: 30px;
 }
 
@@ -29,23 +32,23 @@
 }
 
 .CarosoleSlickSlider .next-arrow {
-  right: 17px;
+  right: -5px;
 }
 
 .CarosoleSlickSlider .prev-arrow {
-  left: 17px;
+  left: -5px;
 }
 
 .CarosoleSlickSlider .custom-arrow img {
-  width: 30px; /* Adjust arrow size */
+  width: 22px;
   height: auto;
 }
 
 .CarosoleSlickSlider .slick-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 20px !important;
   display: inline-block;
-  width: 100%;
+  width: 99%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -53,17 +56,17 @@
 }
 
 .CarosoleSlickSlider .slick-dots li button:before {
-  font-family: 'slick';
-  font-size: 13px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: '•';
+  content: '';
   opacity: 1;
-  color: #ffffff;
+  background-image: url('../assets/images/Carasole-Img/deactivebtn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 12px;
+  height: 18px;
+  display: inline-block;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 .CarosoleSlickSlider .slick-dots li.slick-active button:before {
@@ -73,9 +76,26 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  width: 13.8px;
+  height: 17px;
+  display: inline-block;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+
+.CarosoleSlickSlider .slick-dots li.slick button {
+  content: '';
+  opacity: 1;
+  background-image: url('../assets/images/Carasole-Img/activebtn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 13px;
   height: 19px;
   display: inline-block;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 .CarosoleSlickSlider .slick-dots li {
@@ -83,6 +103,19 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin: 0 5px;
+  margin: 0 0px !important;
   padding: 0;
+  cursor: pointer;
+}
+
+.CarosoleSlickSlider .slick-slide {
+  padding: 0px 0px !important;
+  border-radius: 30px !important;
+  margin-bottom: -7px !important;
+}
+
+.CarosoleSlickSlider .slick-list {
+  border-radius: 30px;
+  /* border-bottom-right-radius: 46px;
+  border-bottom-left-radius: 46px; */
 }

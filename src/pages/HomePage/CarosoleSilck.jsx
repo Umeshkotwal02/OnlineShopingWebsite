@@ -33,18 +33,14 @@ const CarosoleSilckSlider = () => {
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 1,  // Only one slide at a time
+        slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true, 
+        autoplay: false,
         autoplaySpeed: 3000,
         dots: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        adaptiveHeight: false,
-        adaptiveWidth: false,
-        focusOnSelect: true,
     };
-    
 
     // Array of images
     const images = [
@@ -55,19 +51,17 @@ const CarosoleSilckSlider = () => {
 
     return (
         <Container fluid className=" d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5">
-            <Row>
-                <Slider {...settings} className="h-100 w-100">
+                <Slider {...settings}>
                     {images.map((image, index) => (
-                        <div key={index} className="slider-item h-100 w-100">
+                        <div key={index} className="slider-item">
                             <img
                                 src={image}
                                 alt={`Slide ${index + 1}`}
-                                className="Carosole-slider-image"
+                                className="caro-img"
                             />
                         </div>
                     ))}
                 </Slider>
-            </Row>
         </Container>
     );
 };

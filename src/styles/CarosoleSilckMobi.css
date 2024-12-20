@@ -1,26 +1,35 @@
-.MobileCarasole .slick-slider {
-    width: 100vw;
-    height: auto;
-    overflow-x: hidden;
-
+.MobileCarasole{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .MobileCarasole .slider-item {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
-}
+    padding: 0;
+    border: 0;
+    border-radius: 15px;
+  }
 
 .MobileCarasole .slider-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100vw;
+    height: 18vh;
+    object-fit: fill;
     border: 0px solid rgb(255, 255, 255);
     border-radius: 11px;
 }
+
+.MobileCarasole .slick-slide {
+    padding: 0px 0px !important;
+    border-radius: 15px !important;
+    margin-bottom: -7px !important;
+  }
+  
+  .MobileCarasole .slick-list {
+    border-radius: 15px;
+    /* border-bottom-right-radius: 46px;
+    border-bottom-left-radius: 46px; */
+  }
 
 .MobileCarasole .custom-arrow {
     position: absolute;
@@ -46,7 +55,7 @@
 
 .MobileCarasole .slick-dots {
     position: relative;
-    bottom: 20px !important;
+    bottom: 2px !important;
     display: block;
     width: 100%;
     padding: 0;
