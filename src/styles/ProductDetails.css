@@ -1,0 +1,13 @@
+.discount-coupon{
+background-image: url("../assets/images/ProductDetails/discount-bg.png");
+background-repeat: no-repeat;
+background-size: contain;
+width: 100% ;
+/* object-fit: ; */
+}
+
+.discount-bag{
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}

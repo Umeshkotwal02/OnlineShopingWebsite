@@ -1,0 +1,181 @@
+@import 'var';
+@import 'mixin';
+
+.cartDetail {
+    .container {
+        max-width: 93% !important;
+    }
+}
+
+.cartProductsize {
+    a {
+        color: $primaryColor;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+}
+
+.qtyPlusMinuse {
+    gap: 1rem;
+    font-size: 14px;
+    align-items: center;
+
+    section {
+        background-color: #F7F7F7;
+        border-radius: 0.5rem;
+    }
+
+    div {
+        align-items: center;
+        background-color: #F7F7F7;
+        border-radius: 0.5rem;
+
+        input {
+            border-radius: 0.5rem;
+            border: 1px solid lightgray;
+            width: 50px;
+            text-align: center;
+        }
+
+        span {
+            font-weight: 900;
+            font-size: 17px;
+            text-decoration: none;
+            color: $primaryColor;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.priceBox {
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+}
+
+.promoCodeInput {
+    input {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    button {
+        border-radius: 0 0.5rem 0.5rem 0;
+        @include darkbtn;
+        transition: .3s;
+
+        &:hover {
+            @include lightbtn;
+            border-color: $primaryColor;
+        }
+    }
+}
+
+.coupenCodeDesign {
+    border: 1px solid lightgray;
+
+    div {
+        section {
+            border: 1px dashed $primaryColor;
+        }
+
+        button {
+            @include darkbtn;
+            transition: .3s;
+
+            &:hover {
+                @include lightbtn;
+                border-color: $primaryColor;
+            }
+        }
+    }
+}
+
+.finalCheckOutBtn {
+    a {
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        @include darkbtn;
+        transition: .3s;
+
+        &:hover {
+            @include lightbtn;
+            border-color: $primaryColor;
+        }
+    }
+
+    div {
+        max-height: 50px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.customHeartColor {
+    a {
+        color: $primaryColor;
+        transition: .3s;
+
+        &:hover {
+            color: $subSecondoryColor;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cartProductsize {
+        a {
+            font-size: 12px;
+        }
+
+        h5 {
+            font-size: 14px;
+        }
+    }
+
+    .qtyPlusMinuse {
+        font-size: 14px;
+    }
+
+    .footerForCart {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $secondaryColor;
+        font-size: 12px !important;
+        z-index: 99;
+
+        h5 {
+            font-size: 12px !important;
+        }
+    }
+}
+
+
+@media (max-width: 578px) {
+    .qtyPlusMinuse {
+        font-size: 12px;
+        text-align: center;
+        gap: 5px;
+
+        div {
+            justify-content: center;
+        }
+    }
+
+    .cartItemPrd {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+}

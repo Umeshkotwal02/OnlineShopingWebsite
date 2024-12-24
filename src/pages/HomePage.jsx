@@ -21,7 +21,6 @@ function HomePage() {
   return (
     <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
-      <CarosoleSlickMobi />
 
       {/* <CategorySection /> */}
       <ShopByCategorySlick />  {/* overflow */}
@@ -30,7 +29,6 @@ function HomePage() {
 
       <BridalLahegaCholi />
 
-      &nbsp;
       <NewArrivalCard /> {/*Add to Cart Component*/}
 
       <NewOnKapoorSwiper />

@@ -9,7 +9,8 @@ const CategoryMenu = () => {
     <Container fluid className="menu-container pt-2 px-4 d-none d-lg-block">
       <Nav className="responsive-navbar-nav">
         {headerCatData.map((menu, index) => (
-          <Col className="menu-item" key={index}>
+          <Col className={"menu-item"}>
+            {/* <Col className={`menu-item ${index === 0 || index === headerCatData.length - 1 ? "text-center" : ""}`} key={index}> */}
             <button className="menu-button">{menu.title}</button>
             <div
               className={`dropdown-content p-3 ${menu.dropdown.length > 0 ? "dropdown-with-items" : "dropdown-only-image"
@@ -49,7 +50,7 @@ const CategoryMenu = () => {
           </Col>
         ))}
       </Nav>
-    </Container>
+    </Container >
   );
 };
 

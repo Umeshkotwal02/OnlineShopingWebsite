@@ -3,6 +3,10 @@
   white-space: nowrap;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* Button styles remain unchanged */
 .menu-button {
   color: rgb(0, 0, 0);
@@ -45,15 +49,17 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
   width: 100%;
-  max-width: 84%; /* Default max width */
+  max-width: 84%;
+  /* Default max width */
   min-width: 200px;
   display: grid;
 }
 
 /* Dropdown with only an image */
 .dropdown-only-image {
-  width: 100%; 
-  max-width: 350px; /* Limit for larger screens */
+  width: 100%;
+  max-width: 350px;
+  /* Limit for larger screens */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +93,9 @@ li {
 }
 
 .list-item {
-  font-size: 0.9rem; /* Smaller text */
+  font-size: 0.9rem;
+  /* Smaller text */
+  text-align: start !important;
   font-weight: 400;
   color: black;
   text-transform: uppercase;
@@ -98,7 +106,7 @@ li {
 .list-item:hover {
   text-decoration: underline;
   color: #2f2e2e;
-} 
+}
 
 /* No dropdown styling */
 .no-dropdown {
@@ -119,7 +127,8 @@ li {
 /* Media queries for responsiveness */
 @media (max-width: 992px) {
   .dropdown-with-items {
-    grid-template-columns: repeat(3, 1fr); /* Reduce columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* Reduce columns */
     gap: 1px;
   }
 
@@ -143,7 +152,8 @@ li {
 
 @media (max-width: 576px) {
   .dropdown-with-items {
-    grid-template-columns: repeat(2, 1fr); /* Further reduce columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* Further reduce columns */
   }
 
   .dropdown-content {

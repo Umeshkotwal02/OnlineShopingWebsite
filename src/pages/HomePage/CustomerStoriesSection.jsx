@@ -3,6 +3,7 @@ import React from "react";
 import "../../styles/customerStories.css";
 import CustomerStories from "../../Components/CustomerStories";
 import { Container } from "react-bootstrap";
+import Slider from "react-slick";
 
 
 export const testimonialsData = [
@@ -26,7 +27,6 @@ export const testimonialsData = [
 
 const CustomerStoriesSection = () => {
     return (
-        <Container fluid>
             <section className="customer-stories-section">
                 <h2 className="customer-section-title">Customer Stories</h2>
                 <div className="customer-container">
@@ -37,7 +37,6 @@ const CustomerStoriesSection = () => {
                     ))}
                 </div>
             </section>
-        </Container>
     );
 };
 

@@ -1,163 +1,156 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { BsOption } from "react-icons/bs";
-import { MdOutlineFilterList } from "react-icons/md";
-import XClose from "../assets/SvgIcons"; // Assuming you have an icon for XClose
+import { Accordion, Button, Card, Col, Row, Form, FormControl, Container, Dropdown } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
+import ProductFilter from "./ProductFilter";
 
 const ProductPage = () => {
-  const [filterOptions, setFilterOptions] = useState([]);
-  const [appliedFilterData, setAppliedFilterData] = useState({});
-  const [isExpanded, setIsExpanded] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const breadcrumbArray = [
-    <Link to={"/"} className="text-gray-600 text-base hover:underline capitalize" key="1">Home</Link>,
-    <p className="text-yellow-600 text-base capitalize" key="2">Product Page</p>,
-  ];
-
-  // Static data for the example
-  const staticFilterOptions = [
+  // Static data for product and filter details
+  const [productPageDetails, setProductPageDetails] = useState([
     {
-      title: "Price",
+      id: 1,
+      name: "Lehenga Wedding Dress",
+      price: 500,
+      category: "Wedding",
+      description: "A beautiful lehenga for weddings.",
+    },
+    {
+      id: 2,
+      name: "Saree",
+      price: 200,
+      category: "Traditional",
+      description: "A traditional saree for celebrations.",
+    },
+    // Add more products here as required
+  ]);
+
+  const [filterOptions, setFilterOptions] = useState([
+    {
+      name: "category",
+      title: "Category",
+      data: [
+        { value: "Wedding", label: "Wedding" },
+        { value: "Traditional", label: "Traditional" },
+      ],
+    },
+    {
       name: "price",
+      title: "Price Range",
       data: [
-        { value: "low", label: "Low to High" },
-        { value: "high", label: "High to Low" },
+        { value: "low", label: "Low" },
+        { value: "high", label: "High" },
       ],
     },
-    {
-      title: "Brand",
-      name: "brand",
-      data: [
-        { value: "apple", label: "Apple" },
-        { value: "samsung", label: "Samsung" },
-        { value: "sony", label: "Sony" },
-      ],
-    },
-  ];
+  ]);
 
-  useEffect(() => {
-    // Mocked filter options fetching
-    setFilterOptions(staticFilterOptions);
-    setLoading(false);
-  }, []);
+  const [appliedfilterData, setAppliedFilterData] = useState({ category: [], price: [] });
+  const [selectedSortValue, setSelectedSortValue] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 12;
 
-  const handleAccordionChange = (id) => {
-    setIsExpanded((prev) => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+  const handleNavigate = () => {
+    // Navigation logic
   };
 
   const handleCheckboxChange = (key, value) => {
-    const updatedFilterData = { ...appliedFilterData };
-    if (!updatedFilterData[key]) updatedFilterData[key] = [];
-    if (updatedFilterData[key].includes(value)) {
-      updatedFilterData[key] = updatedFilterData[key].filter(item => item !== value);
+    const updatedFilters = { ...appliedfilterData };
+    if (updatedFilters[key]?.includes(value)) {
+      updatedFilters[key] = updatedFilters[key].filter((val) => val !== value);
     } else {
-      updatedFilterData[key].push(value);
+      updatedFilters[key] = [...(updatedFilters[key] || []), value];
     }
-    setAppliedFilterData(updatedFilterData);
+    setAppliedFilterData(updatedFilters);
+    // Trigger re-fetch or filter change
   };
 
-  const handlePaginationChange = (page) => {
-    console.log("Page changed to:", page);
-    // Add pagination logic if required
+  const clearFilters = () => {
+    setAppliedFilterData({ category: [], price: [] });
+    // Reset product data
+  };
+
+  // Rendering the product details using static data
+  const renderProducts = () => {
+    return productPageDetails.map((product) => (
+      <Col xs={12} sm={6} md={4} lg={3} key={product.id}>
+        <Card>
+          <Card.Body>
+            <Card.Title>{product.name}</Card.Title>
+            <Card.Text>{product.description}</Card.Text>
+            <Card.Text><strong>Price: ${product.price}</strong></Card.Text>
+            <Button variant="primary">View Details</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    ));
   };
 
   return (
-    <>
-      {loading ? (
-        <div className="loader-overlay">
-          <div className="loader-container">
-          </div>
-        </div>
-      ) : (
-        <div>
-          <header className="bg-gray-800 text-white p-4">
-            <nav>
-              <ul className="flex space-x-4">
-                <li>
-                  <Link to="/" className="hover:underline">Home</Link>
-                </li>
-                <li>
-                  <Link to="/product-page" className="hover:underline">Product Page</Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-
-          <div className="container mx-auto p-4">
-            <div className="flex justify-between mb-6">
-              <div className="text-lg">Product Page</div>
-            </div>
-
-            <div className="flex flex-wrap gap-6">
-              {/* Sidebar Filters */}
-              <div className="w-full lg:w-1/4">
-                <h3 className="text-xl font-medium mb-4">Filters</h3>
-
-                {filterOptions.map((filter, index) => (
-                  <div key={index} className="mb-4">
-                    <div
-                      className={`cursor-pointer border-b-2 border-gray-300 pb-2 ${isExpanded.includes(filter.title) ? 'text-yellow-600' : 'text-gray-600'}`}
-                      onClick={() => handleAccordionChange(filter.title)}
-                    >
-                      {filter.title}
-                    </div>
-                    {isExpanded.includes(filter.title) && (
-                      <div className="mt-2">
-                        {filter.data.map((item, idx) => (
-                          <div key={idx} className="flex items-center mb-2">
-                            <input
-                              type="checkbox"
-                              id={item.value}
-                              checked={appliedFilterData[filter.name]?.includes(item.value)}
-                              onChange={() => handleCheckboxChange(filter.name, item.value)}
-                              className="mr-2"
-                            />
-                            <label htmlFor={item.value}>{item.label}</label>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Product List */}
-              <div className="w-full lg:w-3/4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Mock Product Cards */}
-                  {[...Array(6).keys()].map((_, idx) => (
-                    <div key={idx} className="border p-4 rounded-lg shadow-lg">
-                      <div className="text-center mb-4">Product {idx + 1}</div>
-                      <div className="text-center text-gray-500">Product description here.</div>
-                    </div>
+    <Container className="my-4">
+      <Row>
+        <Col lg={3}>
+          <h3>Filter</h3>
+          {filterOptions.map((filter, index) => (
+            <Accordion key={index} defaultActiveKey="0">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>{filter.title}</Accordion.Header>
+                <Accordion.Body>
+                  {filter.data.map((option, idx) => (
+                    <Form.Check
+                      key={idx}
+                      type="checkbox"
+                      label={option.label}
+                      checked={appliedfilterData[filter.name]?.includes(option.value)}
+                      onChange={() => handleCheckboxChange(filter.name, option.value)}
+                    />
                   ))}
-                </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          ))}
 
-                <div className="mt-6">
-                  <div className="flex justify-center">
-                    <nav>
-                      <ul className="flex space-x-4">
-                        {[...Array(5).keys()].map((_, idx) => (
-                          <li key={idx}>
-                            <button
-                              onClick={() => handlePaginationChange(idx + 1)}
-                              className="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
-                            >
-                              {idx + 1}
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </div>
+          <ProductFilter/>
+          <Button variant="secondary" onClick={clearFilters}>
+            Clear All Filters
+          </Button>
+        </Col>
+
+        <Col lg={9}>
+          <h3>Lehenga Wedding Dresses Collection</h3>
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <Button variant="outline-secondary" onClick={clearFilters}>
+                Clear All Filters
+              </Button>
+            </div>
+            <div>
+              <span>Sort by:</span>
+              <Dropdown onSelect={(eventKey) => setSelectedSortValue(eventKey)}>
+                <Dropdown.Toggle variant="secondary" id="sort-dropdown">
+                  {selectedSortValue || "Select"}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="price-asc">Price (Low to High)</Dropdown.Item>
+                  <Dropdown.Item eventKey="price-desc">Price (High to Low)</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
           </div>
-        </div>
-      )}
-    </>
+
+          <Row>
+            {renderProducts()}
+          </Row>
+
+          <div className="pagination">
+            <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+              Previous
+            </Button>
+            <span>{currentPage}</span>
+            <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(productPageDetails.length / pageSize)}>
+              Next
+            </Button>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container } from "react-bootstrap";
 import ProductImageSlider from "./ProductImageSlider";
 import { FaHeart } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
 import "../../styles/NewArrivalCard.css";
 import { productData } from "../../config/productData";
+import { Button } from "react-bootstrap";
 
 const NewArrivalCard = () => {
   const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);
 
   const truncateProductName = (name) => {
     if (name.length > 18) {
-      return name.substring(0, 20) + "...";
+      return name.substring(0, 35) + "...";
     }
     return name;
   };
@@ -33,24 +33,28 @@ const NewArrivalCard = () => {
   };
 
   return (
-    <Container fluid className="new-arrival-container">
-      <h2 className="text-center">New Arrival</h2>
-      <p className="text-center">"Embrace the festival magic, let joy fill every moment."</p>
-
-      <Row className="px-lg-5 px-xl-5 px-xxl-5 g-4">
+    <div className="new-arrival-container px-lg-5 px-xl-5 px-xxl-5">
+      <div className="d-none d-lg-block">
+        <h3 className="text-center fs-3 ">New Arrival </h3>
+        <p className="text-center">"Embrace the festival magic, let joy fill every moment."</p>
+      </div>
+      <div className="custom-grid px-lg-3 px-xl-3 px-xxl-3">
         {productData.map((product) => (
-          <Col xs={12} sm={6} md={4} lg={3} xl={2} xxl={2} key={product.id} className="mb-1 rounded">
-            <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none">
-              {/* Product Image Section */}
-              <div className="image-container rounded">
+          <div className="grid-item" key={product.id}>
+            {/* <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none"> */}
+            <Link to={`/products/details`} className="new-arrival-card text-decoration-none">
+              {product.product_discount > 0 && (
+                <div className="discount-badge "> 
+                  <p className="discount-p">{product.product_discount}% OFF</p>
+                </div>
+              )}
+              <div className="image-container rounded-top">
                 <ProductImageSlider imageList={product.product_images} />
                 <div className="overlay-buttons">
                   <button className="add-to-cart-btn" onClick={handleAddToCart}>
                     ADD TO CART
                   </button>
                 </div>
-
-                {/* Wishlist Button */}
                 <div className="wishlist-btn rounded-circle">
                   <button onClick={handleWishlistToggle} className="rounded-circle">
                     {isWishlisted ? (
@@ -61,18 +65,10 @@ const NewArrivalCard = () => {
                   </button>
                 </div>
 
-                {/* Discount Badge */}
-                {product.product_discount > 0 && (
-                  <div className="discount-badge">
-                    <p className="discount-p">{product.product_discount}% OFF</p>
-                  </div>
-                )}
               </div>
-
-              {/* Product Info Section */}
               <div className="product-info">
-                <h3 className="text-start text-dark">{truncateProductName(product.product_name)}</h3>
-                <div className="price-section ">
+                <p className="text-start text-dark" style={{ fontSize: "0.84rem" }}>{truncateProductName(product.product_name)}</p>
+                <div className="price-section">
                   <span className="mrp text-start">
                     {product.currency}
                     {product.product_mrp}
@@ -84,10 +80,21 @@ const NewArrivalCard = () => {
                 </div>
               </div>
             </Link>
-          </Col>
+          </div>
         ))}
-      </Row>
-    </Container>
+      </div>
+
+      <div className="text-center py-3">
+        <Link to="/products-page">
+          <Button
+            className="btn btn-dark text-white font-weight-medium px-4 py-2 d-inline-flex align-items-center gap-2"
+            style={{ fontFamily: "Roboto", fontSize: "0.6", borderRadius: "30px" }}
+          >
+            View All
+          </Button>
+        </Link>
+      </div>
+    </div>
   );
 };
 

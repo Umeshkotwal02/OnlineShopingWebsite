@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'; // Importing Link for navigation
 
 const SareeEdit = () => {
     return (
-        <Container fluid className='px-md-2 d-none d-lg-block px-lg-5 px-xl-5 px-xxl-5'>
+        <Container fluid className='px-md-2 d-none d-lg-block px-lg-5 px-xl-5 px-xxl-5 py-lg-5 py-xl-5 py-xxl-5'>
             {/* Bridal Edit */}
             <p className='text-center fs-2'>The Saree Edit</p>
             <p className='text-center' style={{ fontFamily: "Jost" }}><i>""Embrace the festival magic, let joy fill every moment."</i></p>
             <Row className=' ps-3 pe-3 p-md-12 SareeEdit'>
                 <Col className='col-12 col-md-12' >
-
                     <Row>
                         <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={4}>
                             <Row>
@@ -65,9 +64,6 @@ const SareeEdit = () => {
                                             className='w-100'
                                             alt="Bridal Edit"
                                         />
-                                        <div className=" text-center">
-                                            <h3 className="text-white">Bridal Edit</h3>
-                                        </div>
                                     </div>
                                 </Col>
                                 <Col>

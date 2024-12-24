@@ -6,11 +6,16 @@
   }
   
   .shop-by-category-card :hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
   }
   .shop-by-category-card .slider-image {
+    width: 100%;
+    height: auto;
+    z-index: 9999;
+  }
+
+  .staic-slider-image{
     width: 100%;
     height: auto;
     z-index: 9999;
@@ -25,7 +30,6 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .overlay-text {

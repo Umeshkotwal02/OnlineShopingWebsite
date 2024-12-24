@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FaTruckFast } from "react-icons/fa6";
 import { GiReturnArrow } from "react-icons/gi";
+import "../assets2/sass/productpage.scss"
 
 function ProductListing() {
 
@@ -562,4 +563,4 @@ function ProductListing() {
   )
 }
 
-export default ProductListing
+export default ProductListing;

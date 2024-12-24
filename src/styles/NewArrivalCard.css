@@ -1,3 +1,27 @@
+.new-arrival-container {
+  padding: 2rem;
+}
+
+.new-arrival-container h2,
+.new-arrival-container p {
+  margin-bottom: 0.1rem;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 items per row */
+  gap: 16px;
+  /* Space between items */
+  overflow: hidden;
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
 
 .image-container {
   position: relative;
@@ -5,9 +29,15 @@
   background: #f8f8f8;
   z-index: 1;
 }
-.bridal-image-container{
-z-index: 16;
+
+.new-arrival-container {
+  background-color: white;
 }
+
+.bridal-image-container {
+  z-index: 16;
+}
+
 .wishlist-btn {
   position: absolute;
   top: 10px;
@@ -17,13 +47,14 @@ z-index: 16;
   z-index: 2;
 }
 
+
 .overlay-buttons {
   position: absolute;
   bottom: 10px;
   left: 0;
   width: 100%;
   opacity: 0;
-  z-index: 7  ;
+  z-index: 7;
   transition: opacity 0.3s ease;
 }
 
@@ -37,7 +68,7 @@ z-index: 16;
   margin: 0 auto;
   display: block;
   text-transform: uppercase;
-  background: rgba(225, 225, 225,1);
+  background: rgb(255, 255, 255);
   color: #000;
   border: 1px solid #ccc;
   padding: 10px;
@@ -47,7 +78,7 @@ z-index: 16;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #eee9e0;
+  background-color: #f0f0f0;
   color: #000000;
 }
 
@@ -73,8 +104,134 @@ z-index: 16;
 }
 
 .icon {
-  font-size: 22px;
+  font-size: 18px;
   color: #000;
+}
+
+
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.new-arrival-card:hover .wishlist-btn {
+  opacity: 1 !important;
+  /* Make visible on hover */
+}
+
+.wishlist-btn button {
+  background: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 18px;
+  color: #000;
+}
+
+.heart-icon {
+  color: #ff3f3f;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: -16px;
+  background: url("../assets/images/discount1.png") no-repeat center center;
+  background-size: contain;
+  width: 95px;
+  height: 56px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  z-index: 10;
+  overflow: visible;
+}
+
+.discount-p {
+  margin-top: 11px;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Ensure the container doesn’t clip the badge */
+.image-container {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  background: #f8f8f8;
+  z-index: 1;
+  overflow: visible;
+}
+
+.discount-badge h5 {
+  margin: 10px;
+}
+
+.discount-p {
+  margin-top: 11px;
+  margin-bottom: 1re
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+  background-color: #F3F3F3;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+.price-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.discounted-price {
+  color: #03a685;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .custom-grid {
+    grid-template-columns: repeat(5, 1fr);
+    /* 4 items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-grid {
+    grid-template-columns: 1fr;
+    /* 1 item per row */
+  }
 }
 
 /* wishlist-page-btn ++++++++++++++++++++++++++++=================================== */

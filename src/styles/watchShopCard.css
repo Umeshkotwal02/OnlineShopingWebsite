@@ -1,104 +1,180 @@
-
 .watch-shop-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 0px !important;
-    border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0px !important;
+  border-radius: 10px;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding-top: 0% !important;
+  margin-bottom: -10px;
+}
+
+.react-video {
+  object-fit: cover;
+}
+
+.wtc-shop-product-info {
+  padding: 0.8rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 0 0 10px 10px;
+}
+
+.wtc-shop-product-info h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.price {
+  color: #03a685;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.slick-slide {
+  padding: 0 10px;
+  /* Adds horizontal spacing between cards */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  font-size: 18px;
+  color: #333;
+}
+
+.watch-shop-card .watch-custom-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.watch-shop-card .next-arrow {
+  right: -15px;
+}
+
+.watch-shop-card .prev-arrow {
+  left: -15px;
+}
+
+.watch-shop-card .watch-custom-arrow svg {
+  width: 40px;
+  height: 40px;
+  fill: #333;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.watch-shop-card .watch-custom-arrow:hover svg {
+  transform: scale(1.1);
+  fill: #B51B3B;
+}
+
+/* badge-container */
+.wtc-shop-badge-container {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 2;
+  width: auto;
+  height: auto;
+}
+
+.wtc-shop-badge-container img {
+  width: 70px;
+  height: 70px;
+  max-width: 70px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 576px) {
+
+  /* Small screens (phones) */
+  .wtc-shop-product-info h3 {
+    margin-top: 15px;
   }
-  
-  .video-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    padding-top: 0% !important;
+
+  .wtc-shop-badge-container {
+    gap: 3px;
+    top: 84%;
   }
-  
-  .react-video {
-    object-fit: cover;
+
+  .wtc-shop-badge-container img {
+    width: 60px;
+    height: 60px;
   }
-  
-  .badge-container {
-    position: absolute;
-    top: 71%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
+
+  .wtc-shop-slick-slider {
+    /* width: 80%; */
+    margin: 0px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  /* Medium screens (tablets) */
+  .wtc-shop-badge-container {
     gap: 5px;
-    z-index: 2;
+    top: 75%;
   }
-  
-  .badge-container img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10px;
+  .wtc-shop-product-info h3 {
+    margin-top: 15px;
   }
-  
-  .product-info {
-    padding: 0.8rem;
-    text-align: center;
-    background-color: #f2f2f2;
-    border-radius: 0 0 10px 10px;  /* Rounded bottom corners */
+
+  .wtc-shop-badge-container img {
+    width: 60px;
+    height: 60px;
   }
-  
-  .product-info h3 {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #333;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  /* Large screens (laptops) */
+  .wtc-shop-badge-container {
+    gap: 7px;
   }
-  
-  .price {
-    color: #03a685;
-    font-size: 1.2rem;
-    font-weight: 600;
+
+  .wtc-shop-badge-container img {
+    width: 70px;
+    height: 70px;
   }
-  
-  .product-link {
-    text-decoration: none;
-    color: inherit;
+}
+
+@media (min-width: 993px) {
+
+  /* Extra-large screens (desktops) */
+  .wtc-shop-product-info h3 {
+    margin-top: 30px;
   }
-  
-  .slick-slide {
-    padding: 0 10px;  /* Adds horizontal spacing between cards */
+
+  .wtc-shop-badge-container {
+    gap: 3px;
+    top: 78%;
   }
-  
-  .slick-prev,
-  .slick-next {
-    z-index: 1;
-    font-size: 18px;
-    color: #333;
+
+  .wtc-shop-badge-container img {
+    width: 80px;
+    height: 80px;
   }
-  
-  .watch-shop-card .custom-arrow {
-    position: absolute;
-    top: 37%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  .watch-shop-card .next-arrow {
-    right: -15px;
-  }
-  
-  .watch-shop-card .prev-arrow {
-    left: -15px;
-  }
-  
-  .watch-shop-card .custom-arrow svg {
-    width: 40px;
-    height: 40px;
-    fill: #333;
-    transition: transform 0.3s ease, fill 0.3s ease;
-  }
-  
-  .watch-shop-card .custom-arrow:hover svg {
-    transform: scale(1.1);
-    fill: #B51B3B;
-  }
-  
+}

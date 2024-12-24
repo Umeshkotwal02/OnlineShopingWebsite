@@ -32,7 +32,7 @@ const WatchShopCard = ({ productInfo }) => {
             </div>
 
             {/* Badge Section */}
-            <div className="badge-container">
+            <div className="wtc-shop-badge-container">
                 <img
                     src={productInfo.small_image || ""}
                     alt="Product"
@@ -41,7 +41,7 @@ const WatchShopCard = ({ productInfo }) => {
 
             {/* Product Info Section */}
             <Link to={`/product/${productInfo.id}/${productInfo.product_name}`} className="product-link">
-                <div className="product-info">
+                <div className="wtc-shop-product-info">
                     <h3>{productInfo.product_name}</h3>
                     <div className="price">₹{productInfo.product_price}</div>
                 </div>
@@ -98,7 +98,7 @@ const productData = [
 // Custom Next Arrow Component
 const NextCatArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow next-arrow" onClick={onClick}>
+        <div className="watch-custom-arrow next-arrow d-none d-lg-block" onClick={onClick}>
             <CategorySlickNextIcon />
         </div>
     );
@@ -107,7 +107,7 @@ const NextCatArrow = ({ onClick }) => {
 // Custom Previous Arrow Component
 const PrevCatArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow prev-arrow" onClick={onClick}>
+        <div className="watch-custom-arrow prev-arrow d-lg-block" onClick={onClick}>
             <CategoryPrevNextIcon />
         </div>
     );
@@ -116,11 +116,19 @@ const WatchShopCardDemo = () => {
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         nextArrow: <NextCatArrow />,
         prevArrow: <PrevCatArrow />,
         responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                },
+            },
             {
                 breakpoint: 1200,
                 settings: {
@@ -132,17 +140,21 @@ const WatchShopCardDemo = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 5,
+                    slidesToShow: 4,
                     slidesToScroll: 1,
                     centerMode: false,
+                    nextArrow: false,
+                    prevArrow: false,
                 },
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 3, 
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     centerMode: true,
+                    nextArrow: false,
+                    prevArrow: false,
                 },
             },
             {
@@ -151,22 +163,31 @@ const WatchShopCardDemo = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: true,
+                    nextArrow: false,
+                    prevArrow: false,
                 },
             },
         ],
     };
 
     return (
-        <Container fluid className="watch-shop-card px-lg-5 px-xl-5 px-xxl-5 px-sm-0">
-            <h2 className="text-center">Watch and Shop</h2>
-            <p className="text-center">"Embrace the festival magic, let joy fill every moment."</p>
-            <Slider {...settings}>
-                {productData.map((product) => (
-                    <div key={product.id}>
-                        <WatchShopCard productInfo={product} />
-                    </div>
-                ))}
-            </Slider>
+        <Container fluid className="watch-shop-card px-lg-5 px-xl-5 px-xxl-5 px-sm-0 py-lg-4 px-xl-4 px-xxl-4">
+            <div>
+                <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
+                <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>
+                <p className="text-center font-italic d-none d-lg-block"><i> "Embrace the festival magic, let joy fill every moment."</i></p>
+            </div>
+            <Row>
+                <Col>
+                    <Slider {...settings} className="wtc-shop-slick-slider">
+                        {productData.map((product) => (
+                            <div key={product.id}>
+                                <WatchShopCard productInfo={product} />
+                            </div>
+                        ))}
+                    </Slider>
+                </Col>
+            </Row>
         </Container>
     );
 };

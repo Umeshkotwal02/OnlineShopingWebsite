@@ -17,7 +17,6 @@ const NewArrivalOfferCard = ({ itemInfo }) => {
     return (
         <div
             className="new-arrival-card"
-            style={{ backgroundImage: "url(/images/new-arrival-card-bg.png)" }}
         >
             <div className="new-arrival-card-image">
                 <img
@@ -34,7 +33,7 @@ const NewArrivalOfferCard = ({ itemInfo }) => {
             <h3 className="new-arrival-card-discount">
                 MIN {parseInt(itemInfo?.product_discount)}% OFF
             </h3>
-           
+
         </div>
     );
 };

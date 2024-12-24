@@ -1,10 +1,9 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import "../../styles/OurInstaPage.css";
 
 const OurInstaPage = () => {
     return (
-        <Container fluid className="our-stores-section">
+        <div fluid className="our-stores-section">
             <div className="position-relative mx-auto our-stores-wrapper">
                 {/* Background Image */}
                 <div className="our-stores-image">
@@ -15,7 +14,7 @@ const OurInstaPage = () => {
                     />
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

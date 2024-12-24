@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "../../styles/CarosoleSilck.css";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import CarosoleSlickMobi from "../MobilePages/CarosoleSlickMobi";
+import Loader from "../../Components/Loader";
 
 // Custom Next Arrow Component
 const NextArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow next-arrow d-none d-lg-block " onClick={onClick}>
+        <div className="custom-arrow next-arrow d-none d-lg-block" onClick={onClick}>
             <img
                 src={require("../../assets/images/Carasole-Img/sidechange-next.png")}
                 className="img-fluid"
@@ -16,10 +18,9 @@ const NextArrow = ({ onClick }) => {
     );
 };
 
-// Custom Previous Arrow Component
 const PrevArrow = ({ onClick }) => {
     return (
-        <div className="custom-arrow prev-arrow d-none d-lg-block " onClick={onClick}>
+        <div className="custom-arrow prev-arrow d-none d-lg-block" onClick={onClick}>
             <img
                 src={require("../../assets/images/Carasole-Img/sidechange-prev.png")}
                 className="img-fluid"
@@ -30,6 +31,18 @@ const PrevArrow = ({ onClick }) => {
 };
 
 const CarosoleSilckSlider = () => {
+    const [loading, setLoading] = useState(true);
+
+    // Simulating loading for 2 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 1000);
+        return () => clearTimeout(timer); 
+    }, []);
+
+    if (loading) {
+        return <Loader />;
+    }
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -42,7 +55,6 @@ const CarosoleSilckSlider = () => {
         prevArrow: <PrevArrow />,
     };
 
-    // Array of images
     const images = [
         require("../../assets/images/Carasole-Img/Carousel-1.png"),
         require("../../assets/images/Carasole-Img/Carousel-2.png"),
@@ -50,7 +62,9 @@ const CarosoleSilckSlider = () => {
     ];
 
     return (
-        <Container fluid className=" d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5">
+        <>
+            <CarosoleSlickMobi />
+            <Container fluid className="d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5">
                 <Slider {...settings}>
                     {images.map((image, index) => (
                         <div key={index} className="slider-item">
@@ -62,7 +76,8 @@ const CarosoleSilckSlider = () => {
                         </div>
                     ))}
                 </Slider>
-        </Container>
+            </Container>
+        </>
     );
 };
 
