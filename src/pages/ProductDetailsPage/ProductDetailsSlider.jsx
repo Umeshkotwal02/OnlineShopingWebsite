@@ -6,17 +6,20 @@ import {
   FaAngleRight,
   FaAngleUp,
   FaAngleDown,
-} from "react-icons/fa";
+} from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import "../../styles/ProductDetails.css";
+
 
 const ProductDetailsSlider = () => {
   const images = [
     require('../../assets/images/ProductDetails/img1.png'),
     require('../../assets/images/ProductDetails/img2.png'),
+    require('../../assets/images/ProductDetails/image.png'),
     require('../../assets/images/ProductDetails/img3.png'),
     require('../../assets/images/ProductDetails/img4.png'),
-  ]; 
-  
+  ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -44,39 +47,37 @@ const ProductDetailsSlider = () => {
         zoomRef.current.getBoundingClientRect();
       const x = e.clientX - left;
       const y = e.clientY - top;
-      zoomRef.current.style.transformOrigin = `${(x / width) * 100}% ${
-        (y / height) * 100
-      }%`;
+      zoomRef.current.style.transformOrigin = `${(x / width) * 100}% ${(y / height) * 100
+        }%`;
     }
   };
 
   return (
-    <div className="container">
+    <div className="container fluid">
       <div className="row">
         {/* Thumbnail Navigation */}
-        <div className="col-md-3 d-none d-md-block">
+        <div className="col-md-2 d-none d-md-block">
           <div className="d-flex flex-column align-items-center">
             {images.map((image, index) => (
               <div
                 key={index}
-                className={`thumbnail  my-2 p-1 ${
-                  activeIndex === index ? "border-primary border" : ""
-                }`}
+                className={`thumbnail  mb-2 ${activeIndex === index ? "border-dark border-3" : ""
+                  }`}
                 style={{ cursor: "pointer" }}
                 onClick={() => handleThumbClick(index)}
               >
                 <img
                   src={image}
                   alt={`Thumbnail ${index + 1}`}
-                  className="img-fluid rounded"
+                  className="img-fluid"
+                  style={{ borderRadius: "8px" }}
                 />
               </div>
             ))}
-            <div className="mt-2">
+            <div className="">
               <button
-                className="btn btn-dark me-2"
+                className="btn btn-dark"
                 onClick={handlePrev}
-                disabled={activeIndex === 0}
               >
                 <FaAngleUp />
               </button>
@@ -92,14 +93,14 @@ const ProductDetailsSlider = () => {
         </div>
 
         {/* Main Image Slider */}
-        <div className="col-md-9">
-          <div className="main-image position-relative">
+        <div className="col-md-10 p-0">
+          <div className="main-image position-relative p-0">
             <img
               src={images[activeIndex]}
               alt={`Main ${activeIndex + 1}`}
-              className="img-fluid w-100 rounded"
+              className="img-fluid w-100 p-0"
               onClick={toggleModal}
-              style={{ cursor: "pointer", height:"100vh" }}
+              style={{ cursor: "pointer", height: "100vh", borderRadius: "20px" }}
             />
           </div>
         </div>
@@ -116,9 +117,8 @@ const ProductDetailsSlider = () => {
               ref={zoomRef}
               src={images[activeIndex]}
               alt={`Zoomed ${activeIndex + 1}`}
-              className={`img-fluid ${
-                isZoomed ? "zoomed" : ""
-              } `}
+              className={`img-fluid ${isZoomed ? "zoomed" : ""
+                } `}
               onClick={toggleZoom}
               style={{
                 cursor: isZoomed ? "zoom-out" : "zoom-in",
@@ -126,28 +126,30 @@ const ProductDetailsSlider = () => {
                 transform: isZoomed ? "scale(1.5)" : "scale(1)",
               }}
             />
-            <button
-              className="btn btn-light position-absolute top-0 end-0 m-2"
-              onClick={toggleModal}
-            >
-              <IoClose size={24} />
-            </button>
-            {activeIndex > 0 && (
+            <div className="button-product-de">
               <button
-                className="btn btn-light position-absolute start-0 m-2"
-                onClick={handlePrev}
+                className="btn btn-light position-absolute top-0 end-0 m-2"
+                onClick={toggleModal}
               >
-                <FaAngleLeft size={24} />
+                <IoClose size={24} />
               </button>
-            )}
-            {activeIndex < images.length - 1 && (
-              <button
-                className="btn btn-light position-absolute end-0 m-2"
-                onClick={handleNext}
-              >
-                <FaAngleRight size={24} />
-              </button>
-            )}
+              {activeIndex > 0 && (
+                <button
+                  className="btn btn-light position-absolute start-0 m-2"
+                  onClick={handlePrev}
+                >
+                  <FaAngleLeft size={24} />
+                </button>
+              )}
+              {activeIndex < images.length - 1 && (
+                <button
+                  className="btn btn-light position-absolute end-0 m-2"
+                  onClick={handleNext}
+                >
+                  <FaAngleRight size={24} />
+                </button>
+              )}
+            </div>
           </div>
         </Modal.Body>
       </Modal>

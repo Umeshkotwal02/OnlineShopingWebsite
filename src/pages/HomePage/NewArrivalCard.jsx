@@ -49,7 +49,7 @@ const NewArrivalCard = () => {
                 </div>
               )}
               <div className="image-container rounded-top">
-                <ProductImageSlider imageList={product.product_images} />
+                <ProductImageSlider imageList={product.product_images} className="product-multi-img-slider" />
                 <div className="overlay-buttons">
                   <button className="add-to-cart-btn" onClick={handleAddToCart}>
                     ADD TO CART

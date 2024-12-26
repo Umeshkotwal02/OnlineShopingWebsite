@@ -40,7 +40,7 @@ const ProductImageSlider = ({ imageList }) => {
         {imageList?.map((image, index) => {
           return (
             <SwiperSlide key={"productImage-" + index} className="slider-slide ">
-              <div className="slider-image-container">
+              <div className="slider-image-container rounded-top">
                 <img
                   src={image}
                   className="slider-image"

@@ -45,7 +45,7 @@ const sliderItems = [
     {
         id: 9,
         image: require("../assets/images/CategoryByShopSlicks/Others.png"),
-        text: "OTHERs"
+        text: "Others"
     },
 ];
 

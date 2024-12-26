@@ -87,8 +87,8 @@ const BridalLahegaCholi = () => {
         <div className="mt-4">
             <Container fluid className="bridal-container">
                 <div>
-                    <h4 className="text-center fs-4 d-none d-lg-block mt-2">Bridal Lehenga Choli
-                    </h4>
+                    <h3 className="text-center d-none d-lg-block mt-2" style={{ fontWeight: "400" }}>Bridal Lehenga Choli
+                    </h3>
                     <h3 className="text-start font-bold d-lg-none my-3 ms-2 mt-4">Bridal Lehenga Choli</h3>
                     <p className="text-center font-italic d-none d-lg-block"><i> "Embrace the festival magic, let joy fill every moment."</i></p>
                 </div>
@@ -98,7 +98,7 @@ const BridalLahegaCholi = () => {
                             <Col xs={12} sm={6} md={3} lg={4} xl={4} xxl={4} key={product.id}>
                                 <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none">
                                     {/* Product Image Section */}
-                                    <div className="bridal-image-container">
+                                    <div className="bridal-image-container rounded">
                                         <img
                                             src={product.product_images}
                                             className="slider-image bridal-img"

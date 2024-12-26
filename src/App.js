@@ -17,9 +17,9 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2205); 
+    }, 2205);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -36,6 +36,7 @@ function App() {
               duration: 2000,
             }}
           />
+          <AutoScrollToTop />
           <Header />
           <Routes>
             {publicRoutes.map((route, idx) => (

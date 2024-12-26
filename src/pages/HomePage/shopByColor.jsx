@@ -1,70 +1,201 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect, useRef } from "react";
+import Slider from "react-slick";
+import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
-import "../../styles/ShopByColor.css";
+import "../../styles/ShopbyCatCard.css"
+import "../../styles/ShopByCategorySlick.css";
 
 
-const shopByColorData = [
-    {
-      id: 1,
-      product_name: "Red Shirt",
-      product_image: "https://via.placeholder.com/150/FF0000/FFFFFF",
-    },
-    {
-      id: 2,
-      product_name: "Blue Jeans",
-      product_image: "https://via.placeholder.com/150/0000FF/FFFFFF",
-    },
-    {
-      id: 3,
-      product_name: "Green Jacket",
-      product_image: "https://via.placeholder.com/150/008000/FFFFFF",
-    },
-    {
-      id: 4,
-      product_name: "Yellow Hat",
-      product_image: "https://via.placeholder.com/150/FFFF00/000000",
-    },
-    {
-      id: 5,
-      product_name: "Black Shoes",
-      product_image: "https://via.placeholder.com/150/000000/FFFFFF",
-    },
-    
-  ];
+const sliderItems = [
+  {
+    id: 1,
+    image: require("../../assets/images/ShopByColor/img1.png"),
+    text: "Crush(Pleated) Work"
+  },
+  {
+    id: 2,
+    image: require("../../assets/images/ShopByColor/img2.png"),
+    text: "Lehenga Saree"
+  },
+  {
+    id: 3,
+    image: require("../../assets/images/ShopByColor/img3.png"),
+    text: "Designer Saree"
+  },
+  {
+    id: 4,
+    image: require("../../assets/images/ShopByColor/img4.png"),
+    text: "Printed Embroidered "
+  },
+  {
+    id: 5,
+    image: require("../../assets/images/ShopByColor/img5.png"),
+    text: "Floral Saree"
+  },
+  {
+    id: 6,
+    image: require("../../assets/images/ShopByColor/img6.png"),
+    text: "Celebrity Outfits"
+  },
+  {
+    id: 7,
+    image: require("../../assets/images/ShopByColor/img1.png"),
+    text: "Reception"
+  },
+  {
+    id: 8,
+    image: require("../../assets/images/ShopByColor/img2.png"),
+    text: "Others"
+  },
+];
 
-  
+// Custom Next Arrow Component
+const NextCatArrow = ({ onClick }) => {
+  return (
+    <div className="custom-arrow next-arrow d-none d-lg-block" onClick={onClick}>
+      <CategorySlickNextIcon />
+    </div>
+  );
+};
+
+// Custom Previous Arrow Component
+const PrevCatArrow = ({ onClick }) => {
+  return (
+    <div className="custom-arrow shop-by-color-prev-arrow d-none d-lg-block" onClick={onClick}>
+      <CategoryPrevNextIcon />
+    </div>
+  );
+};
 
 const ShopByColor = () => {
-  return (
-    <Container fluid className="position-relative shop-by-color-container">
-      {/* Navigation Buttons */}
-      <button className="shop-button prev-button">
-        <FaAngleLeft />
-      </button>
-      <button className="shop-button next-button">
-        <FaAngleRight />
-      </button>
+  const [loading, setLoading] = useState(true);
 
-      {/* Image Carousel */}
-      <Row className="g-4 justify-content-center">
-        {shopByColorData.map((item) => (
-          <Col xs={6} sm={4} md={3} lg={2} key={item.id}>
-            <div className="product-card">
-              <Link to={`/product/${item.product_name}`}>
-                <img
-                  src={item.product_image}
-                  alt={item.product_name}
-                  className="product-image img-fluid"
-                />
-              </Link>
-              <h5 className="product-name text-center mt-2">{item.product_name}</h5>
+
+  // Slick slider settings
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    nextArrow: <NextCatArrow />,
+    prevArrow: <PrevCatArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1.2,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+    ],
+  };
+
+  const productNameSlug = (name) => name.replace(/\s+/g, "-").toLowerCase();
+
+  return (
+    <>
+      <Container
+        fluid
+        className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block"
+      >
+
+        <div className="d-none d-lg-block">
+          <h3 className="text-center font-normal fs-3 pt-3" style={{ paddingBottom: "0px" }}>Shop by Color</h3>
+          <p className="text-center"><i>"Embrace the festival magic, let joy fill every moment."</i></p>
+        </div>
+        <Row>
+          <Col xxl={12} xl={12} lg={12} className="p-0 m-0">
+            {/* Render the slider */}
+            <div>
+              <Slider {...settings}>
+                {sliderItems.map((product) => (
+                  <div key={product.id}>
+                    <Link
+                      to={`/product/${productNameSlug(product.text)}`}
+                      className="shop-by-category-card text-decoration-none"
+                    >
+                      <div className="position-relative w-100 h-100 rounded">
+                        <img
+                          src={product.image}
+                          className="slider-image py-lg-2 rounded"
+                          alt={product.text}
+                          loading="lazy"
+                        />
+                        <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
+                          {/* <p
+                            className="overlay-text text-white text-center"
+                            style={{ fontFamily: "KaushanScript" }}
+                          >
+                            {product.text}
+                          </p> */}
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </Slider>
             </div>
           </Col>
-        ))}
-      </Row>
-    </Container>
+        </Row>
+      </Container>
+
+      <Container fluid className="d-lg-none">
+        {/* <h3 className="fw-bold my-3">Shop by Category</h3> */}
+        <h3 className="text-start my-3">Shop by Category</h3>
+
+        {/* <Slider {...settings}>
+          {sliderItems.map((product) => (
+            <div key={product.id}>
+              <Link
+                to={`/product/${productNameSlug(product.text)}`}
+                className="shop-by-category-card text-decoration-none"
+              >
+                <div className="position-relative w-100 h-100 rounded">
+                  <img
+                    src={product.image}
+                    className="slider-image rounded"
+                    alt={product.text}
+                    loading="lazy"
+                  />
+                  <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
+                    <p className="overlay-text text-white text-center" style={{ fontFamily: "KaushanScript" }}>{product.text}</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </Slider> */}
+      </Container>
+    </>
   );
 };
 

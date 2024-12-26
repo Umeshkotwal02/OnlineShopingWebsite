@@ -2,6 +2,8 @@ import React from 'react';
 import "../../styles/Menu.css";
 import { Container } from 'react-bootstrap';
 
+
+
 const menuData = [
   {
     title: "SALE",
@@ -65,7 +67,7 @@ const menuData = [
     subcategories: [],
     imageUrl: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
   }, {
-    title: "OTHERS",
+    title: "Others",
     subcategories: [],
     imageUrl: "https://kapoorlehengasaree.com/admin/public/category1/4231.jpeg",
   },

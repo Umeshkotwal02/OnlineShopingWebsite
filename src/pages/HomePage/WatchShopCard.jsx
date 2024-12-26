@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "../../styles/watchShopCard.css";
 import { Col, Container, Row } from "react-bootstrap";
-import Slider from "react-slick"; // Import React Slick
+import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 
 const WatchShopCard = ({ productInfo }) => {

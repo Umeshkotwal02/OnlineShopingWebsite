@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 import { Col, Container, Row } from "react-bootstrap";
@@ -47,7 +47,7 @@ const sliderItems = [
     {
         id: 8,
         image: require("../../assets/images/CategoryByShopSlicks/DesignerSaree.png"),
-        text: "OTHERs"
+        text: "Others"
     },
 ];
 
@@ -71,7 +71,31 @@ const PrevCatArrow = ({ onClick }) => {
 
 const ShopByCategorySlick = () => {
     const [loading, setLoading] = useState(true);
+    const [prevArrowPosition, setPrevArrowPosition] = useState(0);
+    const sliderRef = useRef(null);
 
+    useEffect(() => {
+        const updateArrowPosition = () => {
+            if (sliderRef.current) {
+                const slide = sliderRef.current.querySelector(".slick-slide");
+                if (slide) {
+                    const slideWidth = slide.offsetWidth;
+                    const prevArrow = document.querySelector(".prev-arrow");
+                    if (prevArrow) {
+                        prevArrow.style.left = `-${slideWidth + 11}px`;
+                    }
+                }
+            }
+        };
+
+        // Update on mount and on window resize
+        updateArrowPosition();
+        window.addEventListener("resize", updateArrowPosition);
+
+        return () => {
+            window.removeEventListener("resize", updateArrowPosition);
+        };
+    }, []);
     // Slick slider settings
     const settings = {
         dots: false,
@@ -82,7 +106,7 @@ const ShopByCategorySlick = () => {
         autoplay: false,
         autoplaySpeed: 2000,
         nextArrow: <NextCatArrow />,
-        prevArrow: <PrevCatArrow />,
+        prevArrow: <PrevCatArrow style={{ left: prevArrowPosition }} />,
         responsive: [
             {
                 breakpoint: 1200,
@@ -123,17 +147,17 @@ const ShopByCategorySlick = () => {
 
     return (
         <>
-            <Container fluid className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block">
+            <Container
+                fluid
+                className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block"
+            >
                 <Row>
                     <Col xxl={2} xl={2} lg={2} className="px-2 d-none d-lg-block">
-                        <div >
-                            <Link
-                                to={`/product/`}
-                                className="shop-by-category-card text-decoration-none"
-                            >
-                                <div className="position-relative w-100 h-100  rounded">
+                        <div>
+                            <Link to={`/products-page`} className="shop-by-category-card text-decoration-none">
+                                <div className="position-relative w-100 h-100 rounded">
                                     <img
-                                        src={require(("../../assets/images/CategoryByShopSlicks/image.png"))}
+                                        src={require("../../assets/images/CategoryByShopSlicks/image.png")}
                                         className="staic-slider-image py-lg-2"
                                         alt={"shop by cat"}
                                         loading="lazy"
@@ -144,28 +168,36 @@ const ShopByCategorySlick = () => {
                     </Col>
                     <Col xxl={10} xl={10} lg={10} className="p-0 m-0">
                         {/* Render the slider */}
-                        <Slider {...settings}>
-                            {sliderItems.map((product) => (
-                                <div key={product.id}>
-                                    <Link
-                                        to={`/product/${productNameSlug(product.text)}`}
-                                        className="shop-by-category-card text-decoration-none"
-                                    >
-                                        <div className="position-relative w-100 h-100 rounded">
-                                            <img
-                                                src={product.image}
-                                                className="slider-image py-lg-2 rounded"
-                                                alt={product.text}
-                                                loading="lazy"
-                                            />
-                                            <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
-                                                <p className="overlay-text text-white text-center" style={{ fontFamily: "KaushanScript" }}>{product.text}</p>
+                        <div ref={sliderRef}>
+                            <Slider {...settings}>
+                                {sliderItems.map((product) => (
+                                    <div key={product.id}>
+                                        <Link
+                                            // to={`/product/${productNameSlug(product.text)}`}
+                                            to={`/products-page`}
+                                            className="shop-by-category-card text-decoration-none"
+                                        >
+                                            <div className="position-relative w-100 h-100 rounded">
+                                                <img
+                                                    src={product.image}
+                                                    className="slider-image py-lg-2 rounded"
+                                                    alt={product.text}
+                                                    loading="lazy"
+                                                />
+                                                <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
+                                                    <p
+                                                        className="overlay-text text-white text-center"
+                                                        style={{ fontFamily: "KaushanScript" }}
+                                                    >
+                                                        {product.text}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            ))}
-                        </Slider>
+                                        </Link>
+                                    </div>
+                                ))}
+                            </Slider>
+                        </div>
                     </Col>
                 </Row>
             </Container>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import '../../styles/NewOnKapoorSwiper.css';
+import '../../styles/NewOnOnlineSwiper.css';
 
 const NewArrivalOfferCard = ({ itemInfo }) => {
     const navigate = useNavigate();

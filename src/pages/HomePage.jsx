@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from './HomePage/Banner'
 import Motion from './HomePage/Motion'
 import CarosoleSilckSlider from './HomePage/CarosoleSilck'
@@ -12,32 +12,44 @@ import NewArrivalCard from './HomePage/NewArrivalCard'
 import BridalLahegaCholi from './HomePage/BridalLahegaCholi'
 import CustomerStoriesSection from './HomePage/CustomerStoriesSection'
 import OurInstaPage from './HomePage/OurInstaPage'
-import ShopByColor from './HomePage/shopByColor'
+import ShopByColor from './HomePage/ShopByColor'
 import WatchShopCardDemo from './HomePage/WatchShopCard'
-import NewOnKapoorSwiper from './HomePage/NewOnKapoorSwiper'
+import NewOnOnlineSwiper from './HomePage/NewOnOnlineSwiper'
 import CategorySection from './HomePage/CategoryCustomCard'
+import Loader from '../Components/Loader'
 
 function HomePage() {
+
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading for 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div style={{ fontFamily: "Roboto" }}>
       <CarosoleSilckSlider />
 
       {/* <CategorySection /> */}
       <ShopByCategorySlick />  {/* overflow */}
-      {/* <ShopByCategoryDemo /> */}
       <WatchShopCardDemo />
 
       <BridalLahegaCholi />
 
       <NewArrivalCard /> {/*Add to Cart Component*/}
 
-      <NewOnKapoorSwiper />
+      <NewOnOnlineSwiper />
 
 
       <Motion />
       <FestivalSpecial />
       <Banner />
-      {/* <ShopByColor /> */}
+      <ShopByColor />
       <SareeEdit />         {/*  overflow */}
       {/* <SareeEditMobi /> */}
       <CustomerStoriesSection />

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, InputGroup, FormControl } from "react-bootstrap";
+import { button } from "react-bootstrap";
+import "../../styles/ProductDetails.css";
+
 
 const QuantityCounter = ({ onChange, quantity }) => {
   const [countValue, setCountValue] = useState(quantity || 1);
@@ -17,32 +19,27 @@ const QuantityCounter = ({ onChange, quantity }) => {
   }, [countValue, onChange]);
 
   return (
-    <InputGroup className="d-flex align-items-center border rounded">
-      <Button
-        variant="outline-secondary"
+    <div className="d-flex align-items-start">
+      <button
         onClick={handleDecrement}
-        className="px-3"
+        className="px-3  start-qut-btn"
       >
         -
-      </Button>
-      <FormControl
-        className="text-center"
-        value={countValue}
-        readOnly
-        style={{
-          width: "50px",
-          borderLeft: "1px solid #ccc",
-          borderRight: "1px solid #ccc",
-        }}
-      />
-      <Button
-        variant="outline-secondary"
+      </button>
+      <button
         onClick={handleIncrement}
-        className="px-3"
+        className="px-3  qut-btn"
+      >
+        1
+      </button>
+      <button
+        onClick={handleIncrement}
+        className="px-3  end-qut-btn"
       >
         +
-      </Button>
-    </InputGroup>
+      </button>
+    </div>
+
   );
 };
 

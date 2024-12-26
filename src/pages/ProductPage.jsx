@@ -1,156 +1,184 @@
-import React, { useState, useEffect } from "react";
-import { Accordion, Button, Card, Col, Row, Form, FormControl, Container, Dropdown } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
-import ProductFilter from "./ProductFilter";
+import React, { useEffect } from "react";
+import { Col, Row, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Breadcrumb from "../Components/Breadcrumb";
+import SortBy from "./ProductPage/SortBy";
+import { XClose } from "../assets/SvgIcons";
+import ProductList from "./ProductPage/ProductList";
+import Loader from "../Components/Loader";
+import { useState } from "react";
+import ProductFilter from "./ProductPage/ProductFilter";
 
 const ProductPage = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading for 2 seconds
+  useEffect(() => {
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer); 
+  }, []);
+
+  if (loading) {
+      return <Loader />;
+  }
+
+  const listyle = {
+    color: "white",
+    backgroundColor: "black",
+    listStyleType: "none",
+  };
+
+  const breadcrumbArray = [
+    <Link to="/" key="1" className="text-dark fw-light text-decoration-none">
+      Home
+    </Link>,
+    <span key="2" className="text-dark fw-light">
+      Product Page
+    </span>,
+  ];
+
   // Static data for product and filter details
-  const [productPageDetails, setProductPageDetails] = useState([
-    {
-      id: 1,
-      name: "Lehenga Wedding Dress",
-      price: 500,
-      category: "Wedding",
-      description: "A beautiful lehenga for weddings.",
-    },
-    {
-      id: 2,
-      name: "Saree",
-      price: 200,
-      category: "Traditional",
-      description: "A traditional saree for celebrations.",
-    },
-    // Add more products here as required
-  ]);
+  // const [appliedfilterData, setAppliedFilterData] = useState({ category: [], price: [] });
+  // const [selectedSortValue, setSelectedSortValue] = useState("");
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const pageSize = 12;
 
-  const [filterOptions, setFilterOptions] = useState([
-    {
-      name: "category",
-      title: "Category",
-      data: [
-        { value: "Wedding", label: "Wedding" },
-        { value: "Traditional", label: "Traditional" },
-      ],
-    },
-    {
-      name: "price",
-      title: "Price Range",
-      data: [
-        { value: "low", label: "Low" },
-        { value: "high", label: "High" },
-      ],
-    },
-  ]);
+  // const clearFilters = () => {
+  //   setAppliedFilterData({ category: [], price: [] });
+  //   // Reset product data
+  // };
 
-  const [appliedfilterData, setAppliedFilterData] = useState({ category: [], price: [] });
-  const [selectedSortValue, setSelectedSortValue] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 12;
-
-  const handleNavigate = () => {
-    // Navigation logic
-  };
-
-  const handleCheckboxChange = (key, value) => {
-    const updatedFilters = { ...appliedfilterData };
-    if (updatedFilters[key]?.includes(value)) {
-      updatedFilters[key] = updatedFilters[key].filter((val) => val !== value);
-    } else {
-      updatedFilters[key] = [...(updatedFilters[key] || []), value];
-    }
-    setAppliedFilterData(updatedFilters);
-    // Trigger re-fetch or filter change
-  };
-
-  const clearFilters = () => {
-    setAppliedFilterData({ category: [], price: [] });
-    // Reset product data
-  };
-
-  // Rendering the product details using static data
-  const renderProducts = () => {
-    return productPageDetails.map((product) => (
-      <Col xs={12} sm={6} md={4} lg={3} key={product.id}>
-        <Card>
-          <Card.Body>
-            <Card.Title>{product.name}</Card.Title>
-            <Card.Text>{product.description}</Card.Text>
-            <Card.Text><strong>Price: ${product.price}</strong></Card.Text>
-            <Button variant="primary">View Details</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    ));
-  };
 
   return (
-    <Container className="my-4">
-      <Row>
-        <Col lg={3}>
-          <h3>Filter</h3>
-          {filterOptions.map((filter, index) => (
-            <Accordion key={index} defaultActiveKey="0">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>{filter.title}</Accordion.Header>
-                <Accordion.Body>
-                  {filter.data.map((option, idx) => (
-                    <Form.Check
-                      key={idx}
-                      type="checkbox"
-                      label={option.label}
-                      checked={appliedfilterData[filter.name]?.includes(option.value)}
-                      onChange={() => handleCheckboxChange(filter.name, option.value)}
-                    />
-                  ))}
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          ))}
+    <>
+      <Breadcrumb list={breadcrumbArray} />
+      <Container fluid className="my-1 px-lg-5 px-xl-5 px-xxl-5">
+        <Row>
+          <Col lg={3} className="custom-column">
+            <h5>Filter</h5>
+            <ProductFilter />
+          </Col>
 
-          <ProductFilter/>
-          <Button variant="secondary" onClick={clearFilters}>
-            Clear All Filters
-          </Button>
-        </Col>
+          <Col lg={9} className="custom-column-product-list">
+            <div className="d-flex justify-content-between align-items-center">
+              <h5>Lehenga Wedding Dresses Collection</h5>
+              <SortBy />
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <div className="d-flex justify-content-around align-items-center gap-2">
+                <button
+                  // onClick={clearFilters}
+                  style={{
+                    borderRadius: "50px",
+                    color: "black",
+                    backgroundColor: "#F5F4F4",
+                    border: "1px solid #C6C6C6",
+                    fontSize: "0.85rem",
+                  }}
+                  className="px-3 py-1 d-flex justify-content-around align-items-center gap-2"
+                >
+                  Clear All
+                </button>
 
-        <Col lg={9}>
-          <h3>Lehenga Wedding Dresses Collection</h3>
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <div>
-              <Button variant="outline-secondary" onClick={clearFilters}>
-                Clear All Filters
+                <button
+                  // onClick={clearFilters}
+                  style={{
+                    borderRadius: "50px",
+                    color: "#898989",
+                    border: "1px dashed #C6C6C6",
+                    backgroundColor: "white",
+                    fontSize: "0.85rem",
+                  }}
+                  className="px-3 py-1 d-flex justify-content-around align-items-center gap-2"
+                >
+                  Product Type: Umbrella Lehenga
+                  <XClose className="ps-2" />
+                </button>
+
+                <button
+                  // onClick={clearFilters}
+                  style={{
+                    borderRadius: "50px",
+                    color: "#898989",
+                    border: "1px dashed #C6C6C6",
+                    backgroundColor: "white",
+                    fontSize: "0.85rem",
+                  }}
+                  className="px-3 py-1 d-flex justify-content-around align-items-center gap-2"
+                >
+                  Size: 45
+                  <XClose className="ps-2" />
+                </button>
+              </div>
+            </div>
+            <Row>
+              <ProductList />
+            </Row>
+
+            <div className="">
+              {/* dynamic... up div  className="pagination"*/}
+              {/* <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                Previous
               </Button>
-            </div>
-            <div>
-              <span>Sort by:</span>
-              <Dropdown onSelect={(eventKey) => setSelectedSortValue(eventKey)}>
-                <Dropdown.Toggle variant="secondary" id="sort-dropdown">
-                  {selectedSortValue || "Select"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item eventKey="price-asc">Price (Low to High)</Dropdown.Item>
-                  <Dropdown.Item eventKey="price-desc">Price (High to Low)</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          </div>
+              <span>{currentPage}</span>
+              <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(productPageDetails.length / pageSize)}>
+                Next
+              </Button> */}
 
-          <Row>
-            {renderProducts()}
-          </Row>
-
-          <div className="pagination">
-            <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-              Previous
-            </Button>
-            <span>{currentPage}</span>
-            <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(productPageDetails.length / pageSize)}>
-              Next
-            </Button>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+              {/* Static... */}
+              <ul className="pagination justify-content-center align-item-center gap-4 fw-bold">
+                <li
+                  className="page-item py-1 px-3"
+                  style={listyle}
+                >
+                  <Link
+                    className="text-decoration-none fw-bold"
+                    to="/products-page"
+                    style={{ color: "white" }}
+                  >
+                    1
+                  </Link>
+                </li>
+                <li className="page-item py-1 px-2" style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                }}><Link className=" text-decoration-none fw-bold" style={{ color: "black" }} to="/products-page">2</Link></li>
+                <li className="page-item py-1 px-2"  style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                }} ><Link className=" text-decoration-none fw-bold" style={{ color: "black" }} to="/products-page">3</Link></li>
+                 <li className="page-item py-1 px-2"  style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                }} ><Link className="text-decoration-none fw-bold" style={{ color: "black" }} to="/products-page">4</Link></li>
+                 <li className="page-item"  style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                }} ><Link className="p-2 text-decoration-none fw-bold" style={{ color: "black" }} to="/products-page">...</Link></li>
+                 <li className="page-item py-1 px-2"  style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                }} ><Link className=" text-decoration-none fw-bold" style={{ color: "black" }} to="/products-page">25</Link></li>
+                <li className="page-item py-1" style={{
+                  color: "black",
+                  backgroundColor: "white",
+                  listStyleType: "none",
+                  border: "1px solid black"
+                }}>
+                  <Link className="p-2  text-decoration-none fw-bold fw-bold" style={{ color: "black" }} to="/products-page">Next  &gt; </Link>
+                </li>
+              </ul>
+            </div>
+          </Col>
+        </Row>
+      </Container >
+    </>
   );
 };
 

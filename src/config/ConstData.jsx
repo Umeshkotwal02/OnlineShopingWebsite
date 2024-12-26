@@ -159,7 +159,7 @@ const headerCatData = [
     image: require  ("../assets/images/CateMenu.png"),
   },
   {
-    title: "OTHERs",
+    title: "Others",
     dropdown: [],
     image: require  ("../assets/images/CateMenu.png"),
   },

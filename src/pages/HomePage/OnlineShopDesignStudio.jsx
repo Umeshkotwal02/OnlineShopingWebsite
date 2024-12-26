@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 const OnlineShopDesignStudio = () => {
   return (
     <section style={{ marginTop: '50px', marginBottom: '60px' }}>
-      <Container fluid>
+      <Container fluid className="px-lg-5 px-xl-5 px-xxl-5">
         <Row className="text-center mb-5">
           <Col>
             <h2
@@ -17,7 +17,7 @@ const OnlineShopDesignStudio = () => {
                 display: 'inline-block',
               }}
             >
-             Online Shop Designer Studio – Your Ultimate Destination For Indian Ethnic Wear Online
+              Online Shop Designer Studio – Your Ultimate Destination For Indian Ethnic Wear Online
             </h2>
           </Col>
         </Row>
@@ -38,7 +38,7 @@ const OnlineShopDesignStudio = () => {
               </h4>
               <p
                 style={{
-                  fontSize: '15px',
+                  fontSize: '0.8rem',
                   lineHeight: '1.25rem',
                   color: '#7A7A7A',
                   marginBottom: '1.25rem',
@@ -67,7 +67,7 @@ const OnlineShopDesignStudio = () => {
               </h4>
               <p
                 style={{
-                  fontSize: '15px',
+                  fontSize: '0.8rem',
                   lineHeight: '1.25rem',
                   color: '#7A7A7A',
                   marginBottom: '1.25rem',
@@ -96,7 +96,7 @@ const OnlineShopDesignStudio = () => {
               </h4>
               <p
                 style={{
-                  fontSize: '15px',
+                  fontSize: '0.8rem',
                   lineHeight: '1.25rem',
                   color: '#7A7A7A',
                   marginBottom: '1.25rem',
@@ -124,7 +124,7 @@ const OnlineShopDesignStudio = () => {
               </h4>
               <p
                 style={{
-                  fontSize: '15px',
+                  fontSize: '0.8rem',
                   lineHeight: '1.25rem',
                   color: '#7A7A7A',
                   marginBottom: '1.25rem',
@@ -152,7 +152,7 @@ const OnlineShopDesignStudio = () => {
               </h4>
               <p
                 style={{
-                  fontSize: '15px',
+                  fontSize: '0.8rem',
                   lineHeight: '1.25rem',
                   color: '#7A7A7A',
                   marginBottom: '1.25rem',
@@ -166,90 +166,6 @@ const OnlineShopDesignStudio = () => {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <h4
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.25rem',
-                  fontWeight: '400',
-                  color: 'black',
-                  marginBottom: '1rem',
-                }}
-              >
-                Gowns – Embody Elegance and Attractiveness
-              </h4>
-              <p
-                style={{
-                  fontSize: '15px',
-                  lineHeight: '1.25rem',
-                  color: '#7A7A7A',
-                  marginBottom: '1.25rem',
-                }}
-              >
-                Gowns have become popular for contemporary Indian women who wish to showcase their elegance and allure
-                while embracing ethnic fashion. At Kapoor Designer Studio, we offer a range of stunning gowns that blend
-                traditional and modern elements, making you the epitome of style and sophistication.
-              </p>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col>
-              <h4
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.25rem',
-                  fontWeight: '400',
-                  color: 'black',
-                  marginBottom: '1rem',
-                }}
-              >
-                Complement Your Look with Beautiful Jewellery
-              </h4>
-              <p
-                style={{
-                  fontSize: '15px',
-                  lineHeight: '1.25rem',
-                  color: '#7A7A7A',
-                  marginBottom: '1.25rem',
-                }}
-              >
-                In addition to ethnic clothing, we also offer a selection of vintage and beautiful metal jewellery. Our
-                carefully curated collection perfectly complements Indian ethnic wear, adding the finishing touches to your
-                ensemble and enhancing your overall look.
-              </p>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col>
-              <h4
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.25rem',
-                  fontWeight: '400',
-                  color: 'black',
-                  marginBottom: '1rem',
-                }}
-              >
-                Experience the Best Indian Ethnic Wear Collection for Women
-              </h4>
-              <p
-                style={{
-                  fontSize: '15px',
-                  lineHeight: '1.25rem',
-                  color: '#7A7A7A',
-                  marginBottom: '1.25rem',
-                }}
-              >
-                At Kapoor Designer Studio, we are committed to quality, style, and craftsmanship. Our Indian dress designs
-                for women are meticulously handcrafted to perfection. With attention to detail, fine craftsmanship, and
-                quality materials, we have garnered fame and success over the years. Our esteemed clientele spans India, the
-                US, the UK, the Middle East, and Australia, a testament to our trust in our customers.
-              </p>
-            </Col>
-          </Row>
         </div>
       </Container>
     </section>

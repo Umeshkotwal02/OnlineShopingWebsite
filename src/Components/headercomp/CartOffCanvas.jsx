@@ -2,6 +2,7 @@
 import React from 'react';
 import { Offcanvas, Button, Row, Col } from 'react-bootstrap';
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const CartOffCanvas = ({ show, handleClose }) => {
 
@@ -38,6 +39,11 @@ const CartOffCanvas = ({ show, handleClose }) => {
         },
     ];
 
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate("/checkout-page");
+      };
     return (
         <Offcanvas show={show} onHide={handleClose} placement="end" style={{ maxWidth: '450px' }}>
             <Offcanvas.Header closeButton className="custom-header web-bg-color">
@@ -108,9 +114,10 @@ const CartOffCanvas = ({ show, handleClose }) => {
                     </Col>
                     <Col xxl={7} xl={7} lg={7}>
                         <button
-                            className="btn text-white text-center w-100 fw-medium py-1"
+                            className="btn text-white text-center w-100 fw-medium py-2 rounded"
                             href="/choose-address"
                             style={{ backgroundColor: "#B51B3B" }}
+                            onClick={handleNavigate}
                         >
                             Proceed to Buy
                         </button>
