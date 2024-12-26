@@ -16,7 +16,8 @@ import WatchShopCardDemo from './HomePage/WatchShopCard'
 import NewOnOnlineSwiper from './HomePage/NewOnOnlineSwiper'
 import CategorySection from './HomePage/CategoryCustomCard'
 import Loader from '../Components/Loader'
-import ShopByColor from './HomePage/ShopByColor'
+import ShopByColorSlick from './HomePage/ShopByColorSlick'
+
 
 function HomePage() {
 
@@ -48,8 +49,8 @@ function HomePage() {
       <Motion />
       <FestivalSpecial />
       <Banner />
-      <ShopByColor/>
-      <SareeEdit />    
+      <ShopByColorSlick />
+      <SareeEdit />
       {/* <SareeEditMobi /> */}
       <CustomerStoriesSection />
       <OurInstaPage />

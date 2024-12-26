@@ -68,7 +68,7 @@ const PrevCatArrow = ({ onClick }) => {
   );
 };
 
-const ShopByColor = () => {
+const ShopByColorSlick = () => {
 
   // Slick slider settings
   const settings = {
@@ -197,4 +197,4 @@ const ShopByColor = () => {
   );
 };
 
-export default ShopByColor;
+export default ShopByColorSlick;
