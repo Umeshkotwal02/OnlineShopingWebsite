@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 import { Col, Container, Row } from "react-bootstrap";
@@ -69,8 +69,6 @@ const PrevCatArrow = ({ onClick }) => {
 };
 
 const ShopByColor = () => {
-  const [loading, setLoading] = useState(true);
-
 
   // Slick slider settings
   const settings = {

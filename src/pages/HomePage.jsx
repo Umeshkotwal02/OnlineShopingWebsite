@@ -12,11 +12,11 @@ import NewArrivalCard from './HomePage/NewArrivalCard'
 import BridalLahegaCholi from './HomePage/BridalLahegaCholi'
 import CustomerStoriesSection from './HomePage/CustomerStoriesSection'
 import OurInstaPage from './HomePage/OurInstaPage'
-import ShopByColor from './HomePage/ShopByColor'
 import WatchShopCardDemo from './HomePage/WatchShopCard'
 import NewOnOnlineSwiper from './HomePage/NewOnOnlineSwiper'
 import CategorySection from './HomePage/CategoryCustomCard'
 import Loader from '../Components/Loader'
+import ShopByColor from './HomePage/ShopByColor'
 
 function HomePage() {
 
@@ -45,12 +45,11 @@ function HomePage() {
 
       <NewOnOnlineSwiper />
 
-
       <Motion />
       <FestivalSpecial />
       <Banner />
-      <ShopByColor />
-      <SareeEdit />         {/*  overflow */}
+      <ShopByColor/>
+      <SareeEdit />    
       {/* <SareeEditMobi /> */}
       <CustomerStoriesSection />
       <OurInstaPage />
