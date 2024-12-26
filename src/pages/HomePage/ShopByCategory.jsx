@@ -158,7 +158,7 @@ const ShopByCategorySlick = () => {
                                 <div className="position-relative w-100 h-100 rounded">
                                     <img
                                         src={require("../../assets/images/CategoryByShopSlicks/image.png")}
-                                        className="staic-slider-image py-lg-2"
+                                        className="staic-slider-image"
                                         alt={"shop by cat"}
                                         loading="lazy"
                                     />
@@ -180,17 +180,17 @@ const ShopByCategorySlick = () => {
                                             <div className="position-relative w-100 h-100 rounded">
                                                 <img
                                                     src={product.image}
-                                                    className="slider-image py-lg-2 rounded"
+                                                    className="slider-image  rounded"
                                                     alt={product.text}
                                                     loading="lazy"
                                                 />
-                                                <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
-                                                    <p
+                                                <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3 gradient-bg ">
+                                                    <h3
                                                         className="overlay-text text-white text-center"
                                                         style={{ fontFamily: "KaushanScript" }}
                                                     >
                                                         {product.text}
-                                                    </p>
+                                                    </h3>
                                                 </div>
                                             </div>
                                         </Link>

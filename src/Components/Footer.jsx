@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { MdOutlineLocationOn, MdMailOutline } from "react-icons/md";
@@ -12,8 +12,21 @@ import {
 import { IoIosMail } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
 import "../styles/footer.css"
+import Loader from "./Loader";
 
 const Footer = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading for 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div>

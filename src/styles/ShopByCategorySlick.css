@@ -23,6 +23,33 @@
   transform: translateY(-50%);
 }
 
+.gradient-bg {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+/* Container Styles */
+.info-box {
+  
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 100%);
+ 
+}
+
+/* Title Styles */
+.info-title {
+  font-size: 1.125rem; /* Default text size */
+  line-height: 29px;
+  font-family: 'Kaushan Script'; /* Add the font import in your project */
+  font-weight: 400;
+  color: white;
+}
+
+@media (min-width: 640px) { /* sm breakpoint for larger screens */
+  .info-title {
+    font-size: 1.25rem;
+  }
+}
+
+
 /* Shop by color Start +++++++++++++++++++++++++++++++++++++++*/
 .shop-by-color-prev-arrow {
   position: absolute;

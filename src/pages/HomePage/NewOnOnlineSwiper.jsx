@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Link, useNavigate } from "react-router-dom";
 import NewArrivalOfferCard from "./NewArrivalOfferCard";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../../styles/NewOnOnlineSwiper.css";
 import { Container, Row, Col } from "react-bootstrap";
+import Loader from "../../Components/Loader";
 
 const NewOnOnlineSwiper = () => {
   const navigate = useNavigate();
@@ -91,6 +92,18 @@ const NewOnOnlineSwiper = () => {
     ],
   };
 
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading for 2 seconds
+  useEffect(() => {
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer); 
+  }, []);
+
+  if (loading) {
+      return <Loader />;
+  }
+
   return (
 
     <div className="new-on-kapoor-swiper px-lg-5 px-xl-5 px-xxl-5 new-onKapoor-background-gradient ">
@@ -121,7 +134,7 @@ const NewOnOnlineSwiper = () => {
           {/* Slider Component */}
           <Slider {...settings}>
             {staticData.map((item, index) => (
-              <div key={"newOnKapoor-" + index} className="slick-slide-container swiper-slide-container ">
+              <div key={"newOnKapoor-" + index} className="slick-slide-container swiper-slide-container rounded" style={{borderRadius:"10px"}}>
                 <NewArrivalOfferCard itemInfo={item} />
               </div>
             ))}

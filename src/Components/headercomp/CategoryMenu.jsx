@@ -23,7 +23,11 @@ const CategoryMenu = () => {
                     <p className="list-title text-start ms-1">{dropdown.category}</p>
                     {dropdown.items.map((item, i) => (
                       <li key={i} className="p-1">
-                        <Link to={item.link} className="list-item">
+                        {/* <Link to={item.link} className="list-item">
+                          {item.name}
+                        </Link> */}
+                        
+                        <Link to="/products-page" className="list-item">
                           {item.name}
                         </Link>
                       </li>

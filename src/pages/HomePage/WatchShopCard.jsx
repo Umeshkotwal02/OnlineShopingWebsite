@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "../../styles/watchShopCard.css";
 import { Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
+import Loader from "../../Components/Loader";
 
 const WatchShopCard = ({ productInfo }) => {
     const [play, setPlay] = useState(false);
@@ -118,6 +119,8 @@ const WatchShopCardDemo = () => {
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
         nextArrow: <NextCatArrow />,
         prevArrow: <PrevCatArrow />,
         responsive: [
@@ -169,6 +172,17 @@ const WatchShopCardDemo = () => {
             },
         ],
     };
+    const [loading, setLoading] = useState(true);
+
+    // Simulating loading for 2 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 1000);
+        return () => clearTimeout(timer); 
+    }, []);
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
         <Container fluid className="watch-shop-card px-lg-5 px-xl-5 px-xxl-5 px-sm-0 py-lg-4 px-xl-4 px-xxl-4">

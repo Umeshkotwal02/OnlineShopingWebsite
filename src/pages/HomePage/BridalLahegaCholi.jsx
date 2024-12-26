@@ -44,7 +44,7 @@ const BridalLahegaCholi = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrow: false,
         responsive: [

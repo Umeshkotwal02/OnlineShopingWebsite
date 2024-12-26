@@ -106,6 +106,7 @@
   border: none;
   padding: 5px;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .icon {
@@ -242,7 +243,7 @@
   }
 }
 
-/* wishlist-page-btn ++++++++++++++++++++++++++++=================================== */
+/* wishlist-page-btn ++++++++++++++++++++++++++++=================================== &&&&&&&&&&&&&&&&&&&&&&&&&_________=+++++++*/
 
 .new-arrival-card:hover .wishlist-page-btn {
   opacity: 1 !important;
@@ -263,4 +264,34 @@
   opacity: 1;
   transition: opacity 0.3s ease;
   z-index: 2;
+}
+
+/* Default styling for other sizes */
+.wishlist-column {
+  width: auto;
+}
+
+/* Apply specific width for lg, xl, and xxl */
+@media (min-width: 992px) {
+
+  /* lg breakpoint */
+  .wishlist-column {
+    width: 19.666667% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  /* xl breakpoint */
+  .wishlist-column {
+    width: 19.666667% !important;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  /* xxl breakpoint */
+  .wishlist-column {
+    width: 19.666667% !important;
+  }
 }

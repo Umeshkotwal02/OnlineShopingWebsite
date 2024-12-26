@@ -53,7 +53,9 @@ const WishlistPage = () => {
       <Breadcrumb list={breadcrumbArray} />
       <Row className="px-lg-5 px-xl-5 px-xxl-5 g-4">
         {productData.map((product) => (
-          <Col xs={12} sm={6} md={4} lg={2} xl={2} xxl={2} key={product.id} className="mb-1 rounded">
+          <Col xs={12} sm={6} md={4} lg={2} xl={2} xxl={2} key={product.id}
+            className="mb-1 rounded wishlist-column"
+          >
             <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none">
               {/* Product Image Section */}
               <div className="image-container rounded">

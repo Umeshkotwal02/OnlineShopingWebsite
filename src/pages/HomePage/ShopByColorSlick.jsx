@@ -144,7 +144,7 @@ const ShopByColorSlick = () => {
                       <div className="position-relative w-100 h-100 rounded">
                         <img
                           src={product.image}
-                          className="slider-image py-lg-2 rounded"
+                          className="slider-image rounded"
                           alt={product.text}
                           loading="lazy"
                         />
