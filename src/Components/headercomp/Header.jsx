@@ -60,10 +60,14 @@ const Header = ({
 
   //login
   const handleShowLoginCanvas = () => {
+    document.body.classList.add("body-lock");
     setIsOpen(false);
     setShowLoginCanvas(true);
   };
-  const handleCloseLoginCanvas = () => setShowLoginCanvas(false);
+  const handleCloseLoginCanvas = () => {
+    document.body.classList.remove("body-lock");
+    setShowLoginCanvas(false);
+  };
 
   //WishList
   const handleNavigateToWishlist = () => {
@@ -71,14 +75,19 @@ const Header = ({
   };
 
   // Cart
-  const handleCartLoginCanvas = () => {
+  const handleOpenCartCanvas = () => {
+    document.body.classList.add("body-lock");
     setIsOpen(false);
     setShowCartCanvas(true);
   };
-  const handleCloseCartCanvas = () => setShowCartCanvas(false);
+  const handleCloseCartCanvas = () => {
+    document.body.classList.add("body-lock");
+    setShowCartCanvas(false);
+  }
 
   // Profile
   const handleProfileModals = () => {
+    document.body.classList.add("body-lock");
     setIsOpen(false);
     setShowProfileModals(true);
   };
@@ -86,6 +95,7 @@ const Header = ({
   const handleCloseProfileModals = () => setShowProfileModals(false);
   // Notification
   const handleNotificationModals = () => {
+    document.body.classList.add("body-lock");
     setIsOpen(false);
     setShowNotificationModal(true);
   };
@@ -96,25 +106,6 @@ const Header = ({
   };
 
   const handleCloseNotificationModals = () => setShowNotificationModal(false);
-
-
-  useEffect(() => {
-    // Prevent body scroll when either off-canvas is open
-    if (showLoginCanvas || showCartCanvas || showProfileModals || showNotificationModal) {
-      document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "15px"; // Compensate for scrollbar disappearance
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
-    }
-  
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
-    };
-  }, [showLoginCanvas, showCartCanvas, showProfileModals, showNotificationModal]);
-
-  
   return (
     <>
       <TopBar />
@@ -256,7 +247,7 @@ const Header = ({
                 <div
                   className="text-dark d-flex align-items-center gap-1 position-relative"
                   style={{ cursor: "pointer" }}
-                  onClick={handleCartLoginCanvas}
+                  onClick={handleOpenCartCanvas}
                 >
                   <LgBagIcon />
                   <span

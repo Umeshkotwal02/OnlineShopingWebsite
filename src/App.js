@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Add useState and useEffect
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import AutoScrollToTop from './Components/AutoScrollToTop';
 import Header from './Components/headercomp/Header';

@@ -1,3 +1,4 @@
+import CheckOutPage from "../pages/CheckOutPage/CheckOutPage";
 import HomePage from "../pages/HomePage";
 import MyOrderPage from "../pages/MyOrderPage";
 import ProductDetails from "../pages/ProductDetails";
@@ -15,6 +16,7 @@ const publicRoutes = [
     { path: "/products/details", component: ProductDetails },
     { path: "/my-order", component: MyOrderPage },
     { path: "/wishlist", component: WishlistPage },
+    { path: "/checkout-page", component: CheckOutPage },
 ];
 
 export { authProtectedRoutes, publicRoutes };

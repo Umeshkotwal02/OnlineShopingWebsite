@@ -93,6 +93,13 @@ const CashOnDelIcon = (props) => (
 
 );
 
+const CashONIcon2 = (props) => (
+   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.0013 20.8335C18.4542 20.8335 16.9705 21.4481 15.8765 22.542C14.7826 23.636 14.168 25.1197 14.168 26.6668C14.168 28.2139 14.7826 29.6977 15.8765 30.7916C16.9705 31.8856 18.4542 32.5002 20.0013 32.5002C21.5484 32.5002 23.0321 31.8856 24.1261 30.7916C25.2201 29.6977 25.8346 28.2139 25.8346 26.6668C25.8346 25.1197 25.2201 23.636 24.1261 22.542C23.0321 21.4481 21.5484 20.8335 20.0013 20.8335ZM17.5013 26.6668C17.5013 26.0038 17.7647 25.3679 18.2335 24.8991C18.7024 24.4302 19.3383 24.1668 20.0013 24.1668C20.6643 24.1668 21.3002 24.4302 21.7691 24.8991C22.2379 25.3679 22.5013 26.0038 22.5013 26.6668C22.5013 27.3299 22.2379 27.9658 21.7691 28.4346C21.3002 28.9034 20.6643 29.1668 20.0013 29.1668C19.3383 29.1668 18.7024 28.9034 18.2335 28.4346C17.7647 27.9658 17.5013 27.3299 17.5013 26.6668Z" fill="#0D9E33" />
+      <path d="M29.21 8.52672L23.9117 1.09839L4.43 16.6617L3.35 16.6501V16.6667H2.5V36.6667H37.5V16.6667H35.8967L32.7067 7.33506L29.21 8.52672ZM32.375 16.6667H15.6617L28.11 12.4234L30.6467 11.6117L32.375 16.6667ZM25.9167 9.65005L13.0667 14.0301L23.2433 5.90006L25.9167 9.65005ZM5.83333 30.2817V23.0484C6.53649 22.7992 7.17518 22.3963 7.70283 21.8689C8.23047 21.3415 8.63378 20.7031 8.88333 20.0001H31.1167C31.3661 20.7033 31.7694 21.3421 32.297 21.8697C32.8247 22.3974 33.4634 22.8006 34.1667 23.0501V30.2834C33.4634 30.5328 32.8247 30.9361 32.297 31.4637C31.7694 31.9914 31.3661 32.6301 31.1167 33.3334H8.88667C8.63697 32.6295 8.23327 31.9903 7.70503 31.4623C7.17679 30.9344 6.53734 30.531 5.83333 30.2817Z" fill="#0D9E33" />
+   </svg>
+)
+
 const ExchangeIcon = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={42} height={42} fill="none" {...props}>
       <g>
@@ -279,10 +286,17 @@ const CopyIcon = (props) => (
    </svg>
 );
 const WalletIcon = (props) => (
-   <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} fill="none" {...props}>
-      <path fill="#000" fillRule="evenodd" d="M22.211 10.477H27.5c0-4.246-2.544-6.727-6.856-6.727H9.356C5.044 3.75 2.5 6.23 2.5 10.423v9.154c0 4.192 2.544 6.673 6.856 6.673h11.288c4.312 0 6.856-2.48 6.856-6.673v-.39h-5.289c-2.454 0-4.444-1.94-4.444-4.333 0-2.393 1.99-4.333 4.444-4.333v-.044Zm0 1.864h4.356c.515 0 .933.407.933.91v3.163a.933.933 0 0 1-.933.91H22.31c-1.242.016-2.33-.814-2.611-1.994a2.478 2.478 0 0 1 .541-2.065 2.615 2.615 0 0 1 1.97-.925Zm.189 3.325h.411a.944.944 0 0 0 .956-.931.944.944 0 0 0-.956-.932H22.4a.957.957 0 0 0-.675.266.91.91 0 0 0-.28.655c0 .516.425.936.955.942ZM8.422 10.477h7.056a.944.944 0 0 0 .955-.931.944.944 0 0 0-.955-.932H8.422c-.523 0-.95.41-.955.92 0 .517.426.937.955.943Z" clipRule="evenodd" />
+   <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.375 12.5C17.1429 12.5 16.9204 12.5922 16.7563 12.7563C16.5922 12.9204 16.5 13.1429 16.5 13.375C16.5 13.6071 16.5922 13.8296 16.7563 13.9937C16.9204 14.1578 17.1429 14.25 17.375 14.25H20.875C21.1071 14.25 21.3296 14.1578 21.4937 13.9937C21.6578 13.8296 21.75 13.6071 21.75 13.375C21.75 13.1429 21.6578 12.9204 21.4937 12.7563C21.3296 12.5922 21.1071 12.5 20.875 12.5H17.375ZM0.75 4.625C0.75 3.46468 1.21094 2.35188 2.03141 1.53141C2.85188 0.710936 3.96468 0.25 5.125 0.25H20.875C22.0353 0.25 23.1481 0.710936 23.9686 1.53141C24.7891 2.35188 25.25 3.46468 25.25 4.625V13.375C25.25 14.5353 24.7891 15.6481 23.9686 16.4686C23.1481 17.2891 22.0353 17.75 20.875 17.75H5.125C3.96468 17.75 2.85188 17.2891 2.03141 16.4686C1.21094 15.6481 0.75 14.5353 0.75 13.375V4.625ZM23.5 5.5V4.625C23.5 3.92881 23.2234 3.26113 22.7312 2.76884C22.2389 2.27656 21.5712 2 20.875 2H5.125C4.42881 2 3.76113 2.27656 3.26884 2.76884C2.77656 3.26113 2.5 3.92881 2.5 4.625V5.5H23.5ZM2.5 7.25V13.375C2.5 14.0712 2.77656 14.7389 3.26884 15.2312C3.76113 15.7234 4.42881 16 5.125 16H20.875C21.5712 16 22.2389 15.7234 22.7312 15.2312C23.2234 14.7389 23.5 14.0712 23.5 13.375V7.25H2.5Z" fill="white" />
    </svg>
 );
+
+const WalletIcon2 = (props) => (
+   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.9062 5.625H6.09375C4.28157 5.625 2.8125 7.09407 2.8125 8.90625V21.0938C2.8125 22.9059 4.28157 24.375 6.09375 24.375H23.9062C25.7184 24.375 27.1875 22.9059 27.1875 21.0938V8.90625C27.1875 7.09407 25.7184 5.625 23.9062 5.625Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2.8125 11.25H27.1875M7.5 17.5781H10.3125V18.75H7.5V17.5781Z" stroke="black" stroke-width="2" stroke-linejoin="round" />
+   </svg>
+)
 const TimeIconRed = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={58} height={58} fill="none" {...props}>
       <path fill="#F30404" fillRule="evenodd" d="M29.01 57.769C13.108 57.769.2 44.889.2 28.957.2 13.053 13.106.146 29.01.146c15.934 0 28.812 12.907 28.812 28.811 0 15.933-12.878 28.812-28.811 28.812Zm9.193-18.122c.346.201.72.317 1.123.317.72 0 1.441-.375 1.844-1.066a2.17 2.17 0 0 0-.749-2.968l-10.257-6.108V16.511c0-1.21-.98-2.16-2.16-2.16-1.182 0-2.161.95-2.161 2.16v14.55c0 .749.403 1.44 1.066 1.844l11.294 6.742Z" clipRule="evenodd" />
@@ -380,4 +394,4 @@ const ExclaimIcon = (props) => (
 );
 
 
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon };
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon, WalletIcon2, CashONIcon2 };

@@ -33,11 +33,11 @@ function HomePage() {
     return <Loader />;
   }
   return (
-    <div style={{ fontFamily: "Roboto" }}>
-      <CarosoleSilckSlider />
+    <div>
+      {/* <CarosoleSilckSlider /> */}
 
       {/* <CategorySection /> */}
-      <ShopByCategorySlick />  {/* overflow */}
+      {/* <ShopByCategorySlick />  */}
       <WatchShopCardDemo />
 
       <BridalLahegaCholi />

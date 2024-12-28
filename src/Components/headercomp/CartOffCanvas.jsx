@@ -42,6 +42,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
+        handleClose(true)
         navigate("/checkout-page");
       };
     return (

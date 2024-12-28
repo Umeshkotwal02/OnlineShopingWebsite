@@ -185,7 +185,7 @@ const WatchShopCardDemo = () => {
     }
 
     return (
-        <Container fluid className="watch-shop-card px-lg-5 px-xl-5 px-xxl-5 px-sm-0 py-lg-4 px-xl-4 px-xxl-4">
+        <Container fluid className="watch-shop-card px-sm-0">
             <div>
                 <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
                 <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>
