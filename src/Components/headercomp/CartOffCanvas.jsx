@@ -15,7 +15,8 @@ const CartOffCanvas = ({ show, handleClose }) => {
             originalPrice: "₹10,999",
             discount: "50% off",
             quantity: 1,
-            img: "https://s3-alpha-sig.figma.com/img/7cd0/655e/1798e57a8f8db2bfd19e7f556d0f666d?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VCwRAjyroAzRPX32fVy0TPpeRFiVOBcP~WRxiKECJiCk6rFVMldRKbtp3SOvwmIBXHH5CiILxOmHIwqTg6DyZMAgXDM40sMgybmGa2MDkeX~A7-cXmKDcol-fyGb0pnz3DlPG1wRhYJREUNyIjlrqeWfY72rJEFxPc6A0rKo~Ax0TNwAcneOHXlNO0s4im7nmdaXUsHzvX1mWVedCsXZQsAlVLTLnhFckM3IfeoQxLDg0BnwcqqOxeWSMdyFA9wpUvVHGCZ6IWAHlSykvNZ-l-eHzV7oe8Fn9Vl94jadBUlWxpeJw6RrC0YI0Ux9R1UJilY6hZEu7o47COj1Qv9eqQ__",
+            img: require("../../assets/images/form-checkout/cart1.png"),
+
         },
         {
             id: 2,
@@ -25,7 +26,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
             originalPrice: "₹10,999",
             discount: "50% off",
             quantity: 1,
-            img: "https://s3-alpha-sig.figma.com/img/3432/c5a9/f8d0ffa14f99c130b369f4bf614526dd?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qZ-aerW-SoPaEuvC6UwglLX6ftXa5Hx95-Wj9f1diR9HKDxE59xBYx2VKLI8XzsNy3cL0vXU6R6W89O9HbgMIWJla6YCl~Nu7NQvqNUS3ywRUo3qzcJCxCsTmrqPHMde5pBUEOQsoZGHMhzoTnXORr8wW9ECQwKOA2rW0pUUa~cUVmYJlUmzc3ILMLYcKbE~qmG6TyFh05nMAkrSq~QaCPdiWq~rtvUzzkGiz1jd31425ZLs3qOQY4uedR6hygHZTI8V~YKFMzV07Op~Pzrkkp3C0aKH86NNZrd7PDPcipwSiEHl2rnWlhrlGxA~paDqhmvBxZWlAO29mtmdn5dPTw__",
+            img: require("../../assets/images/form-checkout/cart2.png"),
         },
         {
             id: 3,
@@ -35,7 +36,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
             originalPrice: "₹10,999",
             discount: "50% off",
             quantity: 1,
-            img: "https://s3-alpha-sig.figma.com/img/01da/ab47/0593d3faaefdc04b00bc466e7363e9b3?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AXtuxHiR3i7WPLfTku1JAsdjKjqdorYPO3pV4jPNvpm~uNfSiBQ8Z6CHryUFPQk-AYTRQAz2r9m1WMtG2PYCmZ2uGONJfUB93tPgF0tm6KeX5SF6G3FzZkto8UBO7qw8oYOCTEGdpgOwyW1cS1qL0sG7Z3E8zzFyuua6rhSvHGBB8syGmjsZSddBTguLx5fvOFag3WoImjXmJULhUvq4kOzohV1OjgIEtvcWJhCFqRGge3UScdivGmhllcGeLKx2daQPeHmDtgfzOADfsHn44VBYGTHNdsKZif8u1rmtM-auPYOwX-l61sf-62nw7yXfSOlKxeUpvqpHsRkfKSD~hw__",
+            img: require("../../assets/images/form-checkout/cart3.png"),
         },
     ];
 

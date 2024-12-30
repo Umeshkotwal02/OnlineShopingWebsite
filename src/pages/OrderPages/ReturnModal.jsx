@@ -31,7 +31,7 @@ function ReturnModal() {
                         <div class="d-flex justify-content-end">
                             <button
                                 class="btn btn-secondary me-2 rounded-5"
-                                onclick="handleClose()"
+                                onclick={handleClose}
                             >
                                 Cancel
                             </button>
