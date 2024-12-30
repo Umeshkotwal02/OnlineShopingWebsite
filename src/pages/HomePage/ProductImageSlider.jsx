@@ -8,15 +8,15 @@ import "../../styles/ProductImageSlider.css";
 
 const ProductImageSlider = ({ imageList }) => {
   const id = Date.now();
-  const nextClassName = `swiper-button-next-${id}`;
-  const prevClassName = `swiper-button-prev-${id}`;
+  const nextclassName = `swiper-button-next-${id}`;
+  const prevclassName = `swiper-button-prev-${id}`;
 
   return (
     <div className="product-slider-container">
-      <button className={`slider-button slider-button-prev ${nextClassName}`}>
+      <button className={`slider-button slider-button-prev ${nextclassName}`}>
         <FaAngleLeft className="icon-lg" />
       </button>
-      <button className={`slider-button slider-button-next ${prevClassName}`}>
+      <button className={`slider-button slider-button-next ${prevclassName}`}>
         <FaAngleRight className="icon-lg" />
       </button>
       <Swiper
@@ -25,8 +25,8 @@ const ProductImageSlider = ({ imageList }) => {
         slidesPerView={1}
         centeredSlides
         navigation={{
-          nextEl: "." + prevClassName,
-          prevEl: "." + nextClassName,
+          nextEl: "." + prevclassName,
+          prevEl: "." + nextclassName,
         }}
         pagination={{
           clickable: false,

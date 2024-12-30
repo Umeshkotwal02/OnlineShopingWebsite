@@ -21,14 +21,12 @@ const Payment = () => {
   const handleSubmit = () => {
     handleOpenModal();
     console.log("Data Submitted");
-
   }
 
   return (
     <Container className="mt-4 px-lg-5 px-xl-5 px-xxl-5">
       <Row className="mt-3 mb-3">
         <Col sm={12} xs={12} lg={4} xxl={4} xl={4}  >
-
           <div style={{ padding: "20px", borderRadius: "15px", backgroundColor: "#F3F3F3" }}>
             <div>
               <h4 className="fw-bold" style={{ fontSize: "22px", marginBottom: "12px", fontWeight: "500", lineHeight: "1", }}>
@@ -103,26 +101,31 @@ const Payment = () => {
             </div>
 
             {/* Razor Pay Method */}
-            <div className="d-flex align-items-center gap-4 py-2 px-2 bg-white mb-2 justify-content-between" style={{ borderRadius: "10px" }}>
+            <div className="d-flex align-items-center gap-4 py-2 px-2 bg-white mb-2 justify-content-between custom-check-form" style={{ borderRadius: "10px" }}>
               {/* Icon and Text */}
               <div className="d-flex align-items-center gap-2">
-                <img src={require("../../assets/images/RazorPay.png")} className="bg-design" alt="razor-pay" style={{ padding: "9px" }} />
-                <h6 className="d-flex align-items-center font-medium">Razor Pay</h6>
-
-                {/* Radio Button */}
-                <Form.Check
-                  type="radio"
-                  name="payment-method"
-                  value="razorpay"
-                  label=""
-                  className="cursor-pointer"
-                  id="payment-method-cod"
+                <img
+                  src={require("../../assets/images/RazorPay.png")}
+                  className="bg-design"
+                  alt="razor-pay"
+                  style={{ padding: "9px" }}
                 />
+                <h6 className="d-flex align-items-center font-medium">Razor Pay</h6>
               </div>
+
+              {/* Radio Button */}
+              <Form.Check
+                type="radio"
+                name="payment-method"
+                value="razorpay"
+                label=""
+                className="cursor-pointer ml-auto"
+                id="payment-method-cod"
+              />
             </div>
 
             {/* COD Payment Method */}
-            <div className="d-flex align-items-center gap-4 py-2 px-2 bg-white mb-2 justify-content-between" style={{ borderRadius: "10px" }}>
+            <div className="d-flex align-items-center gap-4 py-2 px-2 bg-white mb-2 justify-content-between custom-check-form" style={{ borderRadius: "10px" }}>
               {/* Icon and Text */}
               <div className="d-flex align-items-center gap-2">
                 <span className="bg-design">
@@ -130,16 +133,17 @@ const Payment = () => {
                 </span>
                 <h6 className="d-flex align-items-center font-medium">COD (Cash on Delivery)</h6>
 
-                {/* Radio Button */}
-                <Form.Check
-                  type="radio"
-                  name="payment-method"
-                  value="cod"
-                  label=""
-                  className="cursor-pointer"
-                  id="payment-method-cod"
-                />
               </div>
+
+              {/* Radio Button */}
+              <Form.Check
+                type="radio"
+                name="payment-method"
+                value="razorpay"
+                label=""
+                className="cursor-pointer ml-auto"
+                id="payment-method-cod"
+              />
             </div>
 
             <button type="button mt-3" className="btn-payment w-100" onClick={handleSubmit}>

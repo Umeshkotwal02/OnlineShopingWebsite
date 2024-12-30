@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi2";
 import Pagination from "react-bootstrap/Pagination";
-import Breadcrumb from "../Components/Breadcrumb";
-import Loader from "../Components/Loader";
+import Breadcrumb from "../../Components/Breadcrumb";
+import Loader from "../../Components/Loader";
 import { FaChevronRight } from "react-icons/fa";
 
 const MyOrderPage = () => {
@@ -108,37 +108,38 @@ const MyOrderPage = () => {
           </div>
         ) : (
           <>
-            {orders.slice(0, showAll ? orders.length : 3).map((order) => (
-              <div className="mb-3 web-bg-color" key={order.order_id} onClick={() => handleOrderClick(order.order_id)}>
-                <div className="border border-2 border-light rounded">
-                  <div className="d-flex justify-content-between p-3">
-                    <div className="d-flex gap-4 align-items-center">
-                      <div>
-                        <div className="fw-bold">ORDER DATE</div>
-                        <div>{order.order_date}</div>
-                      </div>
-                      <div className="ps-5">
-                        <div className="fw-bold">ORDER TOTAL</div>
+            <Link to="/my-order/order-details" className="text-decoration-none text-dark">
+              {orders.slice(0, showAll ? orders.length : 3).map((order) => (
+                <div className="mb-3 web-bg-color" style={{ borderRadius: "15px" }} key={order.order_id} onClick={() => handleOrderClick(order.order_id)}>
+                  <div className="border border-2 border-light rounded">
+                    <div className="d-flex justify-content-between p-2">
+                      <div className="d-flex gap-4 align-items-center">
                         <div>
-                          ₹{parseFloat(order.order_net_amount.replace(/,/g, '')).toLocaleString()} ({order.total_quantity} item{order.total_quantity > 1 ? "s" : ""})
+                          <div className="fw-bold">ORDER DATE</div>
+                          <div className="fw-medium" style={{ color: "#545454" }}>{order.order_date}</div>
                         </div>
-                      </div>
+                        <div className="ps-5">
+                          <div className="fw-bold">ORDER TOTAL</div>
+                          <div className="fw-medium" style={{ color: "#545454" }}>
+                            ₹{parseFloat(order.order_net_amount.replace(/,/g, '')).toLocaleString()} ({order.total_quantity} item{order.total_quantity > 1 ? "s" : ""})
+                          </div>
+                        </div>
 
-                    </div>
-                    <div>
-                      <div className="text-start">{order.order_number}</div>
-                      <div className={`rounded px-4 ${getStatusStyle(order.order_status)}`}>
-                        {order.order_status.charAt(0).toUpperCase() + order.order_status.slice(1)}
                       </div>
-                      {/* <FaChevronRight /> */}
+                      <div className="d-flex flex-column justify-content-end align-item-end">
+                        <div className="text-start">{order.order_number}</div>
+                        <button className={`px-4 bg-white ${getStatusStyle(order.order_status)}`} style={{ borderRadius: "5px" }}>
+                          {order.order_status.charAt(0).toUpperCase() + order.order_status.slice(1)}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </Link>
             {!showAll && orders.length > 3 && (
               <div className="d-flex justify-content-end mt-4">
-                <button onClick={() => setShowAll(true)} className="fw-bold btn">
+                <button onClick={() => setShowAll(true)} className="fw-bold btn ">
                   See More...
                 </button>
               </div>

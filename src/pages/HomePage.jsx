@@ -34,10 +34,10 @@ function HomePage() {
   }
   return (
     <div>
-      {/* <CarosoleSilckSlider /> */}
+      <CarosoleSilckSlider />
 
-      {/* <CategorySection /> */}
-      {/* <ShopByCategorySlick />  */}
+      <CategorySection />
+      <ShopByCategorySlick />
       <WatchShopCardDemo />
 
       <BridalLahegaCholi />

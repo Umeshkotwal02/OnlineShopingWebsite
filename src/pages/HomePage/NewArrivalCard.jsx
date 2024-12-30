@@ -8,12 +8,14 @@ import { productData } from "../../config/productData";
 import { FiHeart } from "react-icons/fi";
 const NewArrivalCard = () => {
   const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);
+  
   const truncateProductName = (name) => {
     if (name.length > 18) {
-      return name.substring(0, 20) + "...";
+        return name.substring(0, 35) + "...";
     }
     return name;
-  };
+};
+
   const handleAddToCart = (e) => {
     e.preventDefault();
     alert("Product added to cart!");

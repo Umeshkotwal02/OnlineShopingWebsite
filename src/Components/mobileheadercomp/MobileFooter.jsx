@@ -15,7 +15,7 @@ const MobileFooter = () => {
           <NavLink 
             to="/" 
             className="mobi-footer-icon d-flex flex-column align-items-center"
-            activeClassName="active"
+            activeclassName="active"
           >
             <HomeIcon style={{ fontSize: '24px' }} />
             <span className="mt-2">Home</span>
@@ -27,7 +27,7 @@ const MobileFooter = () => {
           <NavLink 
             to="/category" 
             className="mobi-footer-icon d-flex flex-column align-items-center"
-            activeClassName="active"
+            activeclassName="active"
           >
             <HiOutlineViewGrid style={{ fontSize: '24px' }} />
             <span className="mt-2">Category</span>
@@ -39,7 +39,7 @@ const MobileFooter = () => {
           <NavLink 
             to="/wishlist" 
             className="mobi-footer-icon d-flex flex-column align-items-center"
-            activeClassName="active"
+            activeclassName="active"
           >
             <WishlistIcon style={{ fontSize: '24px' }} />
             <span className="mt-2">Wishlist</span>
@@ -51,7 +51,7 @@ const MobileFooter = () => {
           <NavLink 
             to="/profile" 
             className="mobi-footer-icon d-flex flex-column align-items-center"
-            activeClassName="active"
+            activeclassName="active"
           >
             <CgProfile style={{ fontSize: '24px' }} />
             <span className="mt-2">My Profile</span>

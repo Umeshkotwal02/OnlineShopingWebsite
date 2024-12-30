@@ -177,7 +177,7 @@ const WatchShopCardDemo = () => {
     // Simulating loading for 2 seconds
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1000);
-        return () => clearTimeout(timer); 
+        return () => clearTimeout(timer);
     }, []);
 
     if (loading) {
@@ -185,7 +185,7 @@ const WatchShopCardDemo = () => {
     }
 
     return (
-        <Container fluid className="watch-shop-card px-sm-0">
+        <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5">
             <div>
                 <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
                 <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>

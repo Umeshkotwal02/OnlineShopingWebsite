@@ -103,6 +103,7 @@ const Header = ({
   //My-Order
   const handleMyOrder = () => {
     navigate("/my-order");
+    setIsOpen(false);
   };
 
   const handleCloseNotificationModals = () => setShowNotificationModal(false);

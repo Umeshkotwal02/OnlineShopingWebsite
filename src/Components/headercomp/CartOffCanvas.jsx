@@ -115,9 +115,9 @@ const CartOffCanvas = ({ show, handleClose }) => {
                     </Col>
                     <Col xxl={7} xl={7} lg={7}>
                         <button
-                            className="btn text-white text-center w-100 fw-medium py-2 rounded"
+                            className="btn text-white text-center w-100 fw-medium py-2"
                             href="/choose-address"
-                            style={{ backgroundColor: "#B51B3B" }}
+                            style={{ backgroundColor: "#B51B3B", borderRadius:"10px" }}
                             onClick={handleNavigate}
                         >
                             Proceed to Buy

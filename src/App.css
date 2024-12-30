@@ -159,3 +159,58 @@ body {
   border-radius: 10px;
   /* Scrollbar track color */
 }
+
+
+/* Payment Form */
+.custom-check-form .form-check-input:checked[type=radio] {
+  --bs-form-check-bg-image: url("./assets/images/form-checkout/checkedot.png") !important;
+}
+
+.custom-check-form .form-check-input:checked {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+  border: 0px;
+}
+
+.custom-check-form .form-check-input {
+  border: 2px solid #C4C3C3;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+.Address-Form .form-control {
+  background-color: #F5F5F5;
+  padding: 0.66rem;
+}
+
+.Address-Form::placeholder {
+  color: #A7A7A7 !important;
+  font-size: 1.2rem !important;
+}
+
+.form-switch .form-check-input {
+  background-image: url("./assets/images/form-checkout/swichdot.png") !important;
+  background-color: black !important;
+  width: 2.1rem !important;
+  height: 1.2rem !important;
+}
+
+/* Table */
+.table {
+  --bs-table-bg: "#F3F3F3" !important;
+}
+
+.tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: none !important;
+  border-width: 0;
+}
+
+.no-style{
+  resize: none !important;
+}

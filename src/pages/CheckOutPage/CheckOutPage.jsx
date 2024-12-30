@@ -1,77 +1,107 @@
-import React, { useState } from "react";
-import { IoIosCheckmark } from "react-icons/io";
-import { GoPencil } from "react-icons/go";
-import { Row, Col, Container } from "react-bootstrap";
-import Payment from "./Payment";
-import AddressCard from "./AddressCard";
-import { WalletIcon } from "../../assets/SvgIcons";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { IoIosCheckmark } from 'react-icons/io';
+import { GoPencil } from 'react-icons/go';
+import { Row, Col, Container } from 'react-bootstrap';
+import Payment from './Payment';
+import AddressCard from './AddressCard';
+import { WalletIcon } from '../../assets/SvgIcons';
+import Loader from '../../Components/Loader';
+import { Link } from 'react-router-dom';
+import Breadcrumb from '../../Components/Breadcrumb';
 
 const steps = [
-  { id: "SignUp", label: "Sign Up", icon: <IoIosCheckmark className="fs-1" />, isActive: true },
-  { id: "Address", label: "Address", icon: <GoPencil className="fs-5" />, isActive: false },
-  { id: "Payment", label: "Payment", icon: <WalletIcon />, isActive: false },
+  { id: 'SignUp', label: 'Sign Up', icon: <IoIosCheckmark className="fs-1" />, isActive: true },
+  { id: 'Address', label: 'Address', icon: <GoPencil className="fs-5" />, isActive: false },
+  { id: 'Payment', label: 'Payment', icon: <WalletIcon />, isActive: false },
 ];
 
 const CheckOutPage = () => {
-  const [activeTab, setActiveTab] = useState("Address");
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(location.state?.activeTab || 'Address');
+  const [loading, setLoading] = useState(true);
+
+  const breadcrumbArray = [
+    <Link to="/" key="1" className="text-dark fw-light text-decoration-none">
+      Home
+    </Link>,
+    <Link to="/bag" key="2" className="text-dark fw-light text-decoration-none">
+      Bag
+    </Link>,
+    <span key="3" className="text-dark fw-light">
+      Checkout
+    </span>,
+  ];
 
   const handleTabClick = (stepId) => {
-    if (stepId !== "SignUp") {
+    if (stepId !== 'SignUp') {
       setActiveTab(stepId);
     }
   };
 
   const renderActiveView = () => {
     switch (activeTab) {
-      case "Address":
+      case 'Address':
         return <AddressCard />;
-      case "Payment":
+      case 'Payment':
         return <Payment />;
       default:
         return null;
     }
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <Container>
-      <Row className="w-100 align-items-center mb-4">
-        {steps.map((step, index) => (
-          <React.Fragment key={step.id}>
-            <Col
-              className={`d-flex align-items-center gap-2 ${step.id === "SignUp" || activeTab === step.id ? "text-dark" : "text-muted"
-                }`}
-              onClick={() => handleTabClick(step.id)}
-              style={step.id === "SignUp" ? { cursor: "pointer" } : {}}
-            >
-              <div
-                className={`d-flex align-items-center justify-content-center rounded-circle ${step.id === "SignUp"
-                  ? "bg-dark text-white"
-                  : activeTab === step.id
-                    ? "bg-dark text-white"
-                    : "bg-secondary text-white"
+    <>
+      <Breadcrumb list={breadcrumbArray} />
+      <Container className="my-5">
+        <Row className="w-100 align-items-center mb-4">
+          {steps.map((step, index) => (
+            <React.Fragment key={step.id}>
+              <Col
+                className={`d-flex align-items-center gap-2 ${step.id === 'SignUp' || activeTab === step.id ? 'text-dark' : 'text-muted'
                   }`}
-                style={{ width: "40px", height: "40px" }}
+                onClick={() => handleTabClick(step.id)}
+                style={step.id === 'SignUp' ? { cursor: 'pointer' } : {}}
               >
-                {step.icon}
-              </div>
-              <span className="fs-5 fw-medium">{step.label}</span>
-            </Col>
-            {index < steps.length - 1 && (
-              <Col>
-                <span
-                  className="d-block w-100"
-                  style={{
-                    height: "3px",
-                    backgroundColor: activeTab === steps[index + 1]?.id ? "black" : "rgba(150, 150, 150, 1)",
-                  }}
-                />
+                <div
+                  className={`d-flex align-items-center justify-content-center rounded-circle ${step.id === 'SignUp'
+                    ? 'bg-dark text-white'
+                    : activeTab === step.id
+                      ? 'bg-dark text-white'
+                      : 'bg-secondary text-white'
+                    }`}
+                  style={{ width: '40px', height: '40px' }}
+                >
+                  {step.icon}
+                </div>
+                <span className="fs-5 fw-medium">{step.label}</span>
               </Col>
-            )}
-          </React.Fragment>
-        ))}
-      </Row>
-      <div>{renderActiveView()}</div>
-    </Container>
+              {index < steps.length - 1 && (
+                <Col>
+                  <span
+                    className="d-block w-100"
+                    style={{
+                      height: '3px',
+                      backgroundColor: activeTab === steps[index + 1]?.id ? 'black' : 'rgba(150, 150, 150, 1)',
+                    }}
+                  />
+                </Col>
+              )}
+            </React.Fragment>
+          ))}
+        </Row>
+        <div>{renderActiveView()}</div>
+      </Container>
+    </>
   );
 };
 

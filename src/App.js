@@ -10,6 +10,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from 'react-hot-toast';
 import Loader from './Components/Loader';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [loading, setLoading] = useState(true);
