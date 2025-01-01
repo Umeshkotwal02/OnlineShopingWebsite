@@ -1,68 +1,41 @@
 import React, { useState, useRef } from "react";
+import { Modal } from "react-bootstrap";
 import {
-  FaAngleDown,
   FaAngleLeft,
   FaAngleRight,
   FaAngleUp,
+  FaAngleDown,
 } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-import "swiper/css/pagination";
-import { FreeMode, Navigation, Thumbs, Pagination } from "swiper/modules";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { IoClose } from "react-icons/io5";
+import "./demo.css";
 
 const ProductDetailsSlider = () => {
   const images = [
-    "https://s3-alpha-sig.figma.com/img/f0c0/a2ec/d46520918fa3c04cc6bfadfa0cf8f147?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M9gdkvfGNjBOOmuZjGTY4~siFW2Y~OwOc874CCR6UZxE9ep2v8dj7gzoBZDgCaJ8Ph1qNT31tYWcsWbs7FL4ae44ekVOjAc~RjG7tml9bYxW1HE05zgDZ3UqT1O6NFATo4-bk9DBg8q8~z5VGV38wwy4NoH77kMzJhz6cWrJDu8K2xIcbuz3h16wJXPkQVi527rjzoalOXZwyXPxeupC7-Hei67G1G8BT2vpuQs3muMBMSbRpwkVTyxpAFnQUgbrUVAy1l6nfiC2UvOjKtuEUtVrUvT79yOPGeFRO7r9I31b70QLbL7h2VdSus1I9WpPKOhszlrrym~9NVPymtgnEA__",
-    "https://s3-alpha-sig.figma.com/img/f0c0/a2ec/d46520918fa3c04cc6bfadfa0cf8f147?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M9gdkvfGNjBOOmuZjGTY4~siFW2Y~OwOc874CCR6UZxE9ep2v8dj7gzoBZDgCaJ8Ph1qNT31tYWcsWbs7FL4ae44ekVOjAc~RjG7tml9bYxW1HE05zgDZ3UqT1O6NFATo4-bk9DBg8q8~z5VGV38wwy4NoH77kMzJhz6cWrJDu8K2xIcbuz3h16wJXPkQVi527rjzoalOXZwyXPxeupC7-Hei67G1G8BT2vpuQs3muMBMSbRpwkVTyxpAFnQUgbrUVAy1l6nfiC2UvOjKtuEUtVrUvT79yOPGeFRO7r9I31b70QLbL7h2VdSus1I9WpPKOhszlrrym~9NVPymtgnEA__",
-    "https://s3-alpha-sig.figma.com/img/f0c0/a2ec/d46520918fa3c04cc6bfadfa0cf8f147?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M9gdkvfGNjBOOmuZjGTY4~siFW2Y~OwOc874CCR6UZxE9ep2v8dj7gzoBZDgCaJ8Ph1qNT31tYWcsWbs7FL4ae44ekVOjAc~RjG7tml9bYxW1HE05zgDZ3UqT1O6NFATo4-bk9DBg8q8~z5VGV38wwy4NoH77kMzJhz6cWrJDu8K2xIcbuz3h16wJXPkQVi527rjzoalOXZwyXPxeupC7-Hei67G1G8BT2vpuQs3muMBMSbRpwkVTyxpAFnQUgbrUVAy1l6nfiC2UvOjKtuEUtVrUvT79yOPGeFRO7r9I31b70QLbL7h2VdSus1I9WpPKOhszlrrym~9NVPymtgnEA__",
-    "https://s3-alpha-sig.figma.com/img/f0c0/a2ec/d46520918fa3c04cc6bfadfa0cf8f147?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M9gdkvfGNjBOOmuZjGTY4~siFW2Y~OwOc874CCR6UZxE9ep2v8dj7gzoBZDgCaJ8Ph1qNT31tYWcsWbs7FL4ae44ekVOjAc~RjG7tml9bYxW1HE05zgDZ3UqT1O6NFATo4-bk9DBg8q8~z5VGV38wwy4NoH77kMzJhz6cWrJDu8K2xIcbuz3h16wJXPkQVi527rjzoalOXZwyXPxeupC7-Hei67G1G8BT2vpuQs3muMBMSbRpwkVTyxpAFnQUgbrUVAy1l6nfiC2UvOjKtuEUtVrUvT79yOPGeFRO7r9I31b70QLbL7h2VdSus1I9WpPKOhszlrrym~9NVPymtgnEA__",
+    require('../../assets/images/ProductDetails/img1.png'),
+    require('../../assets/images/ProductDetails/img2.png'),
+    require('../../assets/images/ProductDetails/image.png'),
+    require('../../assets/images/ProductDetails/img3.png'),
+    require('../../assets/images/ProductDetails/img4.png'),
   ];
 
-  const [mainSwiper, setMainSwiper] = useState(null);
-  const [thumbSwiper, setThumbSwiper] = useState(null);
-  const [activeMainIndex, setActiveMainIndex] = useState(0);
-  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setModalOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
   const zoomRef = useRef(null);
 
-  const handleMainSlideChange = (swiper) => {
-    setActiveMainIndex(swiper.activeIndex);
-    if (thumbSwiper && thumbSwiper !== null) {
-      const thumbSlidesInView = thumbSwiper.params.slidesPerView;
-      const thumbIndexInView = swiper.activeIndex - thumbSlidesInView / 2;
-      const thumbIndexMax = images.length - thumbSlidesInView;
-      const newThumbIndex =
-        thumbIndexInView < 0
-          ? 0
-          : thumbIndexInView > thumbIndexMax
-          ? thumbIndexMax
-          : thumbIndexInView;
-      thumbSwiper.slideTo(newThumbIndex);
-    }
-  };
-
-  const handleThumbClick = (index) => () => {
-    mainSwiper.slideTo(index);
-    setActiveMainIndex(index);
-  };
-
   const handlePrev = () => {
-    if (activeMainIndex > 0) {
-      mainSwiper.slideTo(activeMainIndex - 1);
-      setActiveMainIndex(activeMainIndex - 1);
-    }
+    if (activeIndex > 0) setActiveIndex(activeIndex - 1);
   };
 
   const handleNext = () => {
-    if (activeMainIndex < images.length - 1) {
-      mainSwiper.slideTo(activeMainIndex + 1);
-      setActiveMainIndex(activeMainIndex + 1);
-    }
+    if (activeIndex < images.length - 1) setActiveIndex(activeIndex + 1);
   };
+
+  const handleThumbClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  const toggleModal = () => setModalOpen(!isModalOpen);
 
   const toggleZoom = () => setIsZoomed(!isZoomed);
 
@@ -77,94 +50,98 @@ const ProductDetailsSlider = () => {
   };
 
   return (
-    <>
-      <div className="row align-items-center">
-        {/* Thumbnail Slider */}
+    <div className="container fluid">
+      <div className="row">
+        {/* Thumbnail Navigation */}
         <div className="col-md-2 d-none d-md-block">
-          <Swiper
-            onSwiper={setThumbSwiper}
-            spaceBetween={0}
-            slidesPerView={4}
-            direction="vertical"
-            modules={[FreeMode, Thumbs]}
-            className="h-100"
-          >
-            {images.map((item, index) => (
-              <SwiperSlide key={index}>
+          <div className="d-flex flex-column align-items-center">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`thumbnail mb-2 ${activeIndex === index ? "border-dark border-3" : ""}`}
+                style={{ cursor: "pointer" }}
+                onClick={() => handleThumbClick(index)}
+              >
                 <img
-                  src={item}
-                  className={`img-fluid border ${
-                    activeMainIndex === index ? "border-primary" : "border-transparent"
-                  }`}
-                  alt="thumbnail"
-                  onClick={handleThumbClick(index)}
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="img-fluid"
+                  style={{ borderRadius: "8px" }}
                 />
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
-          <div className="d-flex justify-content-between mt-2">
-            <button className="btn btn-dark" onClick={handlePrev}>
-              <FaAngleUp />
-            </button>
-            <button className="btn btn-dark" onClick={handleNext}>
-              <FaAngleDown />
-            </button>
-          </div>
-        </div>
-
-        {/* Main Slider */}
-        <div className="col-md-10">
-          <Swiper
-            onSlideChange={handleMainSlideChange}
-            onSwiper={setMainSwiper}
-            spaceBetween={10}
-            navigation
-            pagination={{ clickable: true }}
-            modules={[FreeMode, Navigation, Thumbs, Pagination]}
-            className="h-100"
-          >
-            {images.map((item, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={item}
-                  className="img-fluid cursor-pointer"
-                  alt="main"
-                  onClick={() => setOpen(true)}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-
-      {/* Fullscreen Modal */}
-      <div
-        className={`modal fade ${open ? "show" : ""}`}
-        tabIndex="-1"
-        style={{ display: open ? "block" : "none" }}
-        onClick={() => setOpen(false)}
-      >
-        <div className="modal-dialog modal-lg modal-dialog-centered">
-          <div className="modal-content bg-dark text-white">
-            <div className="modal-body position-relative">
-              <img
-                ref={zoomRef}
-                src={images[activeMainIndex]}
-                className={`img-fluid ${isZoomed ? "zoomed" : ""}`}
-                alt="zoomed"
-                onClick={toggleZoom}
-                onMouseMove={handleMouseMove}
-                style={{ cursor: isZoomed ? "zoom-out" : "zoom-in" }}
-              />
-              <button
-                className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                onClick={() => setOpen(false)}
-              ></button>
+            <div className="d-flex justify-content-between mt-2 thumbnail">
+              <button className="btn btn-dark" onClick={handlePrev}>
+                <FaAngleUp />
+              </button>
+              <button className="btn btn-dark" onClick={handleNext}>
+                <FaAngleDown />
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Main Image Slider */}
+        <div className="col-md-10 p-0">
+          <div className="main-image position-relative p-0">
+            <img
+              src={images[activeIndex]}
+              alt={`Main ${activeIndex + 1}`}
+              className="img-fluid w-100 p-0"
+              onClick={toggleModal}
+              style={{ cursor: "pointer", height: "100vh", borderRadius: "20px" }}
+            />
+          </div>
+        </div>
       </div>
-    </>
+
+      {/* Modal for Fullscreen View */}
+      <Modal show={isModalOpen} onHide={toggleModal} size="lg" centered>
+        <Modal.Body className="p-0 bg-dark">
+          <div
+            className="position-relative w-100 h-100 d-flex justify-content-center align-items-center"
+            onMouseMove={handleMouseMove}
+          >
+            <img
+              ref={zoomRef}
+              src={images[activeIndex]}
+              alt={`Zoomed ${activeIndex + 1}`}
+              className={`img-fluid ${isZoomed ? "zoomed" : ""}`}
+              onClick={toggleZoom}
+              style={{
+                cursor: isZoomed ? "zoom-out" : "zoom-in",
+                transition: "transform 0.3s",
+                transform: isZoomed ? "scale(1.5)" : "scale(1)",
+              }}
+            />
+            <div className="button-product-de">
+              <button
+                className="btn btn-light position-absolute top-0 end-0 m-2"
+                onClick={toggleModal}
+              >
+                <IoClose size={24} />
+              </button>
+              {activeIndex > 0 && (
+                <button
+                  className="btn btn-light position-absolute start-0 m-2"
+                  onClick={handlePrev}
+                >
+                  <FaAngleLeft size={24} />
+                </button>
+              )}
+              {activeIndex < images.length - 1 && (
+                <button
+                  className="btn btn-light position-absolute end-0 m-2"
+                  onClick={handleNext}
+                >
+                  <FaAngleRight size={24} />
+                </button>
+              )}
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+    </div>
   );
 };
 

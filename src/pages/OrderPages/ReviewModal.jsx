@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import { Rating } from "@mui/material";
+import Rating from "@mui/material/Rating";
 import { Modal } from "react-bootstrap";
 import "../../styles/Order.css"
 import { ReviewClose } from "../../assets/SvgIcons";

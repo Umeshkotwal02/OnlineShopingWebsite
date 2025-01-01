@@ -33,7 +33,7 @@ const Footer = () => {
       <Container fluid className="footer">
         <Container fluid className="py-0 mt-5">
           <Row>
-            <Col xs={12} md={4} lg={3}>
+            <Col xs={12} md={4} lg={3} >
               <div className="logo-div ps-lg-3 ps-xl-3 ps-xxl-3">
                 <img
                   src={require("../assets/images/Footer-img/footer-logo.png")}
@@ -45,7 +45,7 @@ const Footer = () => {
                 </p>
               </div>
             </Col>
-            <Col xs={6} md={4} lg={2}>
+            <Col xs={6} md={4} lg={2} >
               <div className="mb-4">
                 <div className=" fs-4" style={{ fontWeight: "600" }}>
                   Company
@@ -82,7 +82,7 @@ const Footer = () => {
                   Customer Service
                 </div>
                 <ul className="list-unstyled">
-
+                 
                   <li className="my-1">
                     <a
                       href="/privacy-policy"
@@ -115,7 +115,7 @@ const Footer = () => {
                 </ul>
               </div>
             </Col>
-            <Col xs={12} md={6} lg={2}>
+            <Col xs={12} md={6} lg={3}>
               <div className="mb-4">
                 <div className=" fs-4" style={{ fontWeight: "600" }}>
                   Contact Us

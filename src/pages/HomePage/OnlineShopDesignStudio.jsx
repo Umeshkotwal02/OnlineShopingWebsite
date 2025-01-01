@@ -10,15 +10,14 @@ const OnlineShopDesignStudio = () => {
             <h2
               style={{
                 fontSize: '2rem',
-                lineHeight: '1.25rem',
-                fontWeight: '400',
                 paddingBottom: '1.25rem',
-                borderBottom: '1px solid black',
                 display: 'inline-block',
               }}
+              className='fw-normal mb-0'
             >
               Online Shop Designer Studio – Your Ultimate Destination For Indian Ethnic Wear Online
             </h2>
+            <div style={{ borderBottom: '1px solid black', marginRight: "11rem", marginLeft: " 11rem" }}></div>
           </Col>
         </Row>
 

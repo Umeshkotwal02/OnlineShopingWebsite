@@ -1,23 +1,16 @@
-
 import React, { useState, useRef } from "react";
 import { Modal } from "react-bootstrap";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaAngleUp,
-  FaAngleDown,
-} from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaAngleUp, FaAngleDown } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import "../../styles/ProductDetails.css";
 
-
 const ProductDetailsSlider = () => {
   const images = [
-    require('../../assets/images/ProductDetails/img1.png'),
-    require('../../assets/images/ProductDetails/img2.png'),
-    require('../../assets/images/ProductDetails/image.png'),
-    require('../../assets/images/ProductDetails/img3.png'),
-    require('../../assets/images/ProductDetails/img4.png'),
+    require("../../assets/images/ProductDetails/img1.png"),
+    require("../../assets/images/ProductDetails/img2.png"),
+    require("../../assets/images/ProductDetails/image.png"),
+    require("../../assets/images/ProductDetails/img3.png"),
+    require("../../assets/images/ProductDetails/img4.png"),
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,57 +36,54 @@ const ProductDetailsSlider = () => {
 
   const handleMouseMove = (e) => {
     if (zoomRef.current && isZoomed) {
-      const { left, top, width, height } =
-        zoomRef.current.getBoundingClientRect();
+      const { left, top, width, height } = zoomRef.current.getBoundingClientRect();
       const x = e.clientX - left;
       const y = e.clientY - top;
-      zoomRef.current.style.transformOrigin = `${(x / width) * 100}% ${(y / height) * 100
-        }%`;
+      zoomRef.current.style.transformOrigin = `${(x / width) * 100}% ${(y / height) * 100}%`;
     }
   };
 
   return (
-    <div className="container fluid">
+    <div className="container-fluid">
       <div className="row">
         {/* Thumbnail Navigation */}
         <div className="col-md-2 d-none d-md-block">
-          <div className="d-flex flex-column align-items-center">
+          <div className="thumbnail-grid">
             {images.map((image, index) => (
               <div
                 key={index}
-                className={`thumbnail  mb-2 ${activeIndex === index ? "border-dark border-3" : ""
-                  }`}
-                style={{ cursor: "pointer" }}
+                className={`thumbnail ${activeIndex === index ? "active-thumbnail" : ""}`}
                 onClick={() => handleThumbClick(index)}
               >
                 <img
                   src={image}
                   alt={`Thumbnail ${index + 1}`}
-                  className="img-fluid"
-                  style={{ borderRadius: "8px" }}
+                  className="thumbnail-img"
                 />
               </div>
             ))}
-            <div className="d-flex justify-content-between mt-2">
-              <button className="btn btn-dark" onClick={handlePrev}>
-                <FaAngleUp />
-              </button>
-              <button className="btn btn-dark" onClick={handleNext}>
-                <FaAngleDown />
-              </button>
+            <div style={{ marginTop: "-21%", padding: "2%" }}>
+              <div className="thumbnail-nav d-flex justify-content-around bg-black text-white rounded-bottom fs-5">
+                <div onClick={handlePrev}>
+                  <FaAngleUp />
+                </div>
+                <div className="" onClick={handleNext}>
+                  <FaAngleDown />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Main Image Slider */}
         <div className="col-md-10 p-0">
-          <div className="main-image position-relative p-0">
+          <div className="main-image position-relative">
             <img
               src={images[activeIndex]}
               alt={`Main ${activeIndex + 1}`}
-              className="img-fluid w-100 p-0"
+              className=""
               onClick={toggleModal}
-              style={{ cursor: "pointer", height: "100vh", borderRadius: "20px" }}
+              style={{ cursor: "pointer", borderRadius: "20px", width:"100%" }}
             />
           </div>
         </div>
@@ -110,8 +100,7 @@ const ProductDetailsSlider = () => {
               ref={zoomRef}
               src={images[activeIndex]}
               alt={`Zoomed ${activeIndex + 1}`}
-              className={`img-fluid ${isZoomed ? "zoomed" : ""
-                } `}
+              className={`img-fluid ${isZoomed ? "zoomed" : ""}`}
               onClick={toggleZoom}
               style={{
                 cursor: isZoomed ? "zoom-out" : "zoom-in",
@@ -146,7 +135,7 @@ const ProductDetailsSlider = () => {
           </div>
         </Modal.Body>
       </Modal>
-    </div>
+    </div >
   );
 };
 

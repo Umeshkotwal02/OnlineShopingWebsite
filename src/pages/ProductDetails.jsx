@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { IoBagOutline, IoStar } from "react-icons/io5";
 import { Button, Form } from "react-bootstrap";
 import { RiHeartAddLine } from "react-icons/ri";
-// import ProductDetailsSlider from "./ProductDetailsPage/ProductDetailsSlider";
-import "../styles/ProductDetails.css";
+import ProductDetailsSlider from "./ProductDetailsPage/ProductDetailsSlider";
 import QuantityCounter from "./ProductDetailsPage/QuantityCounter";
 import {
   CashOnDelIcon,
@@ -17,8 +16,9 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "../Components/Breadcrumb";
 import Loader from "../Components/Loader";
 import ProductAllInformation from "./ProductDetailsPage/ProductAllInformation";
-import ProductDetailsSlider from "./ProductDetailsPage/Slider";
-
+import "../styles/ProductDetails.css";
+import SimilarProduct from "./ProductDetailsPage/SimilarProduct";
+import OnlineShopDesignStudio from "./HomePage/OnlineShopDesignStudio";
 
 const ProductDetails = () => {
 
@@ -182,7 +182,7 @@ const ProductDetails = () => {
                 {/* Available Offers */}
                 {availableOffers.length > 0 && (
                   <div className="mb-4">
-                    <h5 className="mt-4" >Available Offers:</h5>
+                    <h4 className="mt-4" >Available Offers:</h4>
                     {availableOffers.map((item, index) => (
                       <div key={index} className="border border-light mb-2 p-4 discount-coupon">
                         <Row className="align-items-center">
@@ -229,7 +229,7 @@ const ProductDetails = () => {
                   <h5>Lehenga Choli:</h5>
                   <Row>
                     <Col>
-                      <Form>
+                      <Form className="custom-check-form">
                         {["Unstitched Lehenga Choli", "Standard Stitching", "Customize Stitching"].map((stitching, index) => (
                           <Form.Check
                             key={index}
@@ -239,6 +239,7 @@ const ProductDetails = () => {
                             checked={stitchingValue === stitching}
                             onChange={handleChange}
                             inline
+                            className=""
                           />
                         ))}
                       </Form>
@@ -305,12 +306,15 @@ const ProductDetails = () => {
 
 
                 {/* Product Information */}
-                <ProductAllInformation/>
+                <ProductAllInformation />
               </Col>
               <hr />
+              &nbsp;
+              <SimilarProduct />
             </Row>
-            <CustomerReview />
           </Container>
+          <CustomerReview />
+          <OnlineShopDesignStudio />
         </>
       )
       }

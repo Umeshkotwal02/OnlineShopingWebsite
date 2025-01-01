@@ -36,12 +36,8 @@ const CarosoleSilckSlider = () => {
     // Simulating loading for 2 seconds
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1000);
-        return () => clearTimeout(timer); 
+        return () => clearTimeout(timer);
     }, []);
-
-    if (loading) {
-        return <Loader />;
-    }
 
     const settings = {
         infinite: true,
@@ -63,20 +59,32 @@ const CarosoleSilckSlider = () => {
 
     return (
         <>
-            <CarosoleSlickMobi />
-            <Container fluid className="d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5">
-                <Slider {...settings}>
-                    {images.map((image, index) => (
-                        <div key={index} className="slider-item">
-                            <img
-                                src={image}
-                                alt={`Slide ${index + 1}`}
-                                className="caro-img"
-                            />
-                        </div>
-                    ))}
-                </Slider>
-            </Container>
+            <>
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <CarosoleSlickMobi />
+                        <Container
+                            fluid
+                            className="d-none d-lg-block CarosoleSlickSlider py-3 px-lg-5 px-xl-5 px-xxl-5"
+                        >
+                            <Slider {...settings}>
+                                {images.map((image, index) => (
+                                    <div key={index} className="slider-item">
+                                        <img
+                                            src={image}
+                                            alt={`Slide ${index + 1}`}
+                                            className="caro-img"
+                                        />
+                                    </div>
+                                ))}
+                            </Slider>
+                        </Container>
+                    </>
+                )}
+            </>
+
         </>
     );
 };
