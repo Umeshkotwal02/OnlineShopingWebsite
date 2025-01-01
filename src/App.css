@@ -211,6 +211,25 @@ tr {
   border-width: 0;
 }
 
-.no-style{
+.no-style {
   resize: none !important;
+}
+
+/* Common Radius */
+.cmn-btn {
+  border-radius: 8px !important;
+}
+
+.accordion-button {
+  border-bottom: 0px !important;
+  color: black !important;
+}
+
+.accordion-button:not(.collapsed) {
+  border-bottom: 0px !important;
+  color: black !important;
+}
+
+.contact-us .form-control{
+  padding: 12px !important;
 }

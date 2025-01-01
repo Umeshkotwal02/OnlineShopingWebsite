@@ -37,7 +37,8 @@ const ProductList = () => {
             <Row className="">
                 {productListPageData.map((product) => (
                     <Col xs={12} sm={6} md={4} lg={3} xl={3} xxl={3} key={product.id} className="mb-4 rounded">
-                        <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none">
+                        {/* <Link to={`/product/${productNameSlug(product.product_name)}`} className="new-arrival-card text-decoration-none"> */}
+                        <Link to={`/products/details`} className="new-arrival-card text-decoration-none">
                             {/* Product Image Section */}
                             <div className="image-container rounded">
                                 <ProductImageSlider imageList={product.product_images} />

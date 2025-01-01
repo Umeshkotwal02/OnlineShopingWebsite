@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoBagOutline, IoStar } from "react-icons/io5";
 import { Button, Form } from "react-bootstrap";
 import { RiHeartAddLine } from "react-icons/ri";
-import ProductDetailsSlider from "./ProductDetailsPage/ProductDetailsSlider";
+// import ProductDetailsSlider from "./ProductDetailsPage/ProductDetailsSlider";
 import "../styles/ProductDetails.css";
 import QuantityCounter from "./ProductDetailsPage/QuantityCounter";
 import {
@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "../Components/Breadcrumb";
 import Loader from "../Components/Loader";
 import ProductAllInformation from "./ProductDetailsPage/ProductAllInformation";
+import ProductDetailsSlider from "./ProductDetailsPage/Slider";
 
 
 const ProductDetails = () => {
@@ -102,6 +103,7 @@ const ProductDetails = () => {
             <Row className="py-3">
               {/* Product Image Slider */}
               <Col lg={6}>
+                {/* <ProductDetailsSlider /> */}
                 <ProductDetailsSlider />
               </Col>
 

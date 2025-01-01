@@ -67,7 +67,8 @@ const CheckOutPage = () => {
           {steps.map((step, index) => (
             <React.Fragment key={step.id}>
               <Col
-                className={`d-flex align-items-center gap-2 ${step.id === 'SignUp' || activeTab === step.id ? 'text-dark' : 'text-muted'
+
+                className={`d-flex align-items-center gap-2 justify-content-center text-center ${step.id === 'SignUp' || activeTab === step.id ? 'text-dark' : 'text-muted'
                   }`}
                 onClick={() => handleTabClick(step.id)}
                 style={step.id === 'SignUp' ? { cursor: 'pointer' } : {}}
@@ -79,19 +80,24 @@ const CheckOutPage = () => {
                       ? 'bg-dark text-white'
                       : 'bg-secondary text-white'
                     }`}
-                  style={{ width: '40px', height: '40px' }}
+                  style={{
+                    width: '10vw',
+                    height: '10vw',
+                    maxWidth: '60px',
+                    maxHeight: '60px',
+                  }}
                 >
                   {step.icon}
                 </div>
-                <span className="fs-5 fw-medium">{step.label}</span>
+                <span className="fs-6 fw-medium">{step.label}</span>
               </Col>
               {index < steps.length - 1 && (
-                <Col>
+                <Col xs={2} md={2} sm={2} className="px-0 d-flex align-items-center justify-content-center">
                   <span
                     className="d-block w-100"
                     style={{
                       height: '3px',
-                      backgroundColor: activeTab === steps[index + 1]?.id ? 'black' : 'rgba(150, 150, 150, 1)',
+                      borderTop: activeTab === steps[index + 1]?.id ? '3px dashed black' : '3px dashed rgba(150, 150, 150, 1)',
                     }}
                   />
                 </Col>
@@ -99,6 +105,7 @@ const CheckOutPage = () => {
             </React.Fragment>
           ))}
         </Row>
+
         <div>{renderActiveView()}</div>
       </Container>
     </>

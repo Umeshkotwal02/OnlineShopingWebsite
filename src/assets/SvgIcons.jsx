@@ -154,6 +154,15 @@ const XClose = (props) => (
 
 );
 
+const ReviewClose = (props) => (
+   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="6.9319" cy="6.06667" r="6.06667" fill="#FF2E2E" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96315 3.63987L9.35648 3.0332L6.92982 5.45987L4.50315 3.0332L3.89648 3.63987L6.32315 6.06654L3.89648 8.4932L4.50315 9.09987L6.92982 6.6732L9.35648 9.09987L9.96315 8.4932L7.53648 6.06654L9.96315 3.63987Z" fill="white" />
+   </svg>
+);
+
+
+
 const ProfileIcon = (props) => (
    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}>
       <path stroke="#252525" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.985 15.346c-3.868 0-7.17.585-7.17 2.927s3.281 2.948 7.17 2.948c3.867 0 7.17-.586 7.17-2.927s-3.282-2.948-7.17-2.948Z" clipRule="evenodd" />
@@ -394,4 +403,4 @@ const ExclaimIcon = (props) => (
 );
 
 
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon, WalletIcon2, CashONIcon2 };
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon, WalletIcon2, CashONIcon2,ReviewClose };

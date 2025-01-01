@@ -9,7 +9,7 @@ import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import CouponCanva from "./CouponCanva";
 
-const BagCard = () => {
+const BagCard = (activeTab) => {
 
 
   const items = [

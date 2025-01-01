@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "../../styles/watchShopCard.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Modal, Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 import Loader from "../../Components/Loader";
 
-const WatchShopCard = ({ productInfo }) => {
+const WatchShopCard = ({ productInfo, onVideoClick }) => {
     const [play, setPlay] = useState(false);
 
     const handleMouseEnter = () => setPlay(true);
@@ -18,6 +18,8 @@ const WatchShopCard = ({ productInfo }) => {
             className="watch-shop-card"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => onVideoClick(productInfo.product_video_url)} // Trigger modal open
+
         >
             {/* Video Container */}
             <div className="video-container">
@@ -172,13 +174,43 @@ const WatchShopCardDemo = () => {
             },
         ],
     };
+    const sliderSettings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2.2,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "40px",
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    centerMode: true,
+                    centerPadding: "0px",
+                },
+            },
+        ],
+    };
     const [loading, setLoading] = useState(true);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedVideo, setSelectedVideo] = useState("");
 
     // Simulating loading for 2 seconds
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1000);
         return () => clearTimeout(timer);
     }, []);
+
+    const handleVideoClick = (videoUrl) => {
+        setSelectedVideo(videoUrl);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setSelectedVideo("");
+    };
 
     if (loading) {
         return <Loader />;
@@ -196,12 +228,36 @@ const WatchShopCardDemo = () => {
                     <Slider {...settings} className="wtc-shop-slick-slider">
                         {productData.map((product) => (
                             <div key={product.id}>
-                                <WatchShopCard productInfo={product} />
+                                <WatchShopCard productInfo={product} onVideoClick={handleVideoClick} />
                             </div>
                         ))}
                     </Slider>
                 </Col>
             </Row>
+
+            {/* Modal for Video */}
+            <Modal show={isModalOpen} onHide={handleCloseModal} size="lg" centered style={{background:"transparent"}} className="custom-watch-modal-card" >
+                <Modal.Body style={{background:"transparent"}}>
+                    <Slider
+                        {...sliderSettings}
+                        initialSlide={selectedVideo}
+                        afterChange={(index) => setSelectedVideo(index)}
+                        style={{background:"transparent"}}
+                    >
+                        {productData.map((product, index) => (
+                            <div key={product.id} className="video-slide">
+                                <ReactPlayer
+                                    url={product.product_video_url}
+                                    playing={index === selectedVideo}
+                                    controls
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                </Modal.Body>
+            </Modal>
         </Container>
     );
 };

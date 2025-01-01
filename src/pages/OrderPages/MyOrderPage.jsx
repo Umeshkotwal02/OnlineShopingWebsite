@@ -4,7 +4,7 @@ import { HiShoppingCart } from "react-icons/hi2";
 import Pagination from "react-bootstrap/Pagination";
 import Breadcrumb from "../../Components/Breadcrumb";
 import Loader from "../../Components/Loader";
-import { FaChevronRight } from "react-icons/fa";
+import '../../styles/Order.css'
 
 const MyOrderPage = () => {
   const [orders, setOrders] = useState([]);
@@ -126,9 +126,9 @@ const MyOrderPage = () => {
                         </div>
 
                       </div>
-                      <div className="d-flex flex-column justify-content-end align-item-end">
+                      <div className="d-flex flex-column align-items-end">
                         <div className="text-start">{order.order_number}</div>
-                        <button className={`px-4 bg-white ${getStatusStyle(order.order_status)}`} style={{ borderRadius: "5px" }}>
+                        <button className={`px-4 bg-white ordered-btn ${getStatusStyle(order.order_status)}`} style={{ borderRadius: "5px" }}>
                           {order.order_status.charAt(0).toUpperCase() + order.order_status.slice(1)}
                         </button>
                       </div>

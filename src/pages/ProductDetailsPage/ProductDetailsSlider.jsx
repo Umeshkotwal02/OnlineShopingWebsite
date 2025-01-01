@@ -74,18 +74,11 @@ const ProductDetailsSlider = () => {
                 />
               </div>
             ))}
-            <div className="">
-              <button
-                className="btn btn-dark"
-                onClick={handlePrev}
-              >
+            <div className="d-flex justify-content-between mt-2">
+              <button className="btn btn-dark" onClick={handlePrev}>
                 <FaAngleUp />
               </button>
-              <button
-                className="btn btn-dark"
-                onClick={handleNext}
-                disabled={activeIndex === images.length - 1}
-              >
+              <button className="btn btn-dark" onClick={handleNext}>
                 <FaAngleDown />
               </button>
             </div>

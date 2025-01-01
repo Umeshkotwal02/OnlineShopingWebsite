@@ -66,18 +66,8 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="my-1">
-                    <a href="/blogs" className="text-dark text-decoration-none">
-                      Blogs
-                    </a>
-                  </li>
-                  <li className="my-1">
-                    <a href="/careers" className="text-dark text-decoration-none">
-                      Careers
-                    </a>
-                  </li>
-                  <li className="my-1">
                     <a
-                      href="/market-area"
+                      href="/my-order"
                       className="text-dark text-decoration-none"
                     >
                       Your Orders
@@ -92,11 +82,7 @@ const Footer = () => {
                   Customer Service
                 </div>
                 <ul className="list-unstyled">
-                  <li className="my-1">
-                    <a href="/enquiry" className="text-dark text-decoration-none">
-                      Enquire Now
-                    </a>
-                  </li>
+
                   <li className="my-1">
                     <a
                       href="/privacy-policy"
@@ -129,7 +115,7 @@ const Footer = () => {
                 </ul>
               </div>
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} md={6} lg={2}>
               <div className="mb-4">
                 <div className=" fs-4" style={{ fontWeight: "600" }}>
                   Contact Us

@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MyComponent from "../../assets/Demo";
 import { Container } from "react-bootstrap";
-import ReturnModal from "./ReturnModal";
+import OtherOrder from "./OtherOrder";
 
 const orderDetails = {
   order_detail: [
@@ -34,7 +33,6 @@ const OrderDetails = () => {
   return (
     <>
       <Container>
-        <ReturnModal/>
         <div className="container m-4 border" style={{ borderRadius: "15px", backgroundColor: "#F3F3F3" }}>
           <h3 className="h4 mt-4 mb-2">Order Details</h3>
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
@@ -98,7 +96,7 @@ const OrderDetails = () => {
                       </tr>
                     )}
                     <tr>
-                      <td className="fw-bold">Total Pay:</td>
+                      <td className="fw-bold" style={{ color: "#03A685" }}>Total Pay:</td>
                       <td className="fw-bold text-end">₹ {orderDetails.order_summary.total_after_gst}</td>
                     </tr>
                   </tbody>
@@ -107,7 +105,7 @@ const OrderDetails = () => {
             </div>
           </div>
         </div>
-        <MyComponent />
+        <OtherOrder />
       </Container>
     </>
   );
