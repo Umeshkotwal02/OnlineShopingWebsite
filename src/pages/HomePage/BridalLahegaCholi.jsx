@@ -67,7 +67,7 @@ const BridalLahegaCholi = () => {
     };
 
     return (
-        <div className="bridal-container mt-4 px-lg-5 px-xl-5 px-xxl-5">
+        <div className="bridal-container mt-4 px-lg-5 px-xl-5 px-xxl-5 mobile-paddin-fix">
             <h3 className="text-center d-none d-lg-block mt-2" style={{ fontWeight: "400" }}>
                 Bridal Lehenga Choli
             </h3>
@@ -82,7 +82,7 @@ const BridalLahegaCholi = () => {
                     <Link
                         key={product.id}
                         to={`/product/${productNameSlug(product.product_name)}`}
-                        className="new-arrival-card text-decoration-none"
+                        className="text-decoration-none"
                     >
                         <div className="bridal-image-container">
                             <img
@@ -92,7 +92,7 @@ const BridalLahegaCholi = () => {
                             />
                             <div className="overlay-buttons">
                                 <button
-                                    className="add-to-cart-btn"
+                                    className="shop-now-btn"
                                     onClick={handleAddToCart}
                                 >
                                     SHOP NOW

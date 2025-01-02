@@ -26,15 +26,47 @@ export const testimonialsData = [
 
 
 const CustomerStoriesSection = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        nextArrow: false,
+        prevArrow: false,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: { slidesToShow: 3, slidesToScroll: 1 },
+            },
+            {
+                breakpoint: 1024,
+                settings: { slidesToShow: 3, slidesToScroll: 1 },
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, slidesToScroll: 1 },
+            },
+            {
+                breakpoint: 480,
+                settings: { slidesToShow: 1.2, slidesToScroll: 1, centerMode: true },
+            },
+        ],
+    };
     return (
             <section className="customer-stories-section">
                 <h2 className="customer-section-title">Customer Stories</h2>
-                <div className="customer-container">
+                <div className="">
+                <Slider {...settings} className="cust-stories-slider">
+
                     {testimonialsData.map((item, index) => (
                         <div className="customer-card-wrapper" key={index}>
                             <CustomerStories info={item} />
                         </div>
                     ))}
+                </Slider>
                 </div>
             </section>
     );

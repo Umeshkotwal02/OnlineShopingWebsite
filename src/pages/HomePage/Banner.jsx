@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <Container fluid className='px-lg-5 px-xl-5 px-xxl-5'>
     <Row>
-      <Col className='col-12'>
+      <Col className='px-0'>
         <Link to='/' className='d-none d-md-block'>
           <img src={require('../../assets/images/Banner/Banner.png')} className='w-100' alt="" />
         </Link>

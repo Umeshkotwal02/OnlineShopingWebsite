@@ -8,7 +8,7 @@ const productData = [
         ],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
     },
@@ -18,7 +18,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img2.png")],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 25,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
 
@@ -29,7 +29,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img3.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 15,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -38,7 +38,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img4.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 10,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -47,7 +47,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img5.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -56,7 +56,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img6.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 18,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -65,7 +65,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img7.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 8,
@@ -73,7 +73,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img8.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 22, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 9,
@@ -81,7 +81,7 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img9.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 15, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 10,
@@ -89,7 +89,15 @@ const productData = [
         product_images: [require("../assets/images/New-Arrive/img10.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 10, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
+    },
+    {
+        id: 11,
+        product_name: "Maroon Velvet Embroidered N Sequi",
+        product_images: [require("../assets/images/New-Arrive/img10.png"),],
+        product_mrp: 3899,
+        product_price: 2349,
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
 ];
 
@@ -107,7 +115,7 @@ const productListPageData = [
         ],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
     },
@@ -117,7 +125,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img2.png")],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 25,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
     },
@@ -127,7 +135,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img3.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 15,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -136,7 +144,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img4.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 10,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -145,7 +153,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img5.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -154,7 +162,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img6.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 18,
+        product_discount: 40,
         is_wishlist: false, currency: "₹"
     },
     {
@@ -163,7 +171,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img7.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 8,
@@ -171,7 +179,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img8.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 22, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 9,
@@ -179,7 +187,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img9.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 15, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 10,
@@ -187,7 +195,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img10.png"),],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 10, is_wishlist: false, currency: "₹"
+        product_discount: 40, is_wishlist: false, currency: "₹"
     },
     {
         id: 11,
@@ -198,7 +206,7 @@ const productListPageData = [
         ],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 20,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
     },
@@ -208,7 +216,7 @@ const productListPageData = [
         product_images: [require("../assets/images/New-Arrive/img2.png")],
         product_mrp: 3899,
         product_price: 2349,
-        product_discount: 25,
+        product_discount: 40,
         is_wishlist: false,
         currency: "₹"
     },

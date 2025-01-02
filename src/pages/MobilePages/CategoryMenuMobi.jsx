@@ -63,7 +63,7 @@ const CategoryMenuMobi = () => {
         flexWrap: "nowrap",
         scrollbarWidth: "none",
       }}
-      className="hide-scrollbar d-lg-none p-2"
+      className="hide-scrollbar d-lg-none py-2 px-3"
     >
       {menuItems.map((item, index) => (
         <div
@@ -78,8 +78,8 @@ const CategoryMenuMobi = () => {
             <Image
               src={item.image}
               roundedCircle
-              width={80}
-              height={80}
+              width={70}
+              height={70}
               className="border-none"
               alt="mobile-categoty-image"
             />

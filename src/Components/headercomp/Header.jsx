@@ -110,7 +110,7 @@ const Header = ({
   return (
     <>
       <TopBar />
-      <Container fluid className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
+      <div className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
         <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 pt-1">
           <div className="d-none d-lg-block">
             <Row className="align-items-center pt-3">
@@ -238,11 +238,23 @@ const Header = ({
                   )}
                 </div>
 
-                <div className="text-dark d-flex align-items-center gap-1" onClick={handleNavigateToWishlist} style={{ cursor: "pointer" }}>
+                <div className="text-dark d-flex align-items-center gap-1 position-relative" onClick={handleNavigateToWishlist} style={{ cursor: "pointer" }}>
                   <WishlistIcon />
-                  <span className="header-badge badge position-absolute d-inline-block bg-danger rounded-pill badge-position "
+                  {/* <span className="header-badge badge position-absolute d-inline-block bg-danger rounded-pill badge-position " */}
+                  <span className="cart badge  bg-danger rounded-pill text-white"
+                    style={{
+                      fontSize: '0.7rem',
+                      width: '18px',
+                      height: '18px',
+                      position: 'absolute',
+                      top: '9px',
+                      left: '14px',
+                      textAlign: 'center',
+                      display: 'grid',
+                      placeItems: 'center',
+                    }}
                   >3</span>
-                  <span className="d-none d-xl-inline-block ms-1" style={{ fontSize: "0.9rem" }}>Wishlist</span>
+                  <span className="d-none d-xl-inline-block text-size ms-1 pt-1" style={{ fontSize: "0.9rem" }}>Wishlist</span>
                 </div>
 
                 <div
@@ -277,13 +289,13 @@ const Header = ({
           <MobileHeader />
         </Container>
         <CategoryMenu />
-      </Container >
+      </div >
       <CategoryMenuMobi />
       <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
       <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
       <Notification show={showNotificationModal} handleClose={handleCloseNotificationModals} />
-      <MobileFooter />
+      {/* <MobileFooter /> */}
 
     </>
   );

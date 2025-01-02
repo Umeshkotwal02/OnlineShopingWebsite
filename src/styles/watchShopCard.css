@@ -1,6 +1,6 @@
 .custom-watch-modal-card .modal-content {
   background-color: transparent !important;
-  border: 0px !important;  
+  border: 0px !important;
 }
 
 .watch-shop-card {
@@ -112,7 +112,20 @@
 }
 
 /* Responsive styles for different screen sizes */
+
+@media (min-width: 430px) {
+  .mobile-watchandshop-slider {
+    padding: 0% !important;
+    margin: 0% !important;
+  }
+}
+
 @media (max-width: 576px) {
+
+  .mobile-watchandshop-slider {
+    padding: 0% !important;
+    margin: 0% !important;
+  }
 
   /* Small screens (phones) */
   .wtc-shop-product-info h3 {

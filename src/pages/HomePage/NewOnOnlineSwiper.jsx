@@ -96,21 +96,26 @@ const NewOnOnlineSwiper = () => {
 
   // Simulating loading for 2 seconds
   useEffect(() => {
-      const timer = setTimeout(() => setLoading(false), 1000);
-      return () => clearTimeout(timer); 
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-      return <Loader />;
+    return <Loader />;
   }
 
   return (
 
     <div className="new-on-kapoor-swiper px-lg-5 px-xl-5 px-xxl-5 new-onKapoor-background-gradient ">
-      <div className="d-none d-lg-block">
-        <h3 className="text-center font-normal fs-3 pt-3" style={{ paddingBottom: "0px" }}>New on Online Shop</h3>
-        <p className="text-center"><i>"Find Everything For Your Every Need"</i></p>
-      </div>
+      <h3 className="text-center d-none d-lg-block mt-2" style={{ fontWeight: "400" }}>
+        New on Online Shop
+      </h3>
+      <h3 className="text-start font-bold d-lg-none my-3 ms-2 mt-4">
+        New on Online Shop
+      </h3>
+      <p className="text-center font-italic d-none d-lg-block">
+        <i> "Find Everything For Your Every Need"</i>
+      </p>
       <Row>
         <Col xxl={2} xl={2} lg={2} className="px-2 d-none d-lg-block ">
           <div >
@@ -124,7 +129,7 @@ const NewOnOnlineSwiper = () => {
                   className="staic-slider-image"
                   alt={"New Arrive Product"}
                   loading="lazy"
-                  style={{height:"320px"}}
+                  style={{ height: "320px" }}
                 />
               </div>
             </Link>
@@ -134,7 +139,7 @@ const NewOnOnlineSwiper = () => {
           {/* Slider Component */}
           <Slider {...settings}>
             {staticData.map((item, index) => (
-              <div key={"newOnKapoor-" + index} className="slick-slide-container swiper-slide-container rounded" style={{borderRadius:"10px"}}>
+              <div key={"newOnKapoor-" + index} className="slick-slide-container swiper-slide-container rounded" style={{ borderRadius: "10px" }}>
                 <NewArrivalOfferCard itemInfo={item} />
               </div>
             ))}

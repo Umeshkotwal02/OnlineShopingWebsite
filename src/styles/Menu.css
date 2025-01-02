@@ -28,8 +28,8 @@
 .dropdown-content {
   position: absolute;
   top: 100%;
-  left: 35px;
-  right: 10px;
+  left: 0%;
+  /* right: 10px; */
   background: #FFFFFF;
   padding: 10px;
   display: none;
@@ -91,6 +91,7 @@
 .nav-link {
   font-size: unset !important;
   font-weight: 500 !important;
+  color: black !important;
 }
 
 li {

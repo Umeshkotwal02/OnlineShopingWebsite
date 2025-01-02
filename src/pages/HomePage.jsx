@@ -51,7 +51,7 @@ function HomePage() {
       <Banner />
       <ShopByColorSlick />
       <SareeEdit />
-      {/* <SareeEditMobi /> */}
+      <SareeEditMobi />
       <CustomerStoriesSection />
       <OurInstaPage />
       <OnlineShopDesignStudio />

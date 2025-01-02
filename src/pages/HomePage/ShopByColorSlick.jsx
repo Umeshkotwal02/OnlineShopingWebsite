@@ -109,9 +109,10 @@ const ShopByColorSlick = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 2.3,
           slidesToScroll: 1,
           centerMode: true,
+          centerPadding: "0px",
         },
       },
     ],
@@ -123,12 +124,13 @@ const ShopByColorSlick = () => {
     <>
       <Container
         fluid
-        className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block"
-      >
-
+        className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5">
+        <h3 className="text-start font-bold my-3 ms-2 mt-4">
+          Shop by Color
+        </h3>
         <div className="d-none d-lg-block">
-          <h3 className="text-center font-normal fs-3 pt-3" style={{ paddingBottom: "0px" }}>Shop by Color</h3>
-          <p className="text-center"><i>"Embrace the festival magic, let joy fill every moment."</i></p>
+          <h3 className="text-center d-none d-lg-block mt-2" style={{ fontWeight: "400" }}>Shop by Color</h3>
+          <p className="text-center font-italic mb-2"><i>"Embrace the festival magic, let joy fill every moment."</i></p>
         </div>
         <Row>
           <Col xxl={12} xl={12} lg={12} className="p-0 m-0">

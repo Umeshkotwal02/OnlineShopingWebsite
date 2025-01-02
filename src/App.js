@@ -41,10 +41,14 @@ function App() {
           <AutoScrollToTop />
           <Header />
           <Routes>
-            {publicRoutes.map((route, idx) => (
-              <Route key={idx} path={route.path} element={<route.component />} />
-            ))}
-            <Route path="/" element={<Navigate to="/home" />} />
+            {publicRoutes.map(({ path, component: Component, redirect }, idx) =>
+              redirect ? (
+                <Route key={idx} path={path} element={<Navigate to={redirect} />} />
+              ) : (
+                <Route key={idx} path={path} element={<Component />} />
+              )
+            )}
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
           <Footer />
           <ScrollUp />

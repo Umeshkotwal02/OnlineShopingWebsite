@@ -149,7 +149,7 @@ const ShopByCategorySlick = () => {
         <>
             <Container
                 fluid
-                className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5 d-none d-lg-block"
+                className="shop-by-category-slick slider-container h-100 w-100 px-lg-5 px-xl-5 px-xxl-5"
             >
                 <Row>
                     <Col xxl={2} xl={2} lg={2} className="px-2 d-none d-lg-block">
@@ -166,7 +166,7 @@ const ShopByCategorySlick = () => {
                             </Link>
                         </div>
                     </Col>
-                    <Col xxl={10} xl={10} lg={10} className="p-0 m-0">
+                    <Col xxl={10} xl={10} lg={10} sm={12} xs={12} className="mobile-category-slider">
                         {/* Render the slider */}
                         <div ref={sliderRef}>
                             <Slider {...settings}>
@@ -202,33 +202,6 @@ const ShopByCategorySlick = () => {
                 </Row>
             </Container>
 
-            <Container fluid className="d-lg-none">
-                {/* <h3 className="fw-bold my-3">Shop by Category</h3> */}
-                <h3 className="text-start my-3">Shop by Category</h3>
-
-                <Slider {...settings}>
-                    {sliderItems.map((product) => (
-                        <div key={product.id}>
-                            <Link
-                                to={`/product/${productNameSlug(product.text)}`}
-                                className="shop-by-category-card text-decoration-none"
-                            >
-                                <div className="position-relative w-100 h-100 rounded">
-                                    <img
-                                        src={product.image}
-                                        className="slider-image rounded"
-                                        alt={product.text}
-                                        loading="lazy"
-                                    />
-                                    <div className="image-overlay position-absolute d-flex align-items-end justify-content-center pb-3">
-                                        <p className="overlay-text text-white text-center" style={{ fontFamily: "KaushanScript" }}>{product.text}</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </Slider>
-            </Container>
         </>
     );
 };

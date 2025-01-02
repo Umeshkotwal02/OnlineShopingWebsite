@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const FestivalSpecial = () => {
     return (
-        <Container fluid className="py-0 pt-4 px-5 px-md-2 px-lg-5 px-xl-5 px-xxl-5">
+        <Container fluid className="py-0 pt-4 px-md-2 px-lg-5 px-xl-5 px-xxl-5">
             {/* Bridal Edit */}
             <div>
                 <h3 className="text-center d-none d-lg-block mt-2" style={{ fontWeight: "400" }}>Festival Special

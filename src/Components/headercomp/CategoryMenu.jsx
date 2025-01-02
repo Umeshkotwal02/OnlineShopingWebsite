@@ -6,8 +6,8 @@ import { headerCatData } from '../../config/ConstData';
 
 const CategoryMenu = () => {
   return (
-    <Container fluid className="menu-container pt-2 px-4 d-none d-lg-block">
-      <Navbar className="responsive-navbar-nav">
+    <Container fluid className="menu-container pt-2 px-5 d-none d-lg-block">
+      <Navbar className="responsive-navbar-nav pb-0">
         <Nav className="w-100 justify-content-between">
           {headerCatData.map((menu, index) => (
             <div className={"menu-item"}>
@@ -21,9 +21,9 @@ const CategoryMenu = () => {
                 {menu.dropdown.length > 0 ? (
                   menu.dropdown.map((dropdown, idx) => (
                     <div key={idx} className="mx-4">
-                      <p className="list-title text-start ms-1">{dropdown.category}</p>
+                      <p className="list-title text-start ms-1 text-black" style={{fontWeight:"550"}}>{dropdown.category}</p>
                       {dropdown.items.map((item, i) => (
-                        <li key={i} className="p-1">
+                        <li key={i} className="p-1 text-black">
                           {/* <Link to={item.link} className="list-item">
                           {item.name}
                         </Link> */}

@@ -16,21 +16,21 @@ const NewArrivalOfferCard = ({ itemInfo }) => {
 
     return (
         <div
-            className="new-arrival-card"
+            className="new-on-online"
         >
-            <div className="new-arrival-card-image">
+            <div className="new-on-online-image">
                 <img
                     src={itemInfo?.product_image || "/images/line-lehenga.png"}
-                    className="new-arrival-card-img"
+                    className="new-on-online-img"
                     alt="product"
                     onClick={() => navigate(`/product/${productName}`)}
                     loading="lazy"
                 />
             </div>
-            <h3 className="new-arrival-card-name">
+            <h3 className="new-on-online-name">
                 {truncateProductName(itemInfo?.product_name || "")}
             </h3>
-            <h3 className="new-arrival-card-discount">
+            <h3 className="new-on-online-discount">
                 MIN {parseInt(itemInfo?.product_discount)}% OFF
             </h3>
 

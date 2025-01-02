@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Offcanvas, Row, Col } from "react-bootstrap";
-import { CartIcon, SearchIcon } from "../../assets/SvgIcons";
+import { Offcanvas, Row, Col, Nav } from "react-bootstrap";
+import { CartIcon, OffCanvaArrowIcon } from "../../assets/SvgIcons";
 import { FiSearch } from "react-icons/fi";
+import "../../styles/OffCanvasForHeader.css"
 
 const MainHeaderMobi = ({
   wishlistCount,
@@ -29,7 +30,7 @@ const MainHeaderMobi = ({
               onClick={handleOffcanvasToggle}
               aria-label="Toggle navigation"
             >
-              ☰
+              <img src={require("../../assets/images/offvanvaMobiCat.png")} alt="menu-btn-mobile" style={{ width: "21px" }} />
             </button>
           </Col>
 
@@ -111,46 +112,53 @@ const MainHeaderMobi = ({
           show={showOffcanvas}
           onHide={handleOffcanvasToggle}
           placement="start"
+          responsive="lg"
+          className="offcanvas-for-header"
+          style={{ width: "85%" }}
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Menu</Offcanvas.Title>
+            <div className="col-10 col-md-6 col-lg-3 text-center text-md-left">
+              <img
+                className="offcanvas-header-logo"
+                src={require("../../assets/images/MobileView/mobiheaderlogo.png")}
+                alt="offcanvas-header-logo"
+              />
+            </div>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <div className="mb-3">
-              <Link to="/account" className="text-dark d-block mb-2">
-                Account
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Home
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                About Us
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Blogs
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Careers
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Your Orders
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Enquire Now
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Privacy Policy
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Terms & Conditions
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                Contact Us
-              </Link>
-              <Link to="/account" className="text-dark d-block mb-2">
-                FAQ
-              </Link>
-            </div>
+            <Nav className="d-grid align-items-center mobile-offcanvas text-capitalize">
+              <Nav.Link href="/home" className="red-hover">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> Home
+              </Nav.Link>
+              <div className="border-bottom"></div>
+              <Nav.Link href="/about-us" className="red-hover">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> About Us
+              </Nav.Link>
+              <div className="border-bottom"></div>
+
+              <Nav.Link href="/my-order" className="red-hover text-dark ">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> Your Order
+              </Nav.Link>
+              <div className="border-bottom"></div>
+
+              <Nav.Link href="/privacy-policy" className="red-hover  text-dark ">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> Privacy Policy
+              </Nav.Link>
+              <div className="border-bottom"></div>
+
+              <Nav.Link href="/term-condition" className="red-hover  text-dark">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> Terms & Conditions
+              </Nav.Link>
+              <div className="border-bottom"></div>
+              <Nav.Link href="/faq" className="red-hover  text-dark">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> FAQ
+              </Nav.Link>
+              <div className="border-bottom"></div>
+              <Nav.Link href="/contact-us" className="red-hover  text-dark">
+                <span className="pe-3"> <OffCanvaArrowIcon /> </span> Contact Us
+              </Nav.Link>
+              <div className="border-bottom"></div>
+            </Nav>
           </Offcanvas.Body>
         </Offcanvas>
       </div>

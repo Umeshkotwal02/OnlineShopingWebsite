@@ -217,48 +217,56 @@ const WatchShopCardDemo = () => {
     }
 
     return (
-        <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5">
-            <div>
-                <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
-                <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>
-                <p className="text-center font-italic d-none d-lg-block"><i> "Embrace the festival magic, let joy fill every moment."</i></p>
-            </div>
-            <Row>
-                <Col>
-                    <Slider {...settings} className="wtc-shop-slick-slider">
-                        {productData.map((product) => (
-                            <div key={product.id}>
-                                <WatchShopCard productInfo={product} onVideoClick={handleVideoClick} />
-                            </div>
-                        ))}
-                    </Slider>
-                </Col>
-            </Row>
+        <>
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5">
+                        <div>
+                            <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
+                            <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>
+                            <p className="text-center font-italic d-none d-lg-block"><i> "Embrace the festival magic, let joy fill every moment."</i></p>
+                        </div>
+                        <Row>
+                            <Col className="mobile-watchandshop-slider">
+                                <Slider {...settings} className="wtc-shop-slick-slider">
+                                    {productData.map((product) => (
+                                        <div key={product.id}>
+                                            <WatchShopCard productInfo={product} onVideoClick={handleVideoClick} />
+                                        </div>
+                                    ))}
+                                </Slider>
+                            </Col>
+                        </Row>
 
-            {/* Modal for Video */}
-            <Modal show={isModalOpen} onHide={handleCloseModal} size="lg" centered style={{background:"transparent"}} className="custom-watch-modal-card" >
-                <Modal.Body style={{background:"transparent"}}>
-                    <Slider
-                        {...sliderSettings}
-                        initialSlide={selectedVideo}
-                        afterChange={(index) => setSelectedVideo(index)}
-                        style={{background:"transparent"}}
-                    >
-                        {productData.map((product, index) => (
-                            <div key={product.id} className="video-slide">
-                                <ReactPlayer
-                                    url={product.product_video_url}
-                                    playing={index === selectedVideo}
-                                    controls
-                                    width="100%"
-                                    height="100%"
-                                />
-                            </div>
-                        ))}
-                    </Slider>
-                </Modal.Body>
-            </Modal>
-        </Container>
+                        {/* Modal for Video */}
+                        <Modal show={isModalOpen} onHide={handleCloseModal} size="lg" centered style={{ background: "transparent" }} className="custom-watch-modal-card" >
+                            <Modal.Body style={{ background: "transparent" }}>
+                                <Slider
+                                    {...sliderSettings}
+                                    initialSlide={selectedVideo}
+                                    afterChange={(index) => setSelectedVideo(index)}
+                                    style={{ background: "transparent" }}
+                                >
+                                    {productData.map((product, index) => (
+                                        <div key={product.id} className="video-slide">
+                                            <ReactPlayer
+                                                url={product.product_video_url}
+                                                playing={index === selectedVideo}
+                                                controls
+                                                width="100%"
+                                                height="100%"
+                                            />
+                                        </div>
+                                    ))}
+                                </Slider>
+                            </Modal.Body>
+                        </Modal>
+                    </Container>
+                </>
+            )}
+        </>
     );
 };
 
