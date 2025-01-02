@@ -1,32 +1,39 @@
-<div
-  key={index}
-  className={`thumbnail ${activeIndex === index ? "active-thumbnail" : ""}`}
-  onClick={() => handleThumbClick(index)}
->
-  <img
-    src={image}
-    alt={`Thumbnail ${index + 1}`}
-    className="thumbnail-img"
-  />
-</div>
+import React from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import "../../styles/Menu.css";
+import { Link } from 'react-router-dom';
+import { headerCatData } from '../../config/ConstData';
 
-.thumbnail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 2px solid transparent; /* Default border for inactive thumbnails */
-  transition: border-color 0.3s ease; /* Smooth transition for border */
-}
+const CategoryMenu = () => {
+  return (
+    <Container fluid className="menu-container pt-2 px-4 d-none d-lg-block">
+      <Navbar className="responsive-navbar-nav">
+        <Nav className="w-100 justify-content-between">
+          {headerCatData.map((menu, index) => (
+            <div className="menu-item" key={index}>
+              <Nav.Link className="menu-button">{menu.title}</Nav.Link>
+              <div
+                className={`dropdown-content p-3 ${menu.dropdown.length > 0 ? "dropdown-with-items" : "dropdown-only-image"
+                  }`}
+              >
+                {menu.dropdown.length > 0 ? (
+                  menu.dropdown.map((dropdown, idx) => (
+                    <div key={idx} className="mx-4">
+                      {/* Dropdown content here */}
+                    </div>
+                  ))
+                ) : (
+                  <div className="no-dropdown">
+                    <img src={menu.image} alt={menu.title} />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </Nav>
+      </Navbar>
+    </Container>
+  );
+};
 
-.thumbnail.active-thumbnail {
-  border: 3px solid #000; /* 3px solid black border for active thumbnail */
-}
-
-.thumbnail-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures proper scaling of thumbnail images */
-}
+export default CategoryMenu;
