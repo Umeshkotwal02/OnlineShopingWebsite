@@ -9,7 +9,7 @@
 
 .new-arrival-card {
   background-color: #F3F3F3 !important;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .new-arrival-card {
@@ -19,7 +19,7 @@
 .new-arrival-card:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   background-color: #fff !important;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 
@@ -32,10 +32,6 @@
   aspect-ratio: 2 / 3;
   /* background: #f8f8f8; */
   z-index: 1;
-}
-
-.new-arrival-container {
-  /* background-color: white; */
 }
 
 .bridal-image-container {
@@ -248,15 +244,16 @@
 
 
 @media (min-width: 576px) {
-  .col-md-4 {
-      flex: 0 0 auto;
-      width: 50% !important;
+  .new-arrival-container .col-md-4 {
+    flex: 0 0 auto;
+    width: 50% !important;
   }
 }
+
 @media (min-width: 768px) {
-  .col-md-4 {
-      flex: 0 0 auto;
-      width: 33.33333333% !important;
+  .new-arrival-container .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333% !important;
   }
 }
 
@@ -264,7 +261,7 @@
 @media (min-width: 992px) {
 
   /* lg breakpoint */
-  .wishlist-column {
+  .new-arrival-container .wishlist-column {
     width: 19.666667% !important;
   }
 }
@@ -272,7 +269,7 @@
 @media (min-width: 1200px) {
 
   /* xl breakpoint */
-  .wishlist-column {
+  .new-arrival-container .wishlist-column {
     width: 19.666667% !important;
   }
 }
@@ -280,7 +277,7 @@
 @media (min-width: 1400px) {
 
   /* xxl breakpoint */
-  .wishlist-column {
+  .new-arrival-container .wishlist-column {
     width: 19.666667% !important;
   }
 }

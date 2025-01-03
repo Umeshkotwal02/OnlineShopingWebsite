@@ -40,10 +40,10 @@ const ProductImageSlider = ({ imageList }) => {
         {imageList?.map((image, index) => {
           return (
             <SwiperSlide key={"productImage-" + index} className="slider-slide ">
-              <div className="slider-image-container rounded-top">
+              <div className="slider-image-container rounded-top-3">
                 <img
                   src={image}
-                  className="slider-image"
+                  className="slider-image rounded-top-3"
                   alt="Product Card slider-image"
                   loading="lazy"
                 />

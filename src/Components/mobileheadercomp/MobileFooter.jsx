@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { CategoryIcon, HomeIcon, WishlistIcon } from '../../assets/SvgIcons';
+import { HomeIcon, WishlistIcon } from '../../assets/SvgIcons';
 import { CgProfile } from "react-icons/cg";
 import "../../styles/Mobile-footer.css";
 import { HiOutlineViewGrid } from "react-icons/hi";
@@ -9,11 +9,11 @@ import { HiOutlineViewGrid } from "react-icons/hi";
 const MobileFooter = () => {
   return (
     <Container fluid className="mobile-footer">
-      <Row>
+      <Row className="py-2 pt-3 fw-medium">
         {/* Home */}
         <Col xxl={3} xl={3} lg={3} md={3} sm={3} xs={3}>
           <NavLink 
-            to="/" 
+            to="/"
             className="mobi-footer-icon d-flex flex-column align-items-center"
             activeclassName="active"
           >

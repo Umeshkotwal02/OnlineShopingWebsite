@@ -105,7 +105,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
 
 
             <div
-                className="position-sticky bottom-0 start-0 w-100 bg-white py-3"
+                className=" bottom-0 start-0 w-100 bg-white py-3"
                 style={{ zIndex: 1050, backgroundColor: "#fff" }}
             >
                 <Row>

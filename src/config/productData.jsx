@@ -4,7 +4,10 @@ const productData = [
         product_name: "Maroon Velvet Embroidered N Sequi",
         product_images: [
             require("../assets/images/New-Arrive/img1.png"),
-            require("../assets/images/New-Arrive/img2.png")
+            require("../assets/images/New-Arrive/img2.png"),
+            require("../assets/images/New-Arrive/img2.png"),
+            require("../assets/images/New-Arrive/img4.png"),
+            require("../assets/images/New-Arrive/img5.png"),
         ],
         product_mrp: 3899,
         product_price: 2349,
@@ -15,7 +18,12 @@ const productData = [
     {
         id: 2,
         product_name: "Maroon Velvet Embroidered N Sequi",
-        product_images: [require("../assets/images/New-Arrive/img2.png")],
+        product_images: [require("../assets/images/New-Arrive/img2.png"),
+        require("../assets/images/New-Arrive/img3.png"),
+        require("../assets/images/New-Arrive/img4.png"),
+        require("../assets/images/New-Arrive/img5.png"),
+        require("../assets/images/New-Arrive/img6.png"),
+        ],
         product_mrp: 3899,
         product_price: 2349,
         product_discount: 40,
@@ -26,7 +34,10 @@ const productData = [
     {
         id: 3,
         product_name: "Maroon Velvet Embroidered N Sequi",
-        product_images: [require("../assets/images/New-Arrive/img3.png"),],
+        product_images: [require("../assets/images/New-Arrive/img3.png"),
+        require("../assets/images/New-Arrive/img4.png"),
+        require("../assets/images/New-Arrive/img5.png"),
+        ],
         product_mrp: 3899,
         product_price: 2349,
         product_discount: 40,

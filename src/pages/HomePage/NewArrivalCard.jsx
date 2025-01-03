@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, Container, Button } from "react-bootstrap";
-import ProductImageSlider from "./ProductImageSlider";
 import { FaHeart } from "react-icons/fa6";
 import "../../styles/NewArrivalCard.css";
 import { productData } from "../../config/productData";
 import { FiHeart } from "react-icons/fi";
+import ProductImageSlider from "../../Components/homepage/ProductImageSlider";
 
 const NewArrivalCard = ({ products = productData }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -84,9 +84,9 @@ const NewArrivalCard = ({ products = productData }) => {
             className="mb-4 rounded wishlist-column"
           >
             <Link to={`/products/${productNameSlug(product.product_name)}`} className="text-decoration-none">
-              <div className="new-arrival-card">
+              <div className="new-arrival-card rounded-top-3">
                 {/* Product Image Section */}
-                <div className="image-container">
+                <div className="image-container rounded-top-3">
                   <ProductImageSlider imageList={product.product_images || []} />
                   <div className="overlay-buttons">
                     <button className="add-to-cart-btn" onClick={handleAddToCart}>

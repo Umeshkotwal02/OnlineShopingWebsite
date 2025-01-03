@@ -10,24 +10,25 @@
 }
 
 .mobi-footer-icon {
-text-decoration: none;
-color: #000;
-font-size: 14px;
-transition: color 0.3s ease;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .mobi-footer-icon svg {
-color: #000;
-transition: color 0.3s ease;
+  color: #000;
+  transition: color 0.3s ease;
 }
 
 .mobi-footer-icon.active,
 .mobi-footer-icon.active svg {
-color: red;
+  color: rgba(181, 27, 59, 1);
+  fill: rgba(181, 27, 59, 1);
 }
 
 @media (max-width: 768px) {
-.mobile-footer {
-  display: block;
-}
+  .mobile-footer {
+    display: block;
+  }
 }

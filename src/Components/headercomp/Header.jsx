@@ -45,6 +45,7 @@ const Header = ({
   // Logout handler
   const handleLogout = () => {
     setUser(null);
+    setIsOpen(!isOpen);
     signOut(auth).then(() => {
       toast.success("Logged out successfully");
       navigate("/");
@@ -110,8 +111,8 @@ const Header = ({
   return (
     <>
       <TopBar />
-      <div className="sticky-top" style={{ backgroundColor: "#F3F3F3" }}>
-        <Container fluid className="px-lg-5 px-xl-5 px-xxl-5 pt-1">
+      <div>
+        <Container fluid className=" sticky-top px-lg-5 px-xl-5 px-xxl-5 pt-1" style={{ backgroundColor: "#F3F3F3" }}>
           <div className="d-none d-lg-block">
             <Row className="align-items-center pt-3">
               <Col xl={3} xxl={3} lg={3} className="d-flex align-items-center">
@@ -285,17 +286,16 @@ const Header = ({
               </Col>
             </Row>
           </div>
-
-          <MobileHeader />
         </Container>
+        <MobileHeader />
         <CategoryMenu />
       </div >
+      <MobileFooter/>
       <CategoryMenuMobi />
       <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
       <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
       <Notification show={showNotificationModal} handleClose={handleCloseNotificationModals} />
-      {/* <MobileFooter /> */}
 
     </>
   );

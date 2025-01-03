@@ -149,7 +149,7 @@ const MinusIcon = (props) => (
 );
 const XClose = (props) => (
    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8.33333 11.6667L10 10M10 10L11.6667 8.33333M10 10L8.33333 8.33333M10 10L11.6667 11.6667M17.5 10C17.5 10.9849 17.306 11.9602 16.9291 12.8701C16.5522 13.7801 15.9997 14.6069 15.3033 15.3033C14.6069 15.9997 13.7801 16.5522 12.8701 16.9291C11.9602 17.306 10.9849 17.5 10 17.5C9.01509 17.5 8.03982 17.306 7.12987 16.9291C6.21993 16.5522 5.39314 15.9997 4.6967 15.3033C4.00026 14.6069 3.44781 13.7801 3.0709 12.8701C2.69399 11.9602 2.5 10.9849 2.5 10C2.5 8.01088 3.29018 6.10322 4.6967 4.6967C6.10322 3.29018 8.01088 2.5 10 2.5C11.9891 2.5 13.8968 3.29018 15.3033 4.6967C16.7098 6.10322 17.5 8.01088 17.5 10Z" stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8.33333 11.6667L10 10M10 10L11.6667 8.33333M10 10L8.33333 8.33333M10 10L11.6667 11.6667M17.5 10C17.5 10.9849 17.306 11.9602 16.9291 12.8701C16.5522 13.7801 15.9997 14.6069 15.3033 15.3033C14.6069 15.9997 13.7801 16.5522 12.8701 16.9291C11.9602 17.306 10.9849 17.5 10 17.5C9.01509 17.5 8.03982 17.306 7.12987 16.9291C6.21993 16.5522 5.39314 15.9997 4.6967 15.3033C4.00026 14.6069 3.44781 13.7801 3.0709 12.8701C2.69399 11.9602 2.5 10.9849 2.5 10C2.5 8.01088 3.29018 6.10322 4.6967 4.6967C6.10322 3.29018 8.01088 2.5 10 2.5C11.9891 2.5 13.8968 3.29018 15.3033 4.6967C16.7098 6.10322 17.5 8.01088 17.5 10Z" stroke="#898989" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
 
 );
@@ -302,8 +302,8 @@ const WalletIcon = (props) => (
 
 const WalletIcon2 = (props) => (
    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M23.9062 5.625H6.09375C4.28157 5.625 2.8125 7.09407 2.8125 8.90625V21.0938C2.8125 22.9059 4.28157 24.375 6.09375 24.375H23.9062C25.7184 24.375 27.1875 22.9059 27.1875 21.0938V8.90625C27.1875 7.09407 25.7184 5.625 23.9062 5.625Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M2.8125 11.25H27.1875M7.5 17.5781H10.3125V18.75H7.5V17.5781Z" stroke="black" stroke-width="2" stroke-linejoin="round" />
+      <path d="M23.9062 5.625H6.09375C4.28157 5.625 2.8125 7.09407 2.8125 8.90625V21.0938C2.8125 22.9059 4.28157 24.375 6.09375 24.375H23.9062C25.7184 24.375 27.1875 22.9059 27.1875 21.0938V8.90625C27.1875 7.09407 25.7184 5.625 23.9062 5.625Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.8125 11.25H27.1875M7.5 17.5781H10.3125V18.75H7.5V17.5781Z" stroke="black" strokeWidth="2" strokeLinejoin="round" />
    </svg>
 )
 const TimeIconRed = (props) => (
@@ -396,15 +396,15 @@ const CategoryIcon = (props) => (
 
 const ExclaimIcon = (props) => (
    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0002 1.72949C31.6419 1.72949 40.271 10.3566 40.271 21.0003C40.271 31.642 31.6419 40.2712 21.0002 40.2712C10.3565 40.2712 1.72937 31.642 1.72937 21.0003C1.72937 10.3566 10.3565 1.72949 21.0002 1.72949Z" stroke="#130F26" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M20.99 13.0923V22.2985" stroke="#130F26" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M20.9896 28.9089H21.0105" stroke="#130F26" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0002 1.72949C31.6419 1.72949 40.271 10.3566 40.271 21.0003C40.271 31.642 31.6419 40.2712 21.0002 40.2712C10.3565 40.2712 1.72937 31.642 1.72937 21.0003C1.72937 10.3566 10.3565 1.72949 21.0002 1.72949Z" stroke="#130F26" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20.99 13.0923V22.2985" stroke="#130F26" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20.9896 28.9089H21.0105" stroke="#130F26" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
 );
 
 const OffCanvaArrowIcon = (props) => (
    <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0.999999 1L8 8L1 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M0.999999 1L8 8L1 15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
    </svg>
 )
 

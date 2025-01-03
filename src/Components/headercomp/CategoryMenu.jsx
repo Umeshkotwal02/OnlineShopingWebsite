@@ -8,7 +8,7 @@ const CategoryMenu = () => {
   return (
     <Container fluid className="menu-container pt-2 px-5 d-none d-lg-block">
       <Navbar className="responsive-navbar-nav pb-0">
-        <Nav className="w-100 justify-content-between">
+        <Nav className="w-100 justify-content-center">
           {headerCatData.map((menu, index) => (
             <div className={"menu-item"}>
               {/* <Col className={`menu-item ${index === 0 || index === headerCatData.length - 1 ? "text-center" : ""}`} key={index}> */}

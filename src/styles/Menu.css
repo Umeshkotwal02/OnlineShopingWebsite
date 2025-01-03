@@ -92,6 +92,8 @@
   font-size: unset !important;
   font-weight: 500 !important;
   color: black !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }
 
 li {

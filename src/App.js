@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from 'react-hot-toast';
 import Loader from './Components/Loader';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MobileFooter from './Components/mobileheadercomp/MobileFooter';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           />
           <AutoScrollToTop />
           <Header />
+          {/* <MobileFooter /> */}
           <Routes>
             {publicRoutes.map(({ path, component: Component, redirect }, idx) =>
               redirect ? (

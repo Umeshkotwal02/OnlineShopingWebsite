@@ -22,7 +22,7 @@ const MainHeaderMobi = ({
   return (
     <header>
       {/* Header for Small and Medium Screens Mobile and tablate view*/}
-      <div className="d-lg-none">
+      <div className="d-lg-none container-fluid">
         <Row className="align-items-center py-1 px-0">
           <Col xs={2} className="text-start">
             <button

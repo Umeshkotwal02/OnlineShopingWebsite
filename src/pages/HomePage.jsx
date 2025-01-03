@@ -12,11 +12,11 @@ import NewArrivalCard from './HomePage/NewArrivalCard'
 import BridalLahegaCholi from './HomePage/BridalLahegaCholi'
 import CustomerStoriesSection from './HomePage/CustomerStoriesSection'
 import OurInstaPage from './HomePage/OurInstaPage'
-import WatchShopCardDemo from './HomePage/WatchShopCard'
 import NewOnOnlineSwiper from './HomePage/NewOnOnlineSwiper'
 import CategorySection from './HomePage/CategoryCustomCard'
 import Loader from '../Components/Loader'
 import ShopByColorSlick from './HomePage/ShopByColorSlick'
+import WatchShopSection from './HomePage/WatchShopSection'
 
 
 function HomePage() {
@@ -38,13 +38,13 @@ function HomePage() {
 
       <CategorySection />
       <ShopByCategorySlick />
-      <WatchShopCardDemo />
+      <WatchShopSection />
 
       <BridalLahegaCholi />
 
-      <NewArrivalCard /> {/*Add to Cart Component*/}
+      <NewArrivalCard />
 
-      <NewOnOnlineSwiper />
+       <NewOnOnlineSwiper />
 
       <Motion />
       <FestivalSpecial />

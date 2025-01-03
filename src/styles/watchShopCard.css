@@ -1,34 +1,52 @@
+/* ------------------------------------- Watch and Shop Card  Managed End *------------------------- */
+
+.badge-container,
+.product-image-container {
+  width: 70px;
+  height: 70px;
+}
+
+.product-image-container img,
+.badge-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.translate-middle-x {
+  transform: translateX(-50%);
+}
+
+.ratio-3x4 {
+  aspect-ratio: 3 / 4;
+}
+
+.product-card {
+  max-width: 300px;
+  /* Optional card width */
+  margin: auto;
+}
+
+/* ------------------------------------- Watch and Shop Card  Managed End *------------------------- */
+
+
+
+
 .custom-watch-modal-card .modal-content {
   background-color: transparent !important;
   border: 0px !important;
 }
 
-.watch-shop-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  padding-top: 0% !important;
-  margin-bottom: -10px;
-}
-
-.react-video {
-  object-fit: cover;
+.react-player video {
+  object-fit: fill;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .wtc-shop-product-info {
   padding: 0.8rem;
   text-align: center;
   background-color: #f2f2f2;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 15px 15px;
 }
 
 .wtc-shop-product-info h3 {
@@ -38,20 +56,8 @@
   color: #333;
 }
 
-.price {
-  color: #03a685;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.product-link {
-  text-decoration: none;
-  color: inherit;
-}
-
 .slick-slide {
   padding: 0 10px;
-  /* Adds horizontal spacing between cards */
 }
 
 .slick-prev,
@@ -89,34 +95,18 @@
   fill: #B51B3B;
 }
 
-/* badge-container */
-.wtc-shop-badge-container {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  z-index: 2;
-  width: auto;
-  height: auto;
-}
-
-.wtc-shop-badge-container img {
-  width: 70px;
-  height: 70px;
-  max-width: 70px;
-  object-fit: fill;
-  border-radius: 10px;
-}
-
-/* Responsive styles for different screen sizes */
-
-@media (min-width: 430px) {
+@media (min-width: 430px) and (max-width: 576px) {
   .mobile-watchandshop-slider {
     padding: 0% !important;
     margin: 0% !important;
+  }
+
+  .watch-custom-arrow .next-arrow {
+    display: none !important;
+  }
+
+  .watch-custom-arrow .prev-arrow {
+    display: none !important;
   }
 }
 
@@ -127,9 +117,17 @@
     margin: 0% !important;
   }
 
+  .watch-custom-arrow .next-arrow {
+    display: none;
+  }
+
+  .watch-custom-arrow .prev-arrow {
+    display: none;
+  }
+
   /* Small screens (phones) */
   .wtc-shop-product-info h3 {
-    margin-top: 15px;
+    margin-top: 1.8rem;
   }
 
   .wtc-shop-badge-container {

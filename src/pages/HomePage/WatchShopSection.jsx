@@ -6,52 +6,8 @@ import { Modal, Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
 import Loader from "../../Components/Loader";
-
-const WatchShopCard = ({ productInfo, onVideoClick }) => {
-    const [play, setPlay] = useState(false);
-
-    const handleMouseEnter = () => setPlay(true);
-    const handleMouseLeave = () => setPlay(true);
-
-    return (
-        <div
-            className="watch-shop-card"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => onVideoClick(productInfo.product_video_url)} // Trigger modal open
-
-        >
-            {/* Video Container */}
-            <div className="video-container">
-                <ReactPlayer
-                    url={productInfo.product_video_url}
-                    playing={play}
-                    loop
-                    muted
-                    width="100%"
-                    height="auto"
-                    className="react-video"
-                />
-            </div>
-
-            {/* Badge Section */}
-            <div className="wtc-shop-badge-container">
-                <img
-                    src={productInfo.small_image || ""}
-                    alt="Product"
-                />
-            </div>
-
-            {/* Product Info Section */}
-            <Link to={`/product/${productInfo.id}/${productInfo.product_name}`} className="product-link">
-                <div className="wtc-shop-product-info">
-                    <h3>{productInfo.product_name}</h3>
-                    <div className="price">₹{productInfo.product_price}</div>
-                </div>
-            </Link>
-        </div>
-    );
-};
+import "../../styles/watchShopCard.css";
+import WatchShopCard from "../../Components/homepage/WatchShopCard";
 
 // Static data example
 const productData = [
@@ -99,9 +55,10 @@ const productData = [
     },
 ];
 // Custom Next Arrow Component
+// Custom Next Arrow Component
 const NextCatArrow = ({ onClick }) => {
     return (
-        <div className="watch-custom-arrow next-arrow d-none d-lg-block" onClick={onClick}>
+        <div className="watch-custom-arrow next-arrow" onClick={onClick}>
             <CategorySlickNextIcon />
         </div>
     );
@@ -110,18 +67,21 @@ const NextCatArrow = ({ onClick }) => {
 // Custom Previous Arrow Component
 const PrevCatArrow = ({ onClick }) => {
     return (
-        <div className="watch-custom-arrow prev-arrow d-lg-block" onClick={onClick}>
+        <div className="watch-custom-arrow prev-arrow" onClick={onClick}>
             <CategoryPrevNextIcon />
         </div>
     );
 };
-const WatchShopCardDemo = () => {
+
+
+
+const WatchShopSection = () => {
     const settings = {
         infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         nextArrow: <NextCatArrow />,
         prevArrow: <PrevCatArrow />,
@@ -132,6 +92,8 @@ const WatchShopCardDemo = () => {
                     slidesToShow: 6,
                     slidesToScroll: 1,
                     centerMode: false,
+                    nextArrow: <NextCatArrow />,
+                    prevArrow: <PrevCatArrow />,
                 },
             },
             {
@@ -140,6 +102,8 @@ const WatchShopCardDemo = () => {
                     slidesToShow: 5,
                     slidesToScroll: 1,
                     centerMode: false,
+                    nextArrow: <NextCatArrow />,
+                    prevArrow: <PrevCatArrow />,
                 },
             },
             {
@@ -149,7 +113,7 @@ const WatchShopCardDemo = () => {
                     slidesToScroll: 1,
                     centerMode: false,
                     nextArrow: false,
-                    prevArrow: false,
+                    prevArrow: false, // Explicitly disable arrows for smaller screens
                 },
             },
             {
@@ -174,6 +138,10 @@ const WatchShopCardDemo = () => {
             },
         ],
     };
+    
+    
+
+    // Modal Setting
     const sliderSettings = {
         infinite: true,
         speed: 500,
@@ -196,10 +164,8 @@ const WatchShopCardDemo = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedVideo, setSelectedVideo] = useState("");
 
-    // Simulating loading for 2 seconds
     useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1000);
-        return () => clearTimeout(timer);
+        setLoading(false);
     }, []);
 
     const handleVideoClick = (videoUrl) => {
@@ -222,7 +188,7 @@ const WatchShopCardDemo = () => {
                 <Loader />
             ) : (
                 <>
-                    <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5">
+                    <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5 ">
                         <div>
                             <h4 className="text-center fs-4 font-medium d-none d-lg-block mt-2">Watch and Shop</h4>
                             <h3 className="text-start font-bold d-lg-none my-3 ms-2">Watch and Shop</h3>
@@ -233,7 +199,7 @@ const WatchShopCardDemo = () => {
                                 <Slider {...settings} className="wtc-shop-slick-slider">
                                     {productData.map((product) => (
                                         <div key={product.id}>
-                                            <WatchShopCard productInfo={product} onVideoClick={handleVideoClick} />
+                                            <WatchShopCard watchShopProductInfo={product} onVideoClick={handleVideoClick} />
                                         </div>
                                     ))}
                                 </Slider>
@@ -252,8 +218,8 @@ const WatchShopCardDemo = () => {
                                     {productData.map((product, index) => (
                                         <div key={product.id} className="video-slide">
                                             <ReactPlayer
-                                                url={product.product_video_url}
-                                                playing={index === selectedVideo}
+                                                url={selectedVideo}
+                                                playing
                                                 controls
                                                 width="100%"
                                                 height="100%"
@@ -272,4 +238,4 @@ const WatchShopCardDemo = () => {
 
 
 
-export default WatchShopCardDemo;
+export default WatchShopSection;
