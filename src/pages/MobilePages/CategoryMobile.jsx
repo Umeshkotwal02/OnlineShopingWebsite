@@ -90,7 +90,7 @@ const CategoryMobile = () => {
         <div className="category-container">
             <div className="row">
                 {/* Left Sidebar */}
-                <div className="col-4 category-sidebar">
+                <div className="col-4 category-sidebar p-0 m-0"> 
                     <h5 className="category-title">Categories</h5>
                     <ul className="list-unstyled">
                         {DataConst.map((category) => (

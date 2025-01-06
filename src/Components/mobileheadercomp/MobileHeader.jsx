@@ -4,6 +4,7 @@ import { Offcanvas, Row, Col, Nav } from "react-bootstrap";
 import { CartIcon, OffCanvaArrowIcon } from "../../assets/SvgIcons";
 import { FiSearch } from "react-icons/fi";
 import "../../styles/OffCanvasForHeader.css"
+import CartModal from "../../pages/MobilePages/CartModal";
 
 const MainHeaderMobi = ({
   wishlistCount,
@@ -16,14 +17,23 @@ const MainHeaderMobi = ({
 }) => {
 
   const [showOffcanvas, setShowOffcanvas] = useState(false); // Menu Offcanvas
+  const [showCartModal, setShowCartModal] = useState(false); // Cart Offcanvas
+
   const handleOffcanvasToggle = () => setShowOffcanvas(!showOffcanvas);
 
+  // Cart
+  const handleCartOpen = () => {
+    setShowCartModal(true);
+  };
+  const handleCloseCartModal = () => {
+    setShowCartModal(false);
+  }
 
   return (
     <header>
       {/* Header for Small and Medium Screens Mobile and tablate view*/}
-      <div className="d-lg-none container-fluid">
-        <Row className="align-items-center py-1 px-0">
+      <div className="d-lg-none container-fluid web-bg-color">
+        <Row className="align-items-center py-1 px-0 ">
           <Col xs={2} className="text-start">
             <button
               className="btn fs-2"
@@ -48,7 +58,7 @@ const MainHeaderMobi = ({
 
           {/* Cart icon at the end */}
           <Col xs={2} className="text-end">
-            <div className="btn text-dark">
+            <div className="btn text-dark" onClick={handleCartOpen}>
               <CartIcon />
               {wishlistCount > 0 && (
                 <span className="badge bg-danger">{wishlistCount}</span>
@@ -162,6 +172,8 @@ const MainHeaderMobi = ({
           </Offcanvas.Body>
         </Offcanvas>
       </div>
+
+      <CartModal show={showCartModal} handleClose={handleCloseCartModal} />
 
     </header>
   );

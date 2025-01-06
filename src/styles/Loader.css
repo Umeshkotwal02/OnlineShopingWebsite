@@ -26,10 +26,12 @@
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.9;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -37,14 +39,14 @@
 }
 
 .loader-icon {
-  width: 60px; 
+  width: 60px;
   height: auto;
   display: block;
   margin: -92px auto;
 }
 
-h1 {
-  font-family: ‘Arial Narrow’, sans-serif;
+.loader-container h1 {
+  font-family: "KaushanScript";
   font-weight: 100;
   font-size: 1.8em;
   color: black;
@@ -52,9 +54,9 @@ h1 {
 
 .animation-span span {
   position: relative;
-  top: 0rem;  
+  top: 0rem;
   display: inline-block;
-  text-transform: uppercase;  
+  text-transform: uppercase;
   opacity: 0;
   transform: rotateX(-90deg);
 }
@@ -94,46 +96,55 @@ h1 {
   animation: drop 1.8s ease-in-out infinite;
   animation-delay: 1.11s;
 }
+
 .let8 {
   animation: drop 1.8s ease-in-out infinite;
   animation-delay: 1.12s;
 }
+
 .let9 {
   animation: drop 1.3s ease-in-out infinite;
   animation-delay: 1.13s;
 }
+
 .let10 {
   animation: drop 1.3s ease-in-out infinite;
   animation-delay: 1.14s;
 }
+
 .let11 {
   animation: drop 1.3s ease-in-out infinite;
   animation-delay: 1.15s;
 }
+
 .let12 {
   animation: drop 1.3s ease-in-out infinite;
   animation-delay: 1.16s;
 }
 
 @keyframes drop {
-    10% {
-        opacity: 0.5;
-    }
-    20% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    80% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-        top: 6.94em
-    }
+  10% {
+    opacity: 0.5;
+  }
+
+  20% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+
+  80% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    top: 6.94em
+  }
 }

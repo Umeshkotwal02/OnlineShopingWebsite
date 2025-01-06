@@ -41,6 +41,7 @@ function App() {
           />
           <AutoScrollToTop />
           <Header />
+          <MobileFooter />
           {/* <MobileFooter /> */}
           <Routes>
             {publicRoutes.map(({ path, component: Component, redirect }, idx) =>

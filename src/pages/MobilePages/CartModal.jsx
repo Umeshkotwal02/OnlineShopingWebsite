@@ -1,10 +1,10 @@
 import React from 'react';
-import { Offcanvas, Button, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Row, Col } from 'react-bootstrap';
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import "../../styles/MobileCommon.css"
 
-const CartOffCanvas = ({ show, handleClose }) => {
-
+const CartModal = ({ show, handleClose }) => {
     const items = [
         {
             id: 1,
@@ -15,7 +15,6 @@ const CartOffCanvas = ({ show, handleClose }) => {
             discount: "50% off",
             quantity: 1,
             img: require("../../assets/images/form-checkout/cart1.png"),
-
         },
         {
             id: 2,
@@ -42,18 +41,23 @@ const CartOffCanvas = ({ show, handleClose }) => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-        handleClose(true)
+        handleClose(true);
         navigate("/checkout-page");
     };
+
     return (
-        <Offcanvas show={show}
+        <Modal
+            show={show}
             onHide={handleClose}
-            placement="end"
-            fullscreen="sm-down">
-            <Offcanvas.Header closeButton className="custom-header web-bg-color">
-                <Offcanvas.Title className='text-start fw-bold fs-5'>Bag</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
+            fullscreen="sm-down"
+            dialogClassName="custom-modal"
+            className="custom-modal"
+            style={{ borderRadius: "0px" }}
+        >
+            <Modal.Header closeButton className="modal-custom-header gap-2 web-bg-color">
+                <Modal.Title className="text-start fw-bold fs-5">My Bag</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                 {items.map((item) => (
                     <div
                         key={item.id}
@@ -75,7 +79,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
                             >
                                 <FaTimes />
                             </Button>
-                            <p className="m-0  cart-para">{item.name}</p>
+                            <p className="m-0 cart-para">{item.name}</p>
                             <p className="text-muted small cart-para">{item.description}</p>
                             <div className="d-flex align-items-center gap-2">
                                 <span className="fw-bold text-secondary">Qty:</span>
@@ -89,7 +93,6 @@ const CartOffCanvas = ({ show, handleClose }) => {
                                     </Button>
                                 </div>
                             </div>
-
                             <div className="d-flex align-items-center mb-2">
                                 <span className="text-success fw-bold me-2">{item.price}</span>
                                 <span className="text-muted text-decoration-line-through me-2">
@@ -97,38 +100,25 @@ const CartOffCanvas = ({ show, handleClose }) => {
                                 </span>
                                 <span className="text-danger small">{item.discount}</span>
                             </div>
-
                         </div>
                     </div>
                 ))}
+            </Modal.Body>
+            <Modal.Footer className="position-sticky bottom-0 start-0 w-100 bg-white py-3 custom-modal-footer">
+                <div className="d-flex justify-content-between align-items-center w-100">
+                    <h5 className="fw-bold m-0">₹16,200</h5>
+                    <button
+                        className="btn text-white fw-medium py-2 px-4"
+                        style={{ backgroundColor: "#B51B3B", borderRadius: "10px" }}
+                        onClick={handleNavigate}
+                    >
+                        Proceed to Buy
+                    </button>
+                </div>
+            </Modal.Footer>
 
-            </Offcanvas.Body>
-
-            {/* Sticky Button Footer */}
-            <div
-                className="position-sticky bottom-0 start-0 w-100 bg-white py-3"
-                style={{ zIndex: 1050, backgroundColor: "#fff" }}
-            >
-                <Row>
-                    <Col xxl={4} xl={4} lg={4}>
-                        <div className="text-center mb-2 ">
-                            <h5 className="my-2 fw-bold align-self-center">₹16,200</h5>
-                        </div>
-                    </Col>
-                    <Col xxl={7} xl={7} lg={7}>
-                        <button
-                            className="btn text-white text-center w-100 fw-medium py-2"
-                            href="/choose-address"
-                            style={{ backgroundColor: "#B51B3B", borderRadius: "10px" }}
-                            onClick={handleNavigate}
-                        >
-                            Proceed to Buy
-                        </button>
-                    </Col>
-                </Row>
-            </div>
-        </Offcanvas >
+        </Modal>
     );
 };
 
-export default CartOffCanvas;
+export default CartModal;

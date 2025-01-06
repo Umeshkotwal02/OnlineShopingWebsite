@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Banner from './HomePage/Banner'
 import Motion from './HomePage/Motion'
 import CarosoleSilckSlider from './HomePage/CarosoleSilck'
-import CarosoleSlickMobi from './MobilePages/CarosoleSlickMobi'
 import ShopByCategorySlick from './HomePage/ShopByCategory'
 import FestivalSpecial from './HomePage/FestivalSpecial'
 import SareeEdit from './HomePage/SareeEdit'
@@ -17,6 +16,8 @@ import CategorySection from './HomePage/CategoryCustomCard'
 import Loader from '../Components/Loader'
 import ShopByColorSlick from './HomePage/ShopByColorSlick'
 import WatchShopSection from './HomePage/WatchShopSection'
+import MainHeaderMobi from '../Components/mobileheadercomp/MobileHeader'
+import CategoryMenuMobi from './MobilePages/CategoryMenuMobi'
 
 
 function HomePage() {
@@ -34,8 +35,9 @@ function HomePage() {
   }
   return (
     <div>
+      <MainHeaderMobi />
+      <CategoryMenuMobi />
       <CarosoleSilckSlider />
-
       <CategorySection />
       <ShopByCategorySlick />
       <WatchShopSection />
@@ -44,7 +46,7 @@ function HomePage() {
 
       <NewArrivalCard />
 
-       <NewOnOnlineSwiper />
+      <NewOnOnlineSwiper />
 
       <Motion />
       <FestivalSpecial />

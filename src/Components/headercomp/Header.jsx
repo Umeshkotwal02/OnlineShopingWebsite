@@ -10,7 +10,6 @@ import MobileHeader from "../mobileheadercomp/MobileHeader";
 import TopBar from "./TopBar";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import MobileFooter from "../mobileheadercomp/MobileFooter";
 import toast from "react-hot-toast";
 import { IoLogOutOutline } from "react-icons/io5";
 import ProfileModal from "../Canvas/ProfileModal";
@@ -286,17 +285,15 @@ const Header = ({
               </Col>
             </Row>
           </div>
-
-          <MobileHeader />
         </Container>
         <CategoryMenu />
       </div >
-      <CategoryMenuMobi />
       <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
       <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
       <Notification show={showNotificationModal} handleClose={handleCloseNotificationModals} />
-      <MobileFooter />
+
+      {/* <MobileFooter /> */}
 
     </>
   );

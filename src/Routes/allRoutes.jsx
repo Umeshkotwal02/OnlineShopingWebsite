@@ -3,6 +3,8 @@ import CheckOutPage from "../pages/CheckOutPage/CheckOutPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import FaqsPage from "../pages/FaqsPage";
 import HomePage from "../pages/HomePage";
+import CategoryMobile from "../pages/MobilePages/CategoryMobile";
+import ProfilePage from "../pages/MobilePages/ProfilePage";
 import MyOrderPage from "../pages/OrderPages/MyOrderPage";
 import OrderDetails from "../pages/OrderPages/OrderDetails";
 import PrivancyPolicy from "../pages/PrivancyPolicy";
@@ -29,6 +31,8 @@ const publicRoutes = [
     { path: "/term-condition", component: TermAndConditionPage },
     { path: "/faq", component: FaqsPage },
     { path: "/contact-us", component: ContactUsPage },
+    { path: "/profile", component: ProfilePage },
+    { path: "/mobile-category", component: CategoryMobile },
 ];
 
 export { authProtectedRoutes, publicRoutes };

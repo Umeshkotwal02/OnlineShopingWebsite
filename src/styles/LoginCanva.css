@@ -6,7 +6,6 @@
     border-bottom: 1px solid #CDCDCD;
 }
 
-
 .resend-btn {
     font-size: 14px;
     background: none;
@@ -37,6 +36,10 @@
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 1px solid #CDCDCD !important;
 }
 
 .clear-otp-button {
@@ -103,7 +106,7 @@
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 25px;
     /* Space below the 'Proceed' button */
 }
@@ -118,9 +121,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    /* Increase space between social buttons */
     margin-top: 20px;
-    /* Add space above social login buttons */
 }
 
 /* Social icon background and hover effect */
@@ -188,6 +189,26 @@
 .custom-header .offcanvas-title {
     margin-left: 20px;
     flex-grow: 1;
-    /* Center the title */
     text-align: center;
+}
+
+/* Login Modal Style */
+.login-modal-form .form-control {
+    padding: 1.7rem !important;
+    border-bottom: 2px solid #CDCDCD !important;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.modal-social-media .icon-bg{
+    width: 70px;
+    height: 70px;
+}
+.modal-social-media .icon-bg img{
+    width: 46px;
+    height: 46px;
+}
+.modal-social-media .icon-bg .google-icon{
+    width: 50px;
+    height: 50px;
 }

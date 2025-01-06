@@ -18,12 +18,11 @@ const Login = ({ show, handleClose,setUser }) => {
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
-     
-      setUser(true); // Notify parent about the logged-in user
+      setUser(true);
       setSuccess(true);
       toast.success("Google Login success");
       console.log('User logged in:', result.user);
-      handleClose();
+      handleClose(true);
     } catch (error) {
       console.error("Error logging in with Google: ", error.message);
     }

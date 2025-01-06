@@ -21,7 +21,7 @@ const BagCard = (activeTab) => {
       originalPrice: "₹10,999",
       discount: "50% off",
       quantity: 1,
-      img: "https://s3-alpha-sig.figma.com/img/7cd0/655e/1798e57a8f8db2bfd19e7f556d0f666d?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VCwRAjyroAzRPX32fVy0TPpeRFiVOBcP~WRxiKECJiCk6rFVMldRKbtp3SOvwmIBXHH5CiILxOmHIwqTg6DyZMAgXDM40sMgybmGa2MDkeX~A7-cXmKDcol-fyGb0pnz3DlPG1wRhYJREUNyIjlrqeWfY72rJEFxPc6A0rKo~Ax0TNwAcneOHXlNO0s4im7nmdaXUsHzvX1mWVedCsXZQsAlVLTLnhFckM3IfeoQxLDg0BnwcqqOxeWSMdyFA9wpUvVHGCZ6IWAHlSykvNZ-l-eHzV7oe8Fn9Vl94jadBUlWxpeJw6RrC0YI0Ux9R1UJilY6hZEu7o47COj1Qv9eqQ__",
+      img: require("../../assets/images/CategoryByShopSlicks/Crush.png"),
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const BagCard = (activeTab) => {
       originalPrice: "₹10,999",
       discount: "50% off",
       quantity: 1,
-      img: "https://s3-alpha-sig.figma.com/img/3432/c5a9/f8d0ffa14f99c130b369f4bf614526dd?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qZ-aerW-SoPaEuvC6UwglLX6ftXa5Hx95-Wj9f1diR9HKDxE59xBYx2VKLI8XzsNy3cL0vXU6R6W89O9HbgMIWJla6YCl~Nu7NQvqNUS3ywRUo3qzcJCxCsTmrqPHMde5pBUEOQsoZGHMhzoTnXORr8wW9ECQwKOA2rW0pUUa~cUVmYJlUmzc3ILMLYcKbE~qmG6TyFh05nMAkrSq~QaCPdiWq~rtvUzzkGiz1jd31425ZLs3qOQY4uedR6hygHZTI8V~YKFMzV07Op~Pzrkkp3C0aKH86NNZrd7PDPcipwSiEHl2rnWlhrlGxA~paDqhmvBxZWlAO29mtmdn5dPTw__",
+      img: require("../../assets/images/CategoryByShopSlicks/FloralSaree.png"),
     }
   ]
 
@@ -82,7 +82,7 @@ const BagCard = (activeTab) => {
                 <div className="flex-grow-1">
                   <Button
                     variant="light"
-                    className="position-absolute top-0 end-0 p-1"
+                    className="position-absolute top-0 end-0 p-1 product-cart-close-btn"
                     size="sm"
                   >
                     <FaTimes />
