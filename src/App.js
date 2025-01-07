@@ -5,13 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AutoScrollToTop from "./components/AutoScrollToTop";
 import Loader from "./components/Loader";
 import Header from "./components/headercomp/Header";
 import MobileFooter from "./components/mobileheadercomp/MobileFooter";
 import Footer from "./components/Footer";
 import ScrollUp from "./components/ScrollUp";
 import { publicRoutes } from "./routes/allRoutes";
+import AutoScrollToTop from "./components/AutoScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
