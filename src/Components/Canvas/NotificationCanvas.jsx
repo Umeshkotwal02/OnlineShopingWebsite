@@ -2,42 +2,42 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import "../../styles/ProfileModal.css";
 
-const Notification = ({ show, handleClose }) => {
+const NotificationCanvas = ({ show, handleClose }) => {
   const notifications = [
     {
-      profileImg: require("../../assets/images/Notification/img1.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img1.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a visionzxzxxz...",
       date: "15/05/2023 01:55 PM",
     },
     {
-      profileImg: require("../../assets/images/Notification/img2.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img2.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "20/06/2023 10:30 AM",
     },
     {
-      profileImg: require("../../assets/images/Notification/img3.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img3.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     }, {
-      profileImg: require("../../assets/images/Notification/img4.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img4.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     }, {
-      profileImg: require("../../assets/images/Notification/img5.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img5.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     }, {
-      profileImg: require("../../assets/images/Notification/img1.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img1.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     },
     {
-      profileImg: require("../../assets/images/Notification/img2.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img2.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     },
     {
-      profileImg: require("../../assets/images/Notification/img3.png"),
+      profileImg: require("../../assets/images/NotificationsImgs/img3.png"),
       title: "Pink Embroidered Art Silk Umbrella Lehenga a vision...",
       date: "05/07/2023 02:15 PM",
     },
@@ -78,4 +78,4 @@ const Notification = ({ show, handleClose }) => {
   );
 };
 
-export default Notification;
+export default NotificationCanvas;

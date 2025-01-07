@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
 import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp, ProfileIcon, NotificationIcon, MyOrderIcon } from "../../assets/SvgIcons";
-import LoginOffCanvas from "../Canvas/LoginCanva";
-import CartOffCanvas from "./CartOffCanvas";
+import LoginOffCanvas from "../canvas/LoginOffCanvas";
 import CategoryMenuMobi from "../../pages/MobilePages/CategoryMenuMobi";
 import CategoryMenu from "./CategoryMenu";
 import MobileHeader from "../mobileheadercomp/MobileHeader";
@@ -12,9 +11,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import toast from "react-hot-toast";
 import { IoLogOutOutline } from "react-icons/io5";
-import ProfileModal from "../Canvas/ProfileModal";
-import Notification from "../Canvas/Notification";
+import ProfileModal from "../canvas/ProfileModal";
+import NotificationCanvas from "../canvas/NotificationCanvas";
 import "../../styles/Header.css"
+import CartOffCanvas from "./CartOffCanvas";
+import SearchBar from "../SearchBar";
 
 const Header = ({
   searchTerm,
@@ -25,8 +26,8 @@ const Header = ({
   showSuggestions,
 }) => {
 
-  const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login Offcanvas
-  const [showCartCanvas, setShowCartCanvas] = useState(false); // Cart Offcanvas
+  const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login OffCanvas
+  const [showCartCanvas, setShowCartCanvas] = useState(false); // Cart OffCanvas
   const [showProfileModals, setShowProfileModals] = useState(false); // Profile Modal
   const [showNotificationModal, setShowNotificationModal] = useState(false); // Notification Modal
   const [isOpen, setIsOpen] = useState(false);
@@ -127,30 +128,8 @@ const Header = ({
 
               {/* Search Bar */}
               <Col xxl={6} xl={6} lg={6} className="flex-grow-1 my-1">
-                <div className="d-flex align-items-center bg-opacity-10 px-3 search-bar">
-                  <SearchIcon className="text-dark p-0" />
-                  <input
-                    type="search"
-                    placeholder="Search for products..."
-                    className="form-control border-0 search-hover search-input text custom-placeholder align-self-center"
-                    value={searchTerm}
-                    onKeyDown={handleKeyUp}
-                    onChange={handleChange}
-                  />
-                </div>
-                {showSuggestions && suggestions.length > 0 && (
-                  <div className="position-absolute w-100 bg-white shadow mt-1" style={{ maxHeight: "300px", overflowY: "auto", zIndex: 1050 }}>
-                    {suggestions.map((item) => (
-                      <div
-                        key={item.id}
-                        className="p-2 cursor-pointer hover-bg-light"
-                        onClick={() => handleSuggestionClick(item)}
-                      >
-                        {item.suggestion}
-                      </div>
-                    ))}
-                  </div>
-                )}
+              <SearchBar/>
+
               </Col>
 
               {/* Icons Section */}
@@ -291,7 +270,7 @@ const Header = ({
       <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
       <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
       <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
-      <Notification show={showNotificationModal} handleClose={handleCloseNotificationModals} />
+      <NotificationCanvas show={showNotificationModal} handleClose={handleCloseNotificationModals} />
 
       {/* <MobileFooter /> */}
 

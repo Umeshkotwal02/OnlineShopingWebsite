@@ -160,6 +160,12 @@ const ReviewClose = (props) => (
       <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96315 3.63987L9.35648 3.0332L6.92982 5.45987L4.50315 3.0332L3.89648 3.63987L6.32315 6.06654L3.89648 8.4932L4.50315 9.09987L6.92982 6.6732L9.35648 9.09987L9.96315 8.4932L7.53648 6.06654L9.96315 3.63987Z" fill="white" />
    </svg>
 );
+const SearchCloseIcon = (props) => (
+   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M1 1L11 11M1 11L11 1L1 11Z" stroke="#D3D1D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   </svg>
+   
+);
 
 
 
@@ -453,4 +459,4 @@ const AddressProIcon = (props) => (
 )
 
 
-export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon, WalletIcon2, CashONIcon2, ReviewClose, OffCanvaArrowIcon, HeartIcon, HomeActiveIcon, ProfileTwoIcon, WishlistProfileIcon, MyOrderProIcon, NotificationProIcon, AddressProIcon };
+export { AddPhotoIcon, AmazonIcon, CheckBadgeIcon, WalletIcon, CopyIcon, ShareIcon, ArrowRightXlIcon, CameraIcon, TimeIcon, TimeIconRed, CallingIcon, LocationIcon, AppDownloadIcon, InfoIcon, TweeterIcon, InstagramIcon, PinterestIcon, FacebookIcon, AboutLinkArrow, ReturnIcon, AccountIcon, WishlistIcon, CartIcon, RightAngle, LikePlus, CouponIcon, RightArrow, CashOnDelIcon, ExchangeIcon, StitchingIcon, ShippingIcon, TruckIcon, PlusIcon, MinusIcon, XClose, ProfileIcon, NotificationIcon, MyOrderIcon, LogoutIcon, SearchIcon, DropdownUp, DropdownDown, LoginIcon, offcanvaceMobiIcon, LgBagIcon, CategorySlickNextIcon, CategoryPrevNextIcon, HomeIcon, CategoryIcon, ExclaimIcon, WalletIcon2, CashONIcon2, ReviewClose, OffCanvaArrowIcon, HeartIcon, HomeActiveIcon, ProfileTwoIcon, WishlistProfileIcon, MyOrderProIcon, NotificationProIcon, AddressProIcon,SearchCloseIcon };

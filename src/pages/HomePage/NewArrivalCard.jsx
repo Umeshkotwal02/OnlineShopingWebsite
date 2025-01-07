@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa6";
 import "../../styles/NewArrivalCard.css";
 import { productData } from "../../config/productData";
 import { FiHeart } from "react-icons/fi";
-import ProductImageSlider from "../../Components/homepage/ProductImageSlider";
+import ProductImageSlider from "../../components/homepage/ProductImageSlider";
 
 const NewArrivalCard = ({ products = productData }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);

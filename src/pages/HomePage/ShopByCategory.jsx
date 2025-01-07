@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/ShopbyCatCard.css"
 import "../../styles/ShopByCategorySlick.css";
-import Loader from "../../Components/Loader";
+import Loader from "../../components/Loader";
 
 
 const sliderItems = [
@@ -166,7 +166,7 @@ const ShopByCategorySlick = () => {
                             </Link>
                         </div>
                     </Col>
-                    <Col xxl={10} xl={10} lg={10} sm={12} xs={12} className="mobile-category-slider">
+                    <Col xxl={10} xl={10} lg={10} sm={12} xs={12} className="mobile-category-slider px-0">
                         {/* Render the slider */}
                         <div ref={sliderRef}>
                             <Slider {...settings}>

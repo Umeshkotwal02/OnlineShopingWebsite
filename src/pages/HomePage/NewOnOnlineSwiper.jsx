@@ -5,7 +5,7 @@ import NewArrivalOfferCard from "./NewArrivalOfferCard";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../../styles/NewOnOnlineSwiper.css";
 import { Container, Row, Col } from "react-bootstrap";
-import Loader from "../../Components/Loader";
+import Loader from "../../components/Loader";
 
 const NewOnOnlineSwiper = () => {
   const navigate = useNavigate();

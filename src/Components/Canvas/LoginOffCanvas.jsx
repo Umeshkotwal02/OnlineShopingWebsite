@@ -6,9 +6,9 @@ import { FcGoogle } from 'react-icons/fc';
 import "../../styles/LoginCanva.css";
 import toast from "react-hot-toast";
 
-const Login = ({ show, handleClose,setUser }) => {
+const LoginOffCanvas = ({ show, handleClose, setUser }) => {
   const [mobileNumber, setMobileNumber] = useState('');
-  const [otpCanvas, setOtpCanvas] = useState(false);
+  const [otpcanvas, setOtpcanvas] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
   const [resendTimer, setResendTimer] = useState(30);
@@ -28,23 +28,29 @@ const Login = ({ show, handleClose,setUser }) => {
     }
   };
 
+  const [touched, setTouched] = useState({
+    mobileNumber: false,
+    password: false
+  });
+
   const validateInput = (input) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{10}$/;
     return emailRegex.test(input) || phoneRegex.test(input);
   };
 
-  const handleProceed = () => {
+  const handleProceed = (e) => {
+    e.preventDefault();
     if (validateInput(mobileNumber)) {
-      setOtpCanvas(true);
+      setOtpcanvas(true);
       startResendTimer();
+      setMobileNumber(``)
       // handleClose();
       setError('');
     } else {
       setError('Please enter a valid email ID or 10-digit mobile number.');
     }
   };
-
 
   const handleVerifyOtp = () => {
     if (otp && otp.length === 6 && otp.join('') === '123456') {
@@ -54,7 +60,7 @@ const Login = ({ show, handleClose,setUser }) => {
       setUser(userData); // Notify parent about the logged-in user
       setSuccess(true);
       toast.success("OTP Verified Successfully!");
-      setOtpCanvas(false);
+      setOtpcanvas(false);
       setOtp(['', '', '', '', '', '']);
       handleClose();
       setMobileNumber('');
@@ -106,6 +112,11 @@ const Login = ({ show, handleClose,setUser }) => {
     return number; // Return as-is if length is less than 4
   };
 
+  // Handle input focus loss (blur)
+  const handleBlur = (field) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  };
+
   // Timer logic in useEffect
   useEffect(() => {
     let interval;
@@ -153,9 +164,13 @@ const Login = ({ show, handleClose,setUser }) => {
                 maxLength=""
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value)}
-                className="form-input"
+                // className="form-input"
+                onBlur={() => handleBlur('mobileNumber')}
+                className={`form-input ${touched.mobileNumber && !validateInput(mobileNumber) ? 'is-invalid' : ''}`}
               />
-              {error && <p className="text-danger mt-2">{error}</p>}
+              {touched.mobileNumber && !validateInput(mobileNumber) && (
+                <div className="invalid-feedback">Please enter a valid email ID or phone number.</div>
+              )}
             </Form.Group>
             <button type="button" className="btn-continue w-100" onClick={handleProceed}>
               Proceed
@@ -192,7 +207,7 @@ const Login = ({ show, handleClose,setUser }) => {
       </Offcanvas>
 
       {/* OTP Verification Offcanvas */}
-      <Offcanvas show={otpCanvas} onHide={() => setOtpCanvas(false)} placement="end" style={{ maxWidth: '450px' }}>
+      <Offcanvas show={otpcanvas} onHide={() => setOtpcanvas(false)} placement="end" style={{ maxWidth: '450px' }}>
         <Offcanvas.Header closeButton className="custom-header web-bg-color">
           <Offcanvas.Title className="text-start">OTP Verification </Offcanvas.Title>
         </Offcanvas.Header>
@@ -213,7 +228,7 @@ const Login = ({ show, handleClose,setUser }) => {
             <p>OTP sent to {maskMobileNumber(mobileNumber)} <button
               className="btn-link text-danger resend-btn"
               onClick={() => {
-                setOtpCanvas(false);
+                setOtpcanvas(false);
                 setMobileNumber('');
                 clearOtp();
                 setError('');
@@ -258,4 +273,4 @@ const Login = ({ show, handleClose,setUser }) => {
   );
 };
 
-export default Login;
+export default LoginOffCanvas;

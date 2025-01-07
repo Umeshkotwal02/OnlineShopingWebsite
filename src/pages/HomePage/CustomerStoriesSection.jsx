@@ -1,10 +1,7 @@
 import React from "react";
 // import CustomerStories from "./CustomerStories";
-import "../../styles/customerStories.css";
-import CustomerStories from "../../Components/CustomerStories";
-import { Container } from "react-bootstrap";
-import Slider from "react-slick";
-
+import "../../styles/CustomerStories.css";
+import CustomerStories from "../../components/CustomerStories";
 
 export const testimonialsData = [
     {

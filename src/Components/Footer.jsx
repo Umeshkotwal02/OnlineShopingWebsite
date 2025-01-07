@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
-import "../styles/footer.css"
+import "../styles/Footer.css"
 import Loader from "./Loader";
 
 const Footer = () => {

@@ -5,6 +5,7 @@ import { CartIcon, OffCanvaArrowIcon } from "../../assets/SvgIcons";
 import { FiSearch } from "react-icons/fi";
 import "../../styles/OffCanvasForHeader.css"
 import CartModal from "../../pages/MobilePages/CartModal";
+import SearchBar from "../SearchBar";
 
 const MainHeaderMobi = ({
   wishlistCount,
@@ -70,54 +71,13 @@ const MainHeaderMobi = ({
         <Row className="justify-content-center my-2 pb-3">
           {/* Search Bar */}
           <Col
-            className="d-flex justify-content-center align-items-center px-4"
+            className="d-flex justify-content-center align-items-center"
           >
-            <div
-              className="d-flex align-items-center bg-opacity-10 px-3"
-              style={{
-                border: "2px solid #D3D1D1",
-                borderRadius: "25px",
-                width: "100%",
-                backgroundColor: "#fff",
-              }}
-            >
-              <FiSearch className="text-dark fs-3" />
-              <input
-                type="search"
-                placeholder="Search for products..."
-                className="form-control border-0 search-hover text Mobile-placeholder"
-                value={searchTerm}
-                onKeyDown={handleKeyUp}
-                onChange={handleChange}
-                style={{
-                  outline: "none",
-                  boxShadow: "none",
-                  backgroundColor: "#fff",
-                  padding: "8px 12px",
-                }}
-                aria-label="Search products"
-              />
-            </div>
-            {showSuggestions && suggestions.length > 0 && (
-              <div
-                className="position-absolute w-100 bg-white shadow mt-1"
-                style={{ maxHeight: "300px", overflowY: "auto", zIndex: 1050 }}
-              >
-                {suggestions.map((item) => (
-                  <div
-                    key={item.id}
-                    className="p-2 cursor-pointer hover-bg-light"
-                    onClick={() => handleSuggestionClick(item)}
-                  >
-                    {item.suggestion}
-                  </div>
-                ))}
-              </div>
-            )}
+            <SearchBar />
           </Col>
         </Row>
 
-        {/* OffCanvas for Small Screens */}
+        {/* Offcanvas for Small Screens */}
         <Offcanvas
           show={showOffcanvas}
           onHide={handleOffcanvasToggle}

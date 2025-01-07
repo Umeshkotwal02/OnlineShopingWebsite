@@ -182,6 +182,7 @@
 /* Close button on the left side */
 .custom-header .btn-close {
     order: -1;
+    background-size: 40% !important;
     /* Move the close button to the left */
 }
 

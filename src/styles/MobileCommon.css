@@ -19,7 +19,6 @@
 .modal-custom-header .btn-close {
     --bs-btn-close-bg: url("../assets/images/MobileView/image.png");
     --bs-btn-close-opacity: 1;
-
 }
 
 .custom-modal-footer {

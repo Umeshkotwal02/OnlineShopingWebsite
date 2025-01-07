@@ -6,9 +6,9 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Payment from './Payment';
 import AddressCard from './AddressCard';
 import { WalletIcon } from '../../assets/SvgIcons';
-import Loader from '../../Components/Loader';
+import Loader from '../../components/Loader';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../../Components/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb';
 
 const steps = [
   { id: 'SignUp', label: 'Sign Up', icon: <IoIosCheckmark className="fs-1" />, isActive: true },

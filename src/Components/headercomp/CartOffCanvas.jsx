@@ -57,7 +57,7 @@ const CartOffCanvas = ({ show, handleClose }) => {
                 {items.map((item) => (
                     <div
                         key={item.id}
-                        className="d-flex rounded mb-3 pt-2 position-relative web-bg-color"
+                        className="d-flex rounded mb-3 py-2 position-relative web-bg-color"
                     >
                         <div className="rounded">
                             <img
@@ -69,8 +69,8 @@ const CartOffCanvas = ({ show, handleClose }) => {
                         </div>
                         <div className="flex-grow-1">
                             <Button
-                                variant="light"
-                                className="position-absolute top-0 end-0 p-1 product-cart-close-btn"
+                                variant=""
+                                className="position-absolute top-0 end-0 product-cart-close-btn"
                                 size="sm"
                             >
                                 <FaTimes />

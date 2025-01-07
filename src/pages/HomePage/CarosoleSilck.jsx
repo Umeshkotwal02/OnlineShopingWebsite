@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "../../styles/CarosoleSilck.css";
 import { Container } from "react-bootstrap";
 import CarosoleSlickMobi from "../MobilePages/CarosoleSlickMobi";
-import Loader from "../../Components/Loader";
+import Loader from "../../components/Loader";
 
 // Custom Next Arrow Component
 const NextArrow = ({ onClick }) => {

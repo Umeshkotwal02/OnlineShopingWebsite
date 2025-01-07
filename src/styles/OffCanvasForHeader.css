@@ -3,6 +3,9 @@
   position: relative;
   padding: 2.7rem !important;
 }
+.offcanvas-for-header {
+  border-right: 2px solid #B51B3B !important
+}
 
 .offcanvas-for-header .offcanvas-header .btn-close {
   background-color: #B51B3B;
@@ -12,7 +15,8 @@
   position: absolute;
   right: -2%;
   --bs-btn-close-bg: url("../assets/images/MobileView/offclosebtn.png") !important;
-  background-size: 10px;
+  /* background-size: 10px; */
+  background-size: 55%;
 }
 
 .offcanvas-for-header .accordion-header-button {

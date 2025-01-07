@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import Loader from "../Loader";
-import "../../styles/watchShopCard.css";
+import "../../styles/WatchShopCard.css";
 
 const WatchShopCard = ({ watchShopProductInfo }) => {
     const [play, setPlay] = useState(false);

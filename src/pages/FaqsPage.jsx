@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Components/Breadcrumb";
-import Faq from "../Components/Faq";
+import Breadcrumb from "../components/Breadcrumb";
+import Faq from "../components/Faq";
 import { Container } from "react-bootstrap";
 
 const FaqsPage = () => {

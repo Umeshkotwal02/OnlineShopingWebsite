@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Components/Breadcrumb";
+import Breadcrumb from "../components/Breadcrumb";
 import SortBy from "./ProductPage/SortBy";
 import { XClose } from "../assets/SvgIcons";
 import ProductList from "./ProductPage/ProductList";
-import Loader from "../Components/Loader";
+import Loader from "../components/Loader";
 import { useState } from "react";
 import ProductFilter from "./ProductPage/ProductFilter";
 

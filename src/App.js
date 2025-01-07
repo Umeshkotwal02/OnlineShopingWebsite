@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
-import AutoScrollToTop from './Components/AutoScrollToTop';
-import Header from './Components/headercomp/Header';
-import ScrollUp from './Components/ScrollUp';
-import { publicRoutes } from './Routes/allRoutes';
-import Footer from "./Components/Footer";
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import AutoScrollToTop from "./components/AutoScrollToTop";
+import Header from "./components/headercomp/Header";
+import ScrollUp from "./components/ScrollUp";
+import Footer from "./components/Footer";
+import "./App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Toaster } from 'react-hot-toast';
-import Loader from './Components/Loader';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MobileFooter from './Components/mobileheadercomp/MobileFooter';
-
+import { Toaster } from "react-hot-toast";
+import Loader from "./components/Loader";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MobileFooter from "./components/mobileheadercomp/MobileFooter";
+import { publicRoutes } from "./routes/allRoutes";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,6 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          {/* <AutoScrollToTop /> */}
           <Toaster
             position="top-right"
             reverseOrder={false}
@@ -42,7 +41,6 @@ function App() {
           <AutoScrollToTop />
           <Header />
           <MobileFooter />
-          {/* <MobileFooter /> */}
           <Routes>
             {publicRoutes.map(({ path, component: Component, redirect }, idx) =>
               redirect ? (

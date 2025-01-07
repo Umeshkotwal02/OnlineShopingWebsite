@@ -36,7 +36,7 @@ const BagCard = (activeTab) => {
   ]
 
   const [isOpen, setIsOpen] = useState(true);
-  const [showCouponCanvas, setShowCouponCanvas] = useState(false); // Address Offcanvas
+  const [showCouponcanvas, setShowCouponcanvas] = useState(false); // Address Offcanvas
 
   const navigate = useNavigate();
 
@@ -47,13 +47,13 @@ const BagCard = (activeTab) => {
   };
 
   //Coupon
-  const handleShowCouponCanvas = () => {
+  const handleShowCouponcanvas = () => {
     document.body.classList.add("body-lock");
-    setShowCouponCanvas(true);
+    setShowCouponcanvas(true);
   };
-  const handleCloseCouponCanvas = () => {
+  const handleCloseCouponcanvas = () => {
     document.body.classList.remove("body-lock");
-    setShowCouponCanvas(false);
+    setShowCouponcanvas(false);
   };
 
   return (
@@ -81,8 +81,8 @@ const BagCard = (activeTab) => {
                 </div>
                 <div className="flex-grow-1">
                   <Button
-                    variant="light"
-                    className="position-absolute top-0 end-0 p-1 product-cart-close-btn"
+                    variant=""
+                    className="position-absolute top-0 end-0 product-cart-close-btn"
                     size="sm"
                   >
                     <FaTimes />
@@ -154,7 +154,7 @@ const BagCard = (activeTab) => {
                       />
                     </div>
                     <div style={{ width: "20%" }}>
-                      <button className="btn btn-dark  w-100 text-white fw-bold rounded-5" onClick={handleShowCouponCanvas}>
+                      <button className="btn btn-dark  w-100 text-white fw-bold rounded-5" onClick={handleShowCouponcanvas}>
                         Apply
                       </button>
                     </div>
@@ -240,7 +240,7 @@ const BagCard = (activeTab) => {
 
         </Col>
       </Row>
-      <CouponCanva show={showCouponCanvas} handleClose={handleCloseCouponCanvas} />
+      <CouponCanva show={showCouponcanvas} handleClose={handleCloseCouponcanvas} />
 
     </Container>
   )

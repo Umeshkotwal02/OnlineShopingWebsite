@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Components/Breadcrumb";
+import Breadcrumb from "../components/Breadcrumb";
 import { Container } from "react-bootstrap";
 
 const TermAndConditionPage = () => {

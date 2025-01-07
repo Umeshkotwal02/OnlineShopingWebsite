@@ -5,11 +5,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/ShopbyCatCard.css"
 import "../../styles/ShopByCategorySlick.css";
-import Loader from "../../Components/Loader";
+import Loader from "../../components/Loader";
 import { productData } from "../../config/productData";
 import { FaHeart } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
-import ProductImageSlider from "../../Components/homepage/ProductImageSlider";
+import ProductImageSlider from "../../components/homepage/ProductImageSlider";
 
 
 // Custom Next Arrow Component

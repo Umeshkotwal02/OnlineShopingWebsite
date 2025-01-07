@@ -93,7 +93,7 @@ const CategoryMobile = () => {
                 <div className="col-4 category-sidebar p-0 m-0"> 
                     <h5 className="category-title">Categories</h5>
                     <ul className="list-unstyled">
-                        {DataConst.map((category) => (
+                        {DataConst.map((category, index) => (
                             <li
                                 key={category.id}
                                 className={`category-item  ${activeCategory === category.id ? "active" : ""

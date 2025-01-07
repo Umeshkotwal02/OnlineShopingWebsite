@@ -1,158 +1,129 @@
-import React, { useState } from "react";
-import "../../styles/CategoryMobile.css";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Row, Col, Container } from "react-bootstrap";
+import { FaHeart } from "react-icons/fa6";
+import { productData } from "../config/productData";
+import Breadcrumb from "../components/Breadcrumb";
+import "../styles/NewArrivalCard.css";
+import ProductImageSlider from "../components/homepage/ProductImageSlider";
+import Loader from "../components/Loader";
 
-const DataConst = [
-    {
-        id: 1,
-        title: "New Arrival",
-        image: require("../../assets/images/CateMobi/img-1.png"),
-        dropdown: [
-            {
-                category: "Style",
-                items: [
-                    { name: "See All Saree", link: "products-page" },
-                    { name: "Ready to Ship Saree", link: "products-page" },
-                    { name: "Embroidered Saree", link: "products-page" },
-                    { name: "Designer Saree", link: "products-page" },
-                    { name: "Sequin Saree", link: "products-page" },
-                    { name: "Ready Pleated Saree", link: "products-page" },
-                    { name: "Plain Saree with", link: "products-page" },
-                    { name: "Plain Saree", link: "products-page" },
-                    { name: "Classic Saree", link: "products-page" },
-                    { name: "Printed Saree", link: "products-page" },
-                ],
-            },
-        ],
-    },
-    {
-        id: 2,
-        title: "New",
-        image: require("../../assets/images/CateMobi/img-2.png"),
-        dropdown: [
-            {
-                category: "Style",
-                items: [
-                    { name: "See All Saree", link: "products-page" },
-                    { name: "Ready to Ship Saree", link: "products-page" },
-                    { name: "Embroidered Saree", link: "products-page" },
-                    { name: "Designer Saree", link: "products-page" },
-                    { name: "Sequin Saree", link: "products-page" },
-                    { name: "Ready Pleated Saree", link: "products-page" },
-                    { name: "Plain Saree with", link: "products-page" },
-                    { name: "Plain Saree", link: "products-page" },
-                    { name: "Classic Saree", link: "products-page" },
-                    { name: "Printed Saree", link: "products-page" },
-                ],
-            },
-        ],
-    },
-    {
-        id: 3,
-        title: "New Arrival 0",
-        image: require("../../assets/images/CateMobi/img-3.png"),
-        dropdown: [
-            {
-                category: "Style",
-                items: [
-                    { name: "See All Saree", link: "products-page" },
-                    { name: "Ready to Ship Saree", link: "products-page" },
-                    { name: "Embroidered Saree", link: "products-page" },
-                    { name: "Designer Saree", link: "products-page" },
-                    { name: "Sequin Saree", link: "products-page" },
-                    { name: "Ready Pleated Saree", link: "products-page" },
-                    { name: "Plain Saree with", link: "products-page" },
-                    { name: "Plain Saree", link: "products-page" },
-                    { name: "Classic Saree", link: "products-page" },
-                    { name: "Printed Saree", link: "products-page" },
-                ],
-            },
-        ],
-    },
-];
+const WishlistPage = () => {
+  const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);
 
+  const breadcrumbArray = [
+    <Link
+      to="/"
+      key="1"
+      className="text-muted text-decoration-none fs-6 fw-normal lh-1 text-capitalize d-inline-block"
+    >
+      Home
+    </Link>,
+    <p
+      key="2"
+      className="text-dark fs-6 fw-normal lh-1 text-capitalize d-inline-block mb-0"
+    >
+      Wishlist
+    </p>,
+  ];
 
-const CategoryMobile = () => {
-    const [activeCategory, setActiveCategory] = useState(null); // Stores the active category
-    const [activeDropdown, setActiveDropdown] = useState(null); // Stores the active dropdown category
+  const truncateProductName = (name) => {
+    if (name.length > 18) {
+      return name.substring(0, 20) + "...";
+    }
+    return name;
+  };
 
-    const handleCategoryClick = (categoryId) => {
-        // Toggle the category selection
-        setActiveCategory((prev) => (prev === categoryId ? null : categoryId));
-        setActiveDropdown(null); // Reset subcategory when switching categories
-    };
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    alert("Product added to cart!");
+  };
 
-    const handleDropdownClick = (dropdownIndex) => {
-        // Toggle the dropdown
-        setActiveDropdown((prev) => (prev === dropdownIndex ? null : dropdownIndex));
-    };
+  const handleWishlistToggle = (e) => {
+    e.preventDefault();
+    setIsWishlisted((prev) => !prev);
+    alert(isWishlisted ? "Removed from wishlist!" : "Added to wishlist!");
+  };
 
-    return (
-        <div className="category-container">
-            <div className="row">
-                {/* Left Sidebar */}
-                <div className="col-4 category-sidebar">
-                    <h5 className="category-title">Categories</h5>
-                    <ul className="list-unstyled">
-                        {DataConst.map((category) => (
-                            <li
-                                key={category.id}
-                                className={`category-item  ${activeCategory === category.id ? "active" : ""
-                                    }`}
-                                onClick={() => handleCategoryClick(category.id)}
-                            >
-                                <img
-                                    src={category.image}
-                                    alt={category.title}
-                                    className="category-image"
-                                />
-                                <span className="category-name">{category.title}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+  const productNameSlug = (name) => {
+    return name.replace(/\s+/g, "-").toLowerCase();
+  };
 
-                {/* Right Side */}
-                <div className="col-8 category-content">
-                    {activeCategory && (
-                        <>
-                            <h5 className="subcategory-title">
-                                {DataConst.find((cat) => cat.id === activeCategory).title}
-                            </h5>
-                            {DataConst.find((cat) => cat.id === activeCategory).dropdown.map(
-                                (dropdown, index) => (
-                                    <div key={index} className="dropdown-section">
-                                        <h6
-                                            className="dropdown-category"
-                                            onClick={() => handleDropdownClick(index)}
-                                        >
-                                            {dropdown.category}
-                                            <span className="toggle-icon">
-                                                {activeDropdown === index ? "-" : "+"}
-                                            </span>
-                                        </h6>
-                                        {activeDropdown === index && (
-                                            <ul className="list-unstyled dropdown-items">
-                                                {dropdown.items.map((item, idx) => (
-                                                    <li key={idx}>
-                                                        <a href={item.link} className="dropdown-link">
-                                                            {item.name}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                )
-                            )}
-                        </>
-                    )}
-                    {!activeCategory && (
-                        <p className="no-category">Select a category to see details</p>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading for 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2205);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className="web-bg-color d-lg-none py-3">
+            <div className="text-start text-start fw-medium fs-3 px-3">Wishlist</div>
+          </div>
+          <Container fluid className="new-arrival-container mb-4 p-lg-0 py-sm-0 py-md-0 py-3">
+            <Breadcrumb list={breadcrumbArray} />
+
+            <Row className="px-lg-5 px-xl-5 px-xxl-5 g-4">
+              {productData.map((product) => (
+                <Col xs={6} sm={6} md={4} lg={2} xl={2} xxl={2} key={product.id}
+                  className="mb-1 rounded wishlist-column"
+                >
+                  <Link to={`/product/${productNameSlug(product.product_name)}`} className="text-decoration-none">
+                    <div className="new-arrival-card">
+                      {/* Product Image Section */}
+                      <div className="image-container rounded">
+                        <ProductImageSlider imageList={product.product_images} />
+                        <div className="overlay-buttons">
+                          <button className="add-to-cart-btn" onClick={handleAddToCart}>
+                            MOVE TO BAG
+                          </button>
+                        </div>
+
+                        {/* Wishlist Button */}
+                        <div className="wishlist-page-btn rounded-circle">
+                          <button onClick={handleWishlistToggle} className="rounded-circle">
+                            <FaHeart className="icon heart-icon fs-5" />
+                          </button>
+                        </div>
+
+                        {/* Discount Badge */}
+                        {product.product_discount > 0 && (
+                          <div className="discount-badge">
+                            <p className="discount-p">{product.product_discount}% OFF</p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Product Info Section */}
+                      <div className="product-info">
+                        <h3 className="text-start text-dark">{truncateProductName(product.product_name)}</h3>
+                        <div className="price-section ">
+                          <span className="mrp text-start">
+                            {product.currency}
+                            {product.product_mrp}
+                          </span>
+                          <span className="discounted-price">
+                            {product.currency}
+                            {product.product_price}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </>
+      )}
+    </>
+  );
 };
 
-export default CategoryMobile;
+export default WishlistPage;

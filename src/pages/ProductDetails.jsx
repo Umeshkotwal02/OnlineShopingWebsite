@@ -13,8 +13,8 @@ import {
 import { Container, Row, Col } from 'react-bootstrap';
 import CustomerReview from "./ProductDetailsPage/CustomerReview"
 import { Link } from "react-router-dom";
-import Breadcrumb from "../Components/Breadcrumb";
-import Loader from "../Components/Loader";
+import Breadcrumb from "../components/Breadcrumb";
+import Loader from "../components/Loader";
 import ProductAllInformation from "./ProductDetailsPage/ProductAllInformation";
 import "../styles/ProductDetails.css";
 import SimilarProduct from "./ProductDetailsPage/SimilarProduct";

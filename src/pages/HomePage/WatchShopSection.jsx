@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
-import "../../styles/watchShopCard.css";
+import "../../styles/WatchShopCard.css";
 import { Modal, Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
-import Loader from "../../Components/Loader";
-import "../../styles/watchShopCard.css";
-import WatchShopCard from "../../Components/homepage/WatchShopCard";
+import Loader from "../../components/Loader";
+import "../../styles/WatchShopCard.css";
+import WatchShopCard from "../../components/homepage/WatchShopCard";
 
 // Static data example
 const productData = [
