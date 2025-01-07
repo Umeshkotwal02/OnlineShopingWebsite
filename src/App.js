@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
-import AutoScrollToTop from "./components/AutoScrollToTop";
 import Header from "./components/headercomp/Header";
 import ScrollUp from "./components/ScrollUp";
 import Footer from "./components/Footer";
@@ -13,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MobileFooter from "./components/mobileheadercomp/MobileFooter";
 import { publicRoutes } from "./routes/allRoutes";
 import SearchBar from "./components/SearchBar";
+import AutoScrollToTop from "./components/AutoScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
