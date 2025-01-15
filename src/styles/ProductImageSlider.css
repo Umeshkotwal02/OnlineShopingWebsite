@@ -103,11 +103,11 @@
 }
 
 .product-image-slider.swiper .swiper-pagination-bullet {
-  background: #9c9c9c;
+  background: white;
   margin: 0 2px !important;
   opacity: 1;
 }
 
 .product-image-slider.swiper .swiper-pagination-bullet-active {
-  background-color: rgb(255, 255, 255);
+  background-color: #B51B3B;
 }
