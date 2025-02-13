@@ -13,8 +13,8 @@ import {
 import { Container, Row, Col } from 'react-bootstrap';
 import CustomerReview from "./ProductDetailsPage/CustomerReview"
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
-import Loader from "../components/Loader";
+import Breadcrumb from "../Components/Breadcrumb";
+import LoaderComp from "../Components/LoaderComp";
 import ProductAllInformation from "./ProductDetailsPage/ProductAllInformation";
 import "../styles/ProductDetails.css";
 import SimilarProduct from "./ProductDetailsPage/SimilarProduct";
@@ -95,7 +95,7 @@ const ProductDetails = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+        <LoaderComp />
       ) : (
         <>
           <Breadcrumb list={breadcrumbArray} />

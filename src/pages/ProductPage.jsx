@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../Components/Breadcrumb";
 import SortBy from "./ProductPage/SortBy";
 import { XClose } from "../assets/SvgIcons";
 import ProductList from "./ProductPage/ProductList";
-import Loader from "../components/Loader";
+import LoaderComp from "../Components/LoaderComp";
 import { useState } from "react";
 import ProductFilter from "./ProductPage/ProductFilter";
 
@@ -20,7 +20,7 @@ const ProductPage = () => {
   }, []);
 
   if (loading) {
-      return <Loader />;
+      return <LoaderComp />;
   }
 
   const listyle = {

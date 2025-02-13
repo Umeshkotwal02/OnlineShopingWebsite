@@ -6,9 +6,9 @@ import { FcGoogle } from 'react-icons/fc';
 import "../../styles/LoginCanva.css";
 import toast from "react-hot-toast";
 
-const LoginOffCanvas = ({ show, handleClose, setUser }) => {
+const LoginOffcanvas = ({ show, handleClose, setUser }) => {
   const [mobileNumber, setMobileNumber] = useState('');
-  const [otpcanvas, setOtpcanvas] = useState(false);
+  const [otpCanvas, setOtpCanvas] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
   const [resendTimer, setResendTimer] = useState(30);
@@ -42,7 +42,7 @@ const LoginOffCanvas = ({ show, handleClose, setUser }) => {
   const handleProceed = (e) => {
     e.preventDefault();
     if (validateInput(mobileNumber)) {
-      setOtpcanvas(true);
+      setOtpCanvas(true);
       startResendTimer();
       setMobileNumber(``)
       // handleClose();
@@ -60,7 +60,7 @@ const LoginOffCanvas = ({ show, handleClose, setUser }) => {
       setUser(userData); // Notify parent about the logged-in user
       setSuccess(true);
       toast.success("OTP Verified Successfully!");
-      setOtpcanvas(false);
+      setOtpCanvas(false);
       setOtp(['', '', '', '', '', '']);
       handleClose();
       setMobileNumber('');
@@ -207,7 +207,7 @@ const LoginOffCanvas = ({ show, handleClose, setUser }) => {
       </Offcanvas>
 
       {/* OTP Verification Offcanvas */}
-      <Offcanvas show={otpcanvas} onHide={() => setOtpcanvas(false)} placement="end" style={{ maxWidth: '450px' }}>
+      <Offcanvas show={otpCanvas} onHide={() => setOtpCanvas(false)} placement="end" style={{ maxWidth: '450px' }}>
         <Offcanvas.Header closeButton className="custom-header web-bg-color">
           <Offcanvas.Title className="text-start">OTP Verification </Offcanvas.Title>
         </Offcanvas.Header>
@@ -228,7 +228,7 @@ const LoginOffCanvas = ({ show, handleClose, setUser }) => {
             <p>OTP sent to {maskMobileNumber(mobileNumber)} <button
               className="btn-link text-danger resend-btn"
               onClick={() => {
-                setOtpcanvas(false);
+                setOtpCanvas(false);
                 setMobileNumber('');
                 clearOtp();
                 setError('');
@@ -273,4 +273,4 @@ const LoginOffCanvas = ({ show, handleClose, setUser }) => {
   );
 };
 
-export default LoginOffCanvas;
+export default LoginOffcanvas;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../Components/Breadcrumb";
 import { Container } from "react-bootstrap";
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";

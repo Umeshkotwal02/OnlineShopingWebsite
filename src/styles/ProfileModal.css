@@ -118,7 +118,7 @@
 }
 
 /* Styling for the Offcanvas Title (center it) */
-.custom-header .offcanvas-title {
+.custom-header .Offcanvas-title {
     margin-left: 20px;
     flex-grow: 1;
     /* Center the title */

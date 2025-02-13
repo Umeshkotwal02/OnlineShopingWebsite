@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import "../../styles/Motion.css"
-import Loader from '../../components/Loader';
+import LoaderComp from '../../Components/LoaderComp';
+
 const Motion = () => {
 
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ const Motion = () => {
   }, []);
 
   if (loading) {
-      return <Loader />;
+      return <LoaderComp />;
   }
 
   return (

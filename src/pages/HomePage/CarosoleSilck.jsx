@@ -3,7 +3,8 @@ import Slider from "react-slick";
 import "../../styles/CarosoleSilck.css";
 import { Container } from "react-bootstrap";
 import CarosoleSlickMobi from "../MobilePages/CarosoleSlickMobi";
-import Loader from "../../components/Loader";
+import LoaderComp from "../../Components/LoaderComp";
+
 
 // Custom Next Arrow Component
 const NextArrow = ({ onClick }) => {
@@ -61,7 +62,7 @@ const CarosoleSilckSlider = () => {
         <>
             <>
                 {loading ? (
-                    <Loader />
+                    <LoaderComp />
                 ) : (
                     <>
                         <CarosoleSlickMobi />

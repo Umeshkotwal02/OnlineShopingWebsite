@@ -36,7 +36,7 @@ const BagCard = (activeTab) => {
   ]
 
   const [isOpen, setIsOpen] = useState(true);
-  const [showCouponcanvas, setShowCouponcanvas] = useState(false); // Address Offcanvas
+  const [showCouponCanvas, setShowCouponCanvas] = useState(false); // Address Offcanvas
 
   const navigate = useNavigate();
 
@@ -47,13 +47,13 @@ const BagCard = (activeTab) => {
   };
 
   //Coupon
-  const handleShowCouponcanvas = () => {
+  const handleShowCouponCanvas = () => {
     document.body.classList.add("body-lock");
-    setShowCouponcanvas(true);
+    setShowCouponCanvas(true);
   };
-  const handleCloseCouponcanvas = () => {
+  const handleCloseCouponCanvas = () => {
     document.body.classList.remove("body-lock");
-    setShowCouponcanvas(false);
+    setShowCouponCanvas(false);
   };
 
   return (
@@ -154,7 +154,7 @@ const BagCard = (activeTab) => {
                       />
                     </div>
                     <div style={{ width: "20%" }}>
-                      <button className="btn btn-dark  w-100 text-white fw-bold rounded-5" onClick={handleShowCouponcanvas}>
+                      <button className="btn btn-dark  w-100 text-white fw-bold rounded-5" onClick={handleShowCouponCanvas}>
                         Apply
                       </button>
                     </div>
@@ -240,7 +240,7 @@ const BagCard = (activeTab) => {
 
         </Col>
       </Row>
-      <CouponCanva show={showCouponcanvas} handleClose={handleCloseCouponcanvas} />
+      <CouponCanva show={showCouponCanvas} handleClose={handleCloseCouponCanvas} />
 
     </Container>
   )

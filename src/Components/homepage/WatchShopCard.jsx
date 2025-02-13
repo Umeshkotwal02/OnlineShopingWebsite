@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import Loader from "../Loader";
 import "../../styles/WatchShopCard.css";
+import LoaderComp from "../LoaderComp";
 
 const WatchShopCard = ({ watchShopProductInfo }) => {
     const [play, setPlay] = useState(false);
@@ -18,7 +18,7 @@ const WatchShopCard = ({ watchShopProductInfo }) => {
     return (
         <>
             {loading ? (
-                <Loader />
+                <LoaderComp />
             ) : (
 
                 <div className="product-card web-bg-color rounded-3">

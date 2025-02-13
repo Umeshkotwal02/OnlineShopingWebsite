@@ -4,9 +4,9 @@ import "../../styles/WatchShopCard.css";
 import { Modal, Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
-import Loader from "../../components/Loader";
 import "../../styles/WatchShopCard.css";
-import WatchShopCard from "../../components/homepage/WatchShopCard";
+import WatchShopCard from "../../Components/homepage/WatchShopCard";
+import LoaderComp from "../../Components/LoaderComp";
 
 // Static data example
 const productData = [
@@ -178,13 +178,13 @@ const WatchShopSection = () => {
     };
 
     if (loading) {
-        return <Loader />;
+        return <LoaderComp />;
     }
 
     return (
         <>
             {loading ? (
-                <Loader />
+                <LoaderComp />
             ) : (
                 <>
                     <Container fluid className="watch-shop-card px-sm-0 px-lg-5 px-xl-5 px-xxl-5 ">

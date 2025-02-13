@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import NewArrivalOfferCard from "./NewArrivalOfferCard";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../../styles/NewOnOnlineSwiper.css";
-import { Container, Row, Col } from "react-bootstrap";
-import Loader from "../../components/Loader";
+import { Row, Col } from "react-bootstrap";
+import LoaderComp from "../../Components/LoaderComp";
 
 const NewOnOnlineSwiper = () => {
   const navigate = useNavigate();
@@ -101,7 +101,7 @@ const NewOnOnlineSwiper = () => {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <LoaderComp />;
   }
 
   return (

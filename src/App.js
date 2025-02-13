@@ -5,13 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Loader from "./components/Loader";
-import Header from "./components/headercomp/Header";
-import MobileFooter from "./components/mobileheadercomp/MobileFooter";
-import Footer from "./components/Footer";
-import ScrollUp from "./components/ScrollUp";
-import { publicRoutes } from "./routes/allRoutes";
-import AutoScrollToTop from "./components/AutoScrollToTop";
+import LoaderComp from "./Components/LoaderComp";
+import Header from "./Components/headercomp/Header"
+import MobileFooter from "./Components/mobileheadercomp/MobileFooter";
+import { publicRoutes } from "./Routes/allRoutes";
+import HomePage from "./pages/HomePage";
+import Footer from "./Components/Footer";
+import ScrollUp from "./Components/ScrollUp";
+import AutoScrollToTop from "./Components/AutoScrollToTop";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,7 @@ function App() {
   return (
     <>
       {loading ? (
-        <Loader />
+        <LoaderComp />
       ) : (
         <Router>
           <Toaster
@@ -45,7 +47,7 @@ function App() {
               redirect ? (
                 <Route key={idx} path={path} element={<Navigate to={redirect} />} />
               ) : (
-                <Route key={idx} path={path} element={<Component />} />
+                <Route key={idx} path={path} element={<HomePage />} />
               )
             )}
             <Route path="*" element={<Navigate to="/home" />} />

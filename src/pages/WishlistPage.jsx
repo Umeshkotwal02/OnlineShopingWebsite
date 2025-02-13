@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa6";
 import { productData } from "../config/productData";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../Components/Breadcrumb";
 import "../styles/NewArrivalCard.css";
-import ProductImageSlider from "../components/homepage/ProductImageSlider";
-import Loader from "../components/Loader";
+import ProductImageSlider from "../Components/homepage/ProductImageSlider";
+import LoaderComp from "../Components/LoaderComp";
 
 const WishlistPage = () => {
   const [isWishlisted, setIsWishlisted] = useState(productData[0].is_wishlist);
@@ -60,7 +60,7 @@ const WishlistPage = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+        <LoaderComp />
       ) : (
         <>
           <div className="web-bg-color d-lg-none py-3">

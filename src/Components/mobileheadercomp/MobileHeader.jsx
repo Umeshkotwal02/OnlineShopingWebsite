@@ -2,19 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Offcanvas, Row, Col, Nav } from "react-bootstrap";
 import { CartIcon, OffCanvaArrowIcon } from "../../assets/SvgIcons";
-import { FiSearch } from "react-icons/fi";
 import "../../styles/OffCanvasForHeader.css"
 import CartModal from "../../pages/MobilePages/CartModal";
 import SearchBar from "../SearchBar";
 
 const MainHeaderMobi = ({
   wishlistCount,
-  searchTerm,
-  handleKeyUp,
-  handleChange,
-  suggestions,
-  handleSuggestionClick,
-  showSuggestions,
 }) => {
 
   const [showOffcanvas, setShowOffcanvas] = useState(false); // Menu Offcanvas
@@ -78,25 +71,25 @@ const MainHeaderMobi = ({
         </Row>
 
         {/* Offcanvas for Small Screens */}
-        <Offcanvas
+        <ffcanvas
           show={showOffcanvas}
           onHide={handleOffcanvasToggle}
           placement="start"
           responsive="lg"
-          className="offcanvas-for-header"
+          className="Offcanvas-for-header"
           style={{ width: "85%" }}
         >
           <Offcanvas.Header closeButton>
             <div className="col-10 col-md-6 col-lg-3 text-center text-md-left">
               <img
-                className="offcanvas-header-logo"
+                className="Offcanvas-header-logo"
                 src={require("../../assets/images/MobileView/mobiheaderlogo.png")}
-                alt="offcanvas-header-logo"
+                alt="Offcanvas-header-logo"
               />
             </div>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="d-grid align-items-center mobile-offcanvas text-capitalize">
+            <Nav className="d-grid align-items-center mobile-Offcanvas text-capitalize">
               <Nav.Link href="/home" className="red-hover">
                 <span className="pe-3"> <OffCanvaArrowIcon /> </span> Home
               </Nav.Link>
@@ -130,7 +123,7 @@ const MainHeaderMobi = ({
               <div className="border-bottom"></div>
             </Nav>
           </Offcanvas.Body>
-        </Offcanvas>
+        </ffcanvas>
       </div>
 
       <CartModal show={showCartModal} handleClose={handleCloseCartModal} />

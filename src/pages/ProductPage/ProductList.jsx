@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa6";
 import "../../styles/NewArrivalCard.css";
 import { productListPageData } from "../../config/productData";
 import { FiHeart } from "react-icons/fi";
-import ProductImageSlider from "../../components/homepage/ProductImageSlider";
+import ProductImageSlider from "../../Components/homepage/ProductImageSlider";
 
 const ProductList = () => {
     const [isWishlisted, setIsWishlisted] = useState(productListPageData[0].is_wishlist);

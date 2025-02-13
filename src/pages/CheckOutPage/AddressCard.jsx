@@ -10,19 +10,19 @@ import AddressOffcanvas from "./AddressCanva";
 // Here use static data create array and map it & here used tailwind css replace it with react Bootstrap or normal css
 const AddressCard = ({ info, fetchAddresses, onSelectAddress }) => {
     const [selectedAddress, setSelectedAddress] = useState(null);
-    const [showAddresscanvas, setShowAddresscanvas] = useState(false); // Address Offcanvas
+    const [showAddressCanvas, setShowAddressCanvas] = useState(false); // Address Offcanvas
     const [isOpen, setIsOpen] = useState(false);
 
 
     //Address
-    const handleShowAddresscanvas = () => {
+    const handleShowAddressCanvas = () => {
         document.body.classList.add("body-lock");
         setIsOpen(false);
-        setShowAddresscanvas(true);
+        setShowAddressCanvas(true);
     };
-    const handleCloseAddresscanvas = () => {
+    const handleCloseAddressCanvas = () => {
         document.body.classList.remove("body-lock");
-        setShowAddresscanvas(false);
+        setShowAddressCanvas(false);
     };
 
     const editAddress = (address) => {
@@ -104,7 +104,7 @@ const AddressCard = ({ info, fetchAddresses, onSelectAddress }) => {
                             <div
                                 className="card border p-3 d-flex align-items-center justify-content-center bg-white btn"
                                 style={{ height: '100%', borderRadius: "10px" }}
-                                onClick={handleShowAddresscanvas}
+                                onClick={handleShowAddressCanvas}
                             >
                                 <span className="d-block mb-3 text-center">
                                     <GoPlus className="fs-1 text-dark mx-auto" />
@@ -114,7 +114,7 @@ const AddressCard = ({ info, fetchAddresses, onSelectAddress }) => {
                         </div>
                     </Row>
                 </Col>
-                <AddressOffcanvas show={showAddresscanvas} handleClose={handleCloseAddresscanvas} />
+                <AddressOffcanvas show={showAddressCanvas} handleClose={handleCloseAddressCanvas} />
 
                 {/* Bag Concept */}
                 <Col xxl={5} xl={5} md={5} sm={12} xs={12}>

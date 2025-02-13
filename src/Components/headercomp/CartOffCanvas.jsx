@@ -3,7 +3,7 @@ import { Offcanvas, Button, Row, Col } from 'react-bootstrap';
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
-const CartOffCanvas = ({ show, handleClose }) => {
+const CartOffcanvas = ({ show, handleClose }) => {
 
     const items = [
         {
@@ -131,4 +131,4 @@ const CartOffCanvas = ({ show, handleClose }) => {
     );
 };
 
-export default CartOffCanvas;
+export default CartOffcanvas;

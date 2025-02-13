@@ -4,7 +4,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { FcGoogle } from 'react-icons/fc';
 import "../../styles/LoginCanva.css";
 import toast from "react-hot-toast";
-import { auth, googleProvider } from '../../components/firebase';
+import { auth, googleProvider } from '../../Components/firebase';
 
 const LoginModal = ({ show, handleClose, setUser }) => {
     const [mobileNumber, setMobileNumber] = useState('');

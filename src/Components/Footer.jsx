@@ -12,7 +12,7 @@ import {
 import { IoIosMail } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
 import "../styles/Footer.css"
-import Loader from "./Loader";
+import LoaderComp from "./LoaderComp";
 
 const Footer = () => {
 
@@ -25,7 +25,7 @@ const Footer = () => {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <LoaderComp />;
   }
 
   return (

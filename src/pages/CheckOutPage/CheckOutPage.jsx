@@ -6,9 +6,9 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Payment from './Payment';
 import AddressCard from './AddressCard';
 import { WalletIcon } from '../../assets/SvgIcons';
-import Loader from '../../components/Loader';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../../components/Breadcrumb';
+import Breadcrumb from '../../Components/Breadcrumb';
+import LoaderComp from '../../Components/LoaderComp';
 
 const steps = [
   { id: 'SignUp', label: 'Sign Up', icon: <IoIosCheckmark className="fs-1" />, isActive: true },
@@ -56,7 +56,7 @@ const CheckOutPage = () => {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <LoaderComp />;
   }
 
   return (

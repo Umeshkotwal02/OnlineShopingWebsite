@@ -1,33 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
-import { AccountIcon, WishlistIcon, SearchIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp, ProfileIcon, NotificationIcon, MyOrderIcon } from "../../assets/SvgIcons";
-import LoginOffCanvas from "../canvas/LoginOffCanvas";
-import CategoryMenuMobi from "../../pages/MobilePages/CategoryMenuMobi";
+import { AccountIcon, WishlistIcon, LoginIcon, DropdownDown, LgBagIcon, DropdownUp, ProfileIcon, NotificationIcon, MyOrderIcon } from "../../assets/SvgIcons";
 import CategoryMenu from "./CategoryMenu";
-import MobileHeader from "../mobileheadercomp/MobileHeader";
 import TopBar from "./TopBar";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import toast from "react-hot-toast";
 import { IoLogOutOutline } from "react-icons/io5";
-import ProfileModal from "../canvas/ProfileModal";
-import NotificationCanvas from "../canvas/NotificationCanvas";
+import ProfileModal from "../Canvas/ProfileModal";
+import NotificationCanvas from "../Canvas/NotificationCanvas";
 import "../../styles/Header.css"
-import CartOffCanvas from "./CartOffCanvas";
 import SearchBar from "../SearchBar";
+import CartOffcanvas from "./CartOffCanvas";
+import LoginOffcanvas from "../Canvas/LoginOffCanvas";
 
-const Header = ({
-  searchTerm,
-  handleKeyUp,
-  handleChange,
-  suggestions,
-  handleSuggestionClick,
-  showSuggestions,
-}) => {
+const Header = () => {
 
-  const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login OffCanvas
-  const [showCartCanvas, setShowCartCanvas] = useState(false); // Cart OffCanvas
+  const [showLoginCanvas, setShowLoginCanvas] = useState(false); // Login Offcanvas
+  const [showCartCanvas, setShowCartCanvas] = useState(false); // Cart Offcanvas
   const [showProfileModals, setShowProfileModals] = useState(false); // Profile Modal
   const [showNotificationModal, setShowNotificationModal] = useState(false); // Notification Modal
   const [isOpen, setIsOpen] = useState(false);
@@ -267,8 +258,8 @@ const Header = ({
         </Container>
         <CategoryMenu />
       </div >
-      <LoginOffCanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
-      <CartOffCanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
+      <LoginOffcanvas show={showLoginCanvas} handleClose={handleCloseLoginCanvas} setUser={handleUserUpdate} />
+      <CartOffcanvas show={showCartCanvas} handleClose={handleCloseCartCanvas} />
       <ProfileModal show={showProfileModals} handleClose={handleCloseProfileModals} />
       <NotificationCanvas show={showNotificationModal} handleClose={handleCloseNotificationModals} />
 

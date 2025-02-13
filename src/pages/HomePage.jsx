@@ -13,11 +13,11 @@ import CustomerStoriesSection from './HomePage/CustomerStoriesSection'
 import OurInstaPage from './HomePage/OurInstaPage'
 import NewOnOnlineSwiper from './HomePage/NewOnOnlineSwiper'
 import CategorySection from './HomePage/CategoryCustomCard'
-import Loader from '../components/Loader'
 import ShopByColorSlick from './HomePage/ShopByColorSlick'
 import WatchShopSection from './HomePage/WatchShopSection'
-import MainHeaderMobi from '../components/mobileheadercomp/MobileHeader'
+import MainHeaderMobi from '../Components/mobileheadercomp/MobileHeader'
 import CategoryMenuMobi from './MobilePages/CategoryMenuMobi'
+import LoaderComp from '../Components/LoaderComp'
 
 
 function HomePage() {
@@ -31,7 +31,7 @@ function HomePage() {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <LoaderComp />;
   }
   return (
     <div>

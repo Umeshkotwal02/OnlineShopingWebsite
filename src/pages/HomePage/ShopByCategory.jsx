@@ -5,8 +5,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/ShopbyCatCard.css"
 import "../../styles/ShopByCategorySlick.css";
-import Loader from "../../components/Loader";
-
 
 const sliderItems = [
     {

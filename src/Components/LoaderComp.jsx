@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Loader.css";
 
-const Loader = () => {
+const LoaderComp = () => {
 
   return (
     <div className="loader-container d-flex justify-content-center align-items-center">
@@ -35,4 +35,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default LoaderComp;
