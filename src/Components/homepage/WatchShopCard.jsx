@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import "../../styles/WatchShopCard.css";
+import "../../styles/WatchShopCardFile.css";
 import LoaderComp from "../LoaderComp";
 
 const WatchShopCard = ({ watchShopProductInfo }) => {

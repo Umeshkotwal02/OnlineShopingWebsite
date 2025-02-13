@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import "../../styles/WatchShopCard.css";
+import "../../styles/WatchShopCardFile.css";
 import { Modal, Col, Container, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import { CategoryPrevNextIcon, CategorySlickNextIcon } from "../../assets/SvgIcons";
-import "../../styles/WatchShopCard.css";
 import WatchShopCard from "../../Components/homepage/WatchShopCard";
 import LoaderComp from "../../Components/LoaderComp";
 
