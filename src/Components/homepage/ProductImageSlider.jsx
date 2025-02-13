@@ -29,7 +29,7 @@ const ProductImageSlider = ({ imageList }) => {
           prevEl: "." + nextclassName,
         }}
         pagination={{
-          clickable: false,
+          clickable: true,
         }}
         modules={[Navigation, Pagination]}
         loop
